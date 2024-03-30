@@ -88,7 +88,7 @@ gulp.task('server', function () {
   buildPcss()
   buildAssets()
 
-  gulp.watch(['src/**/*.pug', 'src/**/*.pcss'], function (cb) {
+  gulp.watch(['src/**/*.pug', 'src/**/*.pcss', 'src/**/*.yml'], function (cb) {
     buildPug()
     buildPcss()
     buildAssets()

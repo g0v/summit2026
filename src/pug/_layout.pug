@@ -31,13 +31,13 @@ html(lang="zh-Hant-TW")
     header.container.flex.flex-wrap.items-center.py-4
       a(href=base): img.w-auto.h-12(src='assets/img/pgln_g0v_summit.png', alt='g0v Summit 2024')
       .flex(class="max-md:mt-4 md:ms-auto")
-        a(href="//summit2024.g0v.tw/brd/2024/", target="_blank", data-i18n="cfp") 投稿
-        a.ms-4(data-i18n="speakers") 講者
-        a.ms-4(data-i18n="agenda") 議程
-        a.ms-4(href="visit", data-i18n="traffic") 交通
-        a.ms-4(href="//g0v.hackmd.io/@summit2024/book/", target="_blank", data-i18n="hackmd") 共筆
-        a.ms-4(href="//www.youtube.com/@g0vTW", target="_blank", data-i18n="live") 直播
-        select#lang-select.ms-6.border-none.shadow-none.outline-none
+        a(href="//summit2024.g0v.tw/brd/2024/", target="_blank", data-i18n="nav.cfp") 投稿
+        a.ms-4(data-i18n="nav.speakers") 講者
+        a.ms-4(data-i18n="nav.agenda") 議程
+        a.ms-4(href="visit", data-i18n="nav.traffic") 交通
+        a.ms-4(href="//g0v.hackmd.io/@summit2024/book/", target="_blank", data-i18n="nav.hackmd") 共筆
+        a.ms-4(href="//www.youtube.com/@g0vTW", target="_blank", data-i18n="nav.live") 直播
+        select#lang-select.ms-4.border-none.shadow-none.outline-none
           option(value="zh") 華語
           option(value="en") EN
     block main
@@ -45,12 +45,12 @@ html(lang="zh-Hant-TW")
       .grid.gap-8(class="grid-cols-2 md:grid-cols-4")
         div
           .mb-4.font-bold Summit 2024
-          a.block(href="//summit2024.g0v.tw/brd/2024/", target="_blank") 投稿
-          a.block 講者
-          a.block 議程
-          a.block(href="visit") 交通
-          a.block(href="//g0v.hackmd.io/@summit2024/book/", target="_blank") 共筆
-          a.block(href="//www.youtube.com/@g0vTW", target="_blank") 直播
+          a.block(href="//summit2024.g0v.tw/brd/2024/", target="_blank", data-i18n="nav.cfp") 投稿
+          a.block(data-i18n="nav.speakers") 講者
+          a.block(data-i18n="nav.agenda") 議程
+          a.block(href="visit", data-i18n="nav.traffic") 交通
+          a.block(href="//g0v.hackmd.io/@summit2024/book/", target="_blank", data-i18n="nav.hackmd") 共筆
+          a.block(href="//www.youtube.com/@g0vTW", target="_blank", data-i18n="nav.live") 直播
         div
           .mb-4.font-bold 媒體素材
           div: a(href="//g0v.hackmd.io/@SQLfOC1bRwKstcPS84Gu_w/H1aRf_W8a", target="_blank") Press Kit
@@ -79,9 +79,9 @@ html(lang="zh-Hant-TW")
           a.hidden(href="", target="_blank"): img(src="assets/img/email.svg", alt="Email", class="h-6")
 
     #cookie-agree.fixed.bottom-0.w-full.bg-slate-100.flex.p-4.items-center.justify-center.hidden
-      div
+      div(data-i18n="cookie")
         | 本網站使用 cookies 於廣告、社群與分析等用途，藉以增進您的使用體驗，繼續使用本網站即代表您同意使用 cookies。
-      a.btn.btn-primary.shrink-0.my-auto.ms-3(href="#") 同意
+      a.btn.btn-primary.shrink-0.my-auto.ms-3(href="#", data-i18n="agree") 同意
     script(src='//code.jquery.com/jquery-3.7.0.min.js', integrity='sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=', crossorigin='anonymous')
     script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.9/jquery.i18n.min.js', integrity='sha512-EkS8Kq86l7dHt/dOBniHgtYvAScDqFw/lIPX5VCwaVKsufs0pY44I2cguqZ45QaFOGGwVd3T1nXvVJYIEjRsjA==', crossorigin='anonymous', referrerpolicy='no-referrer')
     script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.9/jquery.i18n.emitter.bidi.min.js', integrity='sha512-EP79zV22G1pPO28sRgwfVyEPEhu1RXA2ovHJNqlev1pIGEAs0CBzi6F6UMkPBaPS78O3KeEVqpicEYah+zbXhg==', crossorigin='anonymous', referrerpolicy='no-referrer')

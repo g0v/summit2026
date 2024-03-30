@@ -19,13 +19,11 @@ const i18n = $.i18n()
 let i18nzh = {}
 
 $('#cookie-agree a.btn').on('click', function (e) {
-  e.preventDefault()
   storage.setItem('agreeCookie', true)
   $('#cookie-agree').addClass('hidden')
 })
 
 $('select#lang-select').on('change', function (e) {
-  console.log(e)
   let lang = $(this).val()
   i18n.locale = lang
   $('body').i18n()
@@ -37,8 +35,8 @@ $(function () {
   }
 
   $('[data-i18n]').each(function () {
-    let key = $(this).attr('data-i18n')
-    let text = $(this).text()
+    let key = $(this).attr('data-i18n').replace(/\[.*?\]/g, '');
+    let text = $(this).html()
     i18nzh[key] = text
   })
 
