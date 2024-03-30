@@ -1,4 +1,4 @@
-name: deploy to production from new_design branch
+name: update gh-pages from new_design branch
 
 jobs:
   build-and-deploy:
@@ -16,10 +16,10 @@ jobs:
         run: npm ci
 
       - name: Build
-        run: npm run deploy
+        run: npm run build
 
-      - name: Deploy to production branch
+      - name: Deploy to gh-pages
         uses: JamesIves/github-pages-deploy-action@4.1.9
         with:
-          branch: production
-          folder: static/2024
+          branch: gh-pages
+          folder: static/summit2024
