@@ -6,12 +6,20 @@ const connect = require('gulp-connect')
 const sitemap = require('gulp-sitemap')
 const path = require('path')
 const rename = require('gulp-rename')
+const yaml = require('gulp-yaml');
+
+function buildAssets (baseurl = '/2024/') {
+  gulp
+    .src('src/locale/*.yml')
+    .pipe(yaml({ schema: 'DEFAULT_SAFE_SCHEMA' }))
+    .pipe(gulp.dest('.' + path.join('/static/', baseurl, '/assets/i18n/')))
+  return gulp
+    .src('src/assets/**')
+    .pipe(gulp.dest('.' + path.join('/static/', baseurl, '/assets/')))
+}
 
 function buildPcss (baseurl = '/2024/') {
   let dest_path = '.' + path.join('/static/', baseurl, '/assets/css')
-  gulp
-    .src('src/assets/**')
-    .pipe(gulp.dest('.' + path.join('/static/', baseurl, '/assets/')))
   return gulp
     .src('src/pcss/*.pcss')
     .pipe(
@@ -60,11 +68,13 @@ function buildPug (baseurl = '/2024/') {
 gulp.task('build', async () => {
   await buildPug('/summit2024/')
   await buildPcss('/summit2024/')
+  await buildAssets('/summit2024/')
 })
 
 gulp.task('deploy', async () => {
   await buildPug('/2024/')
   await buildPcss('/2024/')
+  await buildAssets('/2024/')
 })
 
 gulp.task('server', function () {
@@ -76,13 +86,12 @@ gulp.task('server', function () {
   })
   buildPug()
   buildPcss()
+  buildAssets()
 
-  gulp.watch(
-    ['src/**/*.pug', 'src/**/*.pcss', 'static/assets/js/*.js', 'src/data/*.json'],
-    function (cb) {
-      buildPug()
-      buildPcss()
-      cb()
-    }
-  )
+  gulp.watch(['src/**/*.pug', 'src/**/*.pcss'], function (cb) {
+    buildPug()
+    buildPcss()
+    buildAssets()
+    cb()
+  })
 })

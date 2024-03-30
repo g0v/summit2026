@@ -31,12 +31,15 @@ html(lang="zh-Hant-TW")
     header.container.flex.flex-wrap.items-center.py-4
       a(href=base): img.w-auto.h-12(src='assets/img/pgln_g0v_summit.png', alt='g0v Summit 2024')
       .flex(class="max-md:mt-4 md:ms-auto")
-        a(href="//summit2024.g0v.tw/brd/2024/", target="_blank") 投稿
-        a.ms-4 講者
-        a.ms-4 議程
-        a.ms-4(href="visit") 交通
-        a.ms-4(href="//g0v.hackmd.io/@summit2024/book/", target="_blank") 共筆
-        a.ms-4(href="//www.youtube.com/@g0vTW", target="_blank") 直播
+        a(href="//summit2024.g0v.tw/brd/2024/", target="_blank", data-i18n="cfp") 投稿
+        a.ms-4(data-i18n="speakers") 講者
+        a.ms-4(data-i18n="agenda") 議程
+        a.ms-4(href="visit", data-i18n="traffic") 交通
+        a.ms-4(href="//g0v.hackmd.io/@summit2024/book/", target="_blank", data-i18n="hackmd") 共筆
+        a.ms-4(href="//www.youtube.com/@g0vTW", target="_blank", data-i18n="live") 直播
+        select#lang-select.ms-6.border-none.shadow-none.outline-none
+          option(value="zh") 華語
+          option(value="en") EN
     block main
     footer.bg-slate-200: .container.py-20
       .grid.gap-8(class="grid-cols-2 md:grid-cols-4")
@@ -74,49 +77,18 @@ html(lang="zh-Hant-TW")
           a(href="//x.com/g0vtw/", target="_blank"): img(src="assets/img/twitter-x.svg", alt="Twitter", class="me-3 h-6")
           a(href="//github.com/g0v/", target="_blank"): img(src="assets/img/github-s.svg", alt="Github", class="h-6")
           a.hidden(href="", target="_blank"): img(src="assets/img/email.svg", alt="Email", class="h-6")
-    
+
     #cookie-agree.fixed.bottom-0.w-full.bg-slate-100.flex.p-4.items-center.justify-center.hidden
       div
         | 本網站使用 cookies 於廣告、社群與分析等用途，藉以增進您的使用體驗，繼續使用本網站即代表您同意使用 cookies。
       a.btn.btn-primary.shrink-0.my-auto.ms-3(href="#") 同意
     script(src='//code.jquery.com/jquery-3.7.0.min.js', integrity='sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=', crossorigin='anonymous')
-    script.
-      const storage = window.sessionStorage;
-      /*
-      if(!storage.getItem("userLang")) {
-        var userLanguage = navigator.languages ? navigator.languages[0] : navigator.language || navigator.userLanguage;
-        userLanguage = userLanguage.toLowerCase();
-        console.log(userLanguage);
-        if (userLanguage.includes('zh-hant') || userLanguage.includes('zh-tw') || userLanguage.includes('zh-hk') 
-        || userLanguage.includes('zh-hans') || userLanguage.includes('zh-cn') || userLanguage.includes('zh')) {
-          storage.setItem("userLang", "zh");
-        } else {
-          storage.setItem("userLang", "en");
-          window.location.href="/2024/en";
-        }
-      } else if(storage.getItem("userLang") === 'en') {
-        window.location.href="/2024/en";
-      }*/
-
-      $("#cookie-agree a.btn").on("click", function(e) {
-        e.preventDefault();
-        storage.setItem("agreeCookie", true);
-        $("#cookie-agree").addClass("hidden");
-      })
-
-      $(function() {
-        if(!storage.getItem("agreeCookie")) {
-          $("#cookie-agree").removeClass("hidden");
-        }
-      })
-
-      $(window).on("load", function(e) {
-        $("body").css("overflow", "unset");
-        $("#loading").addClass('scale');
-        setTimeout(function() {
-          $("#loading").addClass('fadeout');
-        }, 1000);
-      })
-
-
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.9/jquery.i18n.min.js', integrity='sha512-EkS8Kq86l7dHt/dOBniHgtYvAScDqFw/lIPX5VCwaVKsufs0pY44I2cguqZ45QaFOGGwVd3T1nXvVJYIEjRsjA==', crossorigin='anonymous', referrerpolicy='no-referrer')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.9/jquery.i18n.emitter.bidi.min.js', integrity='sha512-EP79zV22G1pPO28sRgwfVyEPEhu1RXA2ovHJNqlev1pIGEAs0CBzi6F6UMkPBaPS78O3KeEVqpicEYah+zbXhg==', crossorigin='anonymous', referrerpolicy='no-referrer')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.9/jquery.i18n.emitter.min.js', integrity='sha512-FXATL79ewicv4U54AgQVVHBBsinKwHuIZJZFUIJqhqpA6UV0XuAFAhTjGuA9JX0HmzwKW+frVH2MuHCzpDgSMQ==', crossorigin='anonymous', referrerpolicy='no-referrer')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.9/jquery.i18n.fallbacks.min.js', integrity='sha512-FvKl0c+LXuYS0OlbGXHLIt/VUxLHgVG2wMHB8BwMDzEwwNACtxhutxl4jxlnuNfEuzKPLarLsf17UP7UgPMs6w==', crossorigin='anonymous', referrerpolicy='no-referrer')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.9/jquery.i18n.language.min.js', integrity='sha512-XaRK7YZ6nqPsjMAMUysMC0J7zqEOp3K74pUzIADUd3Ql8qpFpuwpR5jm+TVyzJc8C5fvVkjC3yOjF0gWmmCtDA==', crossorigin='anonymous', referrerpolicy='no-referrer')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.9/jquery.i18n.messagestore.min.js', integrity='sha512-Ejnbo8F6SIU18Tj9hZyJzVbhWtbC40Fyvuyfs6InZloy043xEvICul37BxuUGZG1ia8RQky7uBOwBdLsGKDu1w==', crossorigin='anonymous', referrerpolicy='no-referrer')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.9/jquery.i18n.parser.min.js', integrity='sha512-v3mCT0T3rETWJU4RZKWHobzvOdJUcaojtxFBYVY371L/3aaWj9Dg2MNl6Q46wr19u4YHHnyzAR99wWAr9mB3ZA==', crossorigin='anonymous', referrerpolicy='no-referrer')
+    script(src='assets/js/base.js?version='+timestamp)
     block script
