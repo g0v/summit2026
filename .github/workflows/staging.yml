@@ -1,5 +1,9 @@
 name: update gh-pages from new_design branch
 
+on:
+  push:
+    branches: new_design
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
