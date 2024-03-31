@@ -35,9 +35,9 @@ html(lang="zh-Hant-TW")
         a.ms-4(href="visit", data-i18n="nav.visit") 交通
         a.ms-4(href="//g0v.hackmd.io/@summit2024/book/", target="_blank", data-i18n="nav.hackmd") 共筆
         a.ms-4(href="//www.youtube.com/@g0vTW", target="_blank", data-i18n="nav.live") 直播
-        select#lang-select.ms-4.border-none.shadow-none.outline-none.rounded
+        select#lang-select.ms-4.border-none.shadow-none.outline-none.rounded(aria-label="Language")
           option(value="zh") 華語
-          option(value="en") EN
+          option(value="en") English
     block main
     footer.bg-slate-200: .container.py-20
       .grid.gap-8(class="grid-cols-2 md:grid-cols-4")
