@@ -1,0 +1,14 @@
+extends ../_layout.pug
+block variables
+  - _sessions = data['sessions'];
+  - title = "講者"
+block head
+  link(rel="stylesheet", href="assets/css/base.css?version="+timestamp)
+block main
+  .container.my-20
+    h1.border-b.border-neutral-500.pb-3(data-i18n="speakers.title") 講者
+  .container.my-20
+    p(data-i18n="speakers.intro") 第一波錄取講者如下（名單仍會更動）：
+    ul.grid.mb-12(class="grid-cols-3 md:grid-cols-5")
+      each session in _sessions
+        li.mb-4= session.speaker

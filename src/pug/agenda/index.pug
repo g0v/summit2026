@@ -1,0 +1,14 @@
+extends ../_layout.pug
+block variables
+  - _sessions = data['sessions'];
+  - title = "議程"
+block head
+  link(rel="stylesheet", href="assets/css/base.css?version="+timestamp)
+block main
+  .container.my-20
+    h1.border-b.border-neutral-500.pb-3(data-i18n="agenda.title") 議程
+  .container.my-20
+    p(data-i18n="agenda.intro") 第一波錄取議程如下（議程仍會更動）：
+    ul
+      each session in _sessions
+        li #{session.title} – <strong>#{session.speaker}</strong>
