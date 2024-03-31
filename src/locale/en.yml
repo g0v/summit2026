@@ -81,9 +81,11 @@ agenda.intro: The first round of admitted sessions are as follows (subject to ch
 agenda.timetable: Timetable
 agenda.time: Time
 agenda.r4: Recreation Hall
+agenda.registration: Registration
 agenda.opening: Opening
 agenda.break: Break
 agenda.lunch: Lunch Break
+agenda.summary: Day Summary
 agenda.closing: Closing
 
 visit.title: Transportation
@@ -103,6 +105,11 @@ visit.t4: Driving Directions
 visit.p6: National Highway No. 3 (Nangang System Interchange, Nanshen Rd. Exit)
 visit.p7: Exchange a temporary parking permit at the entrance and park responsibly.
 visit.p8: For motorbikes, there are free parking space on the right hand side of Academia Sinica’s main entrance.
+
+staff.title: Staff Members
+staff.subtitle: g0v Summit 2024 Working Group
+
+partners.title: Partners
 
 coc.title: g0v Code of Conduct
 coc.lastmodified: revised April 5, 2023

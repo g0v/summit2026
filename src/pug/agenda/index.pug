@@ -28,18 +28,18 @@ block main
       table.w-full.rounded-lg.border.border-neutral-300.rounded-lg.center-justify(cellspacing="0", cellpadding="0")
         thead
           tr.bg-neutral-100.font-medium.center-justify
-            th.px-4.py-2(scope="col") 時間
+            th.px-4.py-2(scope="col", data-i18n="agenda.time") 時間
             th.px-4.py-2(scope="col") R0
             th.px-4.py-2(scope="col") R1
             th.px-4.py-2(scope="col") R2
-            th.px-4.py-2(scope="col") 交誼廳
+            th.px-4.py-2(scope="col", data-i18n="agenda.r4") 交誼廳
         tbody
           tr.border-y.border-neutral-300
             td.px-4.py-2 9:00 - 9:20
-            td.px-4.py-2(colspan="4") 報到
+            td.px-4.py-2(colspan="4", data-i18n="agenda.registration") 報到
           tr.border-y.border-neutral-300
             td.px-4.py-2 9:20 - 9:30
-            td.px-4.py-2(colspan="3") 開場
+            td.px-4.py-2(colspan="3", data-i18n="agenda.opening") 開場
             td.px-4.py-2
           tr.border-y.border-neutral-300
             td.px-4.py-2 9:30 - 10:00
@@ -67,7 +67,7 @@ block main
             td.px-4.py-2
           tr.border-y.border-neutral-300
             td.px-4.py-2 11:40 - 12:30
-            td.px-4.py-2(colspan="4") 午休
+            td.px-4.py-2(colspan="4", data-i18n="agenda.lunch") 午休
           tr.border-y.border-neutral-300
             td.px-4.py-2 12:30 - 13:00
             td.px-4.py-2.font-medium(rowspan="3") 社群議程軌：AN
@@ -120,7 +120,7 @@ block main
             td.px-4.py-2
           tr.border-y.border-neutral-300
             td.px-4.py-2 17:20 - 17:30
-            td.px-4.py-2(colspan="3") 小結
+            td.px-4.py-2(colspan="3", data-i18n="agenda.summary") 小結
             td.px-4.py-2
     .mb-12
       h5.mb-4 5/5 (Day 2)

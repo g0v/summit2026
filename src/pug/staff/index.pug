@@ -1,12 +1,13 @@
 extends ../_layout.pug
 block variables
   - _staff = data['staff'];
-  - title = "工作人員 Staff"
+  - title = "工作團隊 Staff"
 block head
   link(rel="stylesheet", href="assets/css/base.css?version="+timestamp)
 block main
   .container.my-20
-    h1.border-b.border-neutral-500.pb-3 工作人員
+    h1.border-b.border-neutral-500.pb-3(data-i18n="staff.title") 工作人員
+    .text-sm.my-4(data-i18n="staff.subtitle") g0v Summit 2024 籌備團隊
   .container.my-20
     each staff, key in _staff
       if key == '宣傳' || key == '議程'
