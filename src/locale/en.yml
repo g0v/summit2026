@@ -101,3 +101,25 @@ visit.t4: Driving Directions
 visit.p6: National Highway No. 3 (Nangang System Interchange, Nanshen Rd. Exit)
 visit.p7: Exchange a temporary parking permit at the entrance and park responsibly.
 visit.p8: For motorbikes, there are free parking space on the right hand side of Academia Sinica’s main entrance.
+
+coc.title: g0v Code of Conduct
+coc.lastmodified: revised April 5, 2023
+coc.doclink: collaboration history
+coc.p1: Participants in the g0v community must work together to create a friendly environment free of harassment for all participants, regardless of their gender, sexual orientation, mental state, appearance, race, religious or political beliefs, or technological preferences.
+coc.p2: If you violate these rules, organisers or project owner, have the right and authority to expel you. Other participants must also actively try to prevent all harassment and other inappropriate behaviour.
+coc.p3: Participants are not required to reimburse recompensate the recourses or money (such registration fees and donations) that had already been contributed by those who have since been expelled. Speakers, sponsors, contributors, project owner and others in specific roles are also participants, and thus must abide by the same rules as all others.
+coc.p4: "Harassment includes:"
+coc.l1: Offensive comments regarding the gender, sexual orientation, mental state, appearance, race, religious or political beliefs, or technological preferences of others;
+coc.l2: Displaying sexually explicit images in public;
+coc.l3: Intentionally intimidating, stalking, following or harassing the photographer or cameraperson;
+coc.l4: Repeatedly disrupting the proceedings of speeches, online cooperation, or other events through verbal or other means;
+coc.l5: Inappropriate physical contact;
+coc.l6: Unwelcomed sexual attention.
+coc.p5: Please immediately stop such harassing behaviour when requested to do so by other participants.
+coc.p6: If you have been harassed or have discovered that others have been harassed, please immediately ask for help from other participants, managers or the event organising team.
+coc.p7: The g0v community hopes that participants can follow the above rules at both online and offline events.
+coc.t1: Need Help?
+coc.p8: If you run into any difficulties, you can ask for help from the project owner or the event organising team. If they are unable to help you, you can get in contact with the jothon team.
+coc.t2: License
+coc.p9: g0v Code of Conduct was based on <a href="https://confcodeofconduct.com/" target="_blank">Conference Code of Conduct</a>, released under <a href="http://creativecommons.org/licenses/by/3.0/deed.en_US" target="_blank">Creative Commons Attribution 3.0 Unported License</a>.
+coc.p10: Refer to <a href="https://github.com/g0v/coc/" target="_blank">g0v Code of Conduct repo</a> for collaboration, amendment or comments regarding this document.
