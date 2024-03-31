@@ -9,14 +9,15 @@ nav.cfp: Proposals
 nav.speakers: Speakers
 nav.agenda: Agenda
 nav.visit: Venue
-nav.hackmd: Collab. Notes
-nav.live: Live
+nav.hackmd: Collaboration Notes
+nav.live: Livestream
 nav.media: Media
 nav.presskit: Press Kit
 nav.newsletter: Newsletter
 nav.about: About Summit
 nav.staff: Staff
 nav.partners: Partners
+nav.docs: Organization Records
 nav.coc: Code of Conduct
 nav.past: Past Events
 nav.bugreport: Report Website Issue
