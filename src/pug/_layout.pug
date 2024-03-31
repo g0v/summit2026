@@ -49,31 +49,31 @@ html(lang="zh-Hant-TW")
           a.block(href="//g0v.hackmd.io/@summit2024/book/", target="_blank", data-i18n="nav.hackmd") 共筆
           a.block(href="//www.youtube.com/@g0vTW", target="_blank", data-i18n="nav.live") 直播
         div
-          .mb-4.font-bold 媒體素材
-          div: a(href="//g0v.hackmd.io/@SQLfOC1bRwKstcPS84Gu_w/H1aRf_W8a", target="_blank") Press Kit
-          div: a(href="//us21.campaign-archive.com/home/?u=5f2da7dc5b32fcf00c4e26170&id=cf109d5e52", target="_blank") 電子報
+          .mb-4.font-bold(data-i18n="nav.media") 媒體資源
+          div: a(href="//g0v.hackmd.io/@SQLfOC1bRwKstcPS84Gu_w/H1aRf_W8a", target="_blank", data-i18n="nav.presskit") 新聞素材
+          div: a(href="//us21.campaign-archive.com/home/?u=5f2da7dc5b32fcf00c4e26170&id=cf109d5e52", target="_blank", data-i18n="nav.newsletter") 電子報
         div
-          .mb-4.font-bold 關於 Summit
-          div: a(href="staff") 籌備團隊
-          div 合作夥伴
-          div: a(href="coc") 社群守則
+          .mb-4.font-bold(data-i18n="nav.about") 關於 Summit
+          div: a(href="staff", data-i18n="nav.staff") 籌備團隊
+          div: a(href="partners", data-i18n="nav.partners") 合作夥伴
+          div: a(href="coc", data-i18n="nav.coc") 社群守則
         div
-          .mb-4.font-bold 歷年網頁
+          .mb-4.font-bold(data-i18n="nav.past") 歷年網站
           div: a(href="//summit.g0v.tw/2014", target="_blank") 2014
           div: a(href="//summit.g0v.tw//2016", target="_blank") 2016
           div: a(href="//summit.g0v.tw//2018", target="_blank") 2018
           div: a(href="//summit.g0v.tw//2020", target="_blank") 2020
-      .grid.my-16(class="grid-cols-1 md:grid-cols-2")
-        .my-2.flex.flex-wrap(class="max-md:justify-center")
+      .grid.my-16(class="grid-cols-1 md:grid-cols-3")
+        .my-2.flex.flex-wrap(class="md:col-span-2 max-md:justify-center")
           span CC BY 4.0 @ g0v Summit 2024
-          a.mx-6(href="//github.com/g0v/summit2024/issues", target="_blank") 網站問題回饋
+          a.mx-6(href="//github.com/g0v/summit2024/issues", target="_blank", data-i18n="nav.bugreport") 網站問題回饋
         .ms-auto.my-2.flex(class="max-md:w-full max-md:justify-center")
           a(href="//www.facebook.com/g0v.tw/", target="_blank"): img(src="assets/img/facebook.svg", alt="Facebook", class="me-3 h-6")
           a(href="//www.instagram.com/g0v.tw/", target="_blank"): img(src="assets/img/instagram.svg", alt="Instagram", class="me-3 h-6")
-          a(href="//g0v.hackmd.io/@jothon/g0v-cowork-guideline/%2FPwJcrD23SBag6sg15epZMA", target="_blank"): img(src="assets/img/slack.svg", alt="Slack", class="me-3 h-6")
           a(href="//x.com/g0vtw/", target="_blank"): img(src="assets/img/twitter-x.svg", alt="Twitter", class="me-3 h-6")
-          a(href="//github.com/g0v/", target="_blank"): img(src="assets/img/github-s.svg", alt="Github", class="h-6")
-          a.hidden(href="", target="_blank"): img(src="assets/img/email.svg", alt="Email", class="h-6")
+          a(href="//g0v.social/@summit", target="_blank"): img(src="assets/img/mastodon.svg", alt="Mastodon (g0v.social)", class="me-3 h-6")
+          a(href="//g0v.hackmd.io/@jothon/g0v-cowork-guideline/%2FPwJcrD23SBag6sg15epZMA", target="_blank"): img(src="assets/img/slack.svg", alt="Slack", class="me-3 h-6")
+          a(href="//github.com/g0v/", target="_blank"): img(src="assets/img/github-s.svg", alt="GitHub", class="h-6")
 
     #cookie-agree.fixed.bottom-0.w-full.bg-slate-100.flex.p-4.items-center.justify-center.hidden
       div(data-i18n="cookie")

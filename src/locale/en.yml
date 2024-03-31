@@ -10,6 +10,15 @@ nav.agenda: Agenda
 nav.visit: Venue
 nav.hackmd: Collab. Notes
 nav.live: Live
+nav.media: Media
+nav.presskit: Press Kit
+nav.newsletter: Newsletter
+nav.about: About Summit
+nav.staff: Staff
+nav.partners: Partners
+nav.coc: Code of Conduct
+nav.past: Past Events
+nav.bugreport: Report Website Issue
 
 index.t1: Citizens Never Rest
 index.p1: |
