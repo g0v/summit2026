@@ -66,3 +66,21 @@ agenda.title: Agenda
 agenda.keynote: Keynote
 agenda.sessions: Sessions
 agenda.intro: The first round of admitted sessions are as follows (subject to change).
+
+visit.title: Transportation
+visit.venue: Humanities & Social Science Building, Academia Sinica
+visit.address: 128 Academia Rd. Sec. 2, Nangang District, Taipei, Taiwan
+
+visit.t1: By Transit
+visit.t2: Reaching Nangang
+visit.p1: Ride the <a href="https://tip.railway.gov.tw/tra-tip-web/tip/tip00H/tipH41/viewStaInfo/0980?lang=EN_US" target="_blank">Taiwan Railway</a> or <a href="https://en.thsrc.com.tw/ArticleContent/f3b45673-24ff-4e70-bd48-b2b155c5c031" target="_blank">Taiwan High Speed Rail</a> to <strong>Nangang</strong> station.
+visit.p2: Ride <a href="https://www.metro.taipei/" target="_blank">Taipei Metro</a> to <strong>Nangang</strong> station (Bannan Line) or <strong>Nangang Exhibition Center</strong> station (Bannan Line & Wenhu Line).
+visit.t3: Reaching Academia Sinica
+visit.p3: From Nangang station Exit 2, take the bus 212 Express, 212 Shuttle, 270 or Blue 25 to <strong>Academia Sinica</strong>.
+visit.p4: From Nangang Exhibition Center Exit 5, take the bus 205, 306, 620, 645, 679, S1, S5 or S12 to <strong>Academia Sinica</strong>.
+visit.p5: Walk or ride <a href="https://en.youbike.com.tw/region/taipei/stations/">YouBike</a> to <strong>Humanities and Social Science Building</strong>.
+
+visit.t4: Driving Directions
+visit.p6: National Highway No. 3 (Nangang System Interchange, Nanshen Rd. Exit)
+visit.p7: Exchange a temporary parking permit at the entrance and park responsibly.
+visit.p8: For motorbikes, there are free parking space on the right hand side of Academia Sinica’s main entrance.

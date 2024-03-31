@@ -5,34 +5,30 @@ block head
   link(rel="stylesheet", href="assets/css/base.css?version="+timestamp)
 block main
   .container.my-20
-    h1.border-b.border-neutral-500.pb-3 交通資訊
+    h1.border-b.border-neutral-500.pb-3(data-i18n="visit.title") 交通資訊
+  .container.my-8
+    h5(data-i18n="visit.venue") 中央研究院人文社會科學館
+    address(data-i18n="visit.address") 台北市南港區研究院路 2 段 128 號
   iframe(src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1873.8475225019197!2d121.60977844724385!3d25.04050229926607!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442ab46b3aaaaab%3A0x6ad0b8243ddc70ef!2z5Lit5aSu56CU56m26Zmi5Lq65paH56S-5pyD56eR5a246aSo!5e0!3m2!1szh-TW!2stw!4v1709469829063!5m2!1szh-TW!2stw' width='100%' height='450' style='border:0;' allowfullscreen loading='lazy' referrerpolicy='no-referrer-when-downgrade')
+
   .container.my-20
     .my-8
-      h3.mb-4 中央研究院人文社會科學館
-      ul: li 台北市南港區研究院路 2 段 128 號
-    .my-8
-      h3.mb-4 公車
-      ul: li 搭乘 205、212、212(直)、212(區)、270、276、306、620、645、小12、藍25、679、小5、小1 至中研院站，步行至人文社會科學館
-    .my-8
-      h3.mb-4 火車
-      ul: li 至南港站換乘公車 306、205、276、小12、212、679、小5 至中研院站，步行至人文社會科學館
-    .my-8
-      h3.mb-4 台北捷運
-      ul  
-        li 搭乘捷運板南線至南港站（ 2 號出口）換乘公車  212(直)、212(區)、270或 藍25 至中研院站，步行至人文社會科學館
-        li 搭乘捷運板南線至南港展覽館站（5 號出口）換乘公車  212、276、306、620、645、679、205、小5、小1 或 小12 至中研院站，步行至人文社會科學館
-    .my-8
-      h3.mb-4 計程車
-      ul: li 可搭乘計程車進入院區
-    .my-8
-      h3.mb-4 開車
+      h3.mb-4(data-i18n="visit.t1") 搭乘大眾運輸工具
+      h5(data-i18n="visit.t2") 移動至南港
       ul
-        li 國道3號→南港系統交流道出口→南深路→舊庄路一段→研究院路二段→中研院大門
-        li 車輛進入院區請持證件向大門警衛室換取臨時通行證。若您於週一至週五來訪，您須停車至人文社會館 B2，並需支付停車費用。假日換證不收費，並請停車於院內道路旁停車格。
+        li(data-i18n="[html]visit.p1") 搭乘<a href="https://www.railway.gov.tw/tra-tip-web/tip/tip00H/tipH41/viewStaInfo/0980" target="_blank">台鐵</a>、<a href="https://www.thsrc.com.tw/ArticleContent/2f940836-cedc-41ef-8e28-c2336ac8fe68" target="_blank">高鐵</a>至<strong>南港站</strong>。
+        li(data-i18n="[html]visit.p2") 搭乘<a href="https://www.metro.taipei/" target="_blank">台北捷運</a>至<strong>南港站</strong>（板南線）、<strong>南港展覽館站</strong>（板南線、文湖線）。
+      h5(data-i18n="visit.t3") 移動至中研院
+      ul
+        li(data-i18n="[html]visit.p3") 於捷運南港站（2 號出口）換乘公車 212(直)、212(區)、270或 藍25 至<strong>中研院站</strong>。
+        li(data-i18n="[html]visit.p4") 於南港展覽館站（5 號出口）換乘公車 212、276、306、620、645、679、205、小5、小1 或 小12 至<strong>中研院站</strong>。
+        li(data-i18n="[html]visit.p5") 步行或騎乘 <a href="https://www.youbike.com.tw/region/taipei/stations/">YouBike</a> 至<strong>中央研究院人文社會科學館</strong>。
     .my-8
-      h3.mb-4 騎摩托車
-      ul: li 院區大門右方有免費機車停車區。或是沿研究院路騎，經過大門、郵局後靠右直騎過側門，往左邊看也有一個停車場。
+      h3.mb-4(data-i18n="visit.t4") 自行開車或騎摩托車
+      ul
+        li(data-i18n="visit.p6") 國道3號→南港系統交流道出口→南深路→舊庄路一段→研究院路二段→中研院大門
+        li(data-i18n="visit.p7") 車輛進入院區請持證件向大門警衛室換取臨時通行證。。假日換證不收費，並請停車於院內道路旁停車格。
+        li(data-i18n="visit.p8") 院區大門右方有免費機車停車區。或是沿研究院路騎，經過大門、郵局後靠右直騎過側門，往左邊看也有一個停車場。
   hr
   .px-4.my-20
     .text-center 中研院人文社會科學館 3 樓平面圖
