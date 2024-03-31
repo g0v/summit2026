@@ -5,10 +5,10 @@ cookie: This website uses cookies to improve your experience. By continuing to u
 agree: Agree
 
 nav.cfp: Proposals
-nav.headespeakers: Speakers
+nav.speakers: Speakers
 nav.agenda: Agenda
-nav.traffic: Traffic
-nav.hackmd: Notebook
+nav.visit: Venue
+nav.hackmd: Collab. Notes
 nav.live: Live
 
 index.t1: Citizens Never Rest
@@ -19,7 +19,7 @@ index.p2: |
 index.p3: |
   The year 2024 has presented brand new challenges to both the g0v community and Summit itself. On one hand, the community already needs to rebuild our momentum after the pandemic, mending connections and motivate participants after a 4-year sedative on crowd events; on the other hand, the global situation has changed significantly since the first g0v Summit. We may not find quick cure to social polarization, authoritarian expansion, or democratic backsliding which many of us are witnessing at the moment, but we still see hope in the vigorous activities of student communities, the strong ties between civic tech communities in neighboring countries, and the firm coordination among non-profits and civic groups.
 index.p4: |
-  We elected to hold g0v Summit 2024 two weeks before Taiwan's presidential inauguration in May. In a year where many democratic countries will cast their votes, we envision g0v Summit continues to serve as a place for gathering, listening, finding common grounds, and joining efforts. There is no free lunch for bringing change, just as voting itself does not bring democracy. Elections will end, but we shall not slow down our pace. Civic engagement never rests.
+  We elected to hold g0v Summit 2024 two weeks before Taiwan's presidential inauguration in May. In a year where many democratic countries will cast their votes, we envision g0v Summit continues to serve as a place for gathering, listening, finding common grounds, and joining efforts. There is no free lunch for bringing change, just as voting itself does not bring democracy. Elections will end, but we shall not slow down our pace. <strong>Civic engagement never rests.</strong>
 
 index.t2: What is g0v?
 index.p5: |
@@ -43,16 +43,16 @@ index.topics.1.tags: |
   #eID #PersonalDataProtection #AIRegulation #DigitalPlatformRegulation #DigitalViolence #DigitalSovereignty
 index.topics.2: Data, AI, and community collaboration
 index.topics.2.tags: |
-  #OpenGovernment #BigData(DataGovernance) #Crowdsourcing #GeoData #OpenCourses
+  #OpenGovernment #BigData (#DataGovernance) #Crowdsourcing #GeoData #OpenCourses
 index.topics.3: Grassroots, open, polycentric, and communal responses to political and technological authoritarianism
 index.topics.3.tags: |
-  #CommunityGovernance #DigitalResilience #CivicActivism #DigitalCivilDefence #OpenSourceSpirits
+  #CommunityGovernance #DigitalResilience #CivicActivism #DigitalCivilDefense #OpenSourceSpirit
 index.topics.4: Digital infrastructure grounded in empathy, inclusiveness, and plurality
 index.topics.4.tags: |
-  #Netiquette #CoC #DigitalPolarisation #DigitalDEI (Diversity and Inclusion) #DigitalLiteracy
+  #Netiquette #CoC #DigitalPolarization #Digital<abbr title="Diversity and Inclusion">DEI #DigitalLiteracy
 index.topics.5: Convergence of technology and social issues
 index.topics.5.tags: |
-  #SDG #SocialEnterprise #DigitalTransformation #Innovation #Education #NGO
+  #SDGs #SocialEnterprise #DigitalTransformation #Innovation #Education #NGO
 
 index.p8: |
-  In addition to the pre-planned agenda, the conference also features a section of “unconference”, where participants can propose topics and create new spaces for collaboration through talks, discussions, and workshops. Participants can also freely sign up for “lightning talks”—a tradition from open source communities that highlights the spirit of openness and sharing.
+  In addition to the pre-planned agenda, the conference also features a section of <strong>unconference</strong>, where participants can propose topics and create new spaces for collaboration through talks, discussions, and workshops. Participants can also freely sign up for <strong>lightning talks</strong>—a tradition from open source communities that highlights the spirit of openness and sharing.
