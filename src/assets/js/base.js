@@ -1,22 +1,5 @@
 const storage = window.sessionStorage
-/*
-if(!storage.getItem("userLang")) {
-  var userLanguage = navigator.languages ? navigator.languages[0] : navigator.language || navigator.userLanguage;
-  userLanguage = userLanguage.toLowerCase();
-  console.log(userLanguage);
-  if (userLanguage.includes('zh-hant') || userLanguage.includes('zh-tw') || userLanguage.includes('zh-hk') 
-  || userLanguage.includes('zh-hans') || userLanguage.includes('zh-cn') || userLanguage.includes('zh')) {
-    storage.setItem("userLang", "zh");
-  } else {
-    storage.setItem("userLang", "en");
-    window.location.href="/2024/en";
-  }
-} else if(storage.getItem("userLang") === 'en') {
-  window.location.href="/2024/en";
-}*/
-
 const i18n = $.i18n()
-let i18nzh = {}
 
 $('#cookie-agree a.btn').on('click', function (e) {
   storage.setItem('agreeCookie', true)
@@ -27,6 +10,7 @@ $('select#lang-select').on('change', function (e) {
   let lang = $(this).val()
   i18n.locale = lang
   $('body').i18n()
+  storage.setItem("userLang", lang)
 })
 
 $(function () {
@@ -34,6 +18,7 @@ $(function () {
     $('#cookie-agree').removeClass('hidden')
   }
 
+  let i18nzh = {}
   $('[data-i18n]').each(function () {
     let key = $(this).attr('data-i18n').replace(/\[.*?\]/g, '');
     let text = $(this).html()
@@ -43,6 +28,32 @@ $(function () {
   i18n.load({
     zh: i18nzh,
     en: 'assets/i18n/en.json'
+  }).then(() => {
+    let lang = storage.getItem("userLang")
+
+    // Allow query string override
+    if (location.search)
+      if (location.search.includes('lang=en')) lang = 'en'
+      else if (location.search.includes('lang=zh')) lang = 'zh'
+
+    // Guess from the user's preferred languages
+    if (!lang) {
+      let languages = navigator.languages || [navigator.language || navigator.userLanguage]
+      for (const l of languages)
+        if (l.startsWith('en')) { // Explicitly prefer English
+          lang = 'en'
+          break
+        } else if (l.startsWith('zh')) { // Explicitly prefer Mandarin
+          lang = 'zh'
+          break
+        }
+      lang = lang || 'en' // Fallback
+    }
+
+    $('select#lang-select').val(lang)
+    i18n.locale = lang
+    if (lang !== 'zh')
+      $('body').i18n()
   })
 })
 
