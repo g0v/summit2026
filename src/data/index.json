@@ -1,71 +1,75 @@
 {
   "staff": {
     "總籌": [
-      "pm5"
+      "Pomin Wu"
     ],
     "宣傳": {
       "main": [
-        "RSchiang"
+        "RSChiang"
       ],
       "社群小組": [
         "繁嵐",
         "Mavis",
-        "OM",
-        "Jason",
-        "李盈萱"
+        "Jason"
       ],
       "媒體小組": [
-        "YC"
+        "YC",
+        "阿敏",
+        "Jason"
       ],
       "網站小組": [
         "SeanGau",
-        "tkirby"
+        "Kirby"
       ],
       "設計小組": [
         "Dong",
         "阿敏",
         "Skyler",
-        "Hou",
-        "Lia Lin",
-        "Azure Tsai",
-        "Andy Chief Yang",
-        "stella"
+        "小侯"
       ]
     },
-    "議程": [
-      "Peter",
-      "coldplay5566",
-      "White Cat",
-      "ichieh",
-      "RAYEN",
-      "tkirby"
+    "議程": {
+      "main": [
+        "Peter",
+        "yellowsoar",
+        "白貓",
+        "芮芮",
+        "Kirby"
+      ],
+      "議程委員": [
+        "Paul",
+        "ddio",
+        "冷玩",
+        "ichieh",
+        "鄰鄰"
+      ]
+    },
+    "行政": [
+      "Allen"
     ],
     "場務": [
-      "annielinkuki"
+      "CPY"
+    ],
+    "贊助": [
+      "chihao"
     ],
     "紀錄": [
-      "OliverL.",
-      "yutin",
-      "hsiaoling"
+      "Oliver",
+      "YuTin",
+      "小0"
     ],
     "翻譯": [
       "Skyler",
       "Amos"
     ],
-    "行政": [
-      "Allen"
-    ],
     "財務": [
-      "Yanyiyi"
-    ],
-    "贊助": [
-      "chihao"
+      "雁子"
     ],
     "顧問": [
       "ipa",
-      "saul511",
-      "aelcenganda",
-      "曾＊文"
+      "彭彭",
+      "Ael",
+      "曾虹文"
     ]
   }
 }

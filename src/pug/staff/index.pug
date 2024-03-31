@@ -9,7 +9,7 @@ block main
     h1.border-b.border-neutral-500.pb-3 工作人員
   .container.my-20
     each staff, key in _staff
-      if key == '宣傳'
+      if key == '宣傳' || key == '議程'
         .mb-12
           h3.mb-4= key
           each team, key in staff
