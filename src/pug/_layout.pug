@@ -21,7 +21,7 @@ html(lang="zh-Hant-TW")
     link(rel='preconnect', href='//fonts.googleapis.com')
     link(rel='preconnect', href='//fonts.gstatic.com', crossorigin)
     link(href='//fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Onest:wght@100..900&display=swap', rel='stylesheet')
-    link(rel="stylesheet", href="//cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css", integrity="sha384-b6lVK+yci+bfDmaY1u0zE8YYJt0TZxLEAFyYSLHId4xoVvsrQu3INevFKo+Xir8e", crossorigin="anonymous")
+    link(rel="stylesheet", href="//cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css", integrity="sha256-9kPW/n5nn53j4WMRYAxe9c1rCY96Oogo/MKSVdKzPmI=", crossorigin="anonymous")
     link(rel='stylesheet', href='assets/css/base.css?version='+timestamp)
     block head
   body
@@ -35,9 +35,11 @@ html(lang="zh-Hant-TW")
         a.ms-4(href="visit", data-i18n="nav.visit") 交通
         a.ms-4(href="//g0v.hackmd.io/@summit2024/book/", target="_blank", data-i18n="nav.hackmd") 共筆
         a.ms-4(href="//www.youtube.com/@g0vTW", target="_blank", data-i18n="nav.live") 直播
-        select#lang-select.ms-4.border-none.shadow-none.outline-none.rounded(aria-label="Language")
-          option(value="zh") 華語
-          option(value="en") English
+        .ms-4
+          i.bi.bi-translate
+          select#lang-select.ms-2.border-none.shadow-none.px-2.rounded(aria-label="Language")
+            option(value="zh") 華語
+            option(value="en") English
     block main
     footer.bg-slate-200: .container.py-20
       .grid.gap-8(class="grid-cols-2 md:grid-cols-4")
@@ -67,13 +69,13 @@ html(lang="zh-Hant-TW")
         .my-2.flex.flex-wrap(class="md:col-span-2 max-md:justify-center")
           span CC BY 4.0 @ g0v Summit 2024
           a.mx-6(href="//github.com/g0v/summit2024/issues", target="_blank", data-i18n="nav.bugreport") 網站問題回饋
-        .ms-auto.my-2.flex(class="max-md:w-full max-md:justify-center")
-          a(href="//www.facebook.com/g0v.tw/", target="_blank"): img(src="assets/img/facebook.svg", alt="Facebook", class="me-3 h-6")
-          a(href="//www.instagram.com/g0v.tw/", target="_blank"): img(src="assets/img/instagram.svg", alt="Instagram", class="me-3 h-6")
-          a(href="//x.com/g0vtw/", target="_blank"): img(src="assets/img/twitter-x.svg", alt="Twitter", class="me-3 h-6")
-          a(href="//g0v.social/@summit", target="_blank"): img(src="assets/img/mastodon.svg", alt="Mastodon (g0v.social)", class="me-3 h-6")
-          a(href="//g0v.hackmd.io/@jothon/g0v-cowork-guideline/%2FPwJcrD23SBag6sg15epZMA", target="_blank"): img(src="assets/img/slack.svg", alt="Slack", class="me-3 h-6")
-          a(href="//github.com/g0v/", target="_blank"): img(src="assets/img/github-s.svg", alt="GitHub", class="h-6")
+        .ms-auto.my-2.flex.text-xl(class="max-md:w-full max-md:justify-center")
+          a(href="//www.facebook.com/g0v.tw/", target="_blank"): i.bi.bi-facebook.me-3(aria-label="Facebook")
+          a(href="//www.instagram.com/g0v.tw/", target="_blank"): i.bi.bi-instagram.me-3(aria-label="Instagram")
+          a(href="//x.com/g0vtw/", target="_blank"): i.bi.bi-twitter-x.me-3(aria-label="Twitter")
+          a(href="//g0v.social/@summit", target="_blank"): i.bi.bi-mastodon.me-3(aria-label="Mastodon (g0v.social)")
+          a(href="//g0v.hackmd.io/@jothon/g0v-cowork-guideline/%2FPwJcrD23SBag6sg15epZMA", target="_blank"): i.bi.bi-slack.me-3(aria-label="Slack")
+          a(href="//github.com/g0v/", target="_blank"): i.bi.bi-github.me-3(aria-label="GitHub")
 
     #cookie-agree.fixed.bottom-0.w-full.bg-slate-100.flex.p-4.items-center.justify-center.hidden
       div(data-i18n="cookie")
