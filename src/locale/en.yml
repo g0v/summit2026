@@ -76,6 +76,14 @@ agenda.keynote: Keynote
 agenda.sessions: Sessions
 agenda.intro: The first round of admitted sessions are as follows (subject to change).
 
+agenda.timetable: Timetable
+agenda.time: Time
+agenda.r4: Recreation Hall
+agenda.opening: Opening
+agenda.break: Break
+agenda.lunch: Lunch Break
+agenda.closing: Closing
+
 visit.title: Transportation
 visit.venue: Humanities & Social Science Building, Academia Sinica
 visit.address: 128 Academia Rd. Sec. 2, Nangang District, Taipei, Taiwan

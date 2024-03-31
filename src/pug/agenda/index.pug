@@ -21,3 +21,189 @@ block main
     ul
       each session in _sessions
         li #{session.title} – <strong>#{session.speaker}</strong>
+  .container.my-20
+    h3.mb-4(data-i18n="agenda.timetable") 議程表
+    .mb-12
+      h5.mb-4 5/4 (Day 1)
+      table.w-full.rounded-lg.border.border-neutral-300.rounded-lg.center-justify(cellspacing="0", cellpadding="0")
+        thead
+          tr.bg-neutral-100.font-medium.center-justify
+            th.px-4.py-2(scope="col") 時間
+            th.px-4.py-2(scope="col") R0
+            th.px-4.py-2(scope="col") R1
+            th.px-4.py-2(scope="col") R2
+            th.px-4.py-2(scope="col") 交誼廳
+        tbody
+          tr.border-y.border-neutral-300
+            td.px-4.py-2 9:00 - 9:20
+            td.px-4.py-2(colspan="4") 報到
+          tr.border-y.border-neutral-300
+            td.px-4.py-2 9:20 - 9:30
+            td.px-4.py-2(colspan="3") 開場
+            td.px-4.py-2
+          tr.border-y.border-neutral-300
+            td.px-4.py-2 9:30 - 10:00
+            td.px-4.py-2.font-medium(colspan="3") Keynote
+            td.px-4.py-2
+          tr.border-y.border-neutral-300
+            td.px-4.py-2 10:00 - 10:10
+            td.px-4.py-2(colspan="3", data-i18n="agenda.break") 換場
+            td.px-4.py-2
+          tr.border-y.border-neutral-300
+            td.px-4.py-2 10:10 - 10:40
+            td.px-4.py-2.font-medium(rowspan="3") Keynote Panel<br>社群議程軌：Cofacts
+            td.px-4.py-2 Session
+            td.px-4.py-2 Session
+            td.px-4.py-2
+          tr.border-y.border-neutral-300
+            td.px-4.py-2 10:40 - 11:10
+            td.px-4.py-2 Session
+            td.px-4.py-2 Session
+            td.px-4.py-2
+          tr.border-y.border-neutral-300
+            td.px-4.py-2 11:10 - 11:40
+            td.px-4.py-2 Session
+            td.px-4.py-2 Session
+            td.px-4.py-2
+          tr.border-y.border-neutral-300
+            td.px-4.py-2 11:40 - 12:30
+            td.px-4.py-2(colspan="4") 午休
+          tr.border-y.border-neutral-300
+            td.px-4.py-2 12:30 - 13:00
+            td.px-4.py-2.font-medium(rowspan="3") 社群議程軌：AN
+            td.px-4.py-2 Session
+            td.px-4.py-2 Session
+            td.px-4.py-2
+          tr.border-y.border-neutral-300
+            td.px-4.py-2 13:00 - 13:30
+            td.px-4.py-2 Session
+            td.px-4.py-2 Session
+            td.px-4.py-2.font-medium(rowspan="2") Jothon
+          tr.border-y.border-neutral-300
+            td.px-4.py-2 13:30 - 14:00
+            td.px-4.py-2 Session
+            td.px-4.py-2 Session
+          tr.border-y.border-neutral-300
+            td.px-4.py-2 14:00 - 14:10
+            td.px-4.py-2(colspan="3", data-i18n="agenda.break") 換場
+            td.px-4.py-2
+          tr.border-y.border-neutral-300
+            td.px-4.py-2 14:10 - 14:40
+            td.px-4.py-2.font-medium(rowspan="3") 社群議程軌：數位民防
+            td.px-4.py-2 Session
+            td.px-4.py-2 Session
+            td.px-4.py-2.font-medium(rowspan="6") Jothon
+          tr.border-y.border-neutral-300
+            td.px-4.py-2 14:40 - 15:10
+            td.px-4.py-2 Session
+            td.px-4.py-2 Session
+          tr.border-y.border-neutral-300
+            td.px-4.py-2 15:10 - 15:40
+            td.px-4.py-2 Session
+            td.px-4.py-2 Session
+          tr.border-y.border-neutral-300
+            td.px-4.py-2 15:40 - 15:50
+            td.px-4.py-2(colspan="3", data-i18n="agenda.break") 換場
+          tr.border-y.border-neutral-300
+            td.px-4.py-2 15:50 - 16:20
+            td.px-4.py-2.font-medium(rowspan="3") 社群議程軌：Rentea
+            td.px-4.py-2 Session
+            td.px-4.py-2 Session
+          tr.border-y.border-neutral-300
+            td.px-4.py-2 16:20 - 16:50
+            td.px-4.py-2 Session
+            td.px-4.py-2 Session
+          tr.border-y.border-neutral-300
+            td.px-4.py-2 16:50 - 17:20
+            td.px-4.py-2 Session
+            td.px-4.py-2 Session
+            td.px-4.py-2
+          tr.border-y.border-neutral-300
+            td.px-4.py-2 17:20 - 17:30
+            td.px-4.py-2(colspan="3") 小結
+            td.px-4.py-2
+    .mb-12
+      h5.mb-4 5/5 (Day 2)
+      table.w-full.rounded-lg.border.border-neutral-300.rounded-lg.center-justify(cellspacing="0", cellpadding="0")
+        thead
+          tr.bg-neutral-100.font-medium.center-justify
+            th.px-4.py-2(scope="col", data-i18n="agenda.time") 時間
+            th.px-4.py-2(scope="col") R0
+            th.px-4.py-2(scope="col") R1
+            th.px-4.py-2(scope="col") R2
+            th.px-4.py-2(scope="col", data-i18n="agenda.r4") 交誼廳
+        tbody
+          tr.border-y.border-neutral-300
+            td.px-4.py-2 9:20 - 9:30
+            td.px-4.py-2(colspan="3", data-i18n="agenda.opening") 開場
+            td.px-4.py-2
+          tr.border-y.border-neutral-300
+            td.px-4.py-2 9:30 - 10:00
+            td.px-4.py-2.font-medium(colspan="3") Keynote 基調演講
+            td.px-4.py-2
+          tr.border-y.border-neutral-300
+            td.px-4.py-2 10:00 - 10:10
+            td.px-4.py-2(colspan="3", data-i18n="agenda.break") 換場
+            td.px-4.py-2.font-medium(rowspan="4") NDI
+          tr.border-y.border-neutral-300
+            td.px-4.py-2 10:10 - 10:40
+            td.px-4.py-2.font-medium(rowspan="3") 社群議程軌：Disfactory
+            td.px-4.py-2 Session
+            td.px-4.py-2 Session
+          tr.border-y.border-neutral-300
+            td.px-4.py-2 10:40 - 11:10
+            td.px-4.py-2 Session
+            td.px-4.py-2 Session
+          tr.border-y.border-neutral-300
+            td.px-4.py-2 11:10 - 11:40
+            td.px-4.py-2 Session
+            td.px-4.py-2 Session
+          tr.border-y.border-neutral-300
+            td.px-4.py-2 11:40 - 12:30
+            td.px-4.py-2(colspan="4", data-i18n="agenda.lunch") 午休
+          tr.border-y.border-neutral-300
+            td.px-4.py-2 12:30 - 13:00
+            td.px-4.py-2.font-medium(rowspan="3") 社群議程軌：Web3
+            td.px-4.py-2 Session
+            td.px-4.py-2 Session
+            td.px-4.py-2
+          tr.border-y.border-neutral-300
+            td.px-4.py-2 13:00 - 13:30
+            td.px-4.py-2 Session
+            td.px-4.py-2 Session
+            td.px-4.py-2
+          tr.border-y.border-neutral-300
+            td.px-4.py-2 13:30 - 14:00
+            td.px-4.py-2 Session
+            td.px-4.py-2 Session
+            td.px-4.py-2
+          tr.border-y.border-neutral-300
+            td.px-4.py-2 14:00 - 14:10
+            td.px-4.py-2(colspan="3", data-i18n="agenda.break") 換場
+            td.px-4.py-2
+          tr.border-y.border-neutral-300
+            td.px-4.py-2 14:10 - 14:40
+            td.px-4.py-2.font-medium(rowspan="3") 社群議程軌：學生
+            td.px-4.py-2 Session
+            td.px-4.py-2 Session
+            td.px-4.py-2.font-medium(rowspan="3") Unconference
+          tr.border-y.border-neutral-300
+            td.px-4.py-2 14:40 - 15:10
+            td.px-4.py-2 Session
+            td.px-4.py-2 Session
+          tr.border-y.border-neutral-300
+            td.px-4.py-2 15:10 - 15:40
+            td.px-4.py-2 Session
+            td.px-4.py-2 Session
+          tr.border-y.border-neutral-300
+            td.px-4.py-2 15:40 - 15:50
+            td.px-4.py-2(colspan="3", data-i18n="agenda.break") 換場
+            td.px-4.py-2
+          tr.border-y.border-neutral-300
+            td.px-4.py-2 15:50 - 16:50
+            td.px-4.py-2.font-medium(colspan="3") Lightning Talk 閃電講
+            td.px-4.py-2
+          tr.border-y.border-neutral-300
+            td.px-4.py-2 16:50 - 17:00
+            td.px-4.py-2(colspan="3", data-i18n="agenda.closing") 閉幕
+            td.px-4.py-2
