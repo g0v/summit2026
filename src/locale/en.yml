@@ -58,7 +58,11 @@ index.p8: |
   In addition to the pre-planned agenda, the conference also features a section of <strong>unconference</strong>, where participants can propose topics and create new spaces for collaboration through talks, discussions, and workshops. Participants can also freely sign up for <strong>lightning talks</strong>—a tradition from open source communities that highlights the spirit of openness and sharing.
 
 speakers.title: Speakers
+speakers.keynote: Keynote
+speakers.sessions: Sessions
 speakers.intro: The first round of admitted speakers are as follows (subject to change).
 
 agenda.title: Agenda
+agenda.keynote: Keynote
+agenda.sessions: Sessions
 agenda.intro: The first round of admitted sessions are as follows (subject to change).
