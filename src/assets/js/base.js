@@ -6,6 +6,10 @@ $('#cookie-agree a.btn').on('click', function (e) {
   $('#cookie-agree').addClass('hidden')
 })
 
+$('header .offcanvas-toggler').on('click', function (e) {
+  $('header .offcanvas-box').toggleClass('show')
+})
+
 $('select#lang-select').on('change', function (e) {
   let lang = $(this).val()
   i18n.locale = lang
