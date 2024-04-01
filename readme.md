@@ -8,6 +8,7 @@
   npm i
   npm start
 ```
+gh-pages 會自動根據 new_design branch 更新，作為 staging site
 
 ## translation
 
