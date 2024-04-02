@@ -84,8 +84,10 @@ agenda.r4: Recreation Hall
 agenda.registration: Registration
 agenda.opening: Opening
 agenda.break: Break
+agenda.ctrack: "Community Track:<br>"
 agenda.lunch: Lunch Break
 agenda.summary: Day Summary
+agenda.lt: Lightning Talk
 agenda.closing: Closing
 
 visit.title: Transportation
