@@ -14,13 +14,11 @@ block main
         .mb-12
           h3.mb-4= key
           each team, key in staff
-            if key == 'main'
-              .mb-8= team[0]
-            else
+            if key !== 'main'
               h5.mb-4= key
-              .grid.mb-8(class="grid-cols-3 md:grid-cols-5")
-                each person in team
-                  .mb-4= person
+            .grid.mb-8(class="grid-cols-3 md:grid-cols-5")
+              each person in team
+                .mb-4= person
       else
         h3.mb-4= key
         .grid.mb-12(class="grid-cols-3 md:grid-cols-5")
