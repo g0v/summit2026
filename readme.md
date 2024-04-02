@@ -18,4 +18,4 @@ gh-pages 會自動根據 new_design branch 更新，作為 staging site
 
 ## how to deploy
 `./deploy`
-會自動將 static/2024 下的檔案推送到 production branch，再到 [summit repo](https://github.com/g0v/summit.g0v.tw) 更新 submodules
+會自動將 static/2024 下的檔案推送到 production branch，並透過 repositor dispatch 觸發 [summit repo](https://github.com/g0v/summit.g0v.tw) 更新 submodules
