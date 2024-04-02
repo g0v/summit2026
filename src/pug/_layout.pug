@@ -41,6 +41,7 @@ html(lang="zh-Hant-TW")
         a.mx-2(href="//g0v.hackmd.io/@summit2024/notes", target="_blank", data-i18n="nav.hackmd") 共筆
         a.mx-2(href="//www.youtube.com/@g0vTW", target="_blank", data-i18n="nav.live") 直播
         .mx-3
+          i.fa-solid.fa-language
           select#lang-select.ms-2.border-none.shadow-none.px-2.rounded(aria-label="Language")
             option(value="zh") 華語
             option(value="en") English
@@ -75,12 +76,18 @@ html(lang="zh-Hant-TW")
           span CC BY 4.0 @ g0v Summit 2024
           a.mx-6(href="//github.com/g0v/summit2024/issues", target="_blank", data-i18n="nav.bugreport") 網站問題回饋
         .ms-auto.my-2.flex.text-xl(class="max-md:w-full max-md:justify-center")
-          a(href="//www.facebook.com/g0v.tw/", target="_blank"): i.bi.bi-facebook.me-3(aria-label="Facebook")
-          a(href="//www.instagram.com/g0v.tw/", target="_blank"): i.bi.bi-instagram.me-3(aria-label="Instagram")
-          a(href="//x.com/g0vtw/", target="_blank"): i.bi.bi-twitter-x.me-3(aria-label="Twitter")
-          a(href="//g0v.social/@summit", target="_blank"): i.bi.bi-mastodon.me-3(aria-label="Mastodon (g0v.social)")
-          a(href="//g0v.hackmd.io/@jothon/g0v-cowork-guideline/%2FPwJcrD23SBag6sg15epZMA", target="_blank"): i.bi.bi-slack.me-3(aria-label="Slack")
-          a(href="//github.com/g0v/", target="_blank"): i.bi.bi-github.me-3(aria-label="GitHub")
+          a(href="//www.facebook.com/g0v.tw/", target="_blank")
+            i.fa-brands.fa-facebook.me-3(title="Facebook")
+          a(href="//www.instagram.com/g0v.tw/", target="_blank")
+            i.fa-brands.fa-instagram.me-3(title="Instagram")
+          a(href="//twitter.com/g0vtw/", target="_blank")
+            i.fa-brands.fa-twitter.me-3(title="Twitter")
+          a(href="//g0v.social/@summit", target="_blank")
+            i.fa-brands.fa-mastodon.me-3(title="Mastodon (g0v.social)")
+          a(href="//g0v.hackmd.io/@jothon/g0v-cowork-guideline/%2FPwJcrD23SBag6sg15epZMA", target="_blank")
+            i.fa-brands.fa-slack.me-3(title="Slack")
+          a(href="//github.com/g0v/", target="_blank")
+            i.fa-brands.fa-github-alt.me-3(title="GitHub")
 
     #cookie-agree.fixed.bottom-0.w-full.bg-slate-100.flex.p-4.items-center.justify-center.hidden
       div(data-i18n="cookie")
