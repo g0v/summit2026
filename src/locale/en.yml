@@ -24,17 +24,17 @@ nav.bugreport: Report Website Issue
 
 index.t1: Citizens Never Rest
 index.p1: |
-  Under the call to “Code a Better Society,” the Taiwanese <a href="https://g0v.tw/intl/en/manifesto/en/" target="_blank" rel="noopener">g0v.tw</a> has rallied thousands of like-minded citizens since 2012, forming one of the largest civic hacking communities in Asia Pacific. Rooted in transparency, open source, and polycentric collaboration, <a href="http://g0v.tw" target="_blank" rel="noopener">g0v.tw</a> community employs the power of grassroots crowds to engage with public affairs. Riding the tide of renewed interest in civic participation from <a href="https://en.wikipedia.org/wiki/Sunflower_Student_Movement" target="_blank" rel="noopener">Sunflower Movement</a>, the community held its first Summit in 2014, facilitating cross-sector exchanges among open source communities, NGOs, the government, academia, and netizens alike.
+  Under the call to “Code a Better Society,” the Taiwanese <a href="https://g0v.tw/intl/en/manifesto/en/" target="_blank">g0v.tw</a> has rallied thousands of like-minded citizens since 2012, forming one of the largest civic hacking communities in Asia Pacific. Rooted in transparency, open source, and polycentric collaboration, <a href="http://g0v.tw" target="_blank">g0v.tw</a> community employs the power of grassroots crowds to engage with public affairs. Riding the tide of renewed interest in civic participation from <a href="https://en.wikipedia.org/wiki/Sunflower_Student_Movement" target="_blank">Sunflower Movement</a>, the community held its first Summit in 2014, facilitating cross-sector exchanges among open source communities, NGOs, the government, academia, and netizens alike.
 index.p2: |
-  After the political turnover in 2016, this consolidated momentum of civic engagement continued to make impacts in different corners of the society, catalyzing public-private partnerships, interdisciplinary collaboration, or issue advocacy in general. g0v Summit had maintained its biennial presence, steadily expanding its scale with less restrictive call-for-papers and encouraging in-depth discussions. For the summit in 2020, the community managed to join forces with well-established NGOs and local geek gatherings in Tainan, hosting an extraordinary 4-day event in Taiwan's culture capital.
+  After the political turnover in 2016, this consolidated momentum of civic engagement continued to make impacts in different corners of the society, catalyzing public-private partnerships, interdisciplinary collaboration, or issue advocacy in general. g0v Summit had maintained its biennial presence, steadily expanding its scale with less restrictive call-for-papers and encouraging in-depth discussions. For the summit in 2020, the community managed to join forces with well-established NGOs and local geek gatherings in Tainan, hosting an extraordinary 4-day event in Taiwan’s culture capital.
 index.p3: |
   The year 2024 has presented brand new challenges to both the g0v community and Summit itself. On one hand, the community already needs to rebuild our momentum after the pandemic, mending connections and motivate participants after a 4-year sedative on crowd events; on the other hand, the global situation has changed significantly since the first g0v Summit. We may not find quick cure to social polarization, authoritarian expansion, or democratic backsliding which many of us are witnessing at the moment, but we still see hope in the vigorous activities of student communities, the strong ties between civic tech communities in neighboring countries, and the firm coordination among non-profits and civic groups.
 index.p4: |
-  We elected to hold g0v Summit 2024 two weeks before Taiwan's presidential inauguration in May. In a year where many democratic countries will cast their votes, we envision g0v Summit continues to serve as a place for gathering, listening, finding common grounds, and joining efforts. There is no free lunch for bringing change, just as voting itself does not bring democracy. Elections will end, but we shall not slow down our pace. <strong>Civic engagement never rests.</strong>
+  We elected to hold g0v Summit 2024 two weeks before Taiwan’s presidential inauguration in May. In a year where many democratic countries will cast their votes, we envision g0v Summit continues to serve as a place for gathering, listening, finding common grounds, and joining efforts. There is no free lunch for bringing change, just as voting itself does not bring democracy. Elections will end, but we shall not slow down our pace. <strong>Civic engagement never rests.</strong>
 
 index.t2: What is g0v?
 index.p5: |
-  <a href="https://g0v.tw/intl/en/" target="_blank" rel="noopener">g0v</a> (gov-zero) is a grassroots social movement community dedicated to deepening the civic engagements and connections between the social arena and citizens. You can find like-minded partners in the g0v community, put your ideas into practice in a grassroots manner, and then release the results under an open-source license, letting people stand on your shoulders.
+  <a href="https://g0v.tw/intl/en/" target="_blank">g0v</a> (gov-zero) is a grassroots social movement community dedicated to deepening the civic engagements and connections between the social arena and citizens. You can find like-minded partners in the g0v community, put your ideas into practice in a grassroots manner, and then release the results under an open-source license, letting people stand on your shoulders.
 index.p6: |
   g0v replaces the “o” in gov with “0”, thereby reimagining the role of government from scratch, and represents the vision from 0 to 1 of the generation of digital natives.
 
@@ -46,10 +46,10 @@ index.dates.4: "May 4－5, 2024: g0v Summit 2024"
 
 index.t4: Sessions
 index.p7: |
-  We've planned 5 themes and 27 keywords for g0v Summit 2024:
+  We’ve planned 5 themes and 27 keywords for g0v Summit 2024:
 
 index.topics.1: |
-  "Nerd politics" v.s. digital governance
+  “Nerd politics” vs. digital governance
 index.topics.1.tags: |
   #eID #PersonalDataProtection #AIRegulation #DigitalPlatformRegulation #DigitalViolence #DigitalSovereignty
 index.topics.2: Data, AI, and community collaboration
@@ -60,7 +60,7 @@ index.topics.3.tags: |
   #CommunityGovernance #DigitalResilience #CivicActivism #DigitalCivilDefense #OpenSourceSpirit
 index.topics.4: Digital infrastructure grounded in empathy, inclusiveness, and plurality
 index.topics.4.tags: |
-  #Netiquette #CoC #DigitalPolarization #Digital<abbr title="Diversity and Inclusion">DEI #DigitalLiteracy
+  #Netiquette #CoC #DigitalPolarization #Digital<abbr title="Diversity and Inclusion">DEI</abbr> #DigitalLiteracy
 index.topics.5: Convergence of technology and social issues
 index.topics.5.tags: |
   #SDGs #SocialEnterprise #DigitalTransformation #Innovation #Education #NGO
