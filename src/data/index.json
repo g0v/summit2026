@@ -61,7 +61,7 @@
         {
           "id": "access-now",
           "name": {"zh": "Access Now", "en": "Access Now"},
-          "logo": "",
+          "logo": "assets/img/partners/accessnow.svg",
           "website": "https://www.accessnow.org/",
           "summary": {
             "zh": "Access Now 是一個國際人權組織，以全球為範圍，致力於捍衛和伸張受危害群體與個人的數位人權。透過直接的技術支援、策略性的宣傳、專案資助以及 RightsCon 會議等多軌行動策略，實踐目標，在數位時代捍衛人權。\n自 2009 年成立以來，Access Now 已發展成為一支由 130 多名專家組成的團隊，致力於在世界各地（包括非洲、亞太地區、東歐和中歐）的政治權力、技術創新和公民行動要地，推進我們的使命，包括亞洲 、歐盟、拉丁美洲和加勒比海地區、中東/北非和美國。成立至今，Access Now 已成為數位人權領域中，全球指摽性的非政府組織之一。\n當迫害人權的新技術和數位工具，日新月異更迭，Access Now 除了快速回應威脅與風險，也以中長期的策略與發展前景，影響全球政府機構的長期政策制定，也為打造更好的未來，其中，全球合作夥伴、捐助者和盟友是不可或缺，作為推動社會改變的一部分，Access Now 更致力於捍衛包容性和多元化的民主；保留民間社會蓬勃發展的空間；並賦予個人在數據驅動的社會中控制自己的資訊、隱私和身分的能力。",
@@ -133,11 +133,11 @@
         {
           "id": "luminate",
           "name": {"zh": "Luminate", "en": "Luminate"},
-          "logo": "",
-          "website": "",
+          "logo": "assets/img/partners/luminate.png",
+          "website": "https://luminategroup.com/",
           "summary": {
             "zh": "",
-            "en": ""
+            "en": "Luminate is a global foundation working to ensure that everyone – especially those who are underrepresented - has the information, rights, and power to influence the decisions that shape society. The foundation is focused on enabling people to fully participate in civic and political life, to safely challenge power, and to access accurate, trustworthy information. Luminate works globally with a regional focus on Africa, Asia, and Latin America. It was established by philanthropists Pierre and Pam Omidyar and has worked for over a decade on issues related to governance and citizen engagement."
           }
         }
       ]
@@ -162,6 +162,16 @@
       "id": "contributors",
       "name": {"zh": "貢獻者", "en": "Contributors"},
       "sponsors": [
+        {
+          "id": "iorg",
+          "name": {"zh": "台灣資訊環境研究中心 IORG", "en": "IORG"},
+          "logo": "",
+          "website": "",
+          "summary": {
+            "zh": "",
+            "en": ""
+          }
+        },
         {
           "id": "micare",
           "name": {"zh": "咪卡創意", "en": "Micare Production"},
