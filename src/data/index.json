@@ -18,13 +18,15 @@
     {"title": "Talk to the City : How LLM can Help Discriminate Consensus Illusion", "speaker": "Deger"},
     {"title": "Between Nerds & Governments: Why The Sovereign Tech Fund Invests Public Money in Open Source Infrastructure", "speaker": "Paul"},
     {"title": "數位治理與性別平等：數位性暴力的法律課題", "speaker": "承慶"},
-    {"title": "青世代數位公民－透過公民科技專案塑造未來", "speaker": "Yi"},
+    {"title": "青世代數位公民－透過公民科技專案塑造未來", "speaker": "Tiff Lin, Saya Kubota, Sonja Fischbauer"},
     {"title": "政府為何不用公共程式？從制度思考", "speaker": "Sandra、YuTin"},
     {"title": "公民科技貢獻者為何而來？而留？而走？", "speaker": "Tiff、小許、袋鼠"},
     {"title": "異言網：資料收集與處理經驗分享", "speaker": "Ming"},
     {"title": "g0v 公民科技專案與社群手冊", "speaker": "Isabel, chewei"},
     {"title": "救松工作坊", "speaker": "揪松團"},
-    {"title": "伯明翰的螺絲起子", "speaker": "小海"}
+    {"title": "伯明翰的螺絲起子", "speaker": "小海"},
+    {"title": "The civic space situation in Ethiopia", "speaker": "Mesud G. Reta"},
+    {"title": "如何用解殖視角看台灣自身的公民科技參與？", "speaker": "Ael"}
   ],
   "staff": {
     "總籌": [
@@ -37,7 +39,8 @@
       "社群小組": [
         "繁嵐",
         "Mavis",
-        "Jason"
+        "Jason",
+        "大助"
       ],
       "媒體小組": [
         "YC",
@@ -76,15 +79,29 @@
     ],
     "場務": [
       "CPY",
-      "兆翌"
+      "兆翌",
+      "企鵝",
+      "Puchi",
+      "Zai",
+      "林雨辰",
+      "Yider",
+      "jackie",
+      "喬",
+      "賴彥江",
+      "che",
+      "柚子",
+      "安妮"
     ],
     "贊助": [
       "chihao"
     ],
     "紀錄": [
       "Oliver",
-      "YuTin",
-      "小0"
+      "小0",
+      "Kailan"
+    ],
+    "設備": [
+      "YuTin"
     ],
     "翻譯": [
       "Skyler",
