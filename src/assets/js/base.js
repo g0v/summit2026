@@ -35,10 +35,15 @@ $(function () {
     i18nzh[key] = text
   })
 
-  i18n.load({
+  let loader = i18n.load({
     zh: i18nzh,
     en: 'assets/i18n/en.json'
-  }).then(() => {
+  })
+
+  if (additional_i18n)
+    loader = loader.then(() => i18n.load(additional_i18n))
+
+  loader.then(() => {
     let lang = storage.getItem("userLang")
 
     // Allow query string override
