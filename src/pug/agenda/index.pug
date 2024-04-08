@@ -20,7 +20,7 @@ block main
     p(data-i18n="agenda.intro") 第一波錄取議程如下（議程仍會更動）：
     ul
       each session in _sessions
-        li #{session.title} – <strong>#{session.speaker}</strong>
+        li #{session.title} – #[strong #{session.speaker}]
   .container.my-20
     h3.mb-4(data-i18n="agenda.timetable") 議程表
     .mb-12
