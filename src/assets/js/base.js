@@ -1,5 +1,12 @@
 const storage = window.sessionStorage
 const i18n = $.i18n()
+const setLocale = (function (lang) {
+  let current = document.body.lang || 'zh-Hant-TW'
+  i18n.locale = lang
+  document.body.lang = (lang === 'en' ? 'en-TW' : 'zh-Hant-TW')
+  if (!current.startsWith(lang))
+    $(document.body).i18n()
+})
 
 $('#cookie-agree a.btn').on('click', function (e) {
   storage.setItem('agreeCookie', true)
@@ -12,8 +19,7 @@ $('header .offcanvas-toggler').on('click', function (e) {
 
 $('select#lang-select').on('change', function (e) {
   let lang = $(this).val()
-  i18n.locale = lang
-  $('body').i18n()
+  setLocale(lang)
   storage.setItem("userLang", lang)
 })
 
@@ -55,9 +61,7 @@ $(function () {
     }
 
     $('select#lang-select').val(lang)
-    i18n.locale = lang
-    if (lang !== 'zh')
-      $('body').i18n()
+    setLocale(lang)
   })
 })
 
