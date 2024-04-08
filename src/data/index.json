@@ -50,7 +50,7 @@
       "sponsors": [
         {
           "id": "iias-infolaw",
-          "name": {"zh": "中研院法律所資訊法中心", "en": "Information Law Center, Institutum Iurisprudentiae Academia Sinica"},
+          "name": {"zh": "中研院法律所資訊法中心", "en": "Information Law Center, IIAS"},
           "logo": "assets/img/partners/iias-infolaw.png",
           "website": "https://infolaw.iias.sinica.edu.tw/",
           "summary": {
@@ -76,7 +76,7 @@
       "sponsors": [
         {
           "id": "jothon",
-          "name": {"zh": "揪松團", "en": "g0v jothon"},
+          "name": {"zh": "g0v 零時政府揪松團", "en": "g0v jothon"},
           "logo": "assets/img/partners/jothon.png",
           "website": "https://jothon.g0v.tw/",
           "summary": {
