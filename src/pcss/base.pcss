@@ -125,3 +125,16 @@ a:not(.btn, .nav-link) {
     }
   }
 }
+
+/* mobile-friendly <abbr> support */
+@media (hover: none) {
+  abbr[title] {
+    text-decoration: none;
+    &:after {
+      content: '（' attr(title) '）';
+    }
+    &:lang(en):after {
+      content: ' (' attr(title) ')';
+    }
+  }
+}
