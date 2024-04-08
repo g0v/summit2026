@@ -2,15 +2,15 @@ name: Dispatch to summit.g0v.tw
 
 on:
   push:
-    branches: [ production ]  # replace with your branch
+    branches: [ production ]
 
 jobs:
   dispatch:
     runs-on: ubuntu-latest
     steps:
       - name: Repository Dispatch
-        uses: peter-evans/repository-dispatch@v1
+        uses: peter-evans/repository-dispatch@v3
         with:
-          token: ${{ secrets.GHA_WORKFLOW_TRIGGER }}  # replace PAT with your secret's name
-          repository: g0v/summit.g0v.tw  # replace with Repo A's path
+          token: ${{ secrets.GHA_WORKFLOW_TRIGGER }}
+          repository: g0v/summit.g0v.tw
           event-type: update
