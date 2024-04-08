@@ -27,6 +27,151 @@
     {"title": "The civic space situation in Ethiopia", "speaker": "Mesud G. Reta"},
     {"title": "如何用解殖視角看台灣自身的公民科技參與？", "speaker": "Ael"}
   ],
+  "partners": [
+    {
+      "name": {"zh": "主辦單位", "en": "Organizer"},
+      "sponsors": [
+        {
+          "name": {"zh": "g0v Summit 2024 籌備團隊", "en": "g0v Summit 2024 Working Group"},
+          "logo": "assets/img/g0v-summit-logo.svg",
+          "website": "https://g0v.tw",
+          "summary": {
+            "zh": "g0v Summit 2024 籌備團隊是你身邊最認真的「沒有人」！",
+            "en": "g0v Summit 2024 Working Group are the most dedicated “nobody” you’ve ever seen!"
+          }
+        }
+      ]
+    },
+    {
+      "name": {"zh": "議程協力", "en": "Program Partners"},
+      "sponsors": [
+        {
+          "name": {"zh": "中研院法律所資訊法中心", "en": "Information Law Center, Institutum Iurisprudentiae Academia Sinica"},
+          "logo": "assets/img/partners/iias-infolaw.png",
+          "website": "https://infolaw.iias.sinica.edu.tw/",
+          "summary": {
+            "zh": "資訊法原本即為中央研究院法律學研究所「科技發展與法律規範」研究組群之研究範疇，為能更前瞻、有效與及時地回應數位資通訊網絡社會之新興科技發展對個人、公民社會、產業與國家之影響，中央研究院法律學研究所於2019年7月成立資訊法中心（以下簡稱本中心）。本中心一方面藉由與資訊科技及資料科學界的跨領域、跨學門合作對話，期能於資訊法研究的上游，在科學技術發展之始，即參與其目標與價值之論辯與設定；另一方面則藉由將傳統資訊法學術研究成果進一步轉譯為更貼近現實的政策語言，期能在資訊法研究的下游，更具體與實際地影響相關法政策之制訂與執行。\n本中心目前規劃以人工智慧、資訊法制、民主監視與治理、健康與資訊、智慧財產權等為主題，透過跨領域、跨學門開放性研究之探索與思辨，一方面作為新興資訊科技議題之前瞻性學術研究單位，另一方面也致力於轉化並傳遞學術研究討論為法學科普知識，促進與提升民眾對於資訊法議題的認知。\n本中心自我期許成為學術研究、公民社會、產業實作者間之交流互動平台，透過利害關係者之溝通聯繫與討論，追求科學技術研發、產業實作與法律倫理規範等價值間的平衡，促成國家社會整體公共利益之提升，作為形塑資料驅動式民主的未來。",
+            "en": ""
+          }
+        },
+        {
+          "name": {"zh": "Access Now", "en": "Access Now"},
+          "logo": "",
+          "website": "https://www.accessnow.org/",
+          "summary": {
+            "zh": "Access Now 是一個國際人權組織，以全球為範圍，致力於捍衛和伸張受危害群體與個人的數位人權。透過直接的技術支援、策略性的宣傳、專案資助以及 RightsCon 會議等多軌行動策略，實踐目標，在數位時代捍衛人權。\n自 2009 年成立以來，Access Now 已發展成為一支由 130 多名專家組成的團隊，致力於在世界各地（包括非洲、亞太地區、東歐和中歐）的政治權力、技術創新和公民行動要地，推進我們的使命，包括亞洲 、歐盟、拉丁美洲和加勒比海地區、中東/北非和美國。成立至今，Access Now 已成為數位人權領域中，全球指摽性的非政府組織之一。\n當迫害人權的新技術和數位工具，日新月異更迭，Access Now 除了快速回應威脅與風險，也以中長期的策略與發展前景，影響全球政府機構的長期政策制定，也為打造更好的未來，其中，全球合作夥伴、捐助者和盟友是不可或缺，作為推動社會改變的一部分，Access Now 更致力於捍衛包容性和多元化的民主；保留民間社會蓬勃發展的空間；並賦予個人在數據驅動的社會中控制自己的資訊、隱私和身分的能力。",
+            "en": "Access Now is an international human rights organization dedicated to defending and extending the digital rights of people and communities at risk around the world. By combining direct technical support, strategic advocacy, grassroots grantmaking, and convenings such as RightsCon, the organization fights for human rights in the digital age.Since its founding in 2009, Access Now has grown into a team of more than 130 experts working to advance our mission in centers of political power, technical innovation, and civic action around the world, including across Africa, Asia Pacific, Eastern Europe and Central Asia (EECA), the European Union, Latin America and the Caribbean, the Middle East/North Africa (MENA), and the United States. It has matured into one of the world's leading NGOs in the digital rights sector.Every day, Access Now sees the emergence of new technologies and digital tools with the potential to disrupt human rights. To mitigate the threats as they emerge, the organization has its eyes on both today’s developments and the horizon, reacting to what we see and anticipating what lies ahead. With the indispensable support of partners, donors, and allies, Access Now fights to defend inclusive and pluralist democracies; preserve spaces for civil society to flourish; and empower individuals to control their own information, privacy, and identities in data-driven societies."
+          }
+        }
+      ]
+    },
+    {
+      "name": {"zh": "協辦單位", "en": "Supporting Organizers"},
+      "sponsors": [
+        {
+          "name": {"zh": "揪松團", "en": "g0v jothon"},
+          "logo": "",
+          "website": "https://jothon.g0v.tw/",
+          "summary": {
+            "zh": "",
+            "en": ""
+          }
+        },
+        {
+          "name": {"zh": "財團法人開放文化基金會", "en": "Open Culture Foundation"},
+          "logo": "",
+          "website": "https://ocf.tw",
+          "summary": {
+            "zh": "",
+            "en": ""
+          }
+        },
+        {
+          "name": {"zh": "台灣維基媒體協會", "en": "Wikimedia Taiwan"},
+          "logo": "",
+          "website": "",
+          "summary": {
+            "zh": "",
+            "en": ""
+          }
+        },
+        {
+            "name": {"zh": "HackMD 嗨筆記股份有限公司", "en": "HackMD"},
+            "logo": "assets/img/partners/hackmd.png",
+            "website": "https://hackmd.io/",
+            "summary": {
+              "zh": "HackMD 是以 Markdown 為本，追求流暢、簡潔的線上協作筆記。\n無論是社群多人編輯、團隊溝通共筆、個人便捷紀錄，HackMD 支援多種語法、圖表、數學表達式，搭配書本模式、簡報模式跟留言互動功能。讓筆記，不只是筆記。\n上線至今，已經有超過 5,000,000 份筆記，以及超過 27,000 個團隊空間使用。HackMD 能夠便捷寫作、版面俐落，聰明的筆記整理方法，受到國內外用戶的喜愛。\n從下筆、編輯、共筆到發表，HackMD 讓你的知識最有效率地呈現，跟人們以最流暢的速度分享。\n在 HackMD 開啟一份新筆記吧！",
+              "en": ""
+            }
+        },
+        {
+            "name": {"zh": "UD Talk", "en": "UD Talk"},
+            "logo": "",
+            "website": "https://udtalk.jp/",
+            "summary": {
+              "zh": "",
+              "en": ""
+            }
+        }
+      ]
+    },
+    {
+      "name": {"zh": "先行者", "en": "Visionaries"},
+      "sponsors": [
+        {
+          "name": {"zh": "Luminate", "en": "Luminate"},
+          "logo": "",
+          "website": "",
+          "summary": {
+            "zh": "",
+            "en": ""
+          }
+        }
+      ]
+    },
+    {
+      "name": {"zh": "行動者", "en": "Activists"},
+      "sponsors": [
+        {
+          "name": {"zh": "可立可", "en": "KlickKlack Communications"},
+          "logo": "",
+          "website": "",
+          "summary": {
+            "zh": "",
+            "en": ""
+          }
+        }
+      ]
+    },
+    {
+      "name": {"zh": "貢獻者", "en": "Contributors"},
+      "sponsors": [
+        {
+          "name": {"zh": "咪卡創意", "en": "Micare Production"},
+          "logo": "",
+          "website": "",
+          "summary": {
+            "zh": "",
+            "en": ""
+          }
+        }
+      ]
+    },
+    {
+      "name": {"zh": "參與者", "en": "Participants"},
+      "sponsors": [
+        {
+          "name": {"zh": "祐生研究基金會", "en": "Archilife Research Foundation"},
+          "logo": "",
+          "website": "",
+          "summary": {
+            "zh": "",
+            "en": ""
+          }
+        }
+      ]
+    }
+  ],
   "staff": {
     "總籌": [
       "Pomin Wu"
