@@ -1,6 +1,7 @@
 extends ../_layout.pug
 block variables
-  - _partners = data['partners'];
+  - _partners = data['partners']
+  - _i18n_en = {}
   - title = "合作夥伴 Partners"
 block head
   link(rel="stylesheet", href="assets/css/base.css?version="+timestamp)
@@ -9,13 +10,22 @@ block main
     h1.border-b.border-neutral-500.pb-3(data-i18n="partners.title") 合作夥伴
   .container.my-20
     each level in _partners
-      h3.mb-4(id=level.id)= level.name.zh
+      h3.mb-4(id=level.id, data-i18n=`partners.${level.id}`)= level.name.zh
+        - _i18n_en[`partners.${level.id}`] = level.name.en
       .mb-12(class=(level.sponsors.length > 1 ? "grid gap-x-8 gap-y-4 md:grid-cols-2" : ""))
         each sponsor in level.sponsors
           div
-            h5.mb-2(id=sponsor.id)= sponsor.name.zh
+            h5.mb-2(id=sponsor.id, data-i18n=`partners.${sponsor.id}`)= sponsor.name.zh
+              - _i18n_en[`partners.${sponsor.id}`] = sponsor.name.en
             if sponsor.logo
               a.mx-auto.aspect-video.max-h-64.flex.items-center.justify-center(class="md:max-w-md", href=sponsor.website, target="_blank", rel="external")
                 img.max-h-full(src=sponsor.logo)
             if sponsor.summary.zh
-              p= sponsor.summary.zh
+              p(data-i18n=`partners.${sponsor.id}.summary`)= sponsor.summary.zh
+                - _i18n_en[`partners.${sponsor.id}.summary`] = sponsor.summary.en || " "
+block script
+  script
+    | $.i18n().load(
+    != JSON.stringify(_i18n_en)
+    | , 'en')
+    | $(document.body).i18n()
