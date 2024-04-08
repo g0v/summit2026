@@ -40,7 +40,7 @@ $(function () {
     en: 'assets/i18n/en.json'
   })
 
-  if (additional_i18n)
+  if (typeof additional_i18n !== 'undefined')
     loader = loader.then(() => i18n.load(additional_i18n))
 
   loader.then(() => {
