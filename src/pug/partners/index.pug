@@ -9,13 +9,13 @@ block main
     h1.border-b.border-neutral-500.pb-3(data-i18n="partners.title") 合作夥伴
   .container.my-20
     each level in _partners
-      h3.mb-4= level.name.zh
+      h3.mb-4(id=level.id)= level.name.zh
       .mb-12(class=(level.sponsors.length > 1 ? "grid gap-x-8 gap-y-4 md:grid-cols-2" : ""))
         each sponsor in level.sponsors
           div
-            h5.mb-2= sponsor.name.zh
-            if sponsor.website
-              a(href=sponsor.website, target="_blank", rel="external")
-                img.max-w-96.max-h-64(src=sponsor.logo)
+            h5.mb-2(id=sponsor.id)= sponsor.name.zh
+            if sponsor.logo
+              a.mx-auto.aspect-video.max-h-64.flex.items-center.justify-center(class="md:max-w-md", href=sponsor.website, target="_blank", rel="external")
+                img.max-h-full(src=sponsor.logo)
             if sponsor.summary.zh
               p= sponsor.summary.zh
