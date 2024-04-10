@@ -176,10 +176,10 @@
           "id": "iorg",
           "name": {"zh": "台灣資訊環境研究中心 IORG", "en": "IORG"},
           "logo": "assets/img/partners/iorg.svg",
-          "website": "",
+          "website": "https://iorg.tw/",
           "summary": {
-            "zh": "",
-            "en": ""
+            "zh": "台灣資訊環境研究中心 IORG 成立於 2019 年，任務是以資料驅動、可驗證的公開研究揭露華語資訊操弄，以科學方法測量資訊操弄對台灣社會的影響，並推動校園及社區的數位公民教育，與台灣各界、世界各地的伙伴協力防治資訊操弄、改善公共討論、強化民主韌性。",
+            "en": "Taiwan Information Environment Research Center (IORG) is established in 2019 with a mission to expose Mandarin information manipulation with data-driven verifiable public research, to measure impact of information manipulation to Taiwan’s society with scientific methodologies, to promote digital civics education in schools and communities, and to collaborate with diverse partners in Taiwan and worldwide in reducing information manipulation, facilitate public discourse, and strengthen democratic resilience."
           }
         },
         {
