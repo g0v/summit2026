@@ -77,7 +77,7 @@
         {
           "id": "jothon",
           "name": {"zh": "g0v 零時政府揪松團", "en": "g0v jothon"},
-          "logo": "assets/img/partners/jothon.png",
+          "logo": "assets/img/partners/jothon.svg",
           "website": "https://jothon.g0v.tw/",
           "summary": {
             "zh": "g0v 零時政府揪松團是 g0v 社群籌辦雙月大黑客松（大松）和基礎松，以及推動募款事務的工作小組，目前有七位志工和二位職工。2012 年開始協助社群籌辦黑客松，2014 年正式組成「揪松團」（jothon），2016 年起，啟動社群基礎建設計畫，開辦「基礎松（infrathon）」，在大黑客松之餘，推動更順暢的線上／線下跨界協作，並於同年底推出「g0v 公民科技創新獎助金（Civic Tech Prototype Grant）」 ，鼓勵 g0v 專案持續投入開發和長期維護、營運。2020 年開辦「零時小學校（Sch001）」，與教育、開源社群一起從零重新思考學校的角色。2024 年執行「繁體中文 AI 開源實踐計畫」，鼓勵民間團隊實踐在地化語言模型的相關工作。g0v 揪松團也是 g0v Summit 2018 的協辦團隊。",
@@ -175,7 +175,7 @@
         {
           "id": "iorg",
           "name": {"zh": "台灣資訊環境研究中心 IORG", "en": "IORG"},
-          "logo": "assets/img/partners/iorg.png",
+          "logo": "assets/img/partners/iorg.svg",
           "website": "",
           "summary": {
             "zh": "",
