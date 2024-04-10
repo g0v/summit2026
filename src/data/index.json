@@ -95,19 +95,19 @@
           }
         },
         {
-          "id": "wikimedia-tw",
+          "id": "wmf",
           "name": {"zh": "台灣維基媒體協會", "en": "Wikimedia Taiwan"},
-          "logo": "",
-          "website": "",
+          "logo": "assets/img/partners/wmf.svg",
+          "website": "https://meta.wikimedia.org/wiki/Wikimedia_Taiwan",
           "summary": {
-            "zh": "",
+            "zh": "台灣維基媒體協會為 2007 年設立之社團法人，旨在推廣包括知名共筆知識網站「維基百科」在內，美國維基媒體基金會所屬的各項計畫。負責維基各平臺操作教學訓練，以及舉辦各項內容專案，並代表台灣與全球各地維基組織串聯合作。同時，亦針對著作權開放授權、政府資料開放、知識平權等相關議題進行政策倡議及概念推廣。",
             "en": ""
           }
         },
         {
           "id": "hackmd",
           "name": {"zh": "HackMD 嗨筆記股份有限公司", "en": "HackMD"},
-          "logo": "assets/img/partners/hackmd.png",
+          "logo": "assets/img/partners/hackmd.svg",
           "website": "https://hackmd.io/",
           "summary": {
             "zh": "HackMD 是以 Markdown 為本，追求流暢、簡潔的線上協作筆記。\n無論是社群多人編輯、團隊溝通共筆、個人便捷紀錄，HackMD 支援多種語法、圖表、數學表達式，搭配書本模式、簡報模式跟留言互動功能。讓筆記，不只是筆記。\n上線至今，已經有超過 5,000,000 份筆記，以及超過 27,000 個團隊空間使用。HackMD 能夠便捷寫作、版面俐落，聰明的筆記整理方法，受到國內外用戶的喜愛。\n從下筆、編輯、共筆到發表，HackMD 讓你的知識最有效率地呈現，跟人們以最流暢的速度分享。\n在 HackMD 開啟一份新筆記吧！",
@@ -133,7 +133,7 @@
         {
           "id": "luminate",
           "name": {"zh": "Luminate", "en": "Luminate"},
-          "logo": "assets/img/partners/luminate.png",
+          "logo": "assets/img/partners/luminate.svg",
           "website": "https://luminategroup.com/",
           "summary": {
             "zh": "",
@@ -149,7 +149,7 @@
         {
           "id": "klickklack",
           "name": {"zh": "可立可股份有限公司", "en": "KlickKlack Communications"},
-          "logo": "assets/img/partners/klickklack.svg",
+          "logo": "assets/img/partners/kkco.svg",
           "website": "https://www.kkco.com.tw/",
           "summary": {
             "zh": "可立可股份有限公司成立於 2017 年，在過去幾年來，可立可陪伴著數以百計的企業面對規模化以及數位轉型，深知企業在營運與資訊需求的痛點。因此，我們致力於提供全方位的資訊顧問服務，賦能企業實踐其成長目標。可立可的服務涵蓋：連結 Connectivity、協作 Collaboration、合規 Compliance 三大面向，以兼具韌性與彈性的服務賦能企業，協助企業隨著規模擴大而成長，並運用新世代的科技工具和管理模式來減輕企業的負擔和煩惱。透過我們的服務，企業不僅可以實現數位轉型，還可以達到資安合規的目標，並享受前所未有的服務體驗。",
