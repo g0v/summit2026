@@ -110,8 +110,8 @@
           "logo": "assets/img/partners/hackmd.svg",
           "website": "https://hackmd.io/",
           "summary": {
-            "zh": "HackMD 是以 Markdown 為本，追求流暢、簡潔的線上協作筆記。\n無論是社群多人編輯、團隊溝通共筆、個人便捷紀錄，HackMD 支援多種語法、圖表、數學表達式，搭配書本模式、簡報模式跟留言互動功能。讓筆記，不只是筆記。\n上線至今，已經有超過 5,000,000 份筆記，以及超過 27,000 個團隊空間使用。HackMD 能夠便捷寫作、版面俐落，聰明的筆記整理方法，受到國內外用戶的喜愛。\n從下筆、編輯、共筆到發表，HackMD 讓你的知識最有效率地呈現，跟人們以最流暢的速度分享。\n在 HackMD 開啟一份新筆記吧！",
-            "en": "HackMD is where you collaborate with your team and communicate with your community in Markdown notes.\nYou write in Markdown and HackMD presents source code, slides, charts, and math expressions for you. You control who can view/edit your notes and share them with flexible permissions.\nSince launch, more than 5,000,000 notes have been created and more than 27,000 teams have collaborated in HackMD.\nHackMD is where your short-term and long-term memory live together."
+            "zh": "HackMD 是以 Markdown 為本，追求流暢、簡潔的線上協作筆記。無論是社群多人編輯、團隊溝通共筆、個人便捷紀錄，HackMD 支援多種語法、圖表、數學表達式，搭配書本模式、簡報模式跟留言互動功能。讓筆記，不只是筆記。\n上線至今，已經有超過 5,000,000 份筆記，以及超過 27,000 個團隊空間使用。HackMD 能夠便捷寫作、版面俐落，聰明的筆記整理方法，受到國內外用戶的喜愛。\n從下筆、編輯、共筆到發表，HackMD 讓你的知識最有效率地呈現，跟人們以最流暢的速度分享。在 HackMD 開啟一份新筆記吧！",
+            "en": "HackMD is where you collaborate with your team and communicate with your community in Markdown notes. You write in Markdown and HackMD presents source code, slides, charts, and math expressions for you. You control who can view/edit your notes and share them with flexible permissions.\nSince launch, more than 5,000,000 notes have been created and more than 27,000 teams have collaborated in HackMD.\nHackMD is where your short-term and long-term memory live together."
           }
         },
         {

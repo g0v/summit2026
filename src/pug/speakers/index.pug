@@ -5,20 +5,21 @@ block variables
 block head
   link(rel="stylesheet", href="assets/css/base.css?version="+timestamp)
 block main
-  .container.my-20
-    h1.border-b.border-neutral-500.pb-3(data-i18n="speakers.title") 講者
-  .container.my-20
-    h3.mb-4(data-i18n="speakers.keynote") 基調演講
-    .mb-12
-      h5 劉致昕 JS Liu
-      p 劉致昕，記者/作者/podcaster，著有《真相製造》、《烏克蘭的不可能戰爭》，聲音節目《不好意思請問一下》。
-      p 前《報導者》副總編輯、前美國民主協會亞太區資訊健全計畫顧問，曾為 g0v News 記者編輯。從一篇德國海盜黨的報導，與公民科技、g0v 開始對話，多次隨團參與公民科技、開放政府等國際會議，採訪台灣、西班牙、墨西哥、東南亞和歐美的許多公民科技計畫，在台南開的咖啡店也曾是大松場地，在國際組織裡試著與社群協力完成亞太區公民科技手冊。跟著「沒有人」的步伐，觀察與記錄公民科技與社群超過十年。
-    .mb-12
-      h5 Dr. John Postill
-      p John Postill (PhD, UCL) is an anthropologist based at RMIT University, Melbourne. He specialises in the study of media, communication and sociopolitical change. To date he has carried out ethnographic fieldwork in Malaysia, Indonesia, Spain and (online) in the Anglosphere. He is the author of numerous publications, including The Anthropology of Digital Practices (in press, Routledge) and The Rise of Nerd Politics (2018, Pluto). At present he is researching the globalisation of the online culture wars.
-  .container.my-20
-    h3.mb-4(data-i18n="speakers.sessions") 議程講者
-    p(data-i18n="speakers.intro") 第一波錄取講者如下（名單仍會更動）：
-    ul.grid.mb-12(class="grid-cols-3 md:grid-cols-5")
-      each session in _sessions
-        li.mb-4= session.speaker
+  main.container
+    .my-20
+      h1.border-b.border-neutral-500.pb-3(data-i18n="speakers.title") 講者
+    section.my-20
+      h3.mb-12(data-i18n="speakers.keynote") 基調演講
+      .mb-12
+        h5 劉致昕 JS Liu
+        p 劉致昕，記者/作者/podcaster，著有《真相製造》、《烏克蘭的不可能戰爭》，聲音節目《不好意思請問一下》。
+        p 前《報導者》副總編輯、前美國民主協會亞太區資訊健全計畫顧問，曾為 g0v News 記者編輯。從一篇德國海盜黨的報導，與公民科技、g0v 開始對話，多次隨團參與公民科技、開放政府等國際會議，採訪台灣、西班牙、墨西哥、東南亞和歐美的許多公民科技計畫，在台南開的咖啡店也曾是大松場地，在國際組織裡試著與社群協力完成亞  太區公民科技手冊。跟著「沒有人」的步伐，觀察與記錄公民科技與社群超過十年。
+      .mb-12
+        h5 Dr. John Postill
+        p John Postill (PhD, UCL) is an anthropologist based at RMIT University, Melbourne. He specialises in the study of media, communication and sociopolitical change. To date he has carried out ethnographic fieldwork in Malaysia, Indonesia, Spain and (online) in the Anglosphere. He is the author of numerous publications, including The Anthropology of Digital Practices (in press, Routledge) and The Rise of Nerd Politics (2018, Pluto). At present he is researching the globalisation of the online culture wars.
+    section.my-20
+      h3.mb-4(data-i18n="speakers.sessions") 議程講者
+      p(data-i18n="speakers.intro") 第一波錄取講者如下（名單仍會更動）：
+      ul.grid.mb-12(class="grid-cols-3 md:grid-cols-5")
+        each session in _sessions
+          li.mb-4= session.speaker

@@ -5,22 +5,23 @@ block variables
 block head
   link(rel="stylesheet", href="assets/css/base.css?version="+timestamp)
 block main
-  .container.my-20
-    h1.border-b.border-neutral-500.pb-3(data-i18n="staff.title") 工作人員
-    .text-sm.my-4(data-i18n="staff.subtitle") g0v Summit 2024 籌備團隊
-  .container.my-20
-    each staff, key in _staff
-      if key == '宣傳' || key == '議程'
-        .mb-12
+  main.container
+    .my-20
+      h1.border-b.border-neutral-500.pb-3(data-i18n="staff.title") 工作人員
+      .text-sm.my-4(data-i18n="staff.subtitle") g0v Summit 2024 籌備團隊
+    .my-20
+      each staff, key in _staff
+        if key == '宣傳' || key == '議程'
+          .mb-12
+            h3.mb-4= key
+            each team, key in staff
+              if key !== 'main'
+                h5.mb-4= key
+              .grid.mb-8(class="grid-cols-3 md:grid-cols-5")
+                each person in team
+                  .mb-4= person
+        else
           h3.mb-4= key
-          each team, key in staff
-            if key !== 'main'
-              h5.mb-4= key
-            .grid.mb-8(class="grid-cols-3 md:grid-cols-5")
-              each person in team
-                .mb-4= person
-      else
-        h3.mb-4= key
-        .grid.mb-12(class="grid-cols-3 md:grid-cols-5")
-          each person in staff
-            .mb-4= person
+          .grid.mb-12(class="grid-cols-3 md:grid-cols-5")
+            each person in staff
+              .mb-4= person
