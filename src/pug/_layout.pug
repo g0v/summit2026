@@ -29,10 +29,10 @@ html(lang="zh-Hant-TW")
       img(src="assets/img/loading 畫面.svg", alt="")
     header.container.flex.flex-wrap.items-center.justify-between.py-4
       a.me-2(href=base)
-        img.w-auto.h-12(src="assets/img/pgln_g0v_summit.png", alt="g0v Summit 2024")
+        img.w-auto.h-12(src="assets/img/pgln_g0v_summit.svg", alt="g0v Summit 2024")
       button.offcanvas-toggler.text-2xl.text-primary(class="sm:hidden")
         i.fa-solid.fa-bars
-      .flex.offcanvas-box(class="sm:-mx-2 sm:mt-1 sm:flex-wrap sm:max-md:grow sm:max-md:justify-between")
+      nav.flex.offcanvas-box(class="sm:-mx-2 sm:mt-1 sm:flex-wrap sm:max-md:grow sm:max-md:justify-between", aria-label="Main")
         .py-4.text-right.px-6(class="sm:hidden")
           button.offcanvas-toggler.text-2xl.text-primary
             i.fa-solid.fa-xmark
@@ -49,7 +49,7 @@ html(lang="zh-Hant-TW")
             option(value="en") English
     block main
     footer.bg-slate-100: .container.py-20
-      .grid.gap-8(class="grid-cols-2 md:grid-cols-4")
+      nav.grid.gap-8(class="grid-cols-2 md:grid-cols-4", aria-label="Sitemap")
         .leading-loose
           .mb-4.font-bold Summit 2024
           a.block(href="speakers", data-i18n="nav.speakers") 講者
@@ -77,7 +77,7 @@ html(lang="zh-Hant-TW")
         .my-2.flex.flex-wrap(class="md:col-span-2 max-md:justify-center")
           span CC BY 4.0 @ g0v Summit 2024
           a.mx-6(href="//github.com/g0v/summit2024/issues", target="_blank", data-i18n="nav.bugreport") 網站問題回饋
-        #social-link.ms-auto.my-2.flex.text-xl(class="max-md:w-full max-md:justify-center")
+        nav#social-link.ms-auto.my-2.flex.text-xl(class="max-md:w-full max-md:justify-center", aria-label="Social Media")
           a(href="//www.facebook.com/g0v.tw/", target="_blank")
             i.fa-brands.fa-facebook.me-3(title="Facebook")
           a(href="//www.instagram.com/g0v.tw/", target="_blank")
@@ -91,10 +91,10 @@ html(lang="zh-Hant-TW")
           a(href="//github.com/g0v/", target="_blank")
             i.fa-brands.fa-github-alt.me-3(title="GitHub")
 
-    #cookie-agree.fixed.bottom-0.w-full.bg-slate-200.flex.p-4.items-center.justify-center.hidden
+    #cookie-notice.fixed.bottom-0.w-full.bg-slate-200.flex.p-4.items-center.justify-center.hidden(role="dialog", aria-label="Cookie")
       div(data-i18n="cookie")
         | 本網站使用 cookies 於廣告、社群與分析等用途，藉以增進您的使用體驗，繼續使用本網站即代表您同意使用 cookies。
-      a.btn.btn-primary.shrink-0.my-auto.ms-3(href="#", data-i18n="agree") 同意
+      button.btn.btn-primary.shrink-0.my-auto.ms-3(data-i18n="agree") 同意
     script(src='//code.jquery.com/jquery-3.7.0.min.js', integrity='sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=', crossorigin='anonymous')
     script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.9/jquery.i18n.min.js', integrity='sha512-EkS8Kq86l7dHt/dOBniHgtYvAScDqFw/lIPX5VCwaVKsufs0pY44I2cguqZ45QaFOGGwVd3T1nXvVJYIEjRsjA==', crossorigin='anonymous', referrerpolicy='no-referrer')
     script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.9/jquery.i18n.emitter.bidi.min.js', integrity='sha512-EP79zV22G1pPO28sRgwfVyEPEhu1RXA2ovHJNqlev1pIGEAs0CBzi6F6UMkPBaPS78O3KeEVqpicEYah+zbXhg==', crossorigin='anonymous', referrerpolicy='no-referrer')

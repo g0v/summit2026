@@ -8,9 +8,9 @@ const setLocale = (function (lang) {
     $(document.body).i18n()
 })
 
-$('#cookie-agree a.btn').on('click', function (e) {
+$('#cookie-notice button').on('click', function (e) {
   storage.setItem('agreeCookie', true)
-  $('#cookie-agree').addClass('hidden')
+  $('#cookie-notice').addClass('hidden')
 })
 
 $('header .offcanvas-toggler').on('click', function (e) {
@@ -25,7 +25,7 @@ $('select#lang-select').on('change', function (e) {
 
 $(function () {
   if (!storage.getItem('agreeCookie')) {
-    $('#cookie-agree').removeClass('hidden')
+    $('#cookie-notice').removeClass('hidden')
   }
 
   let i18nzh = {}
