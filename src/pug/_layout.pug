@@ -48,26 +48,26 @@ html(lang="zh-Hant-TW")
             option(value="zh") 華語
             option(value="en") English
     block main
-    footer.bg-slate-200: .container.py-20
+    footer.bg-slate-100: .container.py-20
       .grid.gap-8(class="grid-cols-2 md:grid-cols-4")
-        div
+        .leading-loose
           .mb-4.font-bold Summit 2024
           a.block(href="speakers", data-i18n="nav.speakers") 講者
           a.block(href="agenda", data-i18n="nav.agenda") 議程
           a.block(href="visit", data-i18n="nav.visit") 交通
           a.block(href="//g0v.hackmd.io/@summit2024/notes", target="_blank", data-i18n="nav.hackmd") 共筆
           a.block(href="//www.youtube.com/@g0vTW", target="_blank", data-i18n="nav.live") 直播
-        div
+        .leading-loose
           .mb-4.font-bold(data-i18n="nav.media") 媒體資源
           a.block(href="//g0v.hackmd.io/@SQLfOC1bRwKstcPS84Gu_w/H1aRf_W8a", target="_blank", data-i18n="nav.presskit") 新聞素材
           a.block(href="//us21.campaign-archive.com/home/?u=5f2da7dc5b32fcf00c4e26170&id=cf109d5e52", target="_blank", data-i18n="nav.newsletter") 電子報
-        div
+        .leading-loose
           .mb-4.font-bold(data-i18n="nav.about") 關於 Summit
           a.block(href="staff", data-i18n="nav.staff") 工作團隊
           a.block(href="partners", data-i18n="nav.partners") 合作夥伴
           a.block(href="//g0v.hackmd.io/@summit2024/book/", target="_blank", data-i18n="nav.docs") 籌備紀錄
           a.block(href="coc", data-i18n="nav.coc") 社群守則
-        div
+        .leading-loose
           .mb-4.font-bold(data-i18n="nav.past") 歷年網站
           a.block(href="//summit.g0v.tw/2020", target="_blank") 2020
           a.block(href="//summit.g0v.tw/2018", target="_blank") 2018
@@ -91,7 +91,7 @@ html(lang="zh-Hant-TW")
           a(href="//github.com/g0v/", target="_blank")
             i.fa-brands.fa-github-alt.me-3(title="GitHub")
 
-    #cookie-agree.fixed.bottom-0.w-full.bg-slate-100.flex.p-4.items-center.justify-center.hidden
+    #cookie-agree.fixed.bottom-0.w-full.bg-slate-200.flex.p-4.items-center.justify-center.hidden
       div(data-i18n="cookie")
         | 本網站使用 cookies 於廣告、社群與分析等用途，藉以增進您的使用體驗，繼續使用本網站即代表您同意使用 cookies。
       a.btn.btn-primary.shrink-0.my-auto.ms-3(href="#", data-i18n="agree") 同意
