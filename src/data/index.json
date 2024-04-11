@@ -131,6 +131,16 @@
       "name": {"zh": "先行者", "en": "Visionaries"},
       "sponsors": [
         {
+          "id": "ndi",
+          "name": {"zh": "美國國際民主協會", "en": "National Democratic Institute"},
+          "logo": "assets/img/partners/ndi.svg",
+          "website": "https://www.ndi.org/",
+          "summary": {
+            "zh": "美國國際民主協會是一個非營利、不隸屬於任何政黨的非政府組織，我們努力回應世界各地人民對民主社會的盼望，並致力於強化認同、促進基本人權的民主社會。NDI 成立於 1983 年，歷年來曾與 156 個國家和地區的當地夥伴合作，匯集個人和團體以分享彼此的想法、知識經驗和專業。NDI 與政黨、公民團體、議會及其他組織和個人合作，強化民主體制、維護選舉、促進公民參與，並推廣開放問責的政府。NDI 的跨國合作方法驗證了一項我們深信的理念：儘管適用於每個社會的民主模式並不存在，但所有的民主社會都共享相同的核心價值。",
+            "en": "The National Democratic Institute (NDI) is a nonprofit, nonpartisan, nongovernmental organization working to strengthen and respond to the aspirations of people around the world to live in democratic societies that recognize and promote basic human rights. Founded in 1983, NDI has worked with local partners in 156 countries and territories, bringing together individuals and groups to share ideas, knowledge, experiences and expertise. NDI works with political parties, civic groups, parliaments, and other organizations and individuals to strengthen democratic institutions, safeguard elections, advance citizen engagement, and promote open and accountable government. NDIʼs multinational approach reinforces the message that while there is no single democratic model, certain core principles are shared by all democracies."
+          }
+        },
+        {
           "id": "luminate",
           "name": {"zh": "Luminate", "en": "Luminate"},
           "logo": "assets/img/partners/luminate.svg",
@@ -138,6 +148,16 @@
           "summary": {
             "zh": "",
             "en": "Luminate is a global foundation working to ensure that everyone – especially those who are underrepresented - has the information, rights, and power to influence the decisions that shape society. The foundation is focused on enabling people to fully participate in civic and political life, to safely challenge power, and to access accurate, trustworthy information. Luminate works globally with a regional focus on Africa, Asia, and Latin America. It was established by philanthropists Pierre and Pam Omidyar and has worked for over a decade on issues related to governance and citizen engagement."
+          }
+        },
+        {
+          "id": "nstc",
+          "name": {"zh": "國家科學及技術委員會", "en": "National Science and Technology Council"},
+          "logo": "assets/img/partners/nstc.svg",
+          "website": "https://www.nstc.gov.tw/",
+          "summary": {
+            "zh": "",
+            "en": ""
           }
         }
       ]
@@ -162,16 +182,6 @@
       "id": "contributors",
       "name": {"zh": "貢獻者", "en": "Contributors"},
       "sponsors": [
-        {
-          "id": "nstc",
-          "name": {"zh": "國家科學及技術委員會", "en": "National Science and Technology Council"},
-          "logo": "",
-          "website": "",
-          "summary": {
-            "zh": "",
-            "en": ""
-          }
-        },
         {
           "id": "iorg",
           "name": {"zh": "台灣資訊環境研究中心 IORG", "en": "IORG"},
