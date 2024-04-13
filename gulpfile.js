@@ -16,6 +16,12 @@ function parseDatetime(dateString) {
   return dateObject;
 }
 
+function formatDatetime(dateObject) {
+  let hours = String(dateObject.getHours()).padStart(2, '0');
+  let minutes = String(dateObject.getMinutes()).padStart(2, '0');
+  return `${hours}:${minutes}`;
+}
+
 function buildAssets(baseurl = '/2024/') {
   gulp
     .src('src/locale/*.yml')
@@ -50,13 +56,16 @@ function buildPug(baseurl = '/2024/') {
   let schedule = require('./src/data/schedule.json')
   schedule['sessions'] = schedule['sessions'].sort((a, b) => parseDatetime(a['start']) - parseDatetime(b['start']));
   schedule['sessions_by_room'] = {}
+  schedule['sessions_timemap'] = {}
   for (let room of schedule['rooms']) {
     schedule['sessions_by_room'][room['id']] = []
   }
   for (let session of schedule['sessions']) {
     if (!session['room'] || !session['start'] || !session['end']) continue;
-    session['size'] = (parseDatetime(session['end']) - parseDatetime(session['start']))/60000;
-    session['offset'] = (parseDatetime(session['start']) - parseDatetime('2024-5-4T09:20:00+08:00'))/60000;
+    session['start_t'] = (parseDatetime(session['start']) - parseDatetime('2024-5-4T09:00:00+08:00')) / 60000;
+    session['end_t'] = (parseDatetime(session['end']) - parseDatetime('2024-5-4T09:00:00+08:00')) / 60000;
+    schedule['sessions_timemap'][session['start_t']] = formatDatetime(parseDatetime(session['start']));
+    schedule['sessions_timemap'][session['end_t']] = formatDatetime(parseDatetime(session['end']));
     schedule['sessions_by_room'][session['room']].push(session);
   }
   return gulp

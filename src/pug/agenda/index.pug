@@ -4,9 +4,10 @@ block variables
   - title = "議程 Agenda"
 block head
   link(rel="stylesheet", href="assets/css/base.css?version="+timestamp)
+  link(rel="stylesheet", href="assets/css/agenda.css?version="+timestamp)
 block main
   main.container
-    .my-20
+    .mt-20
       .flex
         button.rounded-lg.bg-white.drop-shadow-lg.mx-2.p-2.transition#day1(class="hover:bg-neutral-100")
           .font-bold Day 1
@@ -14,16 +15,34 @@ block main
         button.rounded-lg.bg-white.drop-shadow-lg.mx-2.p-2.transition#day2(class="hover:bg-neutral-100")
           .font-bold Day 2
           .text-neutral-500 5/05（日）
-    .my-20
-      h2.mb-8 Day1
-      .grid.grid-cols-4
+    .mt-10.mb-20
+      h2.mb-8#day Day 1
+      .grid.relative(style="grid-template-columns: [ time ] 4rem [ R0 ] 1fr [ R1 ] 1fr [ R2 ] 1fr [ RH ] 1fr [ end ] auto [R4] 0;")
+        .block= ""
+        - let rooms = ['R0', 'R1', 'R2', 'RH']
+        each room in rooms
+          .bg-primary.text-white.px-4.py-2.rounded-lg.m-4.mb-8= room
+        each time, key in schedule['sessions_timemap']
+          - let styles = `grid-area: ${key} / time`
+          .block.agenda-timeline.z-0(style=styles, data-day=key < 1440 ? '1':'2')
+            .font-bold(class="translate-y-[-50%]")= time
         each sessions, room in schedule['sessions_by_room']
-          .relative(class="h-[4000px]")
-            h4.bg-primary.text-white.font-bold.mb-4.py-2.px-4.mx-2.rounded-lg= room
-            .relative
-              each session in sessions
-                if session['offset'] < 1440
-                  - let classes = `top-[${session['offset']*8}px] h-[${session['size']*8}px] ${session['broadcast']?'w-[400%]':'w-full'}`
-                  .block.absolute.left-0.p-2(class=classes)
-                    .rounded-lg.bg-neutral-100.p-4.h-full.w-full.flex.items-center
-                      .font-bold= session['zh']['title']
+          if rooms.includes(room)
+            each session in sessions
+              - let styles = `grid-area: ${session['start_t']} / ${room} / ${session['end_t']} ${session['broadcast']?'/ end':''};`
+              .block.p-3(style=styles, data-day=session['start_t'] < 1440 ? '1':'2')
+                .flex.items-center.bg-neutral-100.rounded-lg.p-4.h-full.z-10.relative
+                  .font-bold= session['zh']['title']
+block script
+  script.
+    $("[data-day='2']").addClass('hidden');
+    $('#day1').click(function() {
+      $("[data-day='1']").removeClass('hidden')
+      $("[data-day='2']").addClass('hidden')
+      $('#day').text('Day 1')
+    });
+    $('#day2').click(function() {
+      $("[data-day='1']").addClass('hidden')
+      $("[data-day='2']").removeClass('hidden')
+      $('#day').text('Day 2')
+    });
