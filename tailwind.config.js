@@ -13,6 +13,9 @@ module.exports = {
       colors: {
         primary: '#074E64',
         secondary: '#F779EE'
+      },
+      gridTemplateRows: {
+        '50': 'repeat(50, minmax(0, 1fr))'
       }
     },
     container: {
