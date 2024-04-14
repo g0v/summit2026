@@ -6,6 +6,13 @@ block head
   link(rel="stylesheet", href="assets/css/base.css?version="+timestamp)
   link(rel="stylesheet", href="assets/css/agenda.css?version="+timestamp)
 block main
+  #modal.hidden
+    .bg-white.max-w-lg
+      .modal-head.flex.p-4.items-start
+        h4.font-bold.me-3
+        button.modal-close.text-2xl.text-primary.ms-auto
+          i.fa-solid.fa-xmark
+      .modal-body.p-4
   main.container
     .mt-20
       .flex
@@ -17,25 +24,33 @@ block main
           .text-neutral-500 5/05（日）
     .mt-10.mb-20
       h2.mb-8#day Day 1
-      .grid.relative(style="grid-template-columns: [ time ] 4rem [ R0 ] 1fr [ R1 ] 1fr [ R2 ] 1fr [ RH ] 1fr [ end ] auto [R4] 0;")
-        .block= ""
-        - let rooms = ['R0', 'R1', 'R2', 'RH']
-        each room in rooms
-          .bg-primary.text-white.px-4.py-2.rounded-lg.m-4.mb-8= room
-        each time, key in schedule['sessions_timemap']
-          - let styles = `grid-area: ${key} / time`
-          .block.agenda-timeline.z-0(style=styles, data-day=key < 1440 ? '1':'2')
-            .font-bold(class="translate-y-[-50%]")= time
-        each sessions, room in schedule['sessions_by_room']
-          if rooms.includes(room)
-            each session in sessions
-              - let styles = `grid-area: ${session['start_t']} / ${room} / ${session['end_t']} ${session['broadcast']?'/ end':''};`
-              .block.p-3(style=styles, data-day=session['start_t'] < 1440 ? '1':'2')
-                .flex.items-center.bg-neutral-100.rounded-lg.p-4.h-full.z-10.relative
-                  .font-bold= session['zh']['title']
+      .overflow-y-auto
+        .grid.relative.agenda-grid
+          .block= ""
+          - let rooms = ['R0', 'R1', 'R2', 'RH']
+          each room in rooms
+            .bg-primary.text-white.px-4.py-2.rounded-lg.m-4.mb-8= room
+          each time, key in schedule['sessions_timemap']
+            - let styles = `grid-area: ${key} / time`
+            .block.agenda-timeline.z-0(style=styles, data-day=key < 1440 ? '1':'2')
+              .font-bold(class="translate-y-[-50%]")= time
+          each sessions, room in schedule['sessions_by_room']
+            if rooms.includes(room)
+              each session in sessions
+                - let styles = `grid-area: ${session['start_t']} / ${room} / ${session['end_t']} ${session['broadcast']?'/ end':''};`
+                .block.p-3(style=styles, data-day=session['start_t'] < 1440 ? '1':'2')
+                  .agenda-session.cursor-pointer.flex.items-center.bg-neutral-100.rounded-lg.p-4.h-full.z-10.relative(data-id=session['id'])
+                    .font-bold= session['zh']['title']
 block script
+  script(src='https://cdn.jsdelivr.net/npm/marked/marked.min.js')
   script.
-    $("[data-day='2']").addClass('hidden');
+    let schedule
+    fetch ('assets/data/schedule.json')
+      .then(response => response.json())
+      .then(data => {
+        schedule = data
+      })
+    $("[data-day='2']").addClass('hidden')
     $('#day1').click(function() {
       $("[data-day='1']").removeClass('hidden')
       $("[data-day='2']").addClass('hidden')
@@ -46,3 +61,19 @@ block script
       $("[data-day='2']").removeClass('hidden')
       $('#day').text('Day 2')
     });
+    $('.agenda-session').on('click', function(e) {
+      let id = $(this).data('id')
+      let session = schedule['sessions'].filter(session => session['id'] == id)[0]
+      $('#modal .modal-head > .font-bold').text(session['zh']['title'])
+      $('#modal .modal-body').html(marked.parse(session['zh']['description']))
+      $('#modal .modal-body a').filter(function() {
+        return this.hostname != window.location.hostname;
+      }).attr('target', '_blank');
+      $('body').addClass('overflow-hidden')
+      $('#modal').removeClass('hidden')
+    })
+    $('#modal .modal-close').on('click', function(e) {
+      e.preventDefault()
+      $('body').removeClass('overflow-hidden')
+      $('#modal').addClass('hidden')
+    })

@@ -23,6 +23,8 @@ $('select#lang-select').on('change', function (e) {
   storage.setItem("userLang", lang)
 })
 
+$('')
+
 $(function () {
   if (!storage.getItem('agreeCookie')) {
     $('#cookie-notice').removeClass('hidden')
@@ -46,12 +48,10 @@ $(function () {
   loader.then(() => {
     let lang = storage.getItem("userLang")
 
-    // Allow query string override
     if (location.search)
       if (location.search.includes('lang=en')) lang = 'en'
       else if (location.search.includes('lang=zh')) lang = 'zh'
 
-    // Guess from the user's preferred languages
     if (!lang) {
       let languages = navigator.languages || [navigator.language || navigator.userLanguage]
       for (const l of languages)

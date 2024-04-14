@@ -1,3 +1,17 @@
+#modal {
+  @apply fixed left-0 top-0 w-full h-full z-50 flex items-center justify-center p-4;
+  background-color: rgba(0, 0, 0, 0.5);
+  .modal-body {
+    max-height: 70vh;
+    overflow-y: auto;
+  }
+}
+
+.agenda-grid {
+  grid-template-columns: [ time ] 4rem [ R0 ] 1fr [ R1 ] 1fr [ R2 ] 1fr [ RH ] 1fr [ end ] auto [R4] 0;
+  min-width: theme('screens.md');
+}
+
 .agenda-timeline {
   font-family: "Chivo Mono", monospace;
   &:before {

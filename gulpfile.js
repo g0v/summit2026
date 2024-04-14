@@ -6,7 +6,8 @@ const connect = require('gulp-connect')
 const sitemap = require('gulp-sitemap')
 const path = require('path')
 const rename = require('gulp-rename')
-const yaml = require('gulp-yaml');
+const yaml = require('gulp-yaml')
+
 
 function parseDatetime(dateString) {
   if (!dateString) return 0;
@@ -17,8 +18,8 @@ function parseDatetime(dateString) {
 }
 
 function formatDatetime(dateObject) {
-  let hours = String(dateObject.getHours()).padStart(2, '0');
-  let minutes = String(dateObject.getMinutes()).padStart(2, '0');
+  let hours = String(dateObject.getUTCHours() + 8).padStart(2, '0');
+  let minutes = String(dateObject.getUTCMinutes()).padStart(2, '0');
   return `${hours}:${minutes}`;
 }
 
@@ -27,9 +28,12 @@ function buildAssets(baseurl = '/2024/') {
     .src('src/locale/*.yml')
     .pipe(yaml({ schema: 'DEFAULT_SAFE_SCHEMA' }))
     .pipe(gulp.dest('.' + path.join('/static/', baseurl, '/assets/i18n/')))
-  return gulp
+  gulp
     .src('src/assets/**')
     .pipe(gulp.dest('.' + path.join('/static/', baseurl, '/assets/')))
+  gulp
+    .src('src/data/**')
+    .pipe(gulp.dest('.' + path.join('/static/', baseurl, '/assets/data/')))
 }
 
 function buildPcss(baseurl = '/2024/') {
