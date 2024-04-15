@@ -10,7 +10,7 @@ block main
     .bg-white.max-w-lg
       .modal-head.flex.p-4.items-start
         h4.font-bold.me-3
-        button.modal-close.text-2xl.text-primary.ms-auto
+        button.modal-close.text-2xl.text-dark.ms-auto
           i.fa-solid.fa-xmark
       .modal-body.p-4
   main.container
@@ -64,8 +64,26 @@ block script
     $('.agenda-session').on('click', function(e) {
       let id = $(this).data('id')
       let session = schedule['sessions'].filter(session => session['id'] == id)[0]
+      let bodyTmplDom = $(`
+        <div>
+          <div class="agenda-speaker"></div>
+          <div class="agenda-description"></div>
+        </div>
+      `)
+      session['speakers'].forEach(sid => {
+        let speaker = schedule['speakers'].filter(speaker => speaker['id'] == sid)[0]
+        let avatar = "assets/" + speaker['avatar'].split("/assets/")[1]
+        $('.agenda-speaker', bodyTmplDom).append(`
+          <div class="flex mb-4">
+            <img src="${avatar}" class="w-20 h-20 rounded-full shrink-0">
+            <div class="font-bold text-xl ms-4 my-auto">${speaker['zh']['name']}</div>
+          </div>
+        `)
+      })
+      $('.agenda-speaker', bodyTmplDom).append('<hr>')
+      $('.agenda-description', bodyTmplDom).html(marked.parse(session['zh']['description']))
       $('#modal .modal-head > .font-bold').text(session['zh']['title'])
-      $('#modal .modal-body').html(marked.parse(session['zh']['description']))
+      $('#modal .modal-body').html(bodyTmplDom)
       $('#modal .modal-body a').filter(function() {
         return this.hostname != window.location.hostname;
       }).attr('target', '_blank');
