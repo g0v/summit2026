@@ -6,7 +6,7 @@
 ## how to dev
 ```
   npm i
-  npm run prebuild
+  npm run pre
   npm start
 ```
 gh-pages 會自動根據 new_design branch 更新，作為 staging site
