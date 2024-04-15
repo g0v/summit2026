@@ -120,3 +120,6 @@ _public/
 _main/
 _grantdash/
 static/**/*
+
+# config
+config.js
