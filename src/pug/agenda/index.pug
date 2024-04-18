@@ -67,7 +67,7 @@ block script
     });
     $('.agenda-session').on('click', function(e) {
       let id = $(this).data('id')
-      window.location.hash = id
+      history.replaceState(null, null, window.location.pathname + '#' + id);
       let session = schedule['sessions'].filter(session => session['id'] == id)[0]
       let bodyTmplDom = $(`
         <div>
@@ -99,5 +99,11 @@ block script
       e.preventDefault()
       $('body').removeClass('overflow-hidden')
       $('#modal').addClass('hidden')
-      window.location.hash = ''
+      history.replaceState(null, null, window.location.pathname);
     })
+
+    $(document).on('keydown', function(e) {
+      if (e.key === 'Escape') {
+        $('#modal .modal-close').click();
+      }
+    });
