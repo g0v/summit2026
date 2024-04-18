@@ -49,6 +49,10 @@ block script
       .then(response => response.json())
       .then(data => {
         schedule = data
+        hash = window.location.hash
+        if (hash) {
+          $('.agenda-session[data-id="' + hash.substring(1) + '"]').click()      
+        }
       })
     $("[data-day='2']").addClass('hidden')
     $('#day1').click(function() {
@@ -63,6 +67,7 @@ block script
     });
     $('.agenda-session').on('click', function(e) {
       let id = $(this).data('id')
+      window.location.hash = id
       let session = schedule['sessions'].filter(session => session['id'] == id)[0]
       let bodyTmplDom = $(`
         <div>
