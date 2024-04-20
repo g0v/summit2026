@@ -18,7 +18,11 @@ block main
         p John Postill (PhD, UCL) is an anthropologist based at RMIT University, Melbourne. He specialises in the study of media, communication and sociopolitical change. To date he has carried out ethnographic fieldwork in Malaysia, Indonesia, Spain and (online) in the Anglosphere. He is the author of numerous publications, including The Anthropology of Digital Practices (in press, Routledge) and The Rise of Nerd Politics (2018, Pluto). At present he is researching the globalisation of the online culture wars.
     section.my-20
       h3.mb-4(data-i18n="speakers.sessions") 議程講者
-      p(data-i18n="speakers.intro") 第一波錄取講者如下（名單仍會更動）：
-      ul.grid.mb-12(class="grid-cols-3 md:grid-cols-5")
-        each speaker in schedule['speakers']
-          li.mb-4(data-i18n=`speakers.${speaker.id}`)= speaker.zh.name
+      .grid.mb-12(class="grid-cols-3 md:grid-cols-5 gap-4")
+        each speaker in schedule.speakers
+          .mb-4.aspect-square.bg-slate-100.rounded-full.flex.items-center.justify-center(data-i18n=`speakers.${speaker.id}`)
+            - let speaker_name = (speaker.zh.name || '') + (speaker.zh.name === speaker.en.name ? '' : ' ' + speaker.en.name)
+            if speaker.avatar && speaker.avatar.indexOf('default') < 0
+              img.rounded-full(src=speaker.avatar, alt=speaker_name)
+            else
+              span.text-center= speaker_name
