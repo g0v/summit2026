@@ -38,9 +38,9 @@ block main
               each session in sessions
                 - let styles = `grid-area: ${session['start_t']} / ${room} / ${session['end_t']} ${session['broadcast']?'/ end':''};`
                 .block.p-3(style=styles, data-day=session['start_t'] < 1440 ? '1':'2')
-                  if session['type'] == 'E'
+                  if session['type'] == 'R'
                     .agenda-session.flex.items-center.bg-neutral-100.rounded-lg.p-4.h-full.z-10.relative
-                      .font-bold(data-i18n=`session.${session.id}.title`)= session['zh']['title']
+                      .font-medium(data-i18n=`session.${session.id}.title`)= session['zh']['title']
                   else
                     .agenda-session.cursor-pointer.flex.items-center.bg-neutral-100.rounded-lg.p-4.h-full.z-10.relative(data-id=session['id'])
                       .font-bold(data-i18n=`session.${session.id}.title`)= session['zh']['title']
@@ -54,7 +54,7 @@ block script
         schedule = data
         hash = window.location.hash
         if (hash) {
-          $('.agenda-session[data-id="' + hash.substring(1) + '"]').click()      
+          $('.agenda-session[data-id="' + hash.substring(1) + '"]').click()
         }
       })
     $("[data-day='2']").addClass('hidden')
