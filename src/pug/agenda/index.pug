@@ -39,8 +39,12 @@ block main
               each session in sessions
                 - let styles = `grid-area: ${session['start_t']} / ${room} / ${session['end_t']} ${session['broadcast']?'/ end':''};`
                 .block.p-3(style=styles, data-day=session['start_t'] < 1440 ? '1':'2')
-                  .agenda-session.cursor-pointer.flex.items-center.bg-neutral-100.rounded-lg.p-4.h-full.z-10.relative(data-id=session['id'])
-                    .font-bold= session['zh']['title']
+                  if session['type'] == 'E'
+                    .agenda-session.flex.items-center.bg-neutral-100.rounded-lg.p-4.h-full.z-10.relative
+                      .font-bold= session['zh']['title']
+                  else
+                    .agenda-session.cursor-pointer.flex.items-center.bg-neutral-100.rounded-lg.p-4.h-full.z-10.relative(data-id=session['id'])
+                      .font-bold= session['zh']['title']
 block script
   script(src='https://cdn.jsdelivr.net/npm/marked/marked.min.js')
   script.
