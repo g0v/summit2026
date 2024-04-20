@@ -1,6 +1,5 @@
 extends ../_layout.pug
 block variables
-  - _sessions = data['sessions'];
   - title = "議程 Agenda"
 block head
   link(rel="stylesheet", href="assets/css/base.css?version="+timestamp)
@@ -41,10 +40,10 @@ block main
                 .block.p-3(style=styles, data-day=session['start_t'] < 1440 ? '1':'2')
                   if session['type'] == 'E'
                     .agenda-session.flex.items-center.bg-neutral-100.rounded-lg.p-4.h-full.z-10.relative
-                      .font-bold= session['zh']['title']
+                      .font-bold(data-i18n=`session.${session.id}.title`)= session['zh']['title']
                   else
                     .agenda-session.cursor-pointer.flex.items-center.bg-neutral-100.rounded-lg.p-4.h-full.z-10.relative(data-id=session['id'])
-                      .font-bold= session['zh']['title']
+                      .font-bold(data-i18n=`session.${session.id}.title`)= session['zh']['title']
 block script
   script(src='https://cdn.jsdelivr.net/npm/marked/marked.min.js')
   script.
@@ -69,7 +68,8 @@ block script
       $("[data-day='2']").removeClass('hidden')
       $('#day').text('Day 2')
     });
-    $('.agenda-session').on('click', function(e) {
+    $('.agenda-session[data-id]').on('click', function(e) {
+      let currentLang = i18n.locale
       let id = $(this).data('id')
       history.replaceState(null, null, window.location.pathname + '#' + id);
       let session = schedule['sessions'].filter(session => session['id'] == id)[0]
@@ -85,13 +85,13 @@ block script
         $('.agenda-speaker', bodyTmplDom).append(`
           <div class="flex mb-4">
             <img src="${avatar}" class="w-20 h-20 rounded-full shrink-0">
-            <div class="font-bold text-xl ms-4 my-auto">${speaker['zh']['name']}</div>
+            <div class="font-bold text-xl ms-4 my-auto">${speaker[currentLang]['name']}</div>
           </div>
         `)
       })
       $('.agenda-speaker', bodyTmplDom).append('<hr>')
-      $('.agenda-description', bodyTmplDom).html(marked.parse(session['zh']['description']))
-      $('#modal .modal-head > .font-bold').text(session['zh']['title'])
+      $('.agenda-description', bodyTmplDom).html(marked.parse(session[currentLang]['description']))
+      $('#modal .modal-head > .font-bold').text(session[currentLang]['title'])
       $('#modal .modal-body').html(bodyTmplDom)
       $('#modal .modal-body a').filter(function() {
         return this.hostname != window.location.hostname;

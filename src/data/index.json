@@ -1,32 +1,4 @@
 {
-  "sessions": [
-    {"title": "以 Wikidata 建構多社群平台的資料共治想像", "speaker": "王文岳"},
-    {"title": "開放國會四年回顧", "speaker": "Ronny"},
-    {"title": "開放政府資料的社群實踐 - 開放街圖台灣經驗", "speaker": "Supaplex"},
-    {"title": "打造新聞生態圈，可能挽救民主基石嗎？", "speaker": "HC"},
-    {"title": "OONI Research 專案與臺灣網路自由度觀察", "speaker": "Toomore Chiang"},
-    {"title": "公民科技與開源硬體的社會包容性", "speaker": "Leaf Tseng"},
-    {"title": "Anti-misinformation factchecking chatbot: A prototype for Malaysia", "speaker": "Khairil Zhafri"},
-    {"title": "服務NPO的開源社會企業，可行嗎？", "speaker": "Jimmy"},
-    {"title": "今天開始測試個資查閱、刪除、停止利用權", "speaker": "冠汝"},
-    {"title": "The value of open source in furthering accessibility goals", "speaker": "Mike Gifford"},
-    {"title": "Misuse of Citizen Data by South Korea Government through AI and other Technologies: What Can Civil Society Do?", "speaker": "Interlab"},
-    {"title": "Digital Technology and Civil-Government Partnerships to Solve National Social Issues of South Korea", "speaker": "Junhee Jang"},
-    {"title": "Building pathways: Participatory data governance for co-generated data", "speaker": "Rattanmeek Kaur"},
-    {"title": "Leverage technology to amplify grassroots voices and address civic challenges.", "speaker": "Idris Bilyaminu Ndasadu’Lau"},
-    {"title": "Talk to the City : How LLM can Help Discriminate Consensus Illusion", "speaker": "Deger"},
-    {"title": "Between Nerds & Governments: Why The Sovereign Tech Fund Invests Public Money in Open Source Infrastructure", "speaker": "Paul"},
-    {"title": "數位治理與性別平等：數位性暴力的法律課題", "speaker": "承慶"},
-    {"title": "青世代數位公民－透過公民科技專案塑造未來", "speaker": "Tiff Lin, Saya Kubota, Sonja Fischbauer"},
-    {"title": "政府為何不用公共程式？從制度思考", "speaker": "Sandra、YuTin"},
-    {"title": "公民科技貢獻者為何而來？而留？而走？", "speaker": "Tiff、小許、袋鼠"},
-    {"title": "異言網：資料收集與處理經驗分享", "speaker": "Ming"},
-    {"title": "g0v 公民科技專案與社群手冊", "speaker": "Isabel, chewei"},
-    {"title": "救松工作坊", "speaker": "揪松團"},
-    {"title": "伯明翰的螺絲起子", "speaker": "小海"},
-    {"title": "The civic space situation in Ethiopia", "speaker": "Mesud G. Reta"},
-    {"title": "如何用解殖視角看台灣自身的公民科技參與？", "speaker": "Ael"}
-  ],
   "partners": [
     {
       "id": "organizer",

@@ -4,23 +4,6 @@ block variables
   - title = "合作夥伴 Partners"
 block head
   link(rel="stylesheet", href="assets/css/base.css?version="+timestamp)
-  script
-    -
-      const _i18n = {zh: {}, en: {}}
-      const _to_p = (s) => (s ? ('<p>' + s.split('\n').join('</p><p>') + '</p>') : "")
-      for (level of _partners) {
-        _i18n.zh[`partners.${level.id}`] = level.name.zh
-        _i18n.en[`partners.${level.id}`] = level.name.en
-        for (sponsor of level.sponsors) {
-          _i18n.zh[`partners.${sponsor.id}`] = sponsor.name.zh
-          _i18n.en[`partners.${sponsor.id}`] = sponsor.name.en
-          if (sponsor.summary.zh || sponsor.summary.en) {
-            _i18n.zh[`partners.${sponsor.id}.summary`] = _to_p(sponsor.summary.zh || sponsor.summary.en) || " "
-            _i18n.en[`partners.${sponsor.id}.summary`] = _to_p(sponsor.summary.en || sponsor.summary.zh) || " "
-          }
-        }
-      }
-    | const additional_i18n = !{JSON.stringify(_i18n)}
 
 mixin sponsor_title(sponsor)
   h5.mb-2(id=sponsor.id, data-i18n=`partners.${sponsor.id}`)= sponsor.name.zh
@@ -33,7 +16,8 @@ mixin sponsor_logo(sponsor)
 mixin sponsor_summary(sponsor)
   if sponsor.summary.zh || sponsor.summary.en
     div(data-i18n=`[html]partners.${sponsor.id}.summary`)
-      != _to_p(sponsor.summary.zh || sponsor.summary.en)
+      each p in (sponsor.summary.zh || sponsor.summary.en).split('\n')
+        p= p
 
 block main
   main.container

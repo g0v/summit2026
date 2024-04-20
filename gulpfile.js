@@ -7,7 +7,7 @@ const sitemap = require('gulp-sitemap')
 const path = require('path')
 const rename = require('gulp-rename')
 const yaml = require('gulp-yaml')
-
+const fs = require('fs-extra')
 
 function parseDatetime(dateString) {
   if (!dateString) return 0;
@@ -24,14 +24,39 @@ function formatDatetime(dateObject) {
 }
 
 function buildAssets(baseurl = '/2024/') {
+  let enjson = {}
+  let schedule = require('./src/data/schedule.json')
+  for (let session of schedule.sessions) {
+    if (!session.room || !session.start || !session.end) continue;
+    enjson[`session.${session.id}.title`] = session.en.title
+    enjson[`session.${session.id}.description`] = session.en.description
+  }
+  for (let speaker of schedule.speakers) {
+    enjson[`speakers.${speaker.id}`] = speaker.en.name
+  }
+  let data = require('./src/data/index.json')
+  for (let level of data.partners) {
+    console.log(level)
+    enjson[`partners.${level.id}`] = level.name.en
+    for (let sponsor of level.sponsors) {
+      enjson[`partners.${sponsor.id}`] = sponsor.name.en
+      if (sponsor.summary.en || sponsor.summary.zh) {
+        enjson[`partners.${sponsor.id}.summary`] = '<p>' + (sponsor.summary.en || sponsor.summary.zh).split('\n').join('</p><p>') + '</p>'
+      }
+    }
+  }
+  fs.mkdirSync('.' + path.join('/static/', baseurl, '/assets/i18n/'), { recursive: true })
+  fs.writeJson('.' + path.join('/static/', baseurl, '/assets/i18n/') + 'additional.en.json', enjson, { spaces: 2 })
+
   gulp
     .src('src/locale/*.yml')
     .pipe(yaml({ schema: 'DEFAULT_SAFE_SCHEMA' }))
     .pipe(gulp.dest('.' + path.join('/static/', baseurl, '/assets/i18n/')))
+
   gulp
     .src('src/assets/**')
     .pipe(gulp.dest('.' + path.join('/static/', baseurl, '/assets/')))
-  gulp
+  return gulp
     .src('src/data/**')
     .pipe(gulp.dest('.' + path.join('/static/', baseurl, '/assets/data/')))
 }
@@ -72,6 +97,7 @@ function buildPug(baseurl = '/2024/') {
     schedule['sessions_timemap'][session['end_t']] = formatDatetime(parseDatetime(session['end']));
     schedule['sessions_by_room'][session['room']].push(session);
   }
+
   return gulp
     .src('src/pug/**/index.pug')
     .pipe(
@@ -99,32 +125,31 @@ function buildPug(baseurl = '/2024/') {
 }
 
 gulp.task('build', async () => {
-  await buildPug('/summit2024/')
   await buildPcss('/summit2024/')
   await buildAssets('/summit2024/')
+  await buildPug('/summit2024/')
 })
 
 gulp.task('deploy', async () => {
-  await buildPug('/2024/')
   await buildPcss('/2024/')
   await buildAssets('/2024/')
+  await buildPug('/2024/')
 })
 
-gulp.task('server', function () {
+gulp.task('server', async () => {
   connect.server({
     port: 3000,
     livereload: true,
     host: '::',
     root: 'static'
   })
-  buildPug()
-  buildPcss()
-  buildAssets()
+  await buildPcss()
+  await buildAssets()
+  await buildPug()
 
-  gulp.watch(['src/**/*.pug', 'src/**/*.pcss', 'src/**/*.yml'], function (cb) {
-    buildPug()
-    buildPcss()
-    buildAssets()
-    cb()
+  gulp.watch(['src/**/*.pug', 'src/**/*.pcss', 'src/**/*.yml'], async () => {
+    await buildPcss()
+    await buildAssets()
+    await buildPug()
   })
 })
