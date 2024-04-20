@@ -32,18 +32,21 @@ block main
           each time, key in schedule['sessions_timemap']
             - let styles = `grid-area: ${key} / time`
             .block.agenda-timeline.z-0(style=styles, data-day=key < 1440 ? '1':'2')
-              .font-bold(class="translate-y-[-50%]")= time
+              .font-medium(class="translate-y-[-50%]")= time
           each sessions, room in schedule['sessions_by_room']
             if rooms.includes(room)
               each session in sessions
                 - let styles = `grid-area: ${session['start_t']} / ${room} / ${session['end_t']} ${session['broadcast']?'/ end':''};`
                 .block.p-3(style=styles, data-day=session['start_t'] < 1440 ? '1':'2')
                   if session['type'] == 'R'
-                    .agenda-session.flex.items-center.bg-neutral-100.rounded-lg.p-4.h-full.z-10.relative
-                      .font-medium(data-i18n=`session.${session.id}.title`)= session['zh']['title']
+                    .agenda-session.flex.items-center.justify-center.bg-neutral-300.rounded-xl.p-4.h-full.z-10.relative
+                      .font-bold.text-neutral-900(data-i18n=`session.${session.id}.title`)= session['zh']['title']
                   else
-                    .agenda-session.cursor-pointer.flex.items-center.bg-neutral-100.rounded-lg.p-4.h-full.z-10.relative(data-id=session['id'])
-                      .font-bold(data-i18n=`session.${session.id}.title`)= session['zh']['title']
+                    .agenda-session.cursor-pointer.flex.flex-col.items-stretch.bg-neutral-100.p-4.h-full.z-10.relative(data-id=session['id'])
+                      .font-bold.text-neutral-800(data-i18n=`session.${session.id}.title`)= session['zh']['title']
+                      each speaker_id in session.speakers
+                        - let speaker = schedule.speakers.find((e) => e.id === speaker_id)
+                        .text-neutral-800= speaker.zh.name
 block script
   script(src='https://cdn.jsdelivr.net/npm/marked/marked.min.js')
   script.
