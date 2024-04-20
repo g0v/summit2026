@@ -6,7 +6,7 @@ block head
   link(rel="stylesheet", href="assets/css/base.css?version="+timestamp)
   link(rel="stylesheet", href="assets/css/agenda.css?version="+timestamp)
 block main
-  #modal.hidden
+  #modal
     .bg-white.max-w-lg
       .modal-head.flex.p-4.items-start
         h4.font-bold.me-3
@@ -93,12 +93,12 @@ block script
         return this.hostname != window.location.hostname;
       }).attr('target', '_blank');
       $('body').addClass('overflow-hidden')
-      $('#modal').removeClass('hidden')
+      $('#modal').addClass('show')
     })
     $('#modal .modal-close').on('click', function(e) {
       e.preventDefault()
       $('body').removeClass('overflow-hidden')
-      $('#modal').addClass('hidden')
+      $('#modal').removeClass('show')
       history.replaceState(null, null, window.location.pathname);
     })
 
