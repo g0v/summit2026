@@ -39,29 +39,27 @@ $(function () {
     zh: i18nzh,
     en: 'assets/i18n/en.json'
   }).done(() => {
-    i18n.load({ en: 'assets/i18n/additional.en.json' }).done(() => {
-      let lang = storage.getItem("userLang")
+    let lang = storage.getItem("userLang")
 
-      if (location.search)
-        if (location.search.includes('lang=en')) lang = 'en'
-        else if (location.search.includes('lang=zh')) lang = 'zh'
+    if (location.search)
+      if (location.search.includes('lang=en')) lang = 'en'
+      else if (location.search.includes('lang=zh')) lang = 'zh'
 
-      if (!lang) {
-        let languages = navigator.languages || [navigator.language || navigator.userLanguage]
-        for (const l of languages)
-          if (l.startsWith('en')) { // Explicitly prefer English
-            lang = 'en'
-            break
-          } else if (l.startsWith('zh')) { // Explicitly prefer Mandarin
-            lang = 'zh'
-            break
-          }
-        lang = lang || 'en' // Fallback
-      }
+    if (!lang) {
+      let languages = navigator.languages || [navigator.language || navigator.userLanguage]
+      for (const l of languages)
+        if (l.startsWith('en')) { // Explicitly prefer English
+          lang = 'en'
+          break
+        } else if (l.startsWith('zh')) { // Explicitly prefer Mandarin
+          lang = 'zh'
+          break
+        }
+      lang = lang || 'en' // Fallback
+    }
 
-      $('select#lang-select').val(lang)
-      setLocale(lang)
-    })
+    $('select#lang-select').val(lang)
+    setLocale(lang)
   })
 })
 

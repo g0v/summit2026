@@ -46,7 +46,7 @@ block main
                       .font-bold.text-neutral-800(data-i18n=`session.${session.id}.title`)= session['zh']['title']
                       each speaker_id in session.speakers
                         - let speaker = schedule.speakers.find((e) => e.id === speaker_id)
-                        .text-neutral-800= speaker.zh.name
+                        .text-neutral-800(data-i18n=`speakers.${speaker.id}.name`)= speaker.zh.name
 block script
   script(src='https://cdn.jsdelivr.net/npm/marked/marked.min.js')
   script.

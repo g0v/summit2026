@@ -1,6 +1,5 @@
 extends ../_layout.pug
 block variables
-  - _partners = data['partners']
   - title = "合作夥伴 Partners"
 block head
   link(rel="stylesheet", href="assets/css/base.css?version="+timestamp)
@@ -24,7 +23,7 @@ block main
     .my-20
       h1.border-b.border-neutral-500.pb-3(data-i18n="partners.title") 合作夥伴
     .my-20
-      each level in _partners
+      each level in partners
         h3.mb-4(id=level.id, data-i18n=`partners.${level.id}`)= level.name.zh
         if level.id === "organizer"
           .mb-12

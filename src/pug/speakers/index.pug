@@ -20,9 +20,9 @@ block main
       h3.mb-4(data-i18n="speakers.sessions") 議程講者
       .grid.mb-12(class="grid-cols-3 md:grid-cols-5 gap-4")
         each speaker in schedule.speakers
-          .mb-4.aspect-square.bg-slate-100.rounded-full.flex.items-center.justify-center(data-i18n=`speakers.${speaker.id}`)
+          .mb-4.aspect-square.bg-slate-100.rounded-full.flex.items-center.justify-center
             - let speaker_name = (speaker.zh.name || '') + (speaker.zh.name === speaker.en.name ? '' : ' ' + speaker.en.name)
             if speaker.avatar && speaker.avatar.indexOf('default') < 0
               img.rounded-full(src=speaker.avatar, alt=speaker_name)
             else
-              span.text-center= speaker_name
+              span.text-center(data-i18n=`speakers.${speaker.id}.name`)= speaker_name

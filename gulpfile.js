@@ -6,8 +6,9 @@ const connect = require('gulp-connect')
 const sitemap = require('gulp-sitemap')
 const path = require('path')
 const rename = require('gulp-rename')
-const yaml = require('gulp-yaml')
+const yaml = require('js-yaml')
 const fs = require('fs-extra')
+const { Transform } = require('node:stream')
 
 function parseDatetime(dateString) {
   if (!dateString) return 0;
@@ -23,36 +24,57 @@ function formatDatetime(dateObject) {
   return `${hours}:${minutes}`;
 }
 
-function buildAssets(baseurl = '/2024/') {
-  let enjson = {}
-  let schedule = require('./src/data/schedule.json')
+function buildI18n(baseurl = '/2024/') {
+  let locales = {en: {}}
+
+  // Load schedule
+  const schedule = require('./src/data/schedule.json')
   for (let session of schedule.sessions) {
     if (!session.room || !session.start || !session.end) continue;
-    enjson[`session.${session.id}.title`] = session.en.title
-    enjson[`session.${session.id}.description`] = session.en.description
+    locales.en[`session.${session.id}.title`] = session.en.title
+    locales.en[`session.${session.id}.description`] = session.en.description
   }
   for (let speaker of schedule.speakers) {
-    enjson[`speakers.${speaker.id}`] = speaker.en.name
+    locales.en[`speakers.${speaker.id}.name`] = speaker.en.name
+    locales.en[`speakers.${speaker.id}.bio`] = speaker.en.bio
   }
-  let data = require('./src/data/index.json')
-  for (let level of data.partners) {
-    console.log(level)
-    enjson[`partners.${level.id}`] = level.name.en
+
+  // Load partners
+  const partners = require('./src/data/partners.json')
+  for (let level of partners) {
+    locales.en[`partners.${level.id}`] = level.name.en
     for (let sponsor of level.sponsors) {
-      enjson[`partners.${sponsor.id}`] = sponsor.name.en
+      locales.en[`partners.${sponsor.id}`] = sponsor.name.en
       if (sponsor.summary.en || sponsor.summary.zh) {
-        enjson[`partners.${sponsor.id}.summary`] = '<p>' + (sponsor.summary.en || sponsor.summary.zh).split('\n').join('</p><p>') + '</p>'
+        locales.en[`partners.${sponsor.id}.summary`] = '<p>' + (sponsor.summary.en || sponsor.summary.zh).split('\n').join('</p><p>') + '</p>'
       }
     }
   }
-  fs.mkdirSync('.' + path.join('/static/', baseurl, '/assets/i18n/'), { recursive: true })
-  fs.writeJson('.' + path.join('/static/', baseurl, '/assets/i18n/') + 'additional.en.json', enjson, { spaces: 2 })
 
-  gulp
+  // Merge translations into base YAML file
+  return gulp
     .src('src/locale/*.yml')
-    .pipe(yaml({ schema: 'DEFAULT_SAFE_SCHEMA' }))
-    .pipe(gulp.dest('.' + path.join('/static/', baseurl, '/assets/i18n/')))
+    .pipe(new Transform({
+      readableObjectMode: true,
+      writableObjectMode: true,
+      transform: function (file, _, callback) {
+        const lang = file.stem
 
+        // Load and merge each locale
+        let document = yaml.load(file.contents.toString('utf8'), { schema: yaml.FAILSAFE_SCHEMA })
+        Object.assign(document, locales[lang])
+
+        // Rewrite file extension and content
+        file.contents = Buffer.from(JSON.stringify(document, null, 2))
+        file.extname = '.json'
+        this.push(file)
+        callback()
+      }
+    }))
+    .pipe(gulp.dest('.' + path.join('/static/', baseurl, '/assets/i18n/')))
+}
+
+function buildAssets(baseurl = '/2024/') {
   gulp
     .src('src/assets/**')
     .pipe(gulp.dest('.' + path.join('/static/', baseurl, '/assets/')))
@@ -102,14 +124,21 @@ function buildPug(baseurl = '/2024/') {
     .src('src/pug/**/index.pug')
     .pipe(
       data(file => {
-        console.log('[build] ' + file['history'])
-        const result = {
-          data: require('./src/data/index.json'),
+        console.log('[build] ' + file.history)
+
+        // Set up basic context
+        let context = {
           schedule: schedule,
           timestamp: build_time,
           base: baseurl
         }
-        return result
+
+        // See if additional data is available
+        const pagename = path.basename(file.dirname)
+        if (fs.existsSync(`./src/data/${pagename}.json`))
+          context[pagename] = require(`./src/data/${pagename}.json`)
+
+        return context
       })
     )
     .pipe(pug())
@@ -126,12 +155,14 @@ function buildPug(baseurl = '/2024/') {
 
 gulp.task('build', async () => {
   await buildPcss('/summit2024/')
+  await buildI18n('/summit2024/')
   await buildAssets('/summit2024/')
   await buildPug('/summit2024/')
 })
 
 gulp.task('deploy', async () => {
   await buildPcss('/2024/')
+  await buildI18n('/2024/')
   await buildAssets('/2024/')
   await buildPug('/2024/')
 })
@@ -144,11 +175,13 @@ gulp.task('server', async () => {
     root: 'static'
   })
   await buildPcss()
+  await buildI18n()
   await buildAssets()
   await buildPug()
 
   gulp.watch(['src/**/*.pug', 'src/**/*.pcss', 'src/**/*.yml'], async () => {
     await buildPcss()
+    await buildI18n()
     await buildAssets()
     await buildPug()
   })
