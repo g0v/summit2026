@@ -29,7 +29,7 @@ block main
           - let rooms = ['R0', 'R1', 'R2', 'RH']
           each room in schedule.rooms
             if rooms.includes(room.id)
-              .bg-secondary.text-white.font-medium.text-center.px-4.py-2.m-4.mb-8= room.zh.name
+              .bg-secondary.text-white.font-medium.text-center.px-4.py-2.m-4.mb-8(data-i18n=`room.${room.id}`)= room.zh.name
           each time, key in schedule['sessions_timemap']
             - let styles = `grid-area: ${key} / time`
             .block.agenda-timeline.z-0(style=styles, data-day=key < 1440 ? '1':'2')
@@ -39,15 +39,20 @@ block main
               each session in sessions
                 - let styles = `grid-area: ${session['start_t']} / ${room} / ${session['end_t']} ${session['broadcast']?'/ end':''};`
                 .block.p-3(style=styles, data-day=session['start_t'] < 1440 ? '1':'2')
-                  if session['type'] == 'R'
+                  if session.type == 'R'
                     .agenda-session.flex.items-center.justify-center.bg-neutral-300.rounded-xl.p-4.h-full.z-10.relative
-                      .font-bold.text-neutral-900(data-i18n=`session.${session.id}.title`)= session['zh']['title']
+                      .font-bold.text-neutral-900(data-i18n=`session.${session.id}.title`)= session.zh.title
                   else
-                    .agenda-session.cursor-pointer.flex.flex-col.items-stretch.bg-neutral-100.p-4.h-full.z-10.relative(data-id=session['id'])
-                      .font-bold.text-neutral-800(data-i18n=`session.${session.id}.title`)= session['zh']['title']
+                    .agenda-session.cursor-pointer.flex.flex-col.items-stretch.bg-neutral-100.p-4.h-full.z-10.relative(data-id=session.id)
+                      .font-bold.text-neutral-800(data-i18n=`session.${session.id}.title`)= session.zh.title
                       each speaker_id in session.speakers
                         - let speaker = schedule.speakers.find((e) => e.id === speaker_id)
                         .text-neutral-800(data-i18n=`speakers.${speaker.id}.name`)= speaker.zh.name
+                      if ['W', 'P', 'C', 'T', 'H'].includes(session.type)
+                        .text-sm.text-white.my-2
+                          span.bg-secondary.rounded-full.px-2.py-1.me-1(data-i18n=`session_type.${session.type}`)= schedule.session_types.find((t) => t.id === session.type).zh.name
+                          if session.language
+                            span.bg-neutral-400.rounded-full.px-2.py-1.me-1(data-i18n=`language.${session.language}`)= session.language === 'en' ? '英語' : '華語'
 block script
   script(src='https://cdn.jsdelivr.net/npm/marked/marked.min.js')
   script.
