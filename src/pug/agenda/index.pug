@@ -17,18 +17,19 @@ block main
       .flex
         button.rounded-lg.bg-white.drop-shadow-lg.mx-2.p-2.transition#day1(class="hover:bg-neutral-100")
           .font-bold Day 1
-          .text-neutral-500 5/04（六）
+          .text-neutral-500(data-i18n="agenda.day-1.text") 5 月 4 日（六）
         button.rounded-lg.bg-white.drop-shadow-lg.mx-2.p-2.transition#day2(class="hover:bg-neutral-100")
           .font-bold Day 2
-          .text-neutral-500 5/05（日）
+          .text-neutral-500(data-i18n="agenda.day-2.text") 5 月 5 日（日）
     .mt-10.mb-20
       h2.mb-8#day Day 1
       .overflow-y-auto
         .grid.relative.agenda-grid
           .block= ""
           - let rooms = ['R0', 'R1', 'R2', 'RH']
-          each room in rooms
-            .bg-primary.text-white.px-4.py-2.rounded-lg.m-4.mb-8= room
+          each room in schedule.rooms
+            if rooms.includes(room.id)
+              .bg-secondary.text-white.font-medium.text-center.px-4.py-2.m-4.mb-8= room.zh.name
           each time, key in schedule['sessions_timemap']
             - let styles = `grid-area: ${key} / time`
             .block.agenda-timeline.z-0(style=styles, data-day=key < 1440 ? '1':'2')

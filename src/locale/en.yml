@@ -79,21 +79,8 @@ speakers.sessions: Sessions
 agenda.title: Agenda
 agenda.keynote: Keynote
 agenda.sessions: Sessions
-agenda.intro: The first round of admitted sessions are as follows (subject to change).
-
-agenda.timetable: Timetable
-agenda.time: Time
-agenda.r4: Recreation Hall
-agenda.registration: Registration
-agenda.opening: Opening
-agenda.break: Break
-agenda.kpanel: "Keynote Panel: "
-agenda.htrack: "Highlight: "
-agenda.ctrack: "Community Track: "
-agenda.lunch: Lunch Break
-agenda.summary: Day Summary
-agenda.lt: Lightning Talk
-agenda.closing: Closing
+agenda.day-1.text: Sat., May 4
+agenda.day-2.text: Sun., May 5
 
 visit.title: Transportation
 visit.venue: Humanities & Social Sciences Building, Academia Sinica

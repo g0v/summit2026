@@ -179,7 +179,7 @@ gulp.task('server', async () => {
   await buildAssets()
   await buildPug()
 
-  gulp.watch(['src/**/*.pug', 'src/**/*.pcss', 'src/**/*.yml'], async () => {
+  gulp.watch(['src/**/*.pug', 'src/**/*.pcss', 'src/**/*.yml', , 'src/**/*.json'], async () => {
     await buildPcss()
     await buildI18n()
     await buildAssets()
