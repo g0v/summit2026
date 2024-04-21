@@ -52,7 +52,7 @@
         "website": "https://jothon.g0v.tw/",
         "summary": {
           "zh": "g0v 零時政府揪松團是 g0v 社群籌辦雙月大黑客松（大松）和基礎松，以及推動募款事務的工作小組，目前有七位志工和二位職工。2012 年開始協助社群籌辦黑客松，2014 年正式組成「揪松團」（jothon），2016 年起，啟動社群基礎建設計畫，開辦「基礎松（infrathon）」，在大黑客松之餘，推動更順暢的線上／線下跨界協作，並於同年底推出「g0v 公民科技創新獎助金（Civic Tech Prototype Grant）」 ，鼓勵 g0v 專案持續投入開發和長期維護、營運。2020 年開辦「零時小學校（Sch001）」，與教育、開源社群一起從零重新思考學校的角色。2024 年執行「繁體中文 AI 開源實踐計畫」，鼓勵民間團隊實踐在地化語言模型的相關工作。g0v 揪松團也是 g0v Summit 2018 的協辦團隊。",
-          "en": ""
+          "en": "The g0v Jothon is responsible for organizing bi-monthly hackathons, infrathons and promoting fundraising activities. Currently, the team consists of seven volunteers and two staff members.\nJothon began as a task force assisting the community in organizing hackathons in 2012 and was formally named Jothon in 2014. In 2016, Jothon initiated the Community Infrastructure Project and launched a series of “Infrathons” to promote smoother online/offline collaboration alongside regular hackathons. In the same year, Jothon introduced the “g0v Civic Tech Prototype Grant” to encourage continuous development and long-term maintenance and operation of g0v projects.\nIn 2020, Jothon launched “Sch001” to rethink the role of schools from scratch together with the education and open-source communities. In 2024, Jothon executed the “Traditional Chinese AI Open Source Practice Project” to encourage civil teams to work on localized language model-related tasks.\nThe g0v Jothon also served as the co-organizing team for g0v Summit 2018 and the co-host for g0v Summit 2020."
         }
       },
       {
@@ -62,7 +62,7 @@
         "website": "https://ocf.tw",
         "summary": {
           "zh": "開放文化基金會（Open Culture Foundation，簡稱 OCF）是一個非營利性的組織。透過推廣開放科技和跨界合作，在台灣持續的銜繫科技社群與其他公／私領域，來促成開放共創保障數位人權、支持透明涵融的數位公民社會。自 2014 年創立以來，我們以法人做為組織形式，支持台灣 30 多個開放科技社群，在過程中，不僅是持續性的推廣開放科技概念，我們也開始參與政策倡議，為眾人的數位人權發聲，進而創建了一個在台灣發展開放科技的基地。這些成果並非由開放文化基金會獨立實現，而是透過科技社群和公民夥伴一起促使台灣的數位/網路環境變得更加公開、透明和公眾參與 — 不論這樣的參與是以個人、社群或是組織為名義。",
-          "en": ""
+          "en": "The Open Culture Foundation (OCF) is a nonpartisan, non-profit organization. Our mission is to build bridges between local and global open tech communities and thus act as a mediator for promoting open culture. Our main goal is to support local communities in advocating open technology, as we see open technology as the core to securing digital rights and internet freedom.\nFounded in 2014 by several open tech communities in Taiwan, OCF was established as the fiscal sponsor for Taiwanese open tech communities. Our main goal is to support local communities in their advocacy for open culture and open tech. We have continued to support these communities to run large-scale conferences, seminars, and hackathons. We help governments, enterprises, and NGOs better understand the benefits of adopting open technology and promote open tech in the public sphere. We believe that a culture of openness is the foundation for an innovative society and the engine of participatory democracy."
         }
       },
       {
@@ -72,7 +72,7 @@
         "website": "https://meta.wikimedia.org/wiki/Wikimedia_Taiwan",
         "summary": {
           "zh": "台灣維基媒體協會為 2007 年設立之社團法人，旨在推廣包括知名共筆知識網站「維基百科」在內，美國維基媒體基金會所屬的各項計畫。負責維基各平臺操作教學訓練，以及舉辦各項內容專案，並代表台灣與全球各地維基組織串聯合作。同時，亦針對著作權開放授權、政府資料開放、知識平權等相關議題進行政策倡議及概念推廣。",
-          "en": ""
+          "en": "Wikimedia Taiwan was established as a legal entity in 2007 and aims to promote various projects under the umbrella of the Wikimedia Foundation, including the well-known collaborative knowledge website Wikipedia. It is responsible for providing operational training for various Wikimedia platforms, organizing content-related projects, and representing Taiwan in coordinating cooperation among Wikimedia organizations worldwide. Additionally, it advocates for policies and promotes concepts related to open licensing of copyrighted works, government data openness, and knowledge equity."
         }
       },
       {
@@ -91,7 +91,7 @@
         "logo": "assets/img/partners/udtalk.png",
         "website": "https://udtalk.jp/",
         "summary": {
-          "zh": "",
+          "zh": "UD Talk是一款轉錄服務的應用程式。您可以將其使用於與不同母語使用者、聽障人士，以及有聽力損失者溝通。UD Talk獲得許多日本組織、公司和活動作為資訊無障礙支援工具使用。",
           "en": "UD Talk is a transcription service app. You can use it to communicate not only with speakers of different languages but also deaf people and people with hearing loss. UD Talk is used by many Japanese organizations, companies, and events as an information accessibility support."
         }
       }
@@ -117,7 +117,7 @@
         "logo": "assets/img/partners/luminate.svg",
         "website": "https://luminategroup.com/",
         "summary": {
-          "zh": "",
+          "zh": "Luminate 是一家全球性基金會，致力於確保每個人，特別是那些未被充分代表的人，擁有足夠的的訊息、權利和權力，進而影響那些形塑社會的決策。該基金會致力於使人們能夠充分參與公民和政治生活，安全地挑戰權力，並取得準確、可信賴的訊息。Luminate 的工作範圍涵蓋全球，並重點關注非洲、亞洲和拉丁美洲地區。Luminate 由慈善家皮埃爾和帕姆·奧米迪亞夫婦（Pierre and Pam Omidyar）創立，十數年來致力於治理和公民參與相關問題上。",
           "en": "Luminate is a global foundation working to ensure that everyone – especially those who are underrepresented - has the information, rights, and power to influence the decisions that shape society. The foundation is focused on enabling people to fully participate in civic and political life, to safely challenge power, and to access accurate, trustworthy information. Luminate works globally with a regional focus on Africa, Asia, and Latin America. It was established by philanthropists Pierre and Pam Omidyar and has worked for over a decade on issues related to governance and citizen engagement."
         }
       },
