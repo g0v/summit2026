@@ -39,6 +39,23 @@
   }
 }
 
+#tag-group {
+  button {
+    &.filtered {
+      @apply bg-neutral-400;
+    }
+    &:not(.filtered) {
+      @apply bg-primary;
+    }
+  }
+}
+
+.agenda-session {
+  &.filtered {
+    opacity: .2;
+  }
+}
+
 .modal-body {
   hr {
     margin: 1rem 0;

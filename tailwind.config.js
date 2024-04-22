@@ -2,7 +2,7 @@ const plugin = require('tailwindcss/plugin')
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   important: true,
-  content: ['./src/**/*.pug', './static/**/*.html'],
+  content: ['./src/**/*.pug', './static/**/*.html', './src/**/*.js'],
   theme: {
     screens: {
       sm: '576px',

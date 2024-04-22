@@ -12,8 +12,8 @@ block main
         button.modal-close.text-2xl.text-dark.ms-auto
           i.fa-solid.fa-xmark
       .modal-body.p-4
-  main.container
-    .mt-20
+  main.container.relative
+    .mt-20.py-4.sticky.top-0.w-full.z-20.bg-white
       .flex
         button.rounded-lg.bg-white.drop-shadow-lg.mx-2.p-2.transition#day1(class="hover:bg-neutral-100")
           .font-bold Day 1
@@ -21,6 +21,14 @@ block main
         button.rounded-lg.bg-white.drop-shadow-lg.mx-2.p-2.transition#day2(class="hover:bg-neutral-100")
           .font-bold Day 2
           .text-neutral-500(data-i18n="agenda.day-2.text") 5 月 5 日（日）
+      .flex.flex-wrap.gap-2.mt-8.text-sm#tag-group
+        each tag in schedule.sessions_tags
+          button.rounded-full.text-white.px-2(data-target=tag)= tag
+        each type in schedule.session_types
+          button.rounded-full.text-white.px-2(data-i18n=`session_type.${type.id}`, data-target=type.id)= type.zh.name
+        //button.rounded-full.text-white.px-2(data-i18n="language.en", data-target="en") 英語
+        //button.rounded-full.text-white.px-2(data-i18n="language.zh", data-target="zh") 華語
+
     .mt-10.mb-20
       h2.mb-8#day Day 1
       .overflow-y-auto
@@ -43,80 +51,24 @@ block main
                     .agenda-session.flex.items-center.justify-center.bg-neutral-300.rounded-xl.p-4.h-full.z-10.relative
                       .font-bold.text-neutral-900(data-i18n=`session.${session.id}.title`)= session.zh.title
                   else
-                    .agenda-session.cursor-pointer.flex.flex-col.items-stretch.bg-neutral-100.p-4.h-full.z-10.relative(data-id=session.id)
-                      .font-bold.text-neutral-800(data-i18n=`session.${session.id}.title`)= session.zh.title
+                    - let tags = [...session.tags]
+                    - if(session.type) tags.push(session.type)
+                    - if(session.language) tags.push(session.language)
+                    
+                    .agenda-session.rounded-sm.cursor-pointer.flex.flex-col.items-stretch.bg-neutral-100.p-4.h-full.z-10.relative(data-id=session.id, data-tags=tags.join(','))
+                      .font-bold.text-neutral-800.mb-2(data-i18n=`session.${session.id}.title`)= session.zh.title
                       each speaker_id in session.speakers
                         - let speaker = schedule.speakers.find((e) => e.id === speaker_id)
-                        .text-neutral-800(data-i18n=`speakers.${speaker.id}.name`)= speaker.zh.name
-                      if ['W', 'P', 'C', 'T', 'H'].includes(session.type)
-                        .text-sm.text-white.my-2
-                          span.bg-secondary.rounded-full.px-2.py-1.me-1(data-i18n=`session_type.${session.type}`)= schedule.session_types.find((t) => t.id === session.type).zh.name
-                          if session.language
-                            span.bg-neutral-400.rounded-full.px-2.py-1.me-1(data-i18n=`language.${session.language}`)= session.language === 'en' ? '英語' : '華語'
+                        .text-neutral-700(data-i18n=`speakers.${speaker.id}.name`)= speaker.zh.name
+                      .text-xs.text-white.my-2.flex.flex-wrap.gap-1
+                        if ['W', 'P', 'C', 'T', 'H'].includes(session.type)
+                          span.bg-secondary.rounded-full.px-2(data-i18n=`session_type.${session.type}`)= schedule.session_types.find((t) => t.id === session.type).zh.name
+                        if session.language
+                          span.bg-neutral-500.rounded-full.px-2(data-i18n=`language.${session.language}`)= session.language === 'en' ? '英語' : '華語'
+                        if session.tags[0]
+                          each tag in session.tags
+                            span.bg-neutral-400.rounded-full.px-2= tag
 block script
   script(src='https://cdn.jsdelivr.net/npm/marked/marked.min.js')
-  script.
-    let schedule
-    fetch ('assets/data/schedule.json')
-      .then(response => response.json())
-      .then(data => {
-        schedule = data
-        hash = window.location.hash
-        if (hash) {
-          $('.agenda-session[data-id="' + hash.substring(1) + '"]').click()
-        }
-      })
-    $("[data-day='2']").addClass('hidden')
-    $('#day1').click(function() {
-      $("[data-day='1']").removeClass('hidden')
-      $("[data-day='2']").addClass('hidden')
-      $('#day').text('Day 1')
-    });
-    $('#day2').click(function() {
-      $("[data-day='1']").addClass('hidden')
-      $("[data-day='2']").removeClass('hidden')
-      $('#day').text('Day 2')
-    });
-    $('.agenda-session[data-id]').on('click', function(e) {
-      let currentLang = i18n.locale
-      let id = $(this).data('id')
-      history.replaceState(null, null, window.location.pathname + '#' + id);
-      let session = schedule['sessions'].filter(session => session['id'] == id)[0]
-      let bodyTmplDom = $(`
-        <div>
-          <div class="agenda-speaker"></div>
-          <div class="agenda-description"></div>
-        </div>
-      `)
-      session['speakers'].forEach(sid => {
-        let speaker = schedule['speakers'].filter(speaker => speaker['id'] == sid)[0]
-        let avatar = "assets/" + speaker['avatar'].split("/assets/")[1]
-        $('.agenda-speaker', bodyTmplDom).append(`
-          <div class="flex mb-4">
-            <img src="${avatar}" class="w-20 h-20 rounded-full shrink-0">
-            <div class="font-bold text-xl ms-4 my-auto">${speaker[currentLang]['name']}</div>
-          </div>
-        `)
-      })
-      $('.agenda-speaker', bodyTmplDom).append('<hr>')
-      $('.agenda-description', bodyTmplDom).html(marked.parse(session[currentLang]['description']))
-      $('#modal .modal-head > .font-bold').text(session[currentLang]['title'])
-      $('#modal .modal-body').html(bodyTmplDom)
-      $('#modal .modal-body a').filter(function() {
-        return this.hostname != window.location.hostname;
-      }).attr('target', '_blank');
-      $('body').addClass('overflow-hidden')
-      $('#modal').addClass('show')
-    })
-    $('#modal .modal-close').on('click', function(e) {
-      e.preventDefault()
-      $('body').removeClass('overflow-hidden')
-      $('#modal').removeClass('show')
-      history.replaceState(null, null, window.location.pathname);
-    })
-
-    $(document).on('keydown', function(e) {
-      if (e.key === 'Escape') {
-        $('#modal .modal-close').click();
-      }
-    });
+  script(src='assets/js/agenda.js?version='+timestamp)
+    
