@@ -25,7 +25,8 @@ block main
         each tag in schedule.sessions_tags
           button.rounded-full.text-white.px-2(data-target=tag)= tag
         each type in schedule.session_types
-          button.rounded-full.text-white.px-2(data-i18n=`session_type.${type.id}`, data-target=type.id)= type.zh.name
+          if type.id != 'R'
+            button.rounded-full.text-white.px-2(data-i18n=`session_type.${type.id}`, data-target=type.id)= type.zh.name
         //button.rounded-full.text-white.px-2(data-i18n="language.en", data-target="en") 英語
         //button.rounded-full.text-white.px-2(data-i18n="language.zh", data-target="zh") 華語
 
@@ -61,7 +62,7 @@ block main
                         - let speaker = schedule.speakers.find((e) => e.id === speaker_id)
                         .text-neutral-700(data-i18n=`speakers.${speaker.id}.name`)= speaker.zh.name
                       .text-xs.text-white.my-2.flex.flex-wrap.gap-1
-                        if ['W', 'P', 'C', 'T', 'H'].includes(session.type)
+                        if !['R'].includes(session.type)
                           span.bg-secondary.rounded-full.px-2(data-i18n=`session_type.${session.type}`)= schedule.session_types.find((t) => t.id === session.type).zh.name
                         if session.language
                           span.bg-neutral-500.rounded-full.px-2(data-i18n=`language.${session.language}`)= session.language === 'en' ? '英語' : '華語'
