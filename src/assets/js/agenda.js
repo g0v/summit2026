@@ -71,8 +71,15 @@ $('.agenda-session[data-id]').on('click', function (e) {
   })
   $('.agenda-speaker', bodyTmplDom).append('<hr>')
   $('.agenda-description', bodyTmplDom).html(marked.parse(session[currentLang]['description']))
-  $('#modal .modal-head > .font-bold').text(session[currentLang]['title'])
+  $('#modal .head-group h4').text(session[currentLang]['title'])
+  let tagGroup = $('.tag-group', this)
+  $('#modal .tag-group').html(tagGroup.clone())
+  let start = new Date(session['start'])
+  let end = new Date(session['end'])
+  let info = `<div>${start.getMonth()+1}/${start.getDate()}  ${start.getHours()}:${start.getMinutes()} ~ ${end.getHours()}:${end.getMinutes()} @ ${session['room']}</div>`
+  $('#modal .info-group').html(info)
   $('#modal .modal-body').html(bodyTmplDom)
+  $('#modal .modal-body').scrollTop(0)
   $('#modal .modal-body a').filter(function () {
     return this.hostname != window.location.hostname;
   }).attr('target', '_blank');

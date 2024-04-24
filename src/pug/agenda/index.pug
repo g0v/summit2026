@@ -8,7 +8,10 @@ block main
   #modal
     .bg-white.max-w-lg
       .modal-head.flex.p-4.items-start
-        h4.font-bold.me-3
+        .head-group
+          h4.font-bold.me-3
+          .tag-group
+          .info-group
         button.modal-close.text-2xl.text-dark.ms-auto
           i.fa-solid.fa-xmark
       .modal-body.p-4
@@ -61,7 +64,7 @@ block main
                       each speaker_id in session.speakers
                         - let speaker = schedule.speakers.find((e) => e.id === speaker_id)
                         .text-neutral-700(data-i18n=`speakers.${speaker.id}.name`)= speaker.zh.name
-                      .text-xs.text-white.my-2.flex.flex-wrap.gap-1
+                      .text-xs.text-white.my-2.flex.flex-wrap.gap-1.tag-group
                         if !['R'].includes(session.type)
                           span.bg-secondary.rounded-full.px-2(data-i18n=`session_type.${session.type}`)= schedule.session_types.find((t) => t.id === session.type).zh.name
                         if session.language
