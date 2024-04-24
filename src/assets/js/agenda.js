@@ -76,7 +76,12 @@ $('.agenda-session[data-id]').on('click', function (e) {
   $('#modal .tag-group').html(tagGroup.clone())
   let start = new Date(session['start'])
   let end = new Date(session['end'])
-  let info = `<div>${start.getMonth()+1}/${start.getDate()}  ${start.getHours()}:${start.getMinutes()} ~ ${end.getHours()}:${end.getMinutes()} @ ${session['room']}</div>`
+  let startHours = String(start.getHours()).padStart(2, '0');
+  let startMinutes = String(start.getMinutes()).padStart(2, '0');
+  let endHours = String(end.getHours()).padStart(2, '0');
+  let endMinutes = String(end.getMinutes()).padStart(2, '0');
+
+  let info = `<div>${start.getMonth()+1}/${start.getDate()}  ${startHours}:${startMinutes} ~ ${endHours}:${endMinutes} @ ${session['room']}</div>`;
   $('#modal .info-group').html(info)
   $('#modal .modal-body').html(bodyTmplDom)
   $('#modal .modal-body').scrollTop(0)
