@@ -1,5 +1,12 @@
 let schedule
 $(function () {
+  let currentTime = new Date();
+  let targetTime = new Date('2024/05/05');
+  if (currentTime < targetTime) {
+    $('#day1').trigger('click')
+  } else {
+    $('#day2').trigger('click')
+  }
   fetch('assets/data/schedule.json')
     .then(response => response.json())
     .then(data => {
@@ -17,12 +24,18 @@ $('#day1').click(function () {
   $("[data-day='1']").removeClass('hidden')
   $("[data-day='2']").addClass('hidden')
   $('#day').text('Day 1')
+  $('#day1').addClass('active')
+  $('#day2').removeClass('active')
+  $('html, body').animate({ scrollTop: 0 }, 'fast');
 });
 
 $('#day2').click(function () {
   $("[data-day='1']").addClass('hidden')
   $("[data-day='2']").removeClass('hidden')
   $('#day').text('Day 2')
+  $('#day2').addClass('active')
+  $('#day1').removeClass('active')
+  $('html, body').animate({ scrollTop: 0 }, 'fast');
 });
 
 $('#tag-group button').on('click', function (e) {
