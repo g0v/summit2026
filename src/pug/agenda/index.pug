@@ -16,6 +16,7 @@ block main
           i.fa-solid.fa-xmark
       .modal-body.p-4
   main.container.relative
+    - let rooms = ['R0', 'R1', 'R2', 'RH']
     .mt-20.py-4.sticky.top-0.w-full.z-20.bg-white
       .flex
         button.rounded-lg.bg-white.drop-shadow-lg.mx-2.p-2.transition#day1(class="hover:bg-neutral-100")
@@ -32,46 +33,48 @@ block main
             button.rounded-full.text-white.px-2(data-i18n=`session_type.${type.id}`, data-target=type.id)= type.zh.name
         //button.rounded-full.text-white.px-2(data-i18n="language.en", data-target="en") 英語
         //button.rounded-full.text-white.px-2(data-i18n="language.zh", data-target="zh") 華語
+      .flex.mt-6.w-full#room-btn-group(class="md:hidden")
+        each room in schedule.rooms
+          if rooms.includes(room.id)
+            button.py-1.grow(data-id=room.id)= room.id
 
     .mt-10.mb-20
       h2.mb-8#day Day 1
-      .overflow-y-auto
-        .grid.relative.agenda-grid
-          .block= ""
-          - let rooms = ['R0', 'R1', 'R2', 'RH']
-          each room in schedule.rooms
-            if rooms.includes(room.id)
-              .bg-secondary.text-white.font-medium.text-center.px-4.py-2.m-4.mb-8(data-i18n=`room.${room.id}`)= room.zh.name
-          each time, key in schedule['sessions_timemap']
-            - let styles = `grid-area: ${key} / time`
-            .block.agenda-timeline.z-0(style=styles, data-day=key < 1440 ? '1':'2')
-              .font-medium(class="translate-y-[-50%]")= time
-          each sessions, room in schedule['sessions_by_room']
-            if rooms.includes(room)
-              each session in sessions
-                - let styles = `grid-area: ${session['start_t']} / ${room} / ${session['end_t']} ${session['broadcast']?'/ end':''};`
-                .block.p-3(style=styles, data-day=session['start_t'] < 1440 ? '1':'2')
-                  if session.type == 'R'
-                    .agenda-session.flex.items-center.justify-center.bg-neutral-300.rounded-xl.p-4.h-full.z-10.relative
-                      .font-bold.text-neutral-900(data-i18n=`session.${session.id}.title`)= session.zh.title
-                  else
-                    - let tags = [...session.tags]
-                    - if(session.type) tags.push(session.type)
-                    - if(session.language) tags.push(session.language)
-                    
-                    .agenda-session.rounded-sm.cursor-pointer.flex.flex-col.items-stretch.bg-neutral-100.p-4.h-full.z-10.relative(data-id=session.id, data-tags=tags.join(','))
-                      .font-bold.text-neutral-800.mb-2(data-i18n=`session.${session.id}.title`)= session.zh.title
-                      each speaker_id in session.speakers
-                        - let speaker = schedule.speakers.find((e) => e.id === speaker_id)
-                        .text-neutral-700(data-i18n=`speakers.${speaker.id}.name`)= speaker.zh.name
-                      .text-xs.text-white.my-2.flex.flex-wrap.gap-1.tag-group
-                        if !['R'].includes(session.type)
-                          span.bg-secondary.rounded-full.px-2(data-i18n=`session_type.${session.type}`)= schedule.session_types.find((t) => t.id === session.type).zh.name
-                        if session.language
-                          span.bg-neutral-500.rounded-full.px-2(data-i18n=`language.${session.language}`)= session.language === 'en' ? '英語' : '華語'
-                        if session.tags[0]
-                          each tag in session.tags
-                            span.bg-neutral-400.rounded-full.px-2= tag
+      .grid.relative.agenda-grid
+        .block= ""
+        each room in schedule.rooms
+          if rooms.includes(room.id)
+            .bg-secondary.text-white.font-medium.text-center.px-4.py-2.m-4.mb-8(class="max-md:hidden", data-i18n=`room.${room.id}`)= room.zh.name
+        each time, key in schedule['sessions_timemap']
+          - let styles = `grid-area: ${key} / time`
+          .block.agenda-timeline.z-0(style=styles, data-day=key < 1440 ? '1':'2')
+            .font-medium(class="translate-y-[-50%]")= time
+        each sessions, room in schedule['sessions_by_room']
+          if rooms.includes(room)
+            each session in sessions
+              - let styles = `grid-area: ${session['start_t']} / ${room} / ${session['end_t']} ${session['broadcast']?'/ end':''};`
+              .block.p-3.session-block(class="max-md:hidden", style=styles, data-room=room, data-broadcast=(session['broadcast']?'true':'false'), data-day=session['start_t'] < 1440 ? '1':'2')
+                if session.type == 'R'
+                  .agenda-session.flex.items-center.justify-center.bg-neutral-300.rounded-xl.p-4.h-full.z-10.relative
+                    .font-bold.text-neutral-900(data-i18n=`session.${session.id}.title`)= session.zh.title
+                else
+                  - let tags = [...session.tags]
+                  - if(session.type) tags.push(session.type)
+                  - if(session.language) tags.push(session.language)
+                  
+                  .agenda-session.rounded-sm.cursor-pointer.flex.flex-col.items-stretch.bg-neutral-100.p-4.h-full.z-10.relative(data-id=session.id, data-tags=tags.join(','))
+                    .font-bold.text-neutral-800.mb-2(data-i18n=`session.${session.id}.title`)= session.zh.title
+                    each speaker_id in session.speakers
+                      - let speaker = schedule.speakers.find((e) => e.id === speaker_id)
+                      .text-neutral-700(data-i18n=`speakers.${speaker.id}.name`)= speaker.zh.name
+                    .text-xs.text-white.my-2.flex.flex-wrap.gap-1.tag-group
+                      if !['R'].includes(session.type)
+                        span.bg-secondary.rounded-full.px-2(data-i18n=`session_type.${session.type}`)= schedule.session_types.find((t) => t.id === session.type).zh.name
+                      if session.language
+                        span.bg-neutral-500.rounded-full.px-2(data-i18n=`language.${session.language}`)= session.language === 'en' ? '英語' : '華語'
+                      if session.tags[0]
+                        each tag in session.tags
+                          span.bg-neutral-400.rounded-full.px-2= tag
 block script
   script(src='https://cdn.jsdelivr.net/npm/marked/marked.min.js')
   script(src='assets/js/agenda.js?version='+timestamp)

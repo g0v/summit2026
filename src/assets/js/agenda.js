@@ -1,4 +1,6 @@
 let schedule
+let state = {}
+
 $(function () {
   let currentTime = new Date();
   let targetTime = new Date('2024/05/05');
@@ -7,6 +9,7 @@ $(function () {
   } else {
     $('#day2').trigger('click')
   }
+  $('#room-btn-group button[data-id="R0"]').trigger('click')
   fetch('assets/data/schedule.json')
     .then(response => response.json())
     .then(data => {
@@ -26,7 +29,8 @@ $('#day1').click(function () {
   $('#day').text('Day 1')
   $('#day1').addClass('active')
   $('#day2').removeClass('active')
-  $('html, body').animate({ scrollTop: 0 }, 'fast');
+  $('html, body').animate({ scrollTop: 0 }, 'fast')
+  state['day'] = 1
 });
 
 $('#day2').click(function () {
@@ -35,7 +39,8 @@ $('#day2').click(function () {
   $('#day').text('Day 2')
   $('#day2').addClass('active')
   $('#day1').removeClass('active')
-  $('html, body').animate({ scrollTop: 0 }, 'fast');
+  $('html, body').animate({ scrollTop: 0 }, 'fast')
+  state['day'] = 2
 });
 
 $('#tag-group button').on('click', function (e) {
@@ -59,6 +64,16 @@ $('#tag-group button').on('click', function (e) {
       $(`.agenda-session[data-tags*="${target}"]`).removeClass('filtered')
     }
   }
+})
+
+$('#room-btn-group button').on('click', function (e) {
+  e.preventDefault()
+  $(this).addClass('active')
+  $(this).siblings('button').removeClass('active')
+  let room = $(this).attr('data-id')
+  $('.agenda-grid .session-block').addClass('max-md:hidden')
+  $('.agenda-grid .session-block[data-broadcast="true"]').removeClass('max-md:hidden')
+  $(`.agenda-grid .session-block[data-room="${room}"]`).removeClass('max-md:hidden')
 })
 
 $('.agenda-session[data-id]').on('click', function (e) {
@@ -94,7 +109,7 @@ $('.agenda-session[data-id]').on('click', function (e) {
   let endHours = String(end.getHours()).padStart(2, '0');
   let endMinutes = String(end.getMinutes()).padStart(2, '0');
 
-  let info = `<div>${start.getMonth()+1}/${start.getDate()}  ${startHours}:${startMinutes} ~ ${endHours}:${endMinutes} @ ${session['room']}</div>`;
+  let info = `<div>${start.getMonth() + 1}/${start.getDate()}  ${startHours}:${startMinutes} ~ ${endHours}:${endMinutes} @ ${session['room']}</div>`;
   $('#modal .info-group').html(info)
   $('#modal .modal-body').html(bodyTmplDom)
   $('#modal .modal-body').scrollTop(0)

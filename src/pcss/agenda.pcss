@@ -1,6 +1,6 @@
 .agenda-grid {
   grid-template-columns: [ time ] 4rem [ R0 ] 1fr [ R1 ] 1fr [ R2 ] 1fr [ RH ] 1fr [ end ] auto [R4] 0;
-  min-width: theme('screens.md');
+  //min-width: theme('screens.md');
 }
 
 .agenda-timeline {
@@ -27,7 +27,17 @@
   }
 }
 
-#day1, #day2 {
+#room-btn-group {
+  button {
+    @apply border-b-2 border-transparent;
+    &.active {
+      @apply border-primary;
+    }
+  }
+}
+
+#day1,
+#day2 {
   &.active {
     @apply border border-primary;
   }
@@ -35,7 +45,9 @@
 
 .agenda-session {
   &.filtered {
-    opacity: .2;
+    opacity: 0.2;
+  }
+  &.show {
   }
 }
 
@@ -47,5 +59,11 @@
   }
 
   .agenda-description {
+  }
+}
+
+@media (max-width: theme('screens.md')) {
+  .agenda-grid {
+    grid-template-columns: [ time ] 4rem [ R0 ] auto [ R1 ] auto [ R2 ] auto [ RH ] auto [ end ] auto [R4] 0;
   }
 }
