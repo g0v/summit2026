@@ -115,7 +115,6 @@ function buildPug(baseurl = '/2024/') {
   schedule['sessions'] = schedule['sessions'].sort((a, b) => parseDatetime(a['start']) - parseDatetime(b['start']));
   schedule['sessions_by_room'] = {}
   schedule['sessions_timemap'] = {}
-  schedule['sessions_tags'] = []
   for (let room of schedule['rooms']) {
     schedule['sessions_by_room'][room['id']] = []
   }
@@ -126,8 +125,6 @@ function buildPug(baseurl = '/2024/') {
     schedule['sessions_timemap'][session['start_t']] = formatDatetime(parseDatetime(session['start']));
     schedule['sessions_timemap'][session['end_t']] = formatDatetime(parseDatetime(session['end']));
     schedule['sessions_by_room'][session['room']].push(session);
-    let mergedTags = schedule['sessions_tags'].concat(session['tags']);
-    schedule['sessions_tags'] = [...new Set(mergedTags)];
   }
 
   return gulp
