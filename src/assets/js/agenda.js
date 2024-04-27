@@ -9,7 +9,7 @@ $(function () {
   } else {
     $('#day2').trigger('click')
   }
-  $('#room-btn-group button[data-id="R0"]').trigger('click')
+  $('#room-btn-group button[data-id="all"]').trigger('click')
   fetch('assets/data/schedule.json')
     .then(response => response.json())
     .then(data => {
@@ -71,9 +71,16 @@ $('#room-btn-group button').on('click', function (e) {
   $(this).addClass('active')
   $(this).siblings('button').removeClass('active')
   let room = $(this).attr('data-id')
-  $('.agenda-grid .session-block').addClass('max-md:hidden')
-  $('.agenda-grid .session-block[data-broadcast="true"]').removeClass('max-md:hidden')
-  $(`.agenda-grid .session-block[data-room="${room}"]`).removeClass('max-md:hidden')
+  state['room'] = room
+  $('.agenda-list .session-block').addClass('hidden_2')
+  $('.agenda-list .session-time').addClass('hidden_2')
+  if (room == 'all') {
+    $('.agenda-list .session-block').removeClass('hidden_2')
+    $('.agenda-list .session-time').removeClass('hidden_2')
+  } else {
+    $('.agenda-list .session-block[data-broadcast="true"]').removeClass('hidden_2')
+    $(`.agenda-list .session-block[data-rooms*="${room}"]`).removeClass('hidden_2')
+  }
 })
 
 $('.agenda-session[data-id]').on('click', function (e) {
