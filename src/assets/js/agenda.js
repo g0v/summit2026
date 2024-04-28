@@ -47,7 +47,7 @@ $('#tag-group button').on('click', function (e) {
   e.preventDefault()
   let target = $(this).attr('data-target')
   if (!$(this).siblings('button.filtered')[0]) {
-    $(`.agenda-session`).addClass('filtered')
+    $(`.agenda-session[data-tags]`).addClass('filtered')
     $(`.agenda-session[data-tags*="${target}"]`).removeClass('filtered')
     $(this).siblings('button').addClass('filtered')
     $(this).removeClass('filtered')
