@@ -96,10 +96,9 @@ $('.agenda-session[data-id]').on('click', function (e) {
       `)
   session['speakers'].forEach(sid => {
     let speaker = schedule['speakers'].filter(speaker => speaker['id'] == sid)[0]
-    let avatar = "assets/" + speaker['avatar'].split("/assets/")[1]
     $('.agenda-speaker', bodyTmplDom).append(`
           <div class="flex mb-4">
-            <img src="${avatar}" class="w-20 h-20 rounded-full shrink-0">
+            <img src="${speaker['avatar']}" class="w-20 h-20 rounded-full shrink-0">
             <div class="font-bold text-xl ms-4 my-auto">${speaker[currentLang]['name']}</div>
           </div>
         `)
