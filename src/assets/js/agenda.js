@@ -116,7 +116,9 @@ $('.agenda-session[data-id]').on('click', function (e) {
   let endHours = String(end.getHours()).padStart(2, '0');
   let endMinutes = String(end.getMinutes()).padStart(2, '0');
 
-  let info = `<div>${start.getMonth() + 1}/${start.getDate()}  ${startHours}:${startMinutes} ~ ${endHours}:${endMinutes} @ ${session['room']}</div>`;
+  let info = `<div>${start.getMonth() + 1}/${start.getDate()}  ${startHours}:${startMinutes} ~ ${endHours}:${endMinutes} @ ${
+    session['broadcast']?session['broadcast'].join(','):session['room']
+  }</div>`;
   $('#modal .info-group').html(info)
   $('#modal .modal-body').html(bodyTmplDom)
   $('#modal .modal-body').scrollTop(0)
@@ -125,6 +127,11 @@ $('.agenda-session[data-id]').on('click', function (e) {
   }).attr('target', '_blank');
   $('body').addClass('overflow-hidden')
   $('#modal').addClass('show')
+})
+
+$('#tag-group-toggle').on('click', function (e) {
+  e.preventDefault()
+  $('#tag-group').toggleClass('show')
 })
 
 $('#modal .modal-close').on('click', function (e) {

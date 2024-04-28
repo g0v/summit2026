@@ -121,7 +121,8 @@ function buildPug(baseurl = '/2024/') {
   schedule['sessions'] = schedule['sessions'].sort((a, b) => parseDatetime(a['start']) - parseDatetime(b['start']));
   schedule['sessions_by_t'] = {}
   schedule['sessions_timemap'] = {}
-  
+  let tags = new Set();
+  let speakers = new Set();
   for (let session of schedule['sessions']) {
     if (!session['room'] || !session['start'] || !session['end']) continue;
     session['start_t'] = (parseDatetime(session['start']) - parseDatetime('2024-5-4T09:00:00+08:00')) / 60000;
@@ -141,10 +142,14 @@ function buildPug(baseurl = '/2024/') {
       schedule['sessions_by_t'][session['start_t']]['rooms'] = schedule['sessions_by_t'][session['start_t']]['rooms'].concat(session['broadcast'])
     }
     schedule['sessions_by_t'][session['start_t']]['rooms'] = [...new Set(schedule['sessions_by_t'][session['start_t']]['rooms'])];
+    tags = new Set([...tags, ...session['tags']]);
+    speakers = new Set([...speakers, ...session['speakers']]);
   }
   let entries = Object.entries(schedule['sessions_by_t']);
   entries.sort((a, b) => a[0] - b[0]);
   schedule['sessions_by_t'] = Object.fromEntries(entries);
+  schedule['tags'] = schedule['tags'].filter(tag => tags.has(tag['id']));
+  schedule['speakers'] = schedule['speakers'].filter(speaker => speakers.has(speaker['id']));
 
   return gulp
     .src('src/pug/**/index.pug')
