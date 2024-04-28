@@ -135,8 +135,10 @@ a:not(.btn, .nav-link) {
     @apply fixed top-0 left-0 w-full h-full bg-slate-100 z-50 flex flex-col text-xl text-center p-0;
     pointer-events: none;
     opacity: 0;
+    transform: translateX(20px);
     transition: all 0.3s ease;
     &.show {
+      transform: translateX(0);
       pointer-events: all;
       opacity: 1;
     }
