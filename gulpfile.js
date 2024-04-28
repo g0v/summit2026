@@ -39,11 +39,17 @@ function buildI18n(baseurl = '/2024/') {
     locales.en[`speakers.${speaker.id}.name`] = speaker.en.name
     locales.en[`speakers.${speaker.id}.bio`] = speaker.en.bio
   }
+
   for (let sessionType of schedule.session_types) {
     locales.en[`session_type.${sessionType.id}`] = sessionType.en.name
   }
+
   for (let room of schedule.rooms) {
     locales.en[`room.${room.id}`] = room.en.name
+  }
+
+  for (let tag of schedule.tags) {
+    locales.en[`tag.${tag.id}`] = tag.en.name
   }
 
   // Load partners
