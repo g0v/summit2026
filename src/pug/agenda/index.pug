@@ -63,6 +63,7 @@ block main
               if session.tags[0]
                 each tag in session.tags
                   span.bg-neutral-400.rounded-full.px-2(data-i18n=`tag.${tag}`)= schedule.tags.find((t) => t.id === tag).zh.name
+            .absolute.right-3.bottom-5.text-sm.text-neutral-400= session.room
 
       .hidden.relative.agenda-grid(class="md:grid")
         .block= ""
@@ -81,7 +82,7 @@ block main
       .flex.flex-col.agenda-list(class="md:hidden")
         each sessions, start_t in schedule['sessions_by_t']
           .py-3.session-block(data-rooms=sessions.rooms.join(','), data-day=start_t < 1440 ? '1':'2')= sessions.t
-          each session in sessions['sessions']
+          each session in [...sessions['sessions']].sort((a, b) => rooms.indexOf(a.room) - rooms.indexOf(b.room))
             - let rooms = [session.room]
             if session.broadcast
               - rooms = rooms.concat(session.broadcast)
