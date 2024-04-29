@@ -1,0 +1,34 @@
+extends ../_layout.pug
+block variables
+  - title = "安全須知 Safety Tips"
+block head
+  link(rel="stylesheet", href="assets/css/base.css?version="+timestamp)
+block main
+  main.container
+    .my-20
+      h1.border-b.border-neutral-500.pb-3(data-i18n="safety.title") 安全須知
+    article.my-20
+      h2.mb-4(data-i18n="safety.earthquake") 地震避難指南
+      h4.my-4 What is an Earthquake?
+      p An earthquake is when the ground shakes violently. Large earthquakes are very dangerous because they can destroy buildings.
+      p In recent weeks, Taiwan’s eastern region has experienced multiple earthquakes with magnitudes ranging from 5 to 6. Please carefully review the following guidelines to minimize potential damage.
+      h4.my-4 What to do when an earthquake strikes
+      ul
+        li #[strong If you’re near a table]: Hide under the table and hold onto its legs for stability.
+        li #[strong If there’s no table nearby]: Crouch down next to a sturdy pillar or wall, and protect your head and neck with a backpack.
+        li #[strong If you’re in an elevator]: Press all floor buttons, crouch down, and exit the elevator as soon as the door opens. If the door doesn’t open, press the emergency button for help.
+      h4.my-4 What to do after the earthquake stops
+      ul
+        li Stay calm, don’t rush to exits. Follow staff instructions for orderly evacuation.
+        li Keep away from glass doors, windows, or hanging light fixtures.
+        li Use a backpack or your hands to protect your head and neck while moving.
+        li Avoid using elevators. Evacuate through safety doors and staircases.
+      h5.my-4 If trapped in a collapsed building
+      ul
+        li Stop bleeding if injured. Don’t remove objects stuck in you.
+        li Cover mouth and nose to slow breathing initially, avoiding inhaling toxic dust.
+        li Communication systems may fail initially. Save phone battery, wait a while before calling 119 for help.
+        li If phone dies, use nearby hard objects to tap on sturdy walls or metal to attract rescuers’ attention. Don’t scream and waste energy.
+      h4.my-4 DON’T PANIC
+      p Light earthquakes are quite frequent in Taiwan - almost every day.
+      p Receive alerts seconds before an earthquake happens for better preparedness.
