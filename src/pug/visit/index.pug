@@ -31,8 +31,11 @@ block main
           li(data-i18n="[html]visit.p7") 車輛進入中研院區，請持證件向大門警衛室換取臨時通行證並依#[a(href="https://dga.sinica.edu.tw/pages/1442", target="_blank") 規定]停放。
           li(data-i18n="visit.p8") 機車無法駛入中研院，請停放在中研院大門右側、四分溪旁側門、或是胡適公園旁的機車停車場。
     hr
-    figure.px-4.my-20
-      .text-center 中研院人文社會科學館 3 樓平面圖
-      img.w-full.px-8.mb-16(src="assets/img/中研院人社中心3樓平面圖.svg", alt="中研院人文社會科學館 3 樓平面圖")
-      .text-center.my-20 中研院人文社會科學館 4 樓平面圖
-      img.w-full.px-8(src="assets/img/中研院人社中心4樓平面圖.svg", alt="中研院人文社會科學館 4 樓平面圖")
+    figure.px-4.my-20.mx-auto(class="max-w-screen-lg")
+      .text-center.my-12(data-i18n="visit.3f") 中研院人文社會科學館 3 樓平面圖
+      .px-8.mb-16(data-i18n="[html]visit.3f.figure") #[img.w-full.mt-20(src="assets/img/中_中研院人社中心4樓平面圖.svg")]
+      .text-center.my-20(data-i18n="visit.4f") 中研院人文社會科學館 4 樓平面圖
+      .px-8(data-i18n="[html]visit.4f.figure") #[img.w-full(src="assets/img/中_中研院人社中心4樓平面圖.svg")]
+block script
+  script.
+

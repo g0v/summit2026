@@ -102,6 +102,11 @@ visit.t4: Driving Directions
 visit.p6: From National Highway No. 3, exit at Nanshen Rd., turn left onto Jiuzhuang St. Sec. 1, and then reach Academia Sinica on Academia Rd. Sec. 2.
 visit.p7: Drivers shall exchange a temporary parking permit at the entrance and park responsibly according to <a href="https://www.sinica.edu.tw/en/Paragraph/10" target="_blank">campus rules</a>.
 visit.p8: As motorbikes are prohibited from entering the campus, please utilize free parking spaces next to Academia Sinica’s main entrance and side entrances.
+visit.3f: Humanities & Social Sciences Building, Academia Sinica 3F
+visit.4f: Humanities & Social Sciences Building, Academia Sinica 4F
+visit.3f.figure: <img src="assets/img/英_中研院人社中心3樓平面圖.svg" class="w-full">
+visit.4f.figure: <img src="assets/img/英_中研院人社中心4樓平面圖.svg" class="w-full">
+
 
 staff.title: Staff Members
 staff.subtitle: g0v Summit 2024 Working Group
