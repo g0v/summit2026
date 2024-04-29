@@ -5,16 +5,15 @@ block head
   link(rel="stylesheet", href="assets/css/base.css?version="+timestamp)
   link(rel="stylesheet", href="assets/css/agenda.css?version="+timestamp)
 block main
-  #modal
-    .bg-white.min-w-80.max-w-lg
-      .modal-head.flex.p-4.items-start
-        .head-group
-          h4.font-bold.me-3
-          .tag-group
-          .info-group
-        button.modal-close.text-2xl.text-dark.ms-auto
-          i.fa-solid.fa-xmark
-      .modal-body.p-4
+  #modal: .inner-modal
+    .modal-head.flex.p-4.items-start
+      .head-group
+        h4.font-bold.me-3
+        .tag-group
+        .info-group
+      button.modal-close.text-2xl.text-dark.ms-auto
+        i.fa-solid.fa-xmark
+    .modal-body.p-4
   #tag-group
     .flex.flex-wrap.gap-2.text-sm.p-5
       each tag in schedule.tags

@@ -85,12 +85,14 @@ a:not(.btn, .nav-link) {
   transition: all 0.3s ease;
   opacity: 0;
   pointer-events: none;
-  > .bg-white {
+  > .inner-modal {
+    @apply  flex flex-col bg-white min-w-80 max-w-lg;
+    max-height: 100%;
     transition: all 0.3s ease;
     transform: translateY(20px);
   }
   .modal-body {
-    max-height: 70vh;
+    flex: 1;
     overflow-y: auto;
     hr {
       margin: 1rem 0;
@@ -99,7 +101,7 @@ a:not(.btn, .nav-link) {
   &.show {
     opacity: 1;
     pointer-events: auto;
-    > .bg-white {
+    > .inner-modal {
       transform: translateY(0);
     }
   }

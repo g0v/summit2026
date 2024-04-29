@@ -4,16 +4,15 @@ block variables
 block head
   link(rel="stylesheet", href="assets/css/base.css?version="+timestamp)
 block main
-  #modal
-    .bg-white.min-w-80.max-w-lg
-      .modal-head.flex.px-4.pt-4.items-start
-        .head-group
-          h4.font-bold.me-3
-          .tag-group
-          .info-group
-        button.modal-close.text-2xl.text-dark.ms-auto
-          i.fa-solid.fa-xmark
-      .modal-body.p-4.pt-0
+  #modal: .inner-modal
+    .modal-head.flex.px-4.pt-4.items-start
+      .head-group
+        h4.font-bold.me-3
+        .tag-group
+        .info-group
+      button.modal-close.text-2xl.text-dark.ms-auto
+        i.fa-solid.fa-xmark
+    .modal-body.px-4.pb-4
   main.container
     .my-20
       h1.border-b.border-neutral-500.pb-3(data-i18n="speakers.title") 講者
