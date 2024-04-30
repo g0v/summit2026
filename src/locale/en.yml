@@ -81,6 +81,9 @@ agenda.keynote: Keynote
 agenda.sessions: Sessions
 agenda.day-1.text: Sat., May 4
 agenda.day-2.text: Sun., May 5
+agenda.btn.qa: Q&A
+agenda.btn.slide: Slides
+agenda.btn.cowrite: Collab Notes
 
 language.zh: Mandarin
 language.en: English

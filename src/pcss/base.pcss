@@ -53,12 +53,8 @@ a:not(.btn, .nav-link) {
 }
 
 .btn {
-  cursor: pointer;
-  font-size: theme('fontSize.base');
-  font-weight: 400;
-  display: inline-block;
+  @apply inline-flex cursor-pointer items-center justify-center font-normal text-base rounded-md;
   padding: theme('spacing.1') theme('spacing.3');
-  border-radius: theme('borderRadius.md');
   transition: all 0.3s ease;
 }
 

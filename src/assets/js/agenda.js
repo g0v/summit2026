@@ -108,6 +108,16 @@ $('.agenda-session[data-id]').on('click', function (e) {
   $('#modal .head-group h4').text(session[currentLang]['title'])
   let tagGroup = $('.tag-group', this)
   $('#modal .tag-group').html(tagGroup.clone())
+  $('#modal .btn-group').html('')
+  if (session['qa']) {
+    $('#modal .btn-group').append(`<a href="${session['qa']}" class="btn btn-primary" target="_blank" data-i18n="agenda.btn.qa">線上提問</a>`)
+  }
+  if (session['slide']) {
+    $('#modal .btn-group').append(`<a href="${session['slide']}" class="btn btn-primary" target="_blank" data-i18n="agenda.btn.slide">簡報連結</a>`)
+  }
+  if (session['co_write']) {
+    $('#modal .btn-group').append(`<a href="${session['co_write']}" class="btn btn-primary" target="_blank" data-i18n="agenda.btn.cowrite">共同筆記</a>`)
+  }
   let start = new Date(session['start'])
   let end = new Date(session['end'])
   let startHours = String(start.getHours()).padStart(2, '0');
@@ -124,6 +134,7 @@ $('.agenda-session[data-id]').on('click', function (e) {
   $('#modal .modal-body a').filter(function () {
     return this.hostname != window.location.hostname;
   }).attr('target', '_blank');
+  $('#modal').i18n()
   $('body').addClass('overflow-hidden')
   $('#modal').addClass('show')
 })
