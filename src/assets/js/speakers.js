@@ -6,7 +6,7 @@ $(function () {
       schedule = data
       hash = window.location.hash
       if (hash) {
-        $('.speaker[data-id="' + hash.substring(1) + '"]').click()
+        $('.speaker[data-id="' + hash.substring(1) + '"]').trigger('click')
       }
     })
 })

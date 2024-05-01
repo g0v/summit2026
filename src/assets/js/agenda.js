@@ -16,7 +16,7 @@ $(function () {
       schedule = data
       hash = window.location.hash
       if (hash) {
-        $('.agenda-session[data-id="' + hash.substring(1) + '"]').click()
+        $('.agenda-session[data-id="' + hash.substring(1) + '"]').trigger('click')
       }
     })
 })
@@ -97,10 +97,10 @@ $('.agenda-session[data-id]').on('click', function (e) {
   session['speakers'].forEach(sid => {
     let speaker = schedule['speakers'].filter(speaker => speaker['id'] == sid)[0]
     $('.agenda-speaker', bodyTmplDom).append(`
-          <div class="flex mb-4">
+          <a class="flex mb-4" href="speakers/#${speaker.id}">
             <img src="${speaker['avatar']}" class="w-20 h-20 rounded-full shrink-0">
             <div class="font-bold text-xl ms-4 my-auto">${speaker[currentLang]['name']}</div>
-          </div>
+          </a>
         `)
   })
   $('.agenda-speaker', bodyTmplDom).append('<hr>')
