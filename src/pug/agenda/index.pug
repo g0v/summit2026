@@ -53,15 +53,12 @@ block main
         .block= ""
         each room in schedule.rooms
           if rooms.includes(room.id)
-            .bg-secondary.text-white.font-medium.text-center.px-4.py-2.mx-4(class="max-lg:hidden", data-i18n=`room.${room.id}`)= room.zh.name
+            .bg-secondary.text-white.font-medium.text-center.px-4.py-2.mx-3(class="max-lg:hidden", data-i18n=`room.${room.id}`)= room.zh.name
 
     .mt-10.mb-20
       h2.mb-8#day Day 1
-      mixin ageda-session-title(session, clickable = true)
-        .agenda-session.rounded-t-xl.bg-secondary.p-4.z-10.relative(data-id= clickable ? session.id : null, data-title="true",  data-tags=([...session.tags, session.type, session.language].filter((t) => !!t).join(','))): .sticky(class="lg:top-40")
-          .font-bold.text-white(data-i18n=`session.${session.id}.title`)= session.zh.title
 
-      mixin agenda-session(session, is_community = false)
+      mixin agenda-session(session)
         if session.type == 'R'
           .agenda-session.items-center.justify-center.bg-neutral-300.rounded-xl.p-4.z-10.relative
             .font-bold.text-neutral-900(data-i18n=`session.${session.id}.title`)= session.zh.title
@@ -88,23 +85,12 @@ block main
           - let styles = `grid-area: ${key} / time`
           .block.agenda-timeline.z-0(style=styles, data-day=key < 1440 ? '1' : '2')
             .font-medium(class="translate-y-[-50%]")= time
-        - let title_session = null
+       
         each sessions, start_t in schedule.sessions_by_t
           each session in sessions.sessions
-            if session.start_t === session.end_t
-              - title_session = session
-            else
-              - let styles = `grid-area: ${session.start_t} / ${session.room} / ${session.end_t} / ${session.type == 'R' ? 'end' : (session.broadcast ? 'RH' : session.room)};`
-              .flex.flex-col.p-3.session-block(style=styles, data-room=session.room, data-broadcast=(session.broadcast ? 'true' : 'false'), data-day=(session.start_t < 1440 ? '1' : '2'))
-                if title_session && session.room === title_session.room && session.start_t === title_session.start_t
-                  +ageda-session-title(title_session)
-                  +agenda-session(session, !!title_session)
-                  - title_session = null
-                else if !title_session && session.type === "C"
-                  +ageda-session-title(session, false)
-                  +agenda-session(session, true)
-                else
-                  +agenda-session(session, session.tags.filter((t) => t.startsWith('CT')).length > 0)
+            - let styles = `grid-area: ${session.start_t} / ${session.room} / ${session.end_t} / ${session.type == 'R' ? 'end' : (session.broadcast ? 'RH' : session.room)};`
+            .flex.flex-col.p-3.session-block(style=styles, data-room=session.room, data-broadcast=(session.broadcast ? 'true' : 'false'), data-day=(session.start_t < 1440 ? '1' : '2'))
+              +agenda-session(session)
 
       .flex.flex-col.agenda-list(class="lg:hidden")
         each sessions, start_t in schedule.sessions_by_t
@@ -114,9 +100,6 @@ block main
             if session.broadcast
               - rooms = rooms.concat(session.broadcast)
             .block.py-3.session-block(data-rooms=rooms.join(','), data-day=(session.start_t < 1440 ? '1' : '2'))
-              //-if session.start_t === session.end_t
-                +ageda-session-title(session, false)
-                +agenda-session(session)
               +agenda-session(session)
 
 
