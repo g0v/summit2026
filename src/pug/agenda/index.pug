@@ -21,7 +21,7 @@ block main
   #tag-group
     .flex.flex-wrap.gap-2.text-sm.p-5
       each tag in schedule.tags
-        button.rounded-full.text-white.px-2(data-target=tag.id, data-i18n=`tag.${tag.id}`)= schedule.tags.find((t) => t.id === tag.id).zh.name
+        button.rounded-full.text-white.px-2(data-target=tag.id, data-i18n=`tag.${tag.id}`)= tag.zh.name
       each type in schedule.session_types
         if type.id != 'R'
           button.rounded-full.text-white.px-2(data-i18n=`session_type.${type.id}`, data-target=type.id)= type.zh.name
@@ -41,7 +41,7 @@ block main
         button.py-1.grow(data-id='all') ALL
         each room in schedule.rooms
           if rooms.includes(room.id)
-            button.py-1.grow(data-id=room.id)= room.id      
+            button.py-1.grow(data-id=room.id)= room.id
       .mt-5.hidden.relative.agenda-grid(class="md:grid")
         .block= ""
         each room in schedule.rooms
@@ -50,50 +50,54 @@ block main
 
     .mt-10.mb-20
       h2.mb-8#day Day 1
+
+      - let speakers = {}
+      - for (let speaker of schedule.speakers) speakers[speaker.id] = speaker
+
+      - let session_types = {}
+      - for (let session_type of schedule.session_types) session_types[session_type.id] = session_type
+
+      - let tags = {}
+      - for (let tag of schedule.tags) tags[tag.id] = tag
+
       mixin agenda-session(session)
         if session.type == 'R'
           .agenda-session.flex.items-center.justify-center.bg-neutral-300.rounded-xl.p-4.h-full.z-10.relative
             .font-bold.text-neutral-900(data-i18n=`session.${session.id}.title`)= session.zh.title
         else
-          - let tags = [...session.tags]
-          - if(session.type) tags.push(session.type)
-          - if(session.language) tags.push(session.language)
-
-          .agenda-session.rounded-sm.cursor-pointer.bg-neutral-100.p-4.h-full.z-10.relative(data-id=session.id, data-tags=tags.join(',')): .sticky(class="md:top-40")
+          .agenda-session.rounded-sm.cursor-pointer.bg-neutral-100.p-4.h-full.z-10.relative(data-id=session.id, data-tags=([...session.tags, session.type, session.language].filter((t) => !!t).join(','))): .sticky(class="md:top-40")
             .font-bold.text-neutral-800.mb-2(data-i18n=`session.${session.id}.title`)= session.zh.title
             .flex.flex-col.items-stretch.more-info
               each speaker_id in session.speakers
-                - let speaker = schedule.speakers.find((e) => e.id === speaker_id)
-                .text-neutral-700(data-i18n=`speakers.${speaker.id}.name`)= speaker.zh.name
+                .text-neutral-700(data-i18n=`speakers.${speaker_id}.name`)= speakers[speaker_id].zh.name
               .text-xs.text-white.my-2.flex.flex-wrap.gap-1.tag-group
                 if !['R'].includes(session.type)
-                  span.bg-secondary.rounded-full.px-2(data-i18n=`session_type.${session.type}`)= schedule.session_types.find((t) => t.id === session.type).zh.name
+                  span.bg-secondary.rounded-full.px-2(data-i18n=`session_type.${session.type}`)= session_types[session.type].zh.name
                 if session.language
                   span.bg-neutral-500.rounded-full.px-2(data-i18n=`language.${session.language}`)= session.language === 'en' ? '英語' : '華語'
                 if session.tags[0]
-                  each tag in session.tags
-                    span.bg-neutral-400.rounded-full.px-2(data-i18n=`tag.${tag}`)= schedule.tags.find((t) => t.id === tag).zh.name
+                  each tag_id in session.tags
+                    span.bg-neutral-400.rounded-full.px-2(data-i18n=`tag.${tag_id}`)= tags[tag_id].zh.name
               //.text-right.text-sm.text-neutral-500(class="md:hidden") @#{session['broadcast']?session['broadcast'].join(','):session['room']}
-              
 
       .hidden.relative.agenda-grid(class="md:grid")
-        each time, key in schedule['sessions_timemap']
+        each time, key in schedule.sessions_timemap
           - let styles = `grid-area: ${key} / time`
-          .block.agenda-timeline.z-0(style=styles, data-day=key < 1440 ? '1':'2')
+          .block.agenda-timeline.z-0(style=styles, data-day=key < 1440 ? '1' : '2')
             .font-medium(class="translate-y-[-50%]")= time
-        each sessions, start_t in schedule['sessions_by_t']
-          each session in sessions['sessions']
-            - let styles = `grid-area: ${session['start_t']} / ${session['room']} / ${session['end_t']} / ${session['type']=='R'?'end':(session['broadcast']?'RH':session['room'])};`
-            .block.p-3.session-block(style=styles, data-room=session.room, data-broadcast=(session.broadcast?'true':'false'), data-day=session.start_t < 1440 ? '1':'2')
+        each sessions, start_t in schedule.sessions_by_t
+          each session in sessions.sessions
+            - let styles = `grid-area: ${session.start_t} / ${session.room} / ${session.end_t} / ${session.type == 'R' ? 'end' : (session.broadcast ? 'RH' : session.room)};`
+            .block.p-3.session-block(style=styles, data-room=session.room, data-broadcast=(session.broadcast ? 'true' : 'false'), data-day=(session.start_t < 1440 ? '1' : '2'))
               +agenda-session(session)
       .flex.flex-col.agenda-list(class="md:hidden")
-        each sessions, start_t in schedule['sessions_by_t']
-          .py-3.session-block(data-rooms=sessions.rooms.join(','), data-day=start_t < 1440 ? '1':'2')= sessions.t
-          each session in [...sessions['sessions']].sort((a, b) => rooms.indexOf(a.room) - rooms.indexOf(b.room))
+        each sessions, start_t in schedule.sessions_by_t
+          .py-3.session-block(data-rooms=sessions.rooms.join(','), data-day=(start_t < 1440 ? '1' : '2'))= sessions.t
+          each session in [...sessions.sessions].sort((a, b) => rooms.indexOf(a.room) - rooms.indexOf(b.room))
             - let rooms = [session.room]
             if session.broadcast
               - rooms = rooms.concat(session.broadcast)
-            .block.py-3.session-block(data-rooms=rooms.join(','), data-day=session.start_t < 1440 ? '1':'2')
+            .block.py-3.session-block(data-rooms=rooms.join(','), data-day=(session.start_t < 1440 ? '1' : '2'))
               +agenda-session(session)
 
 
