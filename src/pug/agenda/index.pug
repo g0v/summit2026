@@ -112,7 +112,7 @@ block main
               - current_ct_session = session
             - let styles = `grid-area: ${session.start_t} / ${session.room} / ${session.end_t} / ${session.type == 'R' ? 'end' : (session.broadcast ? 'RH' : session.room)};`
             .flex.flex-col.p-3.session-block(style=styles, data-room=session.room, data-broadcast=(session.broadcast ? 'true' : 'false'), data-day=(session.start_t < 1440 ? '1' : '2'))
-              if session.type === 'C' || session.tags.filter((t) => t.startsWith('CT')).length > 0
+              if session.tags.filter((t) => t.startsWith('CT')).length > 0
                 +agenda-session(session, current_ct_session)
               else
                 +agenda-session(session)
