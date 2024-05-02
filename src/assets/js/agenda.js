@@ -107,7 +107,7 @@ $('.agenda-session[data-id]').on('click', function (e) {
   $('.agenda-description', bodyTmplDom).html(marked.parse(session[currentLang]['description']))
   $('#modal .head-group h4').text(session[currentLang]['title'])
   let tagGroup = $('.tag-group', this)
-  $('#modal .tag-group').html(tagGroup.clone())
+  $('#modal .tag-group').html(tagGroup.clone().removeClass('hidden'))
   $('#modal .btn-group').html('')
   if (session['qa']) {
     $('#modal .btn-group').append(`<a href="${session['qa']}" class="btn btn-primary" target="_blank" data-i18n="agenda.btn.qa">線上提問</a>`)
@@ -124,10 +124,12 @@ $('.agenda-session[data-id]').on('click', function (e) {
   let startMinutes = String(start.getMinutes()).padStart(2, '0');
   let endHours = String(end.getHours()).padStart(2, '0');
   let endMinutes = String(end.getMinutes()).padStart(2, '0');
-
-  let info = `<div>${start.getMonth() + 1}/${start.getDate()}  ${startHours}:${startMinutes} ~ ${endHours}:${endMinutes} @ ${
-    session['broadcast']?session['broadcast'].join(','):session['room']
-  }</div>`;
+  let info = '';
+  if (session['start'] !== session['end']) {
+    info = `<div>${start.getMonth() + 1}/${start.getDate()}  ${startHours}:${startMinutes} ~ ${endHours}:${endMinutes} @ ${session['broadcast'] ? session['broadcast'].join(',') : session['room']}</div>`;
+  } else {
+    info = `<div>${start.getMonth() + 1}/${start.getDate()}  ${startHours}:${startMinutes} ~ @ ${session['broadcast'] ? session['broadcast'].join(',') : session['room']}</div>`;
+  }
   $('#modal .info-group').html(info)
   $('#modal .modal-body').html(bodyTmplDom)
   $('#modal .modal-body').scrollTop(0)
