@@ -4,7 +4,6 @@
 
 .agenda-grid {
   grid-template-columns: [ time ] 4rem [ R0 ] 1fr [ R1 ] 1fr [ R2 ] 1fr [ RH ] 1fr [ end ] auto [R4] 0;
-  //min-width: theme('screens.md');
 }
 
 .agenda-timeline {
@@ -55,6 +54,15 @@
     opacity: 0.2;
     .more-info {
       display: none !important;
+    }
+  }
+  .tag-group {
+    position: relative;
+    span {
+      @apply lg:max-w-36;
+      word-wrap: keep-all;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
   }
 }
