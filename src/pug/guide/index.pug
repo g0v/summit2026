@@ -1,0 +1,46 @@
+extends ../_layout.pug
+block variables
+  - title = "行前資訊 Pre-event Guide"
+block head
+  link(rel="stylesheet", href="assets/css/base.css?version="+timestamp)
+block main
+  main.container
+    .my-20
+      h1.border-b.border-neutral-500.pb-3(data-i18n="guide.title") 行前資訊
+    article.my-20
+      p 很高興即將在這週末的 g0v summit 看到你！我們特別整理了一些實用資訊供你參考，預祝你此行能愉悅順利、滿載而歸。
+      h3.my-4 年會資訊
+      ul
+        li 時間：5/4 (六) 9:20-17:30<br>5/5 (日) 9:20-17:00
+        li 地點：#[a(href="https://maps.app.goo.gl/dttZhWLAQLGJtE72A", rel="external", target="_blank") 中央研究院人文社會科學館]
+        li 接駁資訊：南港火車站 ➟ 中研院首班 07:50、末班 09:30<br>中研院 ➟ 南港火車站首班 17:00、末班 18:30<br>＊返程車僅 5/5 (日) 提供接駁
+      p 請務必閱讀並遵守#[a(href="coc") 行為準則]，尊重每位與會者。
+      h3.my-4 報到
+      ul
+        li 08:30 於 2F 大廳樓梯口開始報到。
+        li 由於人文館前方正在施工，請在抵達場館後遵循工作人員指示入館（亦可參考#[a(href="https://drive.google.com/file/d/1-wJ4tIdAxL4qlq5anhmU7_dwMk92eTel/view", rel="external", target="_blank") 動線影片]。
+        li 請在手機下載 #[a(href="https://opass.app/", rel="external", target="_blank") OPass app] 後，按下信件中的報到連結登入報到。
+      h3.my-4 議程
+      p 行前除了可透過#[a(href="agenda") 議程表]查看議程內容，也歡迎透過 OPass 預先標記你感興趣的場次！而無論你是初次參加或經驗老道的參與者，都歡迎善用以下資源，獲得更深刻的參與體驗：
+      ul
+        li 英 ⇌ 華即時口譯：請透過信件中的連結收聽該時段現正進行的議程口譯（請記得自備耳機，並在聆聽期間全程配戴，避免干擾現場活動進行。）
+        li UD Talk：會場亦提供 UD Talk 語音辨識自動翻譯，可翻譯成多國語言；詳情請參見 #[a(href="https://g0v.hackmd.io/@summit2024/book/%2FoTfWu-FQTnSATwGjyF1FjQ", rel="external", target="_blank") UD Talk 使用指南]。
+        li 共筆：你可以和與會者在線上共同筆記，自由記錄講者的分享內容、你的摘要或感想。可直接從#[a(href="https://g0v.hackmd.io/@summit2024/notes", rel="external", target="_blank") 共筆]找到特定議程進行撰寫，亦可從#[a(href="agenda") 議程表]查看特定場次的詳細資訊，點擊「共同筆記」即可開始筆記。
+        li 提問：你可以隨時撰寫提問或按讚他人提問，系統將依按讚數排序出聽眾最想知道的問題。可從#[a(href="https://g0v.hackmd.io/@summit2024/notes", rel="external", target="_blank") 共筆]找到各場次綠方框內的「Slido 線上提問連結」，亦可從#[a(href="https://g0v.hackmd.io/@summit2024/notes", rel="external", target="_blank") 共筆]找到特定議程進行撰寫，亦可從#[a(href="agenda") 議程表] 點開特定場次的詳細資訊，點擊「線上提問」即可開始提問。
+        li Unconference：至 3F 塗鴉區撰寫提案單，5/5 (日) 10:00 截止，由參與者現場投票決定。
+        li 閃電講（Lightning Talk）：至 3F 塗鴉區寫白板，5/5 (日) 12:00 起，先搶先贏、額滿為止。
+      h3.my-4 餐飲
+      ul
+        li 午膳餐車：地點於館外，價格依餐車標示。
+        li 公民咖啡廳：3F 憑茶點券兌換，每人每日 200 元。
+        li 奉茶：4F 免費供應。
+        li 講者晚宴：5/5 晚上於北雲餐廳研究院店，#[a(href="https://g0v-summit-2024.kktix.cc/events/d1nner", rel="external", target="_blank") 憑票入場]。
+        li 現場僅提供現金交易，請記得備妥現金。
+        li 會議廳內皆禁止飲食，僅能攜帶有蓋水瓶；如需飲食，請至會議廳外或用餐區。
+        li 歡迎自備環保餐具、水壺，減少使用一次性餐具。
+      h3.my-4 紀念品
+      ul
+        li 品項：年會限定 T 恤、鏡頭防窺貼、防水技能貼紙（亦備有歷年 g0v 週邊商品，售完為止）。
+        li 販售地點：4F 國際會議廳後方大會攤位區
+        li 販售時間：(六) 10:00-17:00、(日) 10:00-15:00
+        li 攤位備有多項打卡互動活動，歡迎來一起玩！會場 3F、4F 的攤位區有許多社群夥伴、公民團體進行擺攤，亦有攤位集章活動可以參加。

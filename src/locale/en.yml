@@ -14,6 +14,8 @@ nav.live: Livestream
 nav.media: Media
 nav.presskit: Press Kit
 nav.newsletter: Newsletter
+nav.guide: Visitors’ Guide
+nav.safety: Safety Tips
 nav.about: About Summit
 nav.staff: Staff
 nav.partners: Partners
@@ -142,3 +144,5 @@ coc.p10: Refer to <a href="https://github.com/g0v/coc/" target="_blank">g0v Code
 
 safety.title: Safety Tips
 safety.earthquake: Dealing with Earthquakes
+
+guide.title: Pre-event Guide
