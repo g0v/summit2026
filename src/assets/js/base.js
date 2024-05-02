@@ -6,6 +6,7 @@ const setLocale = (function (lang) {
   document.body.lang = (lang === 'en' ? 'en-TW' : 'zh-Hant-TW')
   if (!current.startsWith(lang))
     $(document.body).i18n()
+  $('.agenda-grid').css('--agenda-header-height', ($('#agenda-header').outerHeight()+10) + 'px')
 })
 
 $('#cookie-notice button').on('click', function (e) {

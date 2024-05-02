@@ -90,3 +90,9 @@
     grid-template-columns: [ time ] 4rem [ R0 ] auto [ R1 ] auto [ R2 ] auto [ RH ] auto [ end ] auto [R4] 0;
   }
 }
+
+@media (min-width: theme('screens.lg')) {
+  .agenda-session .sticky {
+    top: var(--agenda-header-height, 10rem);
+  }
+}

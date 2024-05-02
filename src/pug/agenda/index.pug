@@ -36,7 +36,7 @@ block main
     - for (let session_type of schedule.session_types) session_types[session_type.id] = session_type
     - for (let tag of schedule.tags) tags[tag.id] = tag
 
-    .pt-6.pb-3.sticky.top-0.w-full.z-20.bg-white(class="lg:mt-12")
+    #agenda-header.pt-6.pb-3.sticky.top-0.w-full.z-20.bg-white(class="lg:mt-12")
       .flex.justify-center
         button.rounded-lg.bg-white.drop-shadow-lg.mx-2.px-3.py-1.text-sm#day1(class="hover:bg-neutral-100")
           .font-bold Day 1
@@ -86,7 +86,7 @@ block main
           .agenda-session.bg-neutral-100.p-4.z-10.relative.grow.shrink-0(
             class= current_ct_session ? 'border-r-4 border-tertiary' : '',
             data-id=session.id, data-tags=([...session.tags, session.type, session.language].filter((t) => !!t).join(','))
-            ): .sticky(class="lg:top-40")
+            ): .sticky
             .font-bold.text-neutral-800.mb-1(data-i18n=`session.${session.id}.title`)= session.zh.title
             .flex.flex-col.items-stretch.more-info
               each speaker_id in session.speakers
