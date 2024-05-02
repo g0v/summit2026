@@ -77,12 +77,11 @@ block main
                 each speaker_id in current_ct_session.speakers
                   span.text-sm.text-neutral-700(data-i18n=`speakers.${speaker_id}.name`)= speakers[speaker_id].zh.name
               .text-xs.text-white.my-2.flex.flex-wrap.gap-1.tag-group.hidden
-                span.bg-secondary.rounded-full.px-2(data-i18n=`session_type.${session.type}`)= session_types[session.type].zh.name
-                if session.language
-                  span.bg-neutral-500.rounded-full.px-2(data-i18n=`language.${session.language}`)= session.language === 'en' ? '英語' : '華語'
-                if session.tags[0]
-                  each tag_id in session.tags
-                    span.bg-neutral-400.rounded-full.px-2(data-i18n=`tag.${tag_id}`)= tags[tag_id].zh.name
+                span.bg-secondary.rounded-full.px-2(data-i18n=`session_type.${current_ct_session.type}`)= session_types[current_ct_session.type].zh.name
+                if current_ct_session.language
+                  span.bg-neutral-500.rounded-full.px-2(data-i18n=`language.${current_ct_session.language}`)= current_ct_session.language === 'en' ? '英語' : '華語'
+                each tag_id in current_ct_session.tags
+                  span.bg-neutral-400.rounded-full.px-2(data-i18n=`tag.${tag_id}`)= tags[tag_id].zh.name
           .agenda-session.bg-neutral-100.p-4.z-10.relative.grow.shrink-0(
             class= current_ct_session ? 'border-r-4 border-tertiary' : '',
             data-id=session.id, data-tags=([...session.tags, session.type, session.language].filter((t) => !!t).join(','))
@@ -96,9 +95,8 @@ block main
                   span.bg-secondary.rounded-full.px-2(data-i18n=`session_type.${session.type}`)= session_types[session.type].zh.name
                 if session.language
                   span.bg-neutral-500.rounded-full.px-2(data-i18n=`language.${session.language}`)= session.language === 'en' ? '英語' : '華語'
-                if session.tags[0]
-                  each tag_id in session.tags
-                    span.bg-neutral-400.rounded-full.px-2(data-i18n=`tag.${tag_id}`)= tags[tag_id].zh.name
+                each tag_id in session.tags
+                  span.bg-neutral-400.rounded-full.px-2(data-i18n=`tag.${tag_id}`)= tags[tag_id].zh.name
 
       .hidden.relative.agenda-grid(class="lg:grid")
         each time, key in schedule.sessions_timemap
