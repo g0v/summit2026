@@ -1,0 +1,26 @@
+extends ../_layout.pug
+block variables
+  - title = "年會紀念品 Summit Souvenir"
+block head
+  link(rel="stylesheet", href="assets/css/base.css?version="+timestamp)
+block main
+  main.container
+    .my-20
+      h1.border-b.border-neutral-500.pb-3(data-i18n="souvenir.title") 年會紀念品
+    section.my-20
+      p(data-i18n="souvenir.intro") 想用色彩斑斕的技能貼紙點綴你的資訊設備？還是對今年 Summit 的吉祥物一見鍾情，想把穿山甲帶回家養呢？在 4F 國際會議廳後方的大會攤位區，年會宣傳組準備了各式各樣的週邊紀念品，歡迎大家來尋寶！
+      p(data-i18n="[html]souvenir.hours") #[strong 營業時間：]週六 10:00 ~ 17:00、週日 10:00 ~ 15:00
+    section.my-20
+      h3.mb-12(data-i18n="souvenir.items") 販售商品
+      ul
+        li(data-i18n="souvenir.lenscover") 鏡頭防窺貼
+        li(data-i18n="souvenir.sticker") 技能貼紙
+        li(data-i18n="souvenir.tshirt") 紀念T恤
+        li(data-i18n="souvenir.everything") 大全套
+        li
+          span(data-i18n="souvenir.classic_tshirt") 絕版年會T恤
+          span(data-i18n="souvenir.whilelasts") （*數量有限，售完為止）
+    section.my-20
+      h3.mb-12(data-i18n="souvenir.mascot") 年會吉祥物
+      h5.mb-4(data-i18n="souvenir.pangolin") 穿山甲
+      p(data-i18n="[html]souvenir.mascot.reason") 穿山甲 (pangolin) 被選為 Summit 2024 的年會吉祥物！不單單是因為台灣穿山甲屬於特有亞種的緣故，穿山甲會挖掘洞穴、覓食蟲蟻的的習性，也與 g0v 參與者們挖坑、抓蟲 debug 的日常生活不謀而合。<br>當您無意在山道間、或是研討會現場看到牠，別忘記向挖坑者的好朋友致上誠摯的招呼：「欸，是穿山甲耶！」
