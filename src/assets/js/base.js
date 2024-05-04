@@ -38,7 +38,7 @@ $(function () {
 
   i18n.load({
     zh: i18nzh,
-    en: 'assets/i18n/en.json'
+    en: 'assets/i18n/en.json?v='+'1'
   }).done(() => {
     let lang = storage.getItem("userLang")
 
