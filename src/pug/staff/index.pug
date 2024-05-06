@@ -9,18 +9,21 @@ block main
       h1.border-b.border-neutral-500.pb-3(data-i18n="staff.title") 工作人員
       .text-sm.my-4(data-i18n="staff.subtitle") g0v Summit 2024 籌備團隊
     .my-20
-      each team, key in staff
-        if key == '宣傳' || key == '議程'
-          .mb-12
-            h3.mb-4= key
-            each group, key in team
-              if key !== 'main'
-                h5.mb-4= key
-              .grid.mb-8(class="grid-cols-3 md:grid-cols-5")
-                each person in group
-                  .mb-4= person
-        else
-          h3.mb-4= key
-          .grid.mb-12(class="grid-cols-3 md:grid-cols-5")
-            each person in team
-              .mb-4= person
+      - let volunteers = {}
+      - for (let volunteer of staff.members) volunteers[volunteer.id] = volunteer
+      .grid.mb-12(class="grid-cols-3 md:grid-cols-6 gap-4")
+        mixin staff-avatar(person)
+          if person != null
+            .mb-4.aspect-square.bg-slate-100.rounded-full.flex.items-center.justify-center.cursor-pointer(data-id=person.id)
+              - let person_name = (person.name.zh || '') + (person.name.zh === person.name.en ? '' : ' ' + person.name.en)
+              if person.avatar
+                img.rounded-full(src=person.avatar, alt=person_name)
+              else
+                span.text-center(data-i18n=`staff.${person.id}.name`)= person_name
+        each team in staff.teams
+          each volunteer_id in team.members
+            +staff-avatar(volunteers[volunteer_id])
+          if team.sections
+            each section in team.sections
+              each volunteer_id in section.members
+                +staff-avatar(volunteers[volunteer_id])
