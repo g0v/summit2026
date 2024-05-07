@@ -98,7 +98,7 @@ $('.agenda-session[data-id]').on('click', function (e) {
     let speaker = schedule['speakers'].filter(speaker => speaker['id'] == sid)[0]
     $('.agenda-speaker', bodyTmplDom).append(`
           <a class="flex mb-4" href="speakers/#${speaker.id}">
-            <img src="${speaker['avatar']}" class="w-20 h-20 rounded-full shrink-0">
+            <img src="${speaker['avatar']}" class="w-20 h-20 rounded-full bg-slate-100 shrink-0">
             <div class="font-bold text-xl ms-4 my-auto">${speaker[currentLang]['name']}</div>
           </a>
         `)

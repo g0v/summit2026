@@ -35,14 +35,16 @@ block main
 
     section.my-20
       h3.mb-4(data-i18n="speakers.sessions") 議程講者
-      .grid.mb-12(class="grid-cols-3 md:grid-cols-5 gap-4")
+      .grid.mb-12.items-start(class="grid-cols-3 md:grid-cols-5 gap-6")
         each speaker in schedule.speakers
-          .mb-4.aspect-square.bg-slate-100.rounded-full.flex.items-center.justify-center.cursor-pointer.speaker(data-id=speaker.id)
-            - let speaker_name = (speaker.zh.name || '') + (speaker.zh.name === speaker.en.name ? '' : ' ' + speaker.en.name)
-            if speaker.avatar && speaker.avatar.indexOf('default') < 0
-              img.rounded-full(src=speaker.avatar, alt=speaker_name)
-            else
-              span.text-center(data-i18n=`speakers.${speaker.id}.name`)= speaker_name
+          - let alt = (speaker.zh.name || '') + (speaker.zh.name === speaker.en.name ? '' : ' ' + speaker.en.name)
+          .speaker.flex.flex-col.items-center.justify-center.cursor-pointer(id=speaker.id, data-id=speaker.id)
+            .w-full.flex.items-center.justify-center.aspect-square.bg-slate-100.rounded-full
+              if speaker.avatar && speaker.avatar.indexOf('default') < 0
+                img.rounded-full(src=speaker.avatar, alt=alt)
+              else
+                img.rounded-full(src="assets/img/default-avatar.svg", aria-hidden)
+            .my-2.text-center(data-i18n=`speakers.${speaker.id}.name`)= speaker.zh.name
 block script
   script(src="assets/js/speakers.js?version="+timestamp)
   script.
@@ -54,7 +56,7 @@ block script
       let bodyTmplDom = $(`
         <div>
           <div class="flex items-center mb-4">
-            <img class="rounded-full shrink-0 w-20" src="${speaker.avatar}">
+            <img class="rounded-full shrink-0 w-20 bg-slate-100" src="${speaker.avatar}">
               <h4 class="text-primary ml-4">${speaker[currentLang].name}</h4>
           </div>
           <p>${speaker[currentLang].bio}</p>
