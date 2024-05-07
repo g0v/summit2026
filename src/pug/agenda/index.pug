@@ -4,6 +4,7 @@ block variables
 block head
   link(rel="stylesheet", href="assets/css/base.css?version="+timestamp)
   link(rel="stylesheet", href="assets/css/agenda.css?version="+timestamp)
+  link(rel="preload", href="assets/data/schedule.json?version="+timestamp, as="fetch")
 block main
   #modal: .inner-modal
     .modal-head.flex.p-4.items-start

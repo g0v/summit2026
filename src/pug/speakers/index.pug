@@ -3,6 +3,7 @@ block variables
   - title = "講者 Speakers"
 block head
   link(rel="stylesheet", href="assets/css/base.css?version="+timestamp)
+  link(rel="preload", href="assets/data/schedule.json?version="+timestamp, as="fetch")
 block main
   #modal: .inner-modal
     .modal-head.flex.px-4.pt-4.items-start

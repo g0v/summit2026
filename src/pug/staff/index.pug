@@ -3,7 +3,18 @@ block variables
   - title = "工作團隊 Staff"
 block head
   link(rel="stylesheet", href="assets/css/base.css?version="+timestamp)
+  link(rel="preload", href="assets/data/staff.json?version="+timestamp, as="fetch")
+  link(rel="preconnect", href="https://gravatar.com")
 block main
+  #modal: .inner-modal.rounded-xl
+    .modal-head.flex.px-4.pt-4.items-start
+      .head-group
+        h4.font-bold.me-3
+        .tag-group
+        .info-group
+      button.modal-close.text-2xl.text-dark.ms-auto
+        i.fa-solid.fa-xmark
+    .modal-body.px-4.pb-4
   main.container
     .my-20
       h1.border-b.border-neutral-500.pb-3(data-i18n="staff.title") 工作人員
@@ -18,7 +29,7 @@ block main
             - let person = volunteers[person_id]
             - let clickable = !!(person?.website || person?.bio)
             - let alt = (person?.name) ? (person.name.zh || '') + (person.name.zh === person.name.en ? '' : ' ' + person.name.en) : person_id
-            .flex.flex-col.items-center.justify-center(id=person_id, data-id=person_id)
+            .staff.flex.flex-col.items-center.justify-center(id=person_id, data-id=person_id)
               a.w-full.flex.items-center.justify-center.aspect-square.bg-slate-100.rounded-full(href=(clickable ? (person.bio ? `staff/#${person_id}` : person.website) : null), rel="external")
                 if person && person.avatar
                   img.w-full.rounded-full(src=person.avatar, alt=alt)
@@ -33,3 +44,37 @@ block main
             .grid.mb-6.items-start(class="grid-cols-3 md:grid-cols-6 gap-6")
               each volunteer_id in section.members
                 +staff-avatar(volunteer_id)
+block script
+  script.
+    let staff
+    $(function () {
+      fetch('assets/data/staff.json')
+        .then(response => response.json())
+        .then(data => {
+          staff = data
+          let hash = window.location.hash
+          if (hash)
+            $('.staff[data-id="' + hash.substring(1) + '"]').trigger('click')
+        })
+    })
+
+    $('.staff[data-id]').on('click', function (e) {
+      let currentLang = i18n.locale
+      let id = $(this).data('id')
+      history.replaceState(null, null, window.location.pathname + '#' + id);
+      let member = staff.members.filter(member => member.id == id)[0]
+      let bodyTmplDom = $(`
+        <div>
+          <div class="flex items-center mb-4">
+            <img class="rounded-full shrink-0 w-20 bg-slate-100" src="${member.avatar}">
+              <h4 class="text-primary ml-4">${member.name[currentLang]}</h4>
+          </div>
+          <p>${member.bio}</p>
+          <a href="${member.website}" rel="external nofollow">${member.website}</a>
+        </div>
+        `)
+
+      $('#modal .modal-body').html(bodyTmplDom)
+      $('body').addClass('overflow-hidden')
+      $('#modal').addClass('show')
+    })

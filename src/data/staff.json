@@ -11,8 +11,8 @@
       "id": "rschiang",
       "name": {"zh": "RSChiang", "en": "RSChiang"},
       "avatar": "assets/img/staff/rschiang.png",
-      "website": "",
-      "bio": "<a href=\"https://poren.tw\" rel=\"external\"><ruby lang=\"hak-TW\" style=\"ruby-overhang: none;\"><ruby lang=\"hak-TW\" style=\"ruby-position: under; ruby-position: inter-character;\">姜<rt>ㄍㄧㆲˋ</rt>柏<rt>ㄆㄚㆻˋ</rt>任<rt>ㄖㄧㆬ˫</rt></ruby><rt>Gìong Pàg Rhīm</rt></ruby></a> (Poren Chiang)\n<strong>三個關鍵字：</strong>資訊法、開放資料、自由軟體\n<strong>喜歡的一句話：</strong>我能吞下玻璃而不傷身體<sup><a href=\"https://en.wikipedia.org/wiki/I_Can_Eat_Glass\" rel=\"external\">[1]</a></sup>\n<strong>社群座右銘：</strong><span style=\"background-image: linear-gradient(90deg,#337ab7,#fd8a8a 30%,#fd8c04,#a8d1d1,#9ea1d4 70%,#337ab7); background-clip: text; color: transparent;\">先講求不傷身體，再講求效果</span>"},
+      "website": "https://poren.tw",
+      "bio": "<a href=\"https://poren.tw\" rel=\"external\"><ruby lang=\"hak-TW\" style=\"ruby-overhang: none;\"><ruby lang=\"hak-TW\" style=\"ruby-position: under; ruby-position: inter-character;\">姜<rt>ㄍㄧㆲˋ</rt>柏<rt>ㄆㄚㆻˋ</rt>任<rt>ㄖㄧㆬ˫</rt></ruby><rt>Gìong Pàg Rhīm</rt></ruby></a> (Poren Chiang)<br><strong>三個關鍵字：</strong>資訊法、開放資料、自由軟體<br><strong>喜歡的一句話：</strong>我能吞下玻璃而不傷身體<sup><a href=\"https://en.wikipedia.org/wiki/I_Can_Eat_Glass\" rel=\"external\">[1]</a></sup><br><strong>社群座右銘：</strong><span style=\"background-image: linear-gradient(90deg,#337ab7,#fd8a8a 30%,#fd8c04,#a8d1d1,#9ea1d4 70%,#337ab7); background-clip: text; color: transparent; font-weight: bolder;\">先講求不傷身體，再講求效果</span>"},
     {
       "id": "fanlan",
       "name": {"zh": "繁嵐／Fanlan", "en": "Fanlan"},
@@ -25,7 +25,7 @@
       "name": {"zh": "Dong", "en": "Dong"},
       "avatar": "assets/img/staff/dong.jpg",
       "website":"https://www.cooldongdong.com/",
-      "bio": "我最喜歡做酷東東了！個人網站：https://www.cooldongdong.com/"
+      "bio": "我最喜歡做酷東東了！個人網站："
     },
     {
       "id": "yc",
@@ -60,7 +60,7 @@
       "name": {"zh": "大助", "en": "Daisuke"},
       "avatar": "assets/img/staff/daisuke.jpg",
       "website": "https://www.facebook.com/DaisukeChenPhotography/",
-      "bio": "不知道到底是救火隊還是本身就是火的大助\n歡迎追蹤攝影粉專（？"
+      "bio": "不知道到底是救火隊還是本身就是火的大助<br>歡迎追蹤攝影粉專（？"
     },
     {
       "id": "ahmin",
@@ -74,7 +74,7 @@
       "name": {"zh": "小侯Sió Hâu", "en": "Hâu/Hou"},
       "avatar": "assets/img/staff/hou.png",
       "website": "",
-      "bio": "Star Wars Fan/nobody/\nstudent /TW history/speak aurebesh"
+      "bio": "Star Wars Fan/nobody/<br>student /TW history/speak aurebesh"
     },
     {
       "id": "kirby",
@@ -88,13 +88,13 @@
       "name": {"zh": "王文岳", "en": "Allen Wang"},
       "avatar": "assets/img/staff/allen.jpg",
       "website": "",
-      "bio": "Wikidata Taiwan 臺灣維基數據社群共同發起人\n過去曾任第一屆第一期立法院開放國會委員會民間委員、國家文化記憶庫：110-111年社群經營與運作模式建置計畫資訊技術協力、社團法人台灣維基媒體協會秘書長，曾共同主持有「客家@維基」資料多元應用專案以及執行李梅樹紀念館國家文化記憶庫專案「臺灣美術巨擘的最後一程. 李梅樹告別式相關文物掃描」等資料開放專案。"},
+      "bio": "Wikidata Taiwan 臺灣維基數據社群共同發起人<br>過去曾任第一屆第一期立法院開放國會委員會民間委員、國家文化記憶庫：110-111年社群經營與運作模式建置計畫資訊技術協力、社團法人台灣維基媒體協會秘書長，曾共同主持有「客家@維基」資料多元應用專案以及執行李梅樹紀念館國家文化記憶庫專案「臺灣美術巨擘的最後一程. 李梅樹告別式相關文物掃描」等資料開放專案。"},
     {
       "id": "monica",
       "name": {"zh": "咪咕", "en": "Monica Mu"},
       "avatar": "assets/img/staff/monica.jpg",
       "website": "",
-      "bio": "是個跨足資訊圈與金融圈的填坑獸，擅長填 Allen Wang 挖出來的坑 (๑•̀ᄇ•́)و ✧ \n\nWikidata Taiwan 共同發起人\n台灣維基媒體協會 理事"
+      "bio": "是個跨足資訊圈與金融圈的填坑獸，擅長填 Allen Wang 挖出來的坑 (๑•̀ᄇ•́)و ✧ <br>Wikidata Taiwan 共同發起人<br>台灣維基媒體協會 理事"
     },
     {
       "id": "momose",
@@ -108,13 +108,13 @@
       "name": {"zh": "Peter", "en": "Peter"},
       "avatar": "assets/img/staff/peter.jpg",
       "website": "",
-      "bio": "不務正業的法律人， g0v 社群的沒有人與 vTaiwan 社群參與者。\nA law student who does not want to be limited by law. g0v Nobody/ vTaiwan contributor"},
+      "bio": "不務正業的法律人， g0v 社群的沒有人與 vTaiwan 社群參與者。<br>A law student who does not want to be limited by law. g0v Nobody/ vTaiwan contributor"},
     {
       "id": "yellowsoar",
       "name": {"zh": "yellowsoar", "en": "yellowsoar"},
       "avatar": "assets/img/staff/yellowsoar.jpg",
       "website": "",
-      "bio": "一個不務正業的水利工程師... ╮(￣▽￣\")╭\n<img src=\"https://i.imgur.com/A5GIRjz.jpeg\">"
+      "bio": "一個不務正業的水利工程師... ╮(￣▽￣\")╭<br><img src=\"https://i.imgur.com/A5GIRjz.jpeg\">"
     },
     {
       "id": "rayen",
@@ -142,7 +142,7 @@
       "name": {"zh": "張珮歆", "en": "Carey Chang"},
       "avatar": "assets/img/staff/carey.jpg",
       "website": "",
-      "bio": "台中人，北棲青年\n1997摩羯座INFP\n主修生醫的政治工作者\n108課綱多元選修老師"
+      "bio": "台中人，北棲青年<br>1997摩羯座INFP<br>主修生醫的政治工作者<br>108課綱多元選修老師"
     },
     {
       "id": "lois",
@@ -317,7 +317,7 @@
       "name": {"zh": "77", "en": "77"},
       "avatar": "https://gravatar.com/avatar/d70fd2f563f5ba351cf00d7aff6c2c0c1a31326ca100b2acff490c7c8f08d2bf.jpg",
       "website": "",
-      "bio": "這裡是77，剛從大肚山跑到花果山的大學生。\n高中玩FRC做文學獎，大學寫了一本書，目前在努力成為一位擁有人文心和理工腦的創造者。"
+      "bio": "這裡是77，剛從大肚山跑到花果山的大學生。<br>高中玩FRC做文學獎，大學寫了一本書，目前在努力成為一位擁有人文心和理工腦的創造者。"
     },
     {
       "id": "weiqi",
