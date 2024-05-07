@@ -126,42 +126,55 @@ function buildPcss(baseurl = '/2024/') {
     .pipe(gulp.dest(dest_path))
 }
 
+function buildSchedule() {
+  let schedule = require('./src/data/schedule.json')
+
+  // Initial setup
+  schedule.sessions = schedule.sessions.sort((a, b) => parseDatetime(a.start) - parseDatetime(b.start))
+  schedule.sessions_by_t = {}
+  schedule.sessions_timemap = {}
+
+  let tags = new Set()
+  let speakers = new Set()
+
+  for (let session of schedule.sessions) {
+    if (!session.room || !session.start || !session.end) continue
+    session.start_t = (parseDatetime(session.start) - parseDatetime('2024-5-4T09:00:00+08:00')) / 60000
+    session.end_t = (parseDatetime(session.end) - parseDatetime('2024-5-4T09:00:00+08:00')) / 60000
+    schedule.sessions_timemap[session.start_t] = formatDatetime(parseDatetime(session.start))
+    schedule.sessions_timemap[session.end_t] = formatDatetime(parseDatetime(session.end))
+    if (!schedule.sessions_by_t[session.start_t])
+      schedule.sessions_by_t[session.start_t] = {
+        't': formatDatetime(parseDatetime(session.start)),
+        'rooms': [],
+        'sessions': []
+      }
+
+    schedule.sessions_by_t[session.start_t].sessions.push(session)
+    schedule.sessions_by_t[session.start_t].rooms.push(session.room)
+    if (session.broadcast)
+      schedule.sessions_by_t[session.start_t].rooms = schedule.sessions_by_t[session.start_t].rooms.concat(session.broadcast)
+    schedule.sessions_by_t[session.start_t].rooms = [...new Set(schedule.sessions_by_t[session.start_t].rooms)]
+    tags = new Set([...tags, ...session.tags])
+    speakers = new Set([...speakers, ...session.speakers])
+  }
+
+  let entries = Object.entries(schedule.sessions_by_t)
+  entries.sort((a, b) => a[0] - b[0])
+
+  schedule.sessions_by_t = Object.fromEntries(entries)
+  schedule.tags = schedule.tags.filter(tag => tags.has(tag.id))
+  schedule.speakers = schedule.speakers.filter(speaker => speakers.has(speaker.id))
+
+  return schedule
+}
+
 function buildPug(baseurl = '/2024/') {
   let build_time = new Date().getTime()
   let dest_path = '.' + path.join('/static/', baseurl)
-  let schedule = require('./src/data/schedule.json')
-  schedule['sessions'] = schedule['sessions'].sort((a, b) => parseDatetime(a['start']) - parseDatetime(b['start']));
-  schedule['sessions_by_t'] = {}
-  schedule['sessions_timemap'] = {}
-  let tags = new Set();
-  let speakers = new Set();
-  for (let session of schedule['sessions']) {
-    if (!session['room'] || !session['start'] || !session['end']) continue;
-    session['start_t'] = (parseDatetime(session['start']) - parseDatetime('2024-5-4T09:00:00+08:00')) / 60000;
-    session['end_t'] = (parseDatetime(session['end']) - parseDatetime('2024-5-4T09:00:00+08:00')) / 60000;
-    schedule['sessions_timemap'][session['start_t']] = formatDatetime(parseDatetime(session['start']));
-    schedule['sessions_timemap'][session['end_t']] = formatDatetime(parseDatetime(session['end']));
-    if (!schedule['sessions_by_t'][session['start_t']]) {
-      schedule['sessions_by_t'][session['start_t']] = {
-        't': formatDatetime(parseDatetime(session['start'])),
-        'rooms': [],
-        'sessions': []
-      };
-    }
-    schedule['sessions_by_t'][session['start_t']]['sessions'].push(session);
-    schedule['sessions_by_t'][session['start_t']]['rooms'].push(session['room']);
-    if (session['broadcast']) {
-      schedule['sessions_by_t'][session['start_t']]['rooms'] = schedule['sessions_by_t'][session['start_t']]['rooms'].concat(session['broadcast'])
-    }
-    schedule['sessions_by_t'][session['start_t']]['rooms'] = [...new Set(schedule['sessions_by_t'][session['start_t']]['rooms'])];
-    tags = new Set([...tags, ...session['tags']]);
-    speakers = new Set([...speakers, ...session['speakers']]);
-  }
-  let entries = Object.entries(schedule['sessions_by_t']);
-  entries.sort((a, b) => a[0] - b[0]);
-  schedule['sessions_by_t'] = Object.fromEntries(entries);
-  schedule['tags'] = schedule['tags'].filter(tag => tags.has(tag['id']));
-  schedule['speakers'] = schedule['speakers'].filter(speaker => speakers.has(speaker['id']));
+
+  // Load schedule
+  let schedule = buildSchedule()
 
   return gulp
     .src('src/pug/**/index.pug')
