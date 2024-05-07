@@ -182,7 +182,7 @@
     {
       "id": "patrick",
       "name": {"zh": "Patrick", "en": "Patrick"},
-      "avatar": "",
+      "avatar": "assets/img/staff/patrick.jpg",
       "website": "",
       "bio": ""
     },
@@ -350,7 +350,7 @@
     {
       "id": "yutin",
       "name": {"zh": "YuTin", "en": "YuTin"},
-      "avatar": "https://gravatar.com/avatar/5d51e6307bddec5472e724f590af7abc8b391f0fd2bf138a649038b1800e9337.jpg",
+      "avatar": "assets/img/speakers/yutin.jpg",
       "website": "",
       "bio": ""
     },
@@ -376,8 +376,8 @@
       "bio": ""
     },
     {
-      "id": "chaoli",
-      "name": {"zh": "兆翌", "en": "兆翌"},
+      "id": "chaoyi",
+      "name": {"zh": "兆翌", "en": "Chaoyi"},
       "avatar": "https://gravatar.com/avatar/ea1f127f094a2db6b6f9de0075a0dd4069cf836334eeeaf3e553a5f1865f0824.jpg",
       "website": "",
       "bio": ""
@@ -442,6 +442,13 @@
       "id": "ralin",
       "name": {"zh": "Ralin", "en": "Ralin"},
       "avatar": "assets/img/staff/ralin.jpg",
+      "website": "",
+      "bio": ""
+    },
+    {
+      "id": "yider",
+      "name": {"zh": "Yider", "en": "Yider"},
+      "avatar": "https://gravatar.com/avatar/3fb4fe91e7f691523250f4da797f50b493be5fd6199744e1e5a1bca29dee2ba6.jpg",
       "website": "",
       "bio": ""
     },
@@ -650,7 +657,7 @@
     {
       "id": "logistics",
       "name": {"zh": "場務組", "en": "Logistics"},
-      "members": ["cpy", "chaoli", "penguin", "puchi", "zai", "ralin", "yider", "jackie", "joy", "yenchiang", "che", "astrid", "annie", "phoebe", "riley", "kuki", "vanbert"],
+      "members": ["cpy", "chaoyi", "penguin", "puchi", "zai", "ralin", "yider", "jackie", "joy", "yenchiang", "che", "astrid", "annie", "phoebe", "riley", "kuki", "vanbert"],
       "sections": null
     },
     {
