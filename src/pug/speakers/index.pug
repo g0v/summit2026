@@ -10,14 +10,16 @@ block main
       header.mb-2
         .head-group.flex.items-center
           img#modal-avatar.rounded-full.shrink-0.w-20.bg-slate-100
-          h4#modal-title.font-bold.mx-4
+          .flex.flex-col.items-stretch.mx-4
+            h4#modal-title.font-bold
+            h6#modal-subtitle
         .tag-group
         .info-group
       button.modal-close.text-2xl.text-dark.ms-auto(aria-label="Close")
         i.fa-solid.fa-xmark
     .modal-body.px-4.pb-4
       article#modal-content.my-4
-      section#modal-sessions
+      section#modal-sessions.mx-2
   main.container
     .my-20
       h1.border-b.border-neutral-500.pb-3(data-i18n="speakers.title") 講者
@@ -60,6 +62,8 @@ block script
       let speaker = schedule['speakers'].filter(speaker => speaker.id == id)[0]
       $('#modal-avatar').attr('src', speaker.avatar)
       $('#modal-title').text(speaker[currentLang].name)
+      $('#modal-subtitle').text(speaker[currentLang === 'en' ? 'zh' : 'en'].name)
+        .toggleClass('hidden', speaker.zh.name === speaker.en.name)
       $('#modal-content').html(speaker[currentLang].bio)
 
       let sessions = schedule.sessions.filter(session => session.speakers.includes(id))
