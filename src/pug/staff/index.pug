@@ -29,7 +29,7 @@ block main
             +staff-avatar(volunteer_id)
         if team.sections
           each section in team.sections
-            h5.my-4(id=section.id, data-i18n=`team.${team.id}.${section.id}`)= section.name.zh
+            h5.my-4(id=section.id, data-i18n=`team.section.${section.id}`)= section.name.zh
             .grid.mb-6.items-start(class="grid-cols-3 md:grid-cols-6 gap-6")
               each volunteer_id in section.members
                 +staff-avatar(volunteer_id)
