@@ -7,14 +7,11 @@ block head
 block main
   #modal: .inner-modal.rounded-xl
     .modal-head.flex.px-4.pt-4.items-start
-      header.mb-2
-        .head-group.flex.items-center
-          img#modal-avatar.rounded-full.shrink-0.w-20.bg-slate-100
-          .flex.flex-col.items-stretch.mx-4
-            h4#modal-title.font-bold
-            h6#modal-subtitle
-        .tag-group
-        .info-group
+      header.head-group.flex.items-center.mb-2
+        img#modal-avatar.rounded-full.shrink-0.w-20.bg-slate-100
+        .flex.flex-col.items-stretch.mx-4
+          h4#modal-title.font-bold
+          h6#modal-subtitle
       button.modal-close.text-2xl.text-dark.ms-auto(aria-label="Close")
         i.fa-solid.fa-xmark
     .modal-body.px-4.pb-4
@@ -26,19 +23,19 @@ block main
     section.my-20
       h3.mb-12(data-i18n="speakers.keynote") 基調演講
       .mb-12
-        .flex.items-center.gap-6(class="max-md:flex-col")
-          img.rounded-full.shrink-0.w-48.h-48(src="assets/img/speakers/jason-liu.jpg", alt="劉致昕 JS Liu")
+        .flex.flex-col.items-center.gap-12(class="md:flex-row md:items-start")
+          img.rounded-full.shrink-0.w-full.h-auto.max-w-56(class="md:max-w-48", src="assets/img/speakers/jason-liu.jpg", alt="劉致昕 JS Liu")
           div
-            h5 劉致昕 JS Liu
+            h5.mb-6 劉致昕 JS Liu
             p 劉致昕，記者/作者/podcaster，著有《真相製造》、《烏克蘭的不可能戰爭》，聲音節目《不好意思請問一下》。
-        p.mt-6 前《報導者》副總編輯、前美國民主協會亞太區資訊健全計畫顧問，曾為 g0v News 記者編輯。從一篇德國海盜黨的報導，與公民科技、g0v 開始對話，多次隨團參與公民科技、開放政府等國際會議，採訪台灣、西班牙、墨西哥、東南亞和歐美的許多公民科技計畫，在台南開的咖啡店也曾是大松場地，在國際組織裡試著與社群協力完成亞  太區公民科技手冊。跟著「沒有人」的步伐，觀察與記錄公民科技與社群超過十年。
+            p 前《報導者》副總編輯、前美國民主協會亞太區資訊健全計畫顧問，曾為 g0v News 記者編輯。從一篇德國海盜黨的報導，與公民科技、g0v 開始對話，多次隨團參與公民科技、開放政府等國際會議，採訪台灣、西班牙、墨西哥、東南亞和歐美的許多公民科技計畫，在台南開的咖啡店也曾是大松場地，在國際組織裡試著與社群協力完成亞  太區公民科技手冊。跟著「沒有人」的步伐，觀察與記錄公民科技與社群超過十年。
       .mb-12
-        .flex.items-center.gap-6(class="max-md:flex-col")
-          img.rounded-full.shrink-0.w-48.h-48(src="assets/img/speakers/john-postill.jpg", alt="John Postill")
+        .flex.flex-col.items-center.gap-12(class="md:flex-row md:items-start")
+          img.rounded-full.shrink-0.w-full.h-auto.max-w-56(class="md:max-w-48", src="assets/img/speakers/john-postill.jpg", alt="John Postill")
           div
-            h5 Dr. John Postill
+            h5.mb-6 Dr. John Postill
             p John Postill (PhD, UCL) is an anthropologist based at RMIT University, Melbourne.
-        p.mt-6 He specialises in the study of media, communication and sociopolitical change. To date he has carried out ethnographic fieldwork in Malaysia, Indonesia, Spain and (online) in the Anglosphere. He is the author of numerous publications, including The Anthropology of Digital Practices (in press, Routledge) and The Rise of Nerd Politics (2018, Pluto). At present he is researching the globalisation of the online culture wars.
+            p He specialises in the study of media, communication and sociopolitical change. To date he has carried out ethnographic fieldwork in Malaysia, Indonesia, Spain and (online) in the Anglosphere. He is the author of numerous publications, including The Anthropology of Digital Practices (in press, Routledge) and The Rise of Nerd Politics (2018, Pluto). At present he is researching the globalisation of the online culture wars.
 
     section.my-20
       h3.mb-4(data-i18n="speakers.sessions") 議程講者
