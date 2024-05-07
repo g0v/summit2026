@@ -77,6 +77,13 @@
       "bio": "Star Wars Fan/nobody/\nstudent /TW history/speak aurebesh"
     },
     {
+      "id": "kirby",
+      "name": {"zh": "Kirby", "en": "Kirby"},
+      "avatar": "assets/img/staff/kirby.jpg",
+      "website": "",
+      "bio": ""
+    },
+    {
       "id": "allen",
       "name": {"zh": "王文岳", "en": "Allen Wang"},
       "avatar": "assets/img/staff/allen.jpg",
@@ -624,7 +631,7 @@
         {
           "id": "program-assistants",
           "name": {"zh": "議程助理", "en": "Session Assistants"},
-          "members": [""]
+          "members": ["lois"]
         }
       ]
     },
