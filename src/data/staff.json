@@ -12,7 +12,7 @@
       "name": {"zh": "RSChiang", "en": "RSChiang"},
       "avatar": "assets/img/staff/rschiang.png",
       "website": "https://poren.tw",
-      "bio": "<a href=\"https://poren.tw\" rel=\"external\"><ruby lang=\"hak-TW\" style=\"ruby-overhang: none;\"><ruby lang=\"hak-TW\" style=\"ruby-position: under; ruby-position: inter-character;\">姜<rt>ㄍㄧㆲˋ</rt>柏<rt>ㄆㄚㆻˋ</rt>任<rt>ㄖㄧㆬ˫</rt></ruby><rt>Gìong Pàg Rhīm</rt></ruby></a> (Poren Chiang)<br><strong>三個關鍵字：</strong>資訊法、開放資料、自由軟體<br><strong>喜歡的一句話：</strong>我能吞下玻璃而不傷身體<sup><a href=\"https://en.wikipedia.org/wiki/I_Can_Eat_Glass\" rel=\"external\">[1]</a></sup><br><strong>社群座右銘：</strong><span style=\"background-image: linear-gradient(90deg,#337ab7,#fd8a8a 30%,#fd8c04,#a8d1d1,#9ea1d4 70%,#337ab7); background-clip: text; color: transparent; font-weight: bolder;\">先講求不傷身體，再講求效果</span>"},
+      "bio": "<h6 class=\"mb-2\"><a href=\"https://poren.tw\" rel=\"external\"><ruby lang=\"hak-TW\" style=\"ruby-overhang: none;\"><ruby lang=\"hak-TW\" style=\"ruby-position: under; ruby-position: inter-character;\">姜<rt>ㄍㄧㆲˋ</rt>柏<rt>ㄆㄚㆻˋ</rt>任<rt>ㄖㄧㆬ˫</rt></ruby><rt>Gìong Pàg Rhīm</rt></ruby></a> (Poren Chiang)</h6><ul><li><strong>三個關鍵字：</strong>資訊法、開放資料、自由軟體</li><li><strong>喜歡的一句話：</strong>我能吞下玻璃而不傷身體<sup><a href=\"https://en.wikipedia.org/wiki/I_Can_Eat_Glass\" rel=\"external\">[1]</a></sup></li><li><strong>社群座右銘：</strong><style>@keyframes rschiang-gradient { 0% { background-position-x: 0%; } 100% { background-position-x: 100%; } } .rschiang-faster:hover { animation-duration: .5s !important; }</style><span class=\"rschiang-faster\" style=\"background-image: linear-gradient(90deg, #337ab7, #fd8a8a 15%, #fd8c04, #a8d1d1, #9ea1d4 35%, #337ab7 50%, #fd8a8a 65%, #fd8c04, #a8d1d1, #9ea1d4 85%, #337ab7); background-size: 200% 100%; background-clip: text; animation: rschiang-gradient 3s linear infinite; color: transparent; font-weight: bolder; cursor: wait;\">先講求不傷身體，再講求效果</span></li></ul>"},
     {
       "id": "fanlan",
       "name": {"zh": "繁嵐／Fanlan", "en": "Fanlan"},
@@ -88,13 +88,13 @@
       "name": {"zh": "王文岳", "en": "Allen Wang"},
       "avatar": "assets/img/staff/allen.jpg",
       "website": "",
-      "bio": "Wikidata Taiwan 臺灣維基數據社群共同發起人<br>過去曾任第一屆第一期立法院開放國會委員會民間委員、國家文化記憶庫：110-111年社群經營與運作模式建置計畫資訊技術協力、社團法人台灣維基媒體協會秘書長，曾共同主持有「客家@維基」資料多元應用專案以及執行李梅樹紀念館國家文化記憶庫專案「臺灣美術巨擘的最後一程. 李梅樹告別式相關文物掃描」等資料開放專案。"},
+      "bio": "<p>Wikidata Taiwan 臺灣維基數據社群共同發起人</p><p>過去曾任第一屆第一期立法院開放國會委員會民間委員、國家文化記憶庫：110-111年社群經營與運作模式建置計畫資訊技術協力、社團法人台灣維基媒體協會秘書長，曾共同主持有「客家@維基」資料多元應用專案以及執行李梅樹紀念館國家文化記憶庫專案「臺灣美術巨擘的最後一程. 李梅樹告別式相關文物掃描」等資料開放專案。</p>"},
     {
       "id": "monica",
       "name": {"zh": "咪咕", "en": "Monica Mu"},
       "avatar": "assets/img/staff/monica.jpg",
       "website": "",
-      "bio": "是個跨足資訊圈與金融圈的填坑獸，擅長填 Allen Wang 挖出來的坑 (๑•̀ᄇ•́)و ✧ <br>Wikidata Taiwan 共同發起人<br>台灣維基媒體協會 理事"
+      "bio": "<p>是個跨足資訊圈與金融圈的填坑獸，擅長填 Allen Wang 挖出來的坑 (๑•̀ᄇ•́)و ✧ </p><p>Wikidata Taiwan 共同發起人<br>台灣維基媒體協會 理事</p>"
     },
     {
       "id": "momose",
@@ -108,7 +108,8 @@
       "name": {"zh": "Peter", "en": "Peter"},
       "avatar": "assets/img/staff/peter.jpg",
       "website": "",
-      "bio": "不務正業的法律人， g0v 社群的沒有人與 vTaiwan 社群參與者。<br>A law student who does not want to be limited by law. g0v Nobody/ vTaiwan contributor"},
+      "bio": "<p>不務正業的法律人，g0v 社群的沒有人與 vTaiwan 社群參與者。</p><p>A law student who does not want to be limited by law. g0v Nobody/ vTaiwan contributor</p>"
+    },
     {
       "id": "yellowsoar",
       "name": {"zh": "yellowsoar", "en": "yellowsoar"},
@@ -148,8 +149,8 @@
       "id": "lois",
       "name": {"zh": "Lois Chen", "en": "Lois Chen"},
       "avatar": "assets/img/staff/lois.jpg",
-      "website": "",
-      "bio": "一名熱衷於參與社群活動的前端工程師，同時也是 <a href=\"https://hackmd.io/8KIFgcOWRbq5bvdiEHqlLw\" rel=\"external\">Tech Book Community</a> 創辦人"
+      "website": "https://hackmd.io/8KIFgcOWRbq5bvdiEHqlLw",
+      "bio": "一名熱衷於參與社群活動的前端工程師，同時也是 Tech Book Community 創辦人："
     },
     {
       "id": "elva",
@@ -273,8 +274,8 @@
     {
       "id": "yangi",
       "name": {"zh": "Yangi", "en": "Yangi"},
-      "avatar": "",
-      "website": "https://gravatar.com/avatar/84ae413d8e5d8c03053df9f997124c243d3f0f466730b38bb2b7a2fea619c691.jpg",
+      "avatar": "https://gravatar.com/avatar/84ae413d8e5d8c03053df9f997124c243d3f0f466730b38bb2b7a2fea619c691.jpg",
+      "website": "",
       "bio": ""
     },
     {
@@ -317,7 +318,7 @@
       "name": {"zh": "77", "en": "77"},
       "avatar": "https://gravatar.com/avatar/d70fd2f563f5ba351cf00d7aff6c2c0c1a31326ca100b2acff490c7c8f08d2bf.jpg",
       "website": "",
-      "bio": "這裡是77，剛從大肚山跑到花果山的大學生。<br>高中玩FRC做文學獎，大學寫了一本書，目前在努力成為一位擁有人文心和理工腦的創造者。"
+      "bio": "<p>這裡是77，剛從大肚山跑到花果山的大學生。</p><p>高中玩FRC做文學獎，大學寫了一本書，目前在努力成為一位擁有人文心和理工腦的創造者。</p>"
     },
     {
       "id": "weiqi",
