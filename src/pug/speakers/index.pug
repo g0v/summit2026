@@ -5,15 +5,19 @@ block head
   link(rel="stylesheet", href="assets/css/base.css?version="+timestamp)
   link(rel="preload", href="assets/data/schedule.json?version="+timestamp, as="fetch")
 block main
-  #modal: .inner-modal
+  #modal: .inner-modal.rounded-xl
     .modal-head.flex.px-4.pt-4.items-start
-      .head-group
-        h4.font-bold.me-3
+      header.mb-2
+        .head-group.flex.items-center
+          img#modal-avatar.rounded-full.shrink-0.w-20.bg-slate-100
+          h4#modal-title.font-bold.mx-4
         .tag-group
         .info-group
-      button.modal-close.text-2xl.text-dark.ms-auto
+      button.modal-close.text-2xl.text-dark.ms-auto(aria-label="Close")
         i.fa-solid.fa-xmark
     .modal-body.px-4.pb-4
+      article#modal-content.my-4
+      section#modal-sessions
   main.container
     .my-20
       h1.border-b.border-neutral-500.pb-3(data-i18n="speakers.title") 講者
@@ -53,36 +57,30 @@ block script
       let currentLang = i18n.locale
       let id = $(this).data('id')
       history.replaceState(null, null, window.location.pathname + '#' + id);
-      let speaker = schedule['speakers'].filter(speaker => speaker['id'] == id)[0]
-      let bodyTmplDom = $(`
-        <div>
-          <div class="flex items-center mb-4">
-            <img class="rounded-full shrink-0 w-20 bg-slate-100" src="${speaker.avatar}">
-              <h4 class="text-primary ml-4">${speaker[currentLang].name}</h4>
-          </div>
-          <p>${speaker[currentLang].bio}</p>
-          <hr class="my-4">
-          <div class="sessions"></div>
-        </div>
-        `)
-      let sessions = schedule['sessions'].filter(session => session['speakers'].includes(id))
+      let speaker = schedule['speakers'].filter(speaker => speaker.id == id)[0]
+      $('#modal-avatar').attr('src', speaker.avatar)
+      $('#modal-title').text(speaker[currentLang].name)
+      $('#modal-content').html(speaker[currentLang].bio)
+
+      let sessions = schedule.sessions.filter(session => session.speakers.includes(id))
+      let sessionsTmplDom = ''
       sessions.forEach(session => {
-        let start = new Date(session['start'])
-        let end = new Date(session['end'])
+        let start = new Date(session.start)
+        let end = new Date(session.end)
         let startHours = String(start.getHours()).padStart(2, '0');
         let startMinutes = String(start.getMinutes()).padStart(2, '0');
         let endHours = String(end.getHours()).padStart(2, '0');
         let endMinutes = String(end.getMinutes()).padStart(2, '0');
-        let info = `${start.getMonth()+1}/${start.getDate()}  ${startHours}:${startMinutes} ~ ${endHours}:${endMinutes} @ ${session['room']}`;
-        $('.sessions', bodyTmplDom).append(`
+        let info = `${start.getMonth()+1}/${start.getDate()}  ${startHours}:${startMinutes} ~ ${endHours}:${endMinutes} @ ${session.room}`;
+        sessionsTmplDom += (`
           <a class="block mb-4" href="agenda/#${session.id}">
           <h5>${session[currentLang].title}</h5>
           <div>${info}</div>
           </a>
         `)
       })
+      $('#modal-sessions').html(sessionsTmplDom)
 
-      $('#modal .modal-body').html(bodyTmplDom)
       $('body').addClass('overflow-hidden')
       $('#modal').addClass('show')
     })
