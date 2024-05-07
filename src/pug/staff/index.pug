@@ -11,32 +11,23 @@ block main
     .my-20
       - let volunteers = {}
       - for (let volunteer of staff.members) volunteers[volunteer.id] = volunteer
-      .grid.mb-12.items-end(class="grid-cols-3 md:grid-cols-6 gap-4")
-        mixin staff-avatar(person)
-          - let person_name = (person.name.zh || '') + (person.name.zh === person.name.en ? '' : ' ' + person.name.en)
-          .aspect-square.bg-slate-100.rounded-full.flex.items-center.justify-center(data-id=person.id, class=(person.website ? "cursor-pointer" : ""))
-            if person.avatar
-              img.rounded-full(src=person.avatar, alt=person_name)
-            else
-              span.text-center(data-i18n=`staff.${person.id}`)= person_name
-        each team in staff.teams
+      each team in staff.teams
+        h4.mt-8.mb-4(id=team.id, data-i18n=`team.${team.id}`)= team.name.zh
+        .grid.mb-6.items-end(class="grid-cols-3 md:grid-cols-6 gap-6")
+          mixin staff-avatar(person_id)
+            - let person = volunteers[person_id]
+            - let clickable = !!(person?.website || person?.bio)
+            - let alt = (person?.name) ? (person.name.zh || '') + (person.name.zh === person.name.en ? '' : ' ' + person.name.en) : person_id
+            .flex.flex-col.items-center.justify-center(id=person_id, data-id=person_id)
+              a.w-full.flex.items-center.justify-center.aspect-square.bg-slate-100.rounded-full(href=(clickable ? (person.bio ? `staff/#${person_id}` : person.website) : null), rel="external")
+                if person && person.avatar
+                  img.rounded-full(src=person.avatar, alt=alt)
+              .mt-2.mb-4.text-center(data-i18n=`staff.${person_id}`, class=(person ? '' : 'text-red'))= person && person.name.zh
           each volunteer_id in team.members
-            - let volunteer = volunteers[volunteer_id]
-            .mb-4
-              if team.members[0] === volunteer_id
-                h5.my-2(data-i18n=`team.${team.id}`)= team.name.zh
-              if volunteer
-                +staff-avatar(volunteer)
-              else
-                .text-red= volunteer_id
-          if team.sections
-            each section in team.sections
+            +staff-avatar(volunteer_id)
+        if team.sections
+          each section in team.sections
+            h5.my-4(id=section.id, data-i18n=`team.${team.id}.${section.id}`)= section.name.zh
+            .grid.mb-6.items-end(class="grid-cols-3 md:grid-cols-6 gap-6")
               each volunteer_id in section.members
-                - let volunteer = volunteers[volunteer_id]
-                .mb-4
-                  if section.members[0] === volunteer_id
-                    h6.my-2(data-i18n=`team.${team.id}.${section.id}`)= section.name.zh
-                  if volunteer
-                    +staff-avatar(volunteer)
-                  else
-                    .text-red= volunteer_id
+                +staff-avatar(volunteer_id)

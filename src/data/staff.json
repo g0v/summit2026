@@ -59,8 +59,8 @@
       "id": "daisuke",
       "name": {"zh": "大助", "en": "Daisuke"},
       "avatar": "assets/img/staff/daisuke.jpg",
-      "website": "",
-      "bio": ""
+      "website": "https://www.facebook.com/DaisukeChenPhotography/",
+      "bio": "不知道到底是救火隊還是本身就是火的大助\n歡迎追蹤攝影粉專（？"
     },
     {
       "id": "ahmin",
@@ -101,7 +101,7 @@
       "name": {"zh": "桃瀨", "en": "Momose"},
       "avatar": "assets/img/staff/momose.jpg",
       "website": "",
-      "bio": "無"
+      "bio": ""
     },
     {
       "id": "peter",
@@ -149,7 +149,7 @@
       "name": {"zh": "Lois Chen", "en": "Lois Chen"},
       "avatar": "assets/img/staff/lois.jpg",
       "website": "",
-      "bio": "一名熱衷於參與社群活動的前端工程師，同時也是 Tech Book Community 創辦人：https://hackmd.io/8KIFgcOWRbq5bvdiEHqlLw"
+      "bio": "一名熱衷於參與社群活動的前端工程師，同時也是 <a href=\"https://hackmd.io/8KIFgcOWRbq5bvdiEHqlLw\" rel=\"external\">Tech Book Community</a> 創辦人"
     },
     {
       "id": "elva",
@@ -169,8 +169,8 @@
       "id": "kangaroo",
       "name": {"zh": "蘇冠彰", "en": "Kangaroo"},
       "avatar": "assets/img/staff/kangaroo.jpg",
-      "website": "",
-      "bio": "個人網站：https://kangarooblog.simple.ink/"
+      "website": "https://kangarooblog.simple.ink/",
+      "bio": ""
     },
     {
       "id": "whitecat",
@@ -327,14 +327,14 @@
       "bio": "Hi, 我是圍棋:) 目前是大學三年級學生。 做過社區營造、刊物編輯、網站設計，目前在大學裡面教怎麼寫Wikipedia。很高興認識大家。"
     },
     {
-      "id": "shrimp",
+      "id": "shrimproll",
       "name": {"zh": "蝦捲", "en": "蝦捲"},
       "avatar": "assets/img/staff/shrimp.jpg",
       "website": "",
       "bio": ""
     },
     {
-      "id": "shiba",
+      "id": "shibasalmon",
       "name": {"zh": "柴犬", "en": "柴犬"},
       "avatar": "assets/img/staff/shiba.jpg",
       "website": "",
@@ -478,7 +478,7 @@
       "name": {"zh": "柚子", "en": "Astrid"},
       "avatar": "assets/img/staff/astrid.jpg",
       "website": "",
-      "bio": "可以不用，感謝"
+      "bio": ""
     },
     {
       "id": "skyler",
@@ -562,7 +562,7 @@
       "name": {"zh": "劉雁", "en": "Ian Liu"},
       "avatar": "assets/img/staff/ian.jpg",
       "website":"https://yannest.com",
-      "bio": "2013 幫 Muka 救火掉進 COSCUP 行銷坑，就坑坑相連出沒在 SITCON, g0v Summit, CCTW 中，也當過拉贊及出納志工小精靈。資傳碩班時接觸了資訊社會學，進而思索怎樣讓地方或人文的人都能快速接觸開放精神，也試著在一些文恐行動中試著嘗試開放的概念。曾在某前瞻計畫中試著推動開放資料與 CC ，突然醒悟覺得來 OCF 可試著從不同角度「更用力」使力。"},
+      "bio": "2013 幫 Muka 救火掉進 COSCUP 行銷坑，就坑坑相連出沒在 SITCON, g0v Summit, CCTW 中，也當過拉贊及出納志工小精靈。資傳碩班時接觸了資訊社會學，進而思索怎樣讓地方或人文的人都能快速接觸開放精神，也試著在一些文恐行動中試著嘗試開放的概念。曾在某前瞻計畫中試著推動開放資料與 CC，突然醒悟覺得來 OCF 可試著從不同角度「更用力」使力。"},
     {
       "id": "ipa",
       "name": {"zh": "ipa", "en": "ipa"},
@@ -603,7 +603,7 @@
         {
           "id": "pr",
           "name": {"zh": "媒體小組", "en": "Media Relations"},
-          "members": ["yc", "ahmin", "jason"]
+          "members": ["yc", "ahmin"]
         },
         {
           "id": "web",
@@ -631,20 +631,26 @@
         {
           "id": "program-assistants",
           "name": {"zh": "議程助理", "en": "Session Assistants"},
-          "members": ["lois"]
+          "members": ["lois", "hamster", "peti", "city", "yuan", "elva", "ting", "kangaroo", "kevin", "vivian", "carey", "patrick", "ireneann"]
         }
       ]
     },
     {
       "id": "photography",
       "name": {"zh": "紀錄組", "en": "Photography"},
-      "members": ["oliver", "whitecat", "hsiaoling", "kailan", "yutin"],
-      "sections": null
+      "members": ["oliver", "whitecat", "shibasalmon", "hsiaoling", "kailan", "moontai", "zhenshoot", "littlechin", "janice", "yangi", "shrimproll", "gavin", "weiqi", "77"],
+      "sections": [
+        {
+          "id": "equipment",
+          "name": {"zh": "設備", "en": "Equipment"},
+          "members": ["yutin"]
+        }
+      ]
     },
     {
       "id": "logistics",
       "name": {"zh": "場務組", "en": "Logistics"},
-      "members": ["cpy", "chaoli", "annie", "riley", "kuki", "che", "vanbert", "jackie", "zai", "joy", "ralin", "penguin", "phoebe", "puchi", "yenchiang", "astrid"],
+      "members": ["cpy", "chaoli", "penguin", "puchi", "zai", "ralin", "yider", "jackie", "joy", "yenchiang", "che", "astrid", "annie", "phoebe", "riley", "kuki", "vanbert"],
       "sections": null
     },
     {
@@ -655,7 +661,7 @@
         {
           "id": "interpreters",
           "name": {"zh": "口譯", "en": "Interpreters"},
-          "members": ["angy", "wilt", "kris", "chiahao", "sarah", "jhanshin", "caro", "angela"]
+          "members": ["wilt", "angy", "kris", "chiahao", "sarah", "jhanshin", "caro", "angela"]
         }
       ]
     },
