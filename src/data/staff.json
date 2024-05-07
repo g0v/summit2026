@@ -30,7 +30,7 @@
     {
       "id": "yc",
       "name": {"zh": "YC", "en": "YC"},
-      "avatar": "assets/img/staff/yc.jpg",
+      "avatar": "",
       "website": "",
       "bio": ""
     },
@@ -44,14 +44,14 @@
     {
       "id": "mavis",
       "name": {"zh": "Mavis", "en": "Mavis"},
-      "avatar": "assets/img/staff/mavis.jpg",
+      "avatar": "https://gravatar.com/avatar/6dcf47460aa337665572446eac4d156ea3a54770195f5277ea305cdf03627aaa.jpg",
       "website": "",
       "bio": ""
     },
     {
       "id": "jason",
       "name": {"zh": "Jason", "en": "Jason"},
-      "avatar": "assets/img/staff/jason.jpg",
+      "avatar": "https://gravatar.com/avatar/b20b81541a3b3194ee86b7f0c778b22b44f92dae8640e47b586fc9c87bd95b4d.jpg",
       "website": "",
       "bio": ""
     },
@@ -79,7 +79,7 @@
     {
       "id": "kirby",
       "name": {"zh": "Kirby", "en": "Kirby"},
-      "avatar": "assets/img/staff/kirby.jpg",
+      "avatar": "",
       "website": "",
       "bio": ""
     },
@@ -99,7 +99,7 @@
     {
       "id": "momose",
       "name": {"zh": "桃瀨", "en": "Momose"},
-      "avatar": "assets/img/staff/momose.jpg",
+      "avatar": "",
       "website": "",
       "bio": ""
     },
@@ -119,7 +119,7 @@
     {
       "id": "rayen",
       "name": {"zh": "Rayen", "en": "Rayen"},
-      "avatar": "assets/img/staff/rayen.jpg",
+      "avatar": "",
       "website": "",
       "bio": ""
     },
@@ -182,7 +182,7 @@
     {
       "id": "patrick",
       "name": {"zh": "Patrick", "en": "Patrick"},
-      "avatar": "assets/img/staff/patrick.jpg",
+      "avatar": "",
       "website": "",
       "bio": ""
     },
@@ -196,63 +196,63 @@
     {
       "id": "hamster",
       "name": {"zh": "楊上賢", "en": "Hamster"},
-      "avatar": "assets/img/staff/hamster.jpg",
+      "avatar": "https://gravatar.com/avatar/56524c112d9510a20e3bd3064e645bf3b87d2e931c45dc9b82d3d7cbd5b2abaa.jpg",
       "website": "",
       "bio": ""
     },
     {
       "id": "peti",
       "name": {"zh": "林沛緹", "en": "Peti"},
-      "avatar": "assets/img/staff/peti.jpg",
+      "avatar": null,
       "website": "",
       "bio": ""
     },
     {
       "id": "yuan",
       "name": {"zh": "Yuan", "en": "Yuan"},
-      "avatar": "assets/img/staff/yuan.jpg",
+      "avatar": "https://gravatar.com/avatar/27b84ea7a68d4c6c9f568aa6c374894c1fdab6198893045c293c5fc2c6125915.jpg",
       "website": "https://yuan-tw.net",
       "bio": ""
     },
     {
       "id": "ting",
       "name": {"zh": "Yu Ting Chen", "en": "Yu Ting Chen"},
-      "avatar": "assets/img/staff/ting.jpg",
+      "avatar": "",
       "website": "",
       "bio": ""
     },
     {
       "id": "paul",
       "name": {"zh": "Paul", "en": "Paul"},
-      "avatar": "assets/img/staff/paul.jpg",
+      "avatar": "https://gravatar.com/avatar/d5dcf7c19848cb6042e8f0e3ef5b5eb651711ea9776a869f74a40b788c0d17d3.jpg",
       "website": "",
       "bio": ""
     },
     {
       "id": "ddio",
       "name": {"zh": "ddio", "en": "ddio"},
-      "avatar": "assets/img/staff/ddio.jpg",
+      "avatar": "assets/img/speakers/ddio.jpg",
       "website": "",
       "bio": ""
     },
     {
       "id": "coldplay",
       "name": {"zh": "冷玩／劉靜耘", "en": "coldplay/Claire Liu"},
-      "avatar": "assets/img/staff/claire.jpg",
+      "avatar": "assets/img/speakers/claire-liu.jpg",
       "website": "https://tw.linkedin.com/in/clairecyliu",
       "bio": ""
     },
     {
       "id": "billion",
       "name": {"zh": "比鄰", "en": "Billion"},
-      "avatar": "assets/img/staff/billion.jpg",
+      "avatar": "assets/img/speakers/billion-lee.jpg",
       "website": "",
       "bio": ""
     },
     {
       "id": "ichieh",
       "name": {"zh": "ichieh", "en": "ichieh"},
-      "avatar": "assets/img/staff/ichieh.jpg",
+      "avatar": "",
       "website": "",
       "bio": ""
     },
@@ -266,56 +266,56 @@
     {
       "id": "kailan",
       "name": {"zh": "Kailan", "en": "Kailan"},
-      "avatar": "assets/img/staff/kailan.jpg",
+      "avatar": "https://gravatar.com/avatar/03394efca1d70947a580cb8c6c9d8b2f1b7ab1cb8f3c7677659e11a7dfbb85a3.jpg",
       "website": "",
       "bio": ""
     },
     {
       "id": "yangi",
       "name": {"zh": "Yangi", "en": "Yangi"},
-      "avatar": "assets/img/staff/yangi.jpg",
-      "website": "",
+      "avatar": "",
+      "website": "https://gravatar.com/avatar/84ae413d8e5d8c03053df9f997124c243d3f0f466730b38bb2b7a2fea619c691.jpg",
       "bio": ""
     },
     {
       "id": "gavin",
       "name": {"zh": "Gavin", "en": "Gavin"},
-      "avatar": "assets/img/staff/gavin.jpg",
+      "avatar": "",
       "website": "",
       "bio": ""
     },
     {
       "id": "hsiaoling",
       "name": {"zh": "小0", "en": "Hsiaoling"},
-      "avatar": "assets/img/staff/hsiaoling.jpg",
+      "avatar": "",
       "website": "",
       "bio": ""
     },
     {
       "id": "janice",
       "name": {"zh": "Janice Hu", "en": "Janice Hu"},
-      "avatar": "assets/img/staff/janice.jpg",
+      "avatar": "",
       "website": "",
       "bio": ""
     },
     {
       "id": "littlechin",
       "name": {"zh": "小群", "en": "littlechin"},
-      "avatar": "assets/img/staff/littlechin.jpg",
+      "avatar": "https://gravatar.com/avatar/17ca86408e3e3c04de55e541868908317ca37de816f0e24a510199dfdfca9390.jpg",
       "website": "",
       "bio": ""
     },
     {
       "id": "moontai",
       "name": {"zh": "月太", "en": "moontai0724"},
-      "avatar": "assets/img/staff/moontai.jpg",
+      "avatar": "https://gravatar.com/avatar/e4f20ec6872f262b2f2866a636a6023de414612a22f2ec52c154ed4ea5ee8d02.jpg",
       "website": "https://moontai0724.tw",
       "bio": ""
     },
     {
       "id": "77",
       "name": {"zh": "77", "en": "77"},
-      "avatar": "assets/img/staff/77.jpg",
+      "avatar": "https://gravatar.com/avatar/d70fd2f563f5ba351cf00d7aff6c2c0c1a31326ca100b2acff490c7c8f08d2bf.jpg",
       "website": "",
       "bio": "這裡是77，剛從大肚山跑到花果山的大學生。\n高中玩FRC做文學獎，大學寫了一本書，目前在努力成為一位擁有人文心和理工腦的創造者。"
     },
@@ -329,14 +329,14 @@
     {
       "id": "shrimproll",
       "name": {"zh": "蝦捲", "en": "蝦捲"},
-      "avatar": "assets/img/staff/shrimp.jpg",
+      "avatar": null,
       "website": "",
       "bio": ""
     },
     {
       "id": "shibasalmon",
       "name": {"zh": "柴犬", "en": "柴犬"},
-      "avatar": "assets/img/staff/shiba.jpg",
+      "avatar": "https://gravatar.com/avatar/894f1c4b0b89e3fd10c0572c313bfa99d4aeb3bae49e042e77d1302caa30305d.jpg",
       "website": "",
       "bio": ""
     },
@@ -350,42 +350,42 @@
     {
       "id": "yutin",
       "name": {"zh": "YuTin", "en": "YuTin"},
-      "avatar": "assets/img/staff/yutin.jpg",
+      "avatar": "https://gravatar.com/avatar/5d51e6307bddec5472e724f590af7abc8b391f0fd2bf138a649038b1800e9337.jpg",
       "website": "",
       "bio": ""
     },
     {
       "id": "charlie",
       "name": {"zh": "查理", "en": "Charlieeeeee"},
-      "avatar": "assets/img/staff/charlie.jpg",
+      "avatar": "https://gravatar.com/avatar/3fa528d205b05f812044dc395ba13e173c27f94d517982aa912970462ba9a41c.jpg",
       "website": "",
       "bio": ""
     },
     {
       "id": "mengting",
       "name": {"zh": "孟庭", "en": "Mengting"},
-      "avatar": "assets/img/staff/mengting.jpg",
+      "avatar": "https://gravatar.com/avatar/423f617ea7dc19be347a108af328a1a49ac6f18141d39a5bf23a23bc4e117aa2.jpg",
       "website": "",
       "bio": ""
     },
     {
       "id": "cpy",
       "name": {"zh": "CPY", "en": "CPY"},
-      "avatar": "assets/img/staff/cpy.jpg",
+      "avatar": "https://gravatar.com/avatar/b758f76d4ee9cb5078b95086193cebe27586ce0beeafd01e649a0cc06384fec0.jpg",
       "website": "",
       "bio": ""
     },
     {
       "id": "chaoli",
       "name": {"zh": "兆翌", "en": "兆翌"},
-      "avatar": "assets/img/staff/chaoli.jpg",
+      "avatar": "https://gravatar.com/avatar/ea1f127f094a2db6b6f9de0075a0dd4069cf836334eeeaf3e553a5f1865f0824.jpg",
       "website": "",
       "bio": ""
     },
     {
       "id": "annie",
       "name": {"zh": "安妮", "en": "Annie Tseng"},
-      "avatar": "assets/img/staff/annie.jpg",
+      "avatar": "",
       "website": "",
       "bio": ""
     },
@@ -406,7 +406,7 @@
     {
       "id": "che",
       "name": {"zh": "che", "en": "che "},
-      "avatar": "assets/img/staff/che.jpg",
+      "avatar": "",
       "website": "",
       "bio": ""
     },
@@ -427,7 +427,7 @@
     {
       "id": "zai",
       "name": {"zh": "Zai", "en": "Zai"},
-      "avatar": "assets/img/staff/zai.jpg",
+      "avatar": "https://gravatar.com/avatar/f2d95c3c84a9515cf176987939104d5df0a736fb448a339b61ad22ee376dfb77.jpg",
       "website": "https://ouoc.net/",
       "bio": ""
     },
@@ -448,14 +448,14 @@
     {
       "id": "penguin",
       "name": {"zh": "柯羿", "en": "Tsubasa Ko"},
-      "avatar": "assets/img/staff/penguin.jpg",
+      "avatar": "",
       "website": "",
       "bio": "Hi!"
     },
     {
       "id": "phoebe",
       "name": {"zh": "Phoebe", "en": "Phoebe"},
-      "avatar": "assets/img/staff/phoebe.jpg",
+      "avatar": "",
       "website": "",
       "bio": ""
     },
@@ -476,14 +476,14 @@
     {
       "id": "astrid",
       "name": {"zh": "柚子", "en": "Astrid"},
-      "avatar": "assets/img/staff/astrid.jpg",
+      "avatar": "assets/img/speakers/astrid.jpg",
       "website": "",
       "bio": ""
     },
     {
       "id": "skyler",
       "name": {"zh": "Skyler", "en": "Skyler"},
-      "avatar": "assets/img/staff/skyler.jpg",
+      "avatar": "",
       "website": "",
       "bio": ""
     },
@@ -497,83 +497,83 @@
     {
       "id": "angy",
       "name": {"zh": "陳安頎", "en": "Angy"},
-      "avatar": "assets/img/staff/angy.jpg",
+      "avatar": "",
       "website": "",
       "bio": ""
     },
     {
       "id": "wilt",
       "name": {"zh": "Wilt Chen", "en": "Wilt Chen"},
-      "avatar": "assets/img/staff/wilt.jpg",
+      "avatar": "",
       "website": "",
       "bio": ""
     },
     {
       "id": "kris",
       "name": {"zh": "Kris", "en": "Kris"},
-      "avatar": "assets/img/staff/kris.jpg",
+      "avatar": "",
       "website": "",
       "bio": ""
     },
     {
       "id": "chiahao",
       "name": {"zh": "張家豪", "en": "張家豪"},
-      "avatar": "assets/img/staff/chiahao.jpg",
+      "avatar": "",
       "website": "",
       "bio": ""
     },
     {
       "id": "sarah",
       "name": {"zh": "Sarah Wu", "en": "Sarah Wu"},
-      "avatar": "assets/img/staff/sarah.jpg",
+      "avatar": "",
       "website": "",
       "bio": ""
     },
     {
       "id": "jhanshin",
       "name": {"zh": "江健新", "en": "江健新"},
-      "avatar": "assets/img/staff/jhanshin.jpg",
+      "avatar": "",
       "website": "",
       "bio": ""
     },
     {
       "id": "caro",
       "name": {"zh": "Caro", "en": "Caro"},
-      "avatar": "assets/img/staff/caro.jpg",
+      "avatar": "https://gravatar.com/avatar/cd639d84e5e7448a9a68d7ff247f59fa4da862b0d6dd7f31a041b97b07bb60a3.jpg",
       "website": "",
       "bio": ""
     },
     {
       "id": "angela",
       "name": {"zh": "Angela Kao", "en": "Angela Kao"},
-      "avatar": "assets/img/staff/angela.jpg",
+      "avatar": "",
       "website": "",
       "bio": ""
     },
     {
       "id": "chihao",
       "name": {"zh": "chihao", "en": "chihao"},
-      "avatar": "assets/img/staff/chihao.jpg",
+      "avatar": "assets/img/speakers/chihhao-yu.jpg",
       "website": "",
       "bio": ""
     },
     {
       "id": "ian",
       "name": {"zh": "劉雁", "en": "Ian Liu"},
-      "avatar": "assets/img/staff/ian.jpg",
+      "avatar": "https://gravatar.com/avatar/1adadaf68c107c93b42908dacd253698b1970fef9f11d1fe3811bedadf9bfa75.jpg",
       "website":"https://yannest.com",
       "bio": "2013 幫 Muka 救火掉進 COSCUP 行銷坑，就坑坑相連出沒在 SITCON, g0v Summit, CCTW 中，也當過拉贊及出納志工小精靈。資傳碩班時接觸了資訊社會學，進而思索怎樣讓地方或人文的人都能快速接觸開放精神，也試著在一些文恐行動中試著嘗試開放的概念。曾在某前瞻計畫中試著推動開放資料與 CC，突然醒悟覺得來 OCF 可試著從不同角度「更用力」使力。"},
     {
       "id": "ipa",
       "name": {"zh": "ipa", "en": "ipa"},
-      "avatar": "assets/img/staff/ipa.jpg",
+      "avatar": "https://gravatar.com/avatar/e7148e4d582f014e61a0fc3a7bfe12812cd805348173460bbbc397ab3e25fee1.jpg",
       "website": "",
       "bio": ""
     },
     {
       "id": "saul",
       "name": {"zh": "彭彭", "en": "彭彭"},
-      "avatar": "assets/img/staff/saul.jpg",
+      "avatar": "",
       "website": "",
       "bio": ""
     }
@@ -643,7 +643,7 @@
         {
           "id": "equipment",
           "name": {"zh": "設備", "en": "Equipment"},
-          "members": ["yutin"]
+          "members": ["yutin", "charlie", "mengting"]
         }
       ]
     },
