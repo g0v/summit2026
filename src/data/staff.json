@@ -491,7 +491,7 @@
     {
       "id": "skyler",
       "name": {"zh": "Skyler", "en": "Skyler"},
-      "avatar": "",
+      "avatar": "assets/img/staff/skyler.jpg",
       "website": "",
       "bio": ""
     },
@@ -563,7 +563,7 @@
       "name": {"zh": "chihao", "en": "chihao"},
       "avatar": "assets/img/speakers/chihhao-yu.jpg",
       "website": "",
-      "bio": ""
+      "bio": "<ul><li>台灣資訊環境研究中心 IORG 共同主持人</li><li>台灣零時政府 g0v 國際交流社群工作小組共同創辦人</li><li>港台日韓公民黑客社群網絡「面海松」共同主辦人</li></ul>"
     },
     {
       "id": "ian",
