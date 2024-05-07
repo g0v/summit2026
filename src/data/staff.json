@@ -74,7 +74,7 @@
       "name": {"zh": "小侯Sió Hâu", "en": "Hâu/Hou"},
       "avatar": "assets/img/staff/hou.png",
       "website": "",
-      "bio": "Star Wars Fan/nobody/<br>student /TW history/speak aurebesh"
+      "bio": "Star Wars Fan/nobody/<br>student/TW history/speak aurebesh"
     },
     {
       "id": "kirby",
@@ -88,7 +88,7 @@
       "name": {"zh": "王文岳", "en": "Allen Wang"},
       "avatar": "assets/img/staff/allen.jpg",
       "website": "",
-      "bio": "<p>Wikidata Taiwan 臺灣維基數據社群共同發起人</p><p>過去曾任第一屆第一期立法院開放國會委員會民間委員、國家文化記憶庫：110-111年社群經營與運作模式建置計畫資訊技術協力、社團法人台灣維基媒體協會秘書長，曾共同主持有「客家@維基」資料多元應用專案以及執行李梅樹紀念館國家文化記憶庫專案「臺灣美術巨擘的最後一程. 李梅樹告別式相關文物掃描」等資料開放專案。</p>"},
+      "bio": "<p>Wikidata Taiwan 臺灣維基數據社群共同發起人</p><p>過去曾任第一屆第一期立法院開放國會委員會民間委員、國家文化記憶庫：110-111年社群經營與運作模式建置計畫資訊技術協力、社團法人台灣維基媒體協會秘書長，曾共同主持有「客家@維基」資料多元應用專案以及執行李梅樹紀念館國家文化記憶庫專案「臺灣美術巨擘的最後一程—李梅樹告別式相關文物掃描」等資料開放專案。</p>"},
     {
       "id": "monica",
       "name": {"zh": "咪咕", "en": "Monica Mu"},
@@ -325,7 +325,7 @@
       "name": {"zh": "圍棋", "en": "Weiqi"},
       "avatar": "assets/img/staff/weiqi.jpg",
       "website": "",
-      "bio": "Hi, 我是圍棋:) 目前是大學三年級學生。 做過社區營造、刊物編輯、網站設計，目前在大學裡面教怎麼寫Wikipedia。很高興認識大家。"
+      "bio": "<p>Hi, 我是圍棋:) 目前是大學三年級學生。</p><p>做過社區營造、刊物編輯、網站設計，目前在大學裡面教怎麼寫Wikipedia。很高興認識大家。</p>"
     },
     {
       "id": "shrimproll",

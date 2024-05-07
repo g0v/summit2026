@@ -66,8 +66,10 @@ block script
     $('.staff[data-id]').on('click', function (e) {
       let currentLang = i18n.locale
       let id = $(this).data('id')
-      history.replaceState(null, null, window.location.pathname + '#' + id);
       let member = staff.members.filter(member => member.id == id)[0]
+
+      // No need to show popup if there were no bio
+      if (!member.bio) return
 
       $('#modal-avatar').attr('src', member.avatar)
       $('#modal-title').text(member.name[currentLang])
@@ -82,6 +84,8 @@ block script
       $('#modal-website-link').attr('href', member.website || "#")
         .text((link.endsWith('/') ? link.substring(0, link.length - 1) : link) || '')
 
+      history.replaceState(null, null, window.location.pathname + '#' + id);
       $('body').addClass('overflow-hidden')
       $('#modal').addClass('show')
+      return false
     })
