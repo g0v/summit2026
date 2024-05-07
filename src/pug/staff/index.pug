@@ -8,13 +8,18 @@ block head
 block main
   #modal: .inner-modal.rounded-xl
     .modal-head.flex.px-4.pt-4.items-start
-      .head-group
-        h4.font-bold.me-3
-        .tag-group
-        .info-group
-      button.modal-close.text-2xl.text-dark.ms-auto
+      header.head-group.flex.items-center.mb-2
+        img#modal-avatar.rounded-full.shrink-0.w-20.bg-slate-100
+        .flex.flex-col.items-stretch.mx-4
+          h4#modal-title.font-bold
+          h6#modal-subtitle
+      button.modal-close.text-2xl.text-dark.ms-auto(aria-label="Close")
         i.fa-solid.fa-xmark
     .modal-body.px-4.pb-4
+      article#modal-content.me-2.my-4
+      section#modal-info.flex.items-center
+        i.fa-solid.fa-earth-asia
+        a#modal-website-link.mx-2(href="#", rel="external", target="_blank")
   main.container
     .my-20
       h1.border-b.border-neutral-500.pb-3(data-i18n="staff.title") 工作人員
@@ -63,18 +68,20 @@ block script
       let id = $(this).data('id')
       history.replaceState(null, null, window.location.pathname + '#' + id);
       let member = staff.members.filter(member => member.id == id)[0]
-      let bodyTmplDom = $(`
-        <div>
-          <div class="flex items-center mb-4">
-            <img class="rounded-full shrink-0 w-20 bg-slate-100" src="${member.avatar}">
-              <h4 class="text-primary ml-4">${member.name[currentLang]}</h4>
-          </div>
-          <p>${member.bio}</p>
-          <a href="${member.website}" rel="external nofollow">${member.website}</a>
-        </div>
-        `)
 
-      $('#modal .modal-body').html(bodyTmplDom)
+      $('#modal-avatar').attr('src', member.avatar)
+      $('#modal-title').text(member.name[currentLang])
+      $('#modal-subtitle').text(member.name[currentLang === 'en' ? 'zh' : 'en'])
+        .toggleClass('hidden', member.name.zh === member.name.en)
+      $('#modal-content').html(member.bio)
+      $('#modal-info').toggleClass('hidden', !member.website)
+
+      let link = member.website
+      if (link.indexOf('//www.') >= 0) link = link.substring(link.indexOf('//www.') + 6, link.length)
+      else if (link.indexOf('//') >= 0) link = link.substring(link.indexOf('//') + 2, link.length)
+      $('#modal-website-link').attr('href', member.website || "#")
+        .text((link.endsWith('/') ? link.substring(0, link.length - 1) : link) || '')
+
       $('body').addClass('overflow-hidden')
       $('#modal').addClass('show')
     })
