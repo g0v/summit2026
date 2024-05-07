@@ -10,16 +10,3 @@ $(function () {
       }
     })
 })
-
-$('#modal .modal-close').on('click', function (e) {
-  e.preventDefault()
-  $('body').removeClass('overflow-hidden')
-  $('#modal').removeClass('show')
-  history.replaceState(null, null, window.location.pathname);
-})
-
-$(document).on('keydown', function (e) {
-  if (e.key === 'Escape') {
-    $('#modal .modal-close').click()
-  }
-});

@@ -1,3 +1,4 @@
+// Global preferences
 const storage = window.sessionStorage
 const i18n = $.i18n()
 const setLocale = (function (lang) {
@@ -12,10 +13,6 @@ const setLocale = (function (lang) {
 $('#cookie-notice button').on('click', function (e) {
   storage.setItem('agreeCookie', true)
   $('#cookie-notice').addClass('hidden')
-})
-
-$('header .offcanvas-toggler').on('click', function (e) {
-  $('header .offcanvas-box').toggleClass('show')
 })
 
 $('select#lang-select').on('change', function (e) {
@@ -64,10 +61,28 @@ $(function () {
   })
 })
 
+// UI interactions & events
 $(window).on('load', function (e) {
   $('body').css('overflow', 'unset')
   $('#loading').addClass('scale')
   setTimeout(function () {
     $('#loading').addClass('fadeout')
   }, 1000)
+})
+
+$('header .offcanvas-toggler').on('click', function (e) {
+  $('header .offcanvas-box').toggleClass('show')
+})
+
+$('#modal .modal-close').on('click', function (e) {
+  e.preventDefault()
+  $('body').removeClass('overflow-hidden')
+  $('#modal').removeClass('show')
+  history.replaceState(null, null, window.location.pathname);
+})
+
+$(document).on('keydown', function (e) {
+  if (e.key === 'Escape' && $('#modal').hasClass('show')) {
+    $('#modal .modal-close').click()
+  }
 })
