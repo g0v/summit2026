@@ -1,6 +1,7 @@
 date: May 4–5, 2024
 location: Academia Sinica, Taipei, Taiwan
 register: Register Now
+survey: Post-Event Survey
 contact: Sponsor & Press Contact
 cookie: This website uses cookies to improve your experience. By continuing to use it, you consent to their use for advertising, social media, and analytics.
 agree: Agree
@@ -72,7 +73,7 @@ index.p8: |
 
 index.t5: The “nobody” who brought everybody
 index.p9: |
-  g0v Summit 2024 is powered by a few dozens of g0v.tw contributors collaborating from different cities, each with different background and expertise; this gathering wouldn’t be possible without support from open source communities, civic groups, and partner organizations. “Rather than questioning why nobody were gonna do this,” we sincerely welcome your participation if you relate with g0v’s motto of “you’re that ‘nobody.’”
+  g0v Summit 2024 is powered by <a href="staff">a few dozens of g0v.tw contributors</a> collaborating from different cities, each with different background and expertise; this gathering wouldn’t be possible without support from open source communities, civic groups, and partner organizations. “Rather than questioning why nobody were gonna do this,” we sincerely <a href="https://g0v.tw/intl/en/event/" target="_blank">welcome your participation</a> if you relate with g0v’s motto of “you’re that ‘nobody.’”
 
 speakers.title: Speakers
 speakers.keynote: Keynote
