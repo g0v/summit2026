@@ -82,7 +82,7 @@ a:not(.btn, .nav-link) {
   opacity: 0;
   pointer-events: none;
   > .inner-modal {
-    @apply  flex flex-col bg-white min-w-80 max-w-lg;
+    @apply flex flex-col bg-white min-w-80 max-w-lg;
     max-height: 100%;
     transition: all 0.3s ease;
     transform: translateY(20px);
@@ -157,4 +157,9 @@ a:not(.btn, .nav-link) {
       content: ' (' attr(title) ')';
     }
   }
+}
+
+/* Prevent modal dialogs from stuttering page */
+:root:has(#modal) {
+  scrollbar-gutter: stable;
 }

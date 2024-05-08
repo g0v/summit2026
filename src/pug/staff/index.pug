@@ -35,7 +35,7 @@ block main
             - let clickable = !!(person?.website || person?.bio)
             - let alt = (person?.name) ? (person.name.zh || '') + (person.name.zh === person.name.en ? '' : ' ' + person.name.en) : person_id
             .staff.flex.flex-col.items-center.justify-center(id=person_id, data-id=person_id)
-              a.w-full.flex.items-center.justify-center.aspect-square.bg-slate-100.rounded-full(href=(clickable ? (person.bio ? `staff/#${person_id}` : person.website) : null), rel="external")
+              a.w-full.flex.items-center.justify-center.aspect-square.bg-slate-100.rounded-full(href=((!person.website && !person.bio) ? null : (person.bio ? `staff/#${person_id}` : person.website)), rel="external", target=((person.website && !person.bio) ? "_blank" : null))
                 if person && person.avatar
                   img.w-full.rounded-full(src=person.avatar, alt=alt)
                 else
