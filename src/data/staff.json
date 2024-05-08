@@ -253,7 +253,7 @@
     {
       "id": "ichieh",
       "name": {"zh": "ichieh", "en": "ichieh"},
-      "avatar": "",
+      "avatar": "assets/img/staff/ichieh.jpg",
       "website": "",
       "bio": ""
     },
@@ -584,6 +584,20 @@
       "avatar": "",
       "website": "",
       "bio": ""
+    },
+    {
+      "id": "ael",
+      "name": {"zh": "小班", "en": "Ael"},
+      "avatar": "assets/img/speakers/ael.jpg",
+      "website": "",
+      "bio": ""
+    },
+    {
+      "id": "hungwen",
+      "name": {"zh": "曾虹文", "en": "Hung-wen Tseng"},
+      "avatar": "",
+      "website": "",
+      "bio": ""
     }
   ],
   "teams": [
@@ -688,7 +702,7 @@
     {
       "id": "advisors",
       "name": {"zh": "顧問", "en": "Advisors"},
-      "members": ["ipa", "saul"],
+      "members": ["ipa", "saul", "ael", "hungwen"],
       "sections": null
     }
   ]
