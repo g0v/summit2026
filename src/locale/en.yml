@@ -15,6 +15,7 @@ nav.live: Livestream
 nav.media: Media
 nav.presskit: Press Kit
 nav.newsletter: Newsletter
+nav.souvenir: Summit Souvenir
 nav.guide: Visitors’ Guide
 nav.safety: Safety Tips
 nav.about: About Summit
@@ -151,13 +152,17 @@ guide.title: Pre-event Guide
 souvenir.title: Summit Souvenir
 souvenir.intro: Fancy the colorful stickers that can decorate your devices? Perhaps a pangolin in your room? A treasure hunt awaits you outside of R0 on 4F. Find the souvenirs that suits you and bring them home!
 souvenir.hours: "<strong>Hours:</strong> Sat. 10:00 ~ 17:00、Sun. 10:00 ~ 15:00"
+souvenir.promos: Participate in community booth <strong>Stamp Rally</strong> or elect to purchase the Summit Starter Pack <span class="text-sm">(lens cover, a pair of skill stickers, and T-shirt)</span> qualifies for additional discount. Don’t miss your chance!
 souvenir.items: Inventory
 souvenir.lenscover: Lens Cover
+souvenir.lenscover.desc: Twin colors, get your privacy covered.
 souvenir.sticker: Skill Sticker Pack
+souvenir.sticker.desc: Waterproof. Might last longer than your skills do.
 souvenir.tshirt: T-shirt
+souvenir.tshirt.desc: Adopt these lavender-colored pangolins as your vision guardian!
 souvenir.everything: Starter Pack (everything above)
-souvenir.classic_tshirt: Classic T-shirt
-souvenir.whilelasts: (*while supplies last)
+souvenir.classic: Classic Goods
+souvenir.whilelasts: "*while supplies last"
 souvenir.mascot: Mascot
 souvenir.pangolin: Pangolin
 souvenir.mascot.reason: Pangolin is the mascot of g0v Summit 2024! Not only because this rare creature is a local endemic favorite, the fact that pangolins dig holes and hunt for bugs suits well with g0ver’s daily life.<br>If you happen to bump into one either on roadside or at the conference venue, don’t forget to greet them with a sincere awe!
