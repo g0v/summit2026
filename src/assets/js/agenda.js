@@ -104,7 +104,7 @@ $('.agenda-session[data-id]').on('click', function (e) {
         `)
   })
   $('.agenda-speaker', bodyTmplDom).append('<hr>')
-  $('.agenda-description', bodyTmplDom).html(marked.parse(session[currentLang]['description']))
+  $('.agenda-description', bodyTmplDom).html(marked.parse(session[currentLang]['description'], { breaks: true }))
   $('#modal .head-group h4').text(session[currentLang]['title'])
   let tagGroup = $('.tag-group', this)
   $('#modal .tag-group').html(tagGroup.clone().removeClass('hidden'))
