@@ -353,7 +353,7 @@
       "name": {"zh": "YuTin", "en": "YuTin"},
       "avatar": "assets/img/speakers/yutin.jpg",
       "website": "",
-      "bio": ""
+      "bio": "軟體工程師 / EMT / Open Code"
     },
     {
       "id": "charlie",
@@ -386,9 +386,9 @@
     {
       "id": "annie",
       "name": {"zh": "安妮", "en": "Annie Tseng"},
-      "avatar": "",
+      "avatar": "assets/img/staff/annie.jpg",
       "website": "",
-      "bio": ""
+      "bio": "三個關鍵字：前端網頁工程師、社群新參者、場務小精靈"
     },
     {
       "id": "riley",
