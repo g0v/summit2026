@@ -273,8 +273,8 @@
     },
     {
       "id": "yangi",
-      "name": {"zh": "Yangi", "en": "Yangi"},
-      "avatar": "https://gravatar.com/avatar/84ae413d8e5d8c03053df9f997124c243d3f0f466730b38bb2b7a2fea619c691.jpg",
+      "name": {"zh": "羊騎", "en": "Yangi"},
+      "avatar": "assets/img/staff/yangi.jpg",
       "website": "",
       "bio": ""
     },
@@ -303,8 +303,8 @@
       "id": "littlechin",
       "name": {"zh": "小群", "en": "littlechin"},
       "avatar": "https://gravatar.com/avatar/17ca86408e3e3c04de55e541868908317ca37de816f0e24a510199dfdfca9390.jpg",
-      "website": "",
-      "bio": ""
+      "website": "https://littlechin.tw",
+      "bio": "一個在會場亂跑的人"
     },
     {
       "id": "moontai",
@@ -343,9 +343,9 @@
     },
     {
       "id": "zhenshoot",
-      "name": {"zh": "海豹", "en": "zhenshoot"},
+      "name": {"zh": "海豹", "en": "Zhenshoot"},
       "avatar": "assets/img/staff/zhenshoot.jpg",
-      "website": "",
+      "website": "https://www.instagram.com/zhen_shoot",
       "bio": "嗨我是會按快門的海豹｜人像攝影｜活動紀錄"
     },
     {
@@ -365,7 +365,7 @@
     {
       "id": "mengting",
       "name": {"zh": "孟庭", "en": "Mengting"},
-      "avatar": "https://gravatar.com/avatar/423f617ea7dc19be347a108af328a1a49ac6f18141d39a5bf23a23bc4e117aa2.jpg",
+      "avatar": "assets/img/staff/mengting.jpg",
       "website": "",
       "bio": ""
     },
