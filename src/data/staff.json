@@ -406,10 +406,10 @@
     },
     {
       "id": "che",
-      "name": {"zh": "che", "en": "che "},
-      "avatar": "",
-      "website": "",
-      "bio": ""
+      "name": {"zh": "che", "en": "che"},
+      "avatar": "assets/img/staff/che.jpg",
+      "website": "https://chewu-0319.github.io/personal/about/",
+      "bio": "期待大學生活~<br>這我："
     },
     {
       "id": "vanbert",
