@@ -79,7 +79,7 @@
     {
       "id": "kirby",
       "name": {"zh": "Kirby", "en": "Kirby"},
-      "avatar": "",
+      "avatar": "https://gravatar.com/avatar/ccf9a149c27229ebd167ab22f43f2cd1614ee0be39ab528714776481aef00a3c.jpg",
       "website": "",
       "bio": ""
     },
@@ -688,8 +688,8 @@
       ]
     },
     {
-      "id": "funding",
-      "name": {"zh": "贊助組", "en": "Funding"},
+      "id": "sponsorship",
+      "name": {"zh": "贊助組", "en": "Sponsorship"},
       "members": ["chihao"],
       "sections": null
     },
