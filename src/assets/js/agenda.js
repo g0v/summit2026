@@ -5,9 +5,9 @@ $(function () {
   let currentTime = new Date();
   let targetTime = new Date('2024/05/05');
   if (currentTime < targetTime) {
-    $('#day1').trigger('click')
+    //$('#day1').trigger('click')
   } else {
-    $('#day2').trigger('click')
+    //$('#day2').trigger('click')
   }
   $('#room-btn-group button[data-id="all"]').trigger('click')
   fetch('assets/data/schedule.json')
