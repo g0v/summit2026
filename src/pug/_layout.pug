@@ -9,20 +9,13 @@ html(lang="zh-Hant-TW")
     meta(property='og:description', content='g0v Summit 2024 是 g0v 台灣零時政府社群兩年一次的大聚會，也是全球公民黑客、公民科技的盛會。民主不只投票凍蒜，Summit 2024 邀你一起持續貢獻、全球連結，公民不打烊。')
     meta(property='og:image', content="assets/img/og.jpg")
 
-    script(async src='//www.googletagmanager.com/gtag/js?id=G-3V52RYWJVJ')
-    script.
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-3V52RYWJVJ');
-
     base(href=base)
     link(rel='icon', type='image/png', href='assets/img/icon.png')
-    link(rel='preconnect', href='//fonts.googleapis.com')
-    link(rel='preconnect', href='//fonts.gstatic.com', crossorigin)
-    link(href='//fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Onest:wght@100..900&display=swap', rel='stylesheet')
+    link(rel='preconnect', href='https://fonts.googleapis.com')
+    link(rel='preconnect', href='https://fonts.gstatic.com', crossorigin)
+    link(rel='stylesheet', href='https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200')
+    link(href='https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Onest:wght@100..900&display=swap', rel='stylesheet')
     link(rel='stylesheet', href='assets/css/base.css?version='+timestamp)
-    script(src='https://kit.fontawesome.com/dcdfd8e3ee.js', crossorigin='anonymous')
     block head
   body
     #loading.fixed.top-0.left-0.w-screen.h-screen.hidden
@@ -40,7 +33,7 @@ html(lang="zh-Hant-TW")
         a.mx-2(href="speakers", data-i18n="nav.speakers") 講者
         a.mx-2(href="agenda", data-i18n="nav.agenda") 議程
         a.mx-2(href="visit", data-i18n="nav.visit") 交通
-        a.mx-2(href="//g0v.hackmd.io/@summit2024/notes", target="_blank", data-i18n="nav.hackmd") 共筆
+        a.mx-2(href="//g0v.hackmd.io/@summit2026/book", target="_blank", data-i18n="nav.hackmd") 共筆
         a.mx-2(href="//www.youtube.com/@g0vTW", target="_blank", data-i18n="nav.live") 直播
         .mx-2.shrink-0
           i.fa-solid.fa-language
@@ -51,7 +44,7 @@ html(lang="zh-Hant-TW")
     footer.bg-slate-100: .container.py-20
       nav.grid.gap-8(class="grid-cols-2 md:grid-cols-4", aria-label="Sitemap")
         .leading-loose
-          .mb-4.font-bold Summit 2024
+          .mb-4.font-bold Summit 2026
           a.block(href="speakers", data-i18n="nav.speakers") 講者
           a.block(href="agenda", data-i18n="nav.agenda") 議程
           a.block(href="visit", data-i18n="nav.visit") 交通
@@ -72,14 +65,15 @@ html(lang="zh-Hant-TW")
           a.block(href="safety", data-i18n="nav.safety") 安全須知
         .leading-loose
           .mb-4.font-bold(data-i18n="nav.past") 歷年網站
+          a.block(href="//summit.g0v.tw/2024", target="_blank") 2024
           a.block(href="//summit.g0v.tw/2020", target="_blank") 2020
           a.block(href="//summit.g0v.tw/2018", target="_blank") 2018
           a.block(href="//summit.g0v.tw/2016", target="_blank") 2016
           a.block(href="//summit.g0v.tw/2014", target="_blank") 2014
       .grid.my-16(class="grid-cols-1 md:grid-cols-3")
         .my-2.flex.flex-wrap(class="md:col-span-2 max-md:justify-center")
-          span CC BY 4.0 @ g0v Summit 2024
-          a.mx-6(href="//github.com/g0v/summit2024/issues", target="_blank", data-i18n="nav.bugreport") 網站問題回饋
+          span CC BY 4.0 @ g0v Summit 2026
+          a.mx-6(href="//github.com/g0v/summit2026/issues", target="_blank", data-i18n="nav.bugreport") 網站問題回饋
         nav#social-link.ms-auto.my-2.flex.text-xl(class="max-md:w-full max-md:justify-center", aria-label="Social Media")
           a(href="//www.facebook.com/g0v.tw/", target="_blank")
             i.fa-brands.fa-facebook.me-3(title="Facebook")

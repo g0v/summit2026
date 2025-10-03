@@ -1,78 +1,103 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-body {
-  font-family: Onest, 'Noto Sans TC', sans-serif;
-  color: theme('colors.neutral.600');
-  letter-spacing: 0.5px;
+@import "tailwindcss";
+@theme {
+  --font-sans: Onest, 'Noto Sans TC', sans-serif;
+  --color-primary: #709AB4;
+  --color-primary-dark: #074E64;
+  --color-primary-light: #A2C1D3;
+  --color-secondary: #9cab37;
+  --color-secondary-dark: #4b5420;
+  --color-secondary-light: #d4dc89;
 }
 
-ul li {
-  list-style: none;
-  padding-left: 1em;
-  margin-bottom: theme('spacing.2');
-  &::before {
-    content: '-';
-    display: inline-block;
-    width: 1em;
-    margin-left: -1em;
+@layer base {
+  body {
+    @apply text-neutral-600 font-sans leading-relaxed;
+    letter-spacing: 0.5px;
   }
-}
-
-ol {
-  padding-left: 1.5em;
-  margin-bottom: theme('spacing.1');
-  li {
-    list-style: decimal;
-    margin-top: theme('spacing.1');
-    margin-bottom: theme('spacing.2');
-    padding-left: theme('spacing.1');
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold;
+  }
+  h1 {
+    @apply text-4xl;
+  }
+  h2 {
+    @apply text-3xl;
+  }
+  h3 {
+    @apply text-2xl;
+  }
+  h4 {
+    @apply text-xl;
+  }
+  h5 {
+    @apply text-lg;
+  }
+  p {
+    &:not(:last-child) {
+      @apply mb-3;
+    }
+  }
+  ul {
+    @apply list-disc list-outside ps-5 mb-2;
     li {
-      list-style: lower-alpha;
-      li {
-        list-style: lower-roman;
+      @apply mb-1;
+    }
+  }
+  ol {
+    @apply list-decimal list-outside ps-4 mb-2;
+    li {
+      @apply mb-1 ps-1;
+    }
+  }
+  b, strong {
+    @apply font-bold;
+  }
+  small {
+    @apply text-sm;
+  }
+  a:not(.btn, .nav-link) {
+    &:link,
+    &:visited {
+      @apply text-primary;
+      @apply no-underline;
+      &:hover {
+        @apply underline;
       }
     }
   }
-}
-
-p:last-child {
-  margin-bottom: 0;
-}
-
-a:not(.btn, .nav-link) {
-  &:link,
-  &:visited {
-    color: theme('colors.primary');
-    text-decoration: none;
-    &:hover {
-      text-decoration: underline;
-    }
+  i.msi {
+    font-family: 'Material Symbols Outlined';
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 }
 
-.btn {
-  @apply inline-flex cursor-pointer items-center justify-center font-normal text-base rounded-md;
-  padding: theme('spacing.1') theme('spacing.3');
-  transition: all 0.3s ease;
-}
-
-.btn-primary {
-  color: theme('colors.white');
-  background-color: theme('colors.primary');
-  &:hover {
-    filter: brightness(90%);
+@layer utilities {
+  .container {
+    @apply mx-auto lg:max-w-5xl;
+  }
+  .btn {
+    @apply rounded px-4 py-2 cursor-pointer focus:outline-none inline-flex items-center justify-center;
+    transition: all 0.2s ease;
+  }
+  .btn-lg {
+    @apply px-7 py-3 text-xl rounded-lg;
+  }
+  .btn-primary {
+    @apply bg-primary text-white hover:bg-primary-dark;
+  }
+  .btn-outline-dark {
+    @apply border border-neutral-500 text-neutral-500 hover:bg-neutral-500 hover:text-white;
   }
 }
 
-.btn-outline-dark {
-  color: theme('colors.neutral.500');
-  border: 1px solid theme('colors.neutral.500');
-  &:hover {
-    color: theme('colors.primary');
-    border-color: theme('colors.primary');
-  }
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
 }
 
 #modal {

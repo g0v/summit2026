@@ -24,7 +24,7 @@ function formatDatetime(dateObject) {
   return `${hours}:${minutes}`;
 }
 
-function buildI18n(baseurl = '/2024/') {
+function buildI18n(baseurl = '/2026/') {
   let locales = { en: {} }
 
   // Load schedule
@@ -99,7 +99,7 @@ function buildI18n(baseurl = '/2024/') {
     .pipe(gulp.dest('.' + path.join('/static/', baseurl, '/assets/i18n/')))
 }
 
-function buildAssets(baseurl = '/2024/') {
+function buildAssets(baseurl = '/2026/') {
   gulp
     .src('src/assets/**')
     .pipe(gulp.dest('.' + path.join('/static/', baseurl, '/assets/')))
@@ -108,7 +108,7 @@ function buildAssets(baseurl = '/2024/') {
     .pipe(gulp.dest('.' + path.join('/static/', baseurl, '/assets/data/')))
 }
 
-function buildPcss(baseurl = '/2024/') {
+function buildPcss(baseurl = '/2026/') {
   let dest_path = '.' + path.join('/static/', baseurl, '/assets/css')
   return gulp
     .src('src/pcss/*.pcss')
@@ -139,8 +139,8 @@ function buildSchedule() {
 
   for (let session of schedule.sessions) {
     if (!session.room || !session.start || !session.end) continue
-    session.start_t = (parseDatetime(session.start) - parseDatetime('2024-5-4T09:00:00+08:00')) / 60000
-    session.end_t = (parseDatetime(session.end) - parseDatetime('2024-5-4T09:00:00+08:00')) / 60000
+    session.start_t = (parseDatetime(session.start) - parseDatetime('2026-5-4T09:00:00+08:00')) / 60000
+    session.end_t = (parseDatetime(session.end) - parseDatetime('2026-5-4T09:00:00+08:00')) / 60000
     schedule.sessions_timemap[session.start_t] = formatDatetime(parseDatetime(session.start))
     schedule.sessions_timemap[session.end_t] = formatDatetime(parseDatetime(session.end))
     if (!schedule.sessions_by_t[session.start_t])
@@ -169,7 +169,7 @@ function buildSchedule() {
   return schedule
 }
 
-function buildPug(baseurl = '/2024/') {
+function buildPug(baseurl = '/2026/') {
   let build_time = new Date().getTime()
   let dest_path = '.' + path.join('/static/', baseurl)
 
@@ -210,17 +210,17 @@ function buildPug(baseurl = '/2024/') {
 }
 
 gulp.task('build', async () => {
-  await buildPcss('/summit2024/')
-  await buildI18n('/summit2024/')
-  await buildAssets('/summit2024/')
-  await buildPug('/summit2024/')
+  await buildPcss('/summit2026/')
+  await buildI18n('/summit2026/')
+  await buildAssets('/summit2026/')
+  await buildPug('/summit2026/')
 })
 
 gulp.task('deploy', async () => {
-  await buildPcss('/2024/')
-  await buildI18n('/2024/')
-  await buildAssets('/2024/')
-  await buildPug('/2024/')
+  await buildPcss('/2026/')
+  await buildI18n('/2026/')
+  await buildAssets('/2026/')
+  await buildPug('/2026/')
 })
 
 gulp.task('server', async () => {
