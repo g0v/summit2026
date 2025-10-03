@@ -1,8 +1,8 @@
-name: update gh-pages from new_design branch
+name: update gh-pages from main branch
 
 on:
   push:
-    branches: new_design
+    branches: main
 
 jobs:
   build-and-deploy:
@@ -26,4 +26,5 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          folder: static/summit2024
+          folder: static/summit2026
+
