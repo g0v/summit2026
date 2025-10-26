@@ -16,25 +16,24 @@ body
           path
           path(fill='#C60000' d='M412,0h-29.622L189,247h30.069L412,0z')
           path(d='M368.145,86.766C358.417,76.936,339.697,68,298.574,68c-39.65,0-59.843,8.787-69.718,18.766C219.864,95.851,215,107.17,215,124s4.864,28,13.855,37.085c9.728,9.83,29.332,18.915,69.718,18.915s59.843-8.936,69.571-18.766C377.136,152.149,382,140.83,382,124C382,107.021,377.136,95.851,368.145,86.766z M298.573,156c-26.347,0-39.96-5.451-45.815-11.344C248.22,140.089,245,134.196,245,123s2.781-17.237,7.611-22.098C258.613,94.862,272.226,90,298.573,90s39.521,5.009,45.669,11.196C349.073,106.058,352,111.804,352,123s-2.781,17.237-7.611,22.098C338.241,151.286,324.921,156,298.573,156z' fill='#ffffff')
-  .container-spacer
-    .arrow-container
-      .arrow-down
-  .container
+  .animate-bounce.py-10.flex.justify-end(class="pr-[20vw]")
+    .block.border-white.border-r-6.border-b-6.w-8.h-8.rotate-45
+  .flex.flex-col.justify-center.items-end.w-full.overflow-hidden
     h1.text
       | g0v
-      span(align='right') 零時政府
+      span.text-right 零時政府
     h1.text
       | summit
-      span(align='right') 雙年會
+      span.text-right 雙年會
     h1.text
       | 2026
-      span(align='right') 丙午肖馬年
+      span.text-right 丙午肖馬年
     h1.text
       | WORKING
-      span(align='right') 現正
+      span.text-right 現正
     h1.text
       | IN PROGRESS
-      span(align='right') 籌備中
+      span.text-right 籌備中
   //  Circles section 
   section.section-circles
     .circles-container
@@ -103,20 +102,12 @@ body
           
   footer#footer
     h3 g0v summit
-    .col.col2
-      a(href='https://summit.g0v.tw/2024' target='_blank')
-        | 2024
-        p
-      a(href='https://summit.g0v.tw/2020' target='_blank')
-        | 2020
-        p
-      a(href='https://summit.g0v.tw/2018' target='_blank')
-        | 2018
-        p
-      a(href='https://summit.g0v.tw/2014' target='_blank')
-        | 2014
-        p
-    .col.col3
+    .grid.grid-cols-4.gap-4
+      a(href='https://summit.g0v.tw/2024' target='_blank') 2024
+      a(href='https://summit.g0v.tw/2020' target='_blank') 2020
+      a(href='https://summit.g0v.tw/2018' target='_blank') 2018
+      a(href='https://summit.g0v.tw/2014' target='_blank') 2014
+    .grid.grid-cols-4.gap-4
       a(href='https://www.facebook.com/g0v.tw/' target='_blank')
         i.fa-brands.fa-facebook-f#social(aria-hidden='true')
       a(href='https://www.instagram.com/g0v.tw/' target='_blank')
@@ -133,5 +124,5 @@ body
   script(src='https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js')
   script(src='https://unpkg.com/gsap@3/dist/CustomEase.min.js')
   script(src='https://unpkg.com/split-type')
-  script(src='https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js')
-  script(src='assets/js/cfp.js')
+  script(src='https://unpkg.com/lenis@1.3.13/dist/lenis.min.js')
+  script(src='assets/js/cfp.js?version='+timestamp)
