@@ -1,27 +1,5 @@
 extends _layout.pug
-block variables
-  - title = "首頁 Home"
-block head
-  link(rel="stylesheet", href="assets/css/base.css?version="+timestamp)
-  link(rel="stylesheet", href="assets/css/index.css?version="+timestamp)
-block main
-  section#banner.relative.w-full(class="h-[90vh] max-md:h-[40vh]")
-    .top-box-inner.absolute(class="bottom-[15%] left-[5%]")
-      h1.text-4xl.font-bold(class="max-md:text-3xl") g0v Summit 2026
-      .text-3xl.font-bold(class="max-md:text-2xl", data-i18n="date") 2026 年 5 月 ? 日
-      .text-2xl.font-bold(class="max-md:text-xl", data-i18n="location") 台北
-      .flex.gap-2.mt-3
-        a.btn.btn-primary(href="https://forms.gle/biY7DFUFCL3i8XSQA", target="_blank", data-i18n="survey") 會後問卷
-        a.btn.btn-primary(href="mailto:summit@g0v.tw", target="_blank", data-i18n="contact") 贊助與媒體聯絡
-  #milestone
-  main.container.my-20
-    article#about
-      h2.mb-8(data-i18n="index.t1") 「反客為主」
-      p 由公共領域破碎化與社群動能減弱的反思為切入點，希望透過多元的議程形式重燃建設性貢獻的熱誠，鼓勵社群參與者積極做主 (take ownership)，讓年會成為拼貼不同行動者與縫合公民社會的契機。
-    section.my-12
-      h3.mb-8(data-i18n="index.t3") 重要時程
-      ul
-        li(data-i18n="index.dates.4") 2026/5：g0v Summit 2026
-    section.my-12
-      h3.mb-8(data-i18n="index.t5") 促成很多人的「沒有人」
-      p(data-i18n="[html]index.p9") g0v Summit 2026 是由 g0v 社群#[a(href="staff") 數十位來自不同城市、背景、專長的貢獻者]發揮所長，透過線上與線下協作，維繫起讓研討會持續運轉的重任；也因為有了開源社群、公民團體與合作夥伴的支持，才使得齊聚眾人的盛會成為可能。「不要問為什麼沒有人做這個，」若您也認同 g0v「你就是『沒有人』」的理念，歡迎#[a(href="https://g0v.tw/intl/zh-TW/event/", target="_blank") 加入 g0v 社群參與者的行列]，一同動手貢獻。
+block script
+  script(type='text/javascript').
+    console.log('redirecting to cfp...');
+    window.location.href = window.location.href.replace(/\/$/, '') + '/cfp/';

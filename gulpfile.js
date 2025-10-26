@@ -52,30 +52,6 @@ function buildI18n(baseurl = '/2026/') {
     locales.en[`tag.${tag.id}`] = tag.en.name
   }
 
-  // Load staff
-  const staff = require('./src/data/staff.json')
-  for (let member of staff.members)
-    locales.en[`staff.${member.id}`] = member.name.en
-
-  for (let team of staff.teams) {
-    locales.en[`team.${team.id}`] = team.name.en
-    if (team.sections)
-      for (let section of team.sections)
-        locales.en[`team.section.${section.id}`] = section.name.en
-  }
-
-  // Load partners
-  const partners = require('./src/data/partners.json')
-  for (let level of partners) {
-    locales.en[`partners.${level.id}`] = level.name.en
-    for (let sponsor of level.sponsors) {
-      locales.en[`partners.${sponsor.id}`] = sponsor.name.en
-      if (sponsor.summary.en || sponsor.summary.zh) {
-        locales.en[`partners.${sponsor.id}.summary`] = '<p>' + (sponsor.summary.en || sponsor.summary.zh).split('\n').join('</p><p>') + '</p>'
-      }
-    }
-  }
-
   // Merge translations into base YAML file
   return gulp
     .src('src/locale/*.yml')
