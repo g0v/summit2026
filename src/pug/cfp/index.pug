@@ -10,14 +10,14 @@ body
   script(src='https://kit.fontawesome.com/709050e76d.js' crossorigin='anonymous')
   //  First section 
   section.section-first
-    a.g0v-link(href='https://g0v.tw/' target='_blank' rel='noreferrer noopener')
-      svg(xmlns='http://www.w3.org/2000/svg' width='100%' height='100%' viewBox='0 0 512 512' fill='none')
+    a(href='https://g0v.tw/' target='_blank' rel='noreferrer noopener')
+      svg.pe-4(xmlns='http://www.w3.org/2000/svg' width='100%' height='100%' viewBox='0 0 512 512' fill='none' class="h-40 md:h-full")
         g(transform='translate(103.000000, 76.000000)')
           path
           path(fill='#C60000' d='M412,0h-29.622L189,247h30.069L412,0z')
           path(d='M368.145,86.766C358.417,76.936,339.697,68,298.574,68c-39.65,0-59.843,8.787-69.718,18.766C219.864,95.851,215,107.17,215,124s4.864,28,13.855,37.085c9.728,9.83,29.332,18.915,69.718,18.915s59.843-8.936,69.571-18.766C377.136,152.149,382,140.83,382,124C382,107.021,377.136,95.851,368.145,86.766z M298.573,156c-26.347,0-39.96-5.451-45.815-11.344C248.22,140.089,245,134.196,245,123s2.781-17.237,7.611-22.098C258.613,94.862,272.226,90,298.573,90s39.521,5.009,45.669,11.196C349.073,106.058,352,111.804,352,123s-2.781,17.237-7.611,22.098C338.241,151.286,324.921,156,298.573,156z' fill='#ffffff')
-  .animate-bounce.py-10.flex.justify-end(class="pr-[20vw]")
-    .block.border-white.border-r-6.border-b-6.w-8.h-8.rotate-45
+  .animate-bounce.flex.justify-end(class="pr-[15vw] pb-[5vh] pt-[30vh]")
+    .block.border-white.border-r-6.border-b-6.w-6.h-6.rotate-45
   .flex.flex-col.justify-center.items-end.w-full.overflow-hidden
     h1.text
       | g0v
@@ -37,30 +37,26 @@ body
   //  Circles section 
   section.section-circles
     .circles-container
-      .reveal
-        p.reveal-type(data-bg-color='#cccccc' data-fg-color='#f09937') 僅僅只是看看、學學不能實踐民主，到底想吃什麼？
-      .layer.gradient-04
-        .reveal-cta
-          p.reveal-type(data-bg-color='#cccccc' data-fg-color='#e55050')
-            | 2026 年 5 月 23、24 日
-            br
-            | 中央研究院人文社會科學館
+        .reveal.container.mx-auto
+          p.reveal-type(data-bg-color='#cccccc' data-fg-color='#f09937') 僅僅只是看看、學學不能實踐民主，到底想吃什麼？
+        .layer.gradient-04
+          .reveal.container.mx-auto
+            p.reveal-type(data-bg-color='#cccccc' data-fg-color='#e55050')
+              | 2026 年 5 月 23、24 日
+              br
+              | 中央研究院人文社會科學館
 
   //  Last section 
-  section.section-last
-    .demo-section
-      nav.nav-container
-        a.nav-item(href='https://g0v.hackmd.io/@summit2026/book/%2F%40summit2026%2Fintro' target='_blank' data-draw-line)
-          | 追蹤最新消息
-
-          .underline-svg(data-draw-line-box)
+  section.section-last.flex(class="h-[50vh] max-md:flex-col max-md:text-lg gap-[30%] max-md:pt-[14rem] md:px-20")
+    nav.nav-container
+      a.nav-item(href='https://g0v.hackmd.io/@summit2026/book/%2F%40summit2026%2Fintro' target='_blank' data-draw-line)
+        | 追蹤最新消息
+        .underline-svg(data-draw-line-box)
     nav.nav-container
       a.nav-item(href='https://g0v.hackmd.io/@summit2026/2026-recruit' target='_blank' data-draw-line)
         | 加入籌備團隊
-
         .underline-svg(data-draw-line-box)
-  //  Debug info element 
-  .debug-info
+
   //  SVG Symbol Library 
   .symbol-library
     symbol
@@ -100,14 +96,14 @@ body
         path(fill='none' stroke='#e55050' stroke-width='10' d='m21 40 35-8c29-4 56-12 86-11 21 2-56 26-48 17 3-4 112-10 124-12 3-1 7 12 11 11 4 0 9-14 13-14 26-2 53 0 79 6').
           
           
-  footer#footer
-    h3 g0v summit
-    .grid.grid-cols-4.gap-4
+  footer.grid.gap-6#footer(class="md:grid-cols-3 max-md:pt-[14rem]")
+    h3.text-center(class="max-md:text-white") g0v summit
+    .flex.gap-6.bg-white.rounded-full.px-10.h-14.items-center.justify-center(class="md:mx-auto")
       a(href='https://summit.g0v.tw/2024' target='_blank') 2024
       a(href='https://summit.g0v.tw/2020' target='_blank') 2020
       a(href='https://summit.g0v.tw/2018' target='_blank') 2018
       a(href='https://summit.g0v.tw/2014' target='_blank') 2014
-    .grid.grid-cols-4.gap-4
+    .flex.gap-6.bg-white.rounded-full.px-10.h-14.items-center.justify-center(class="md:mx-auto")
       a(href='https://www.facebook.com/g0v.tw/' target='_blank')
         i.fa-brands.fa-facebook-f#social(aria-hidden='true')
       a(href='https://www.instagram.com/g0v.tw/' target='_blank')
@@ -116,10 +112,7 @@ body
         i.fa-brands.fa-twitter#social(aria-hidden='true')
       a(href='https://g0v.social/@summit' target='_blank')
         i.fa-brands.fa-mastodon#social(aria-hidden='true')
-      a(href='#')
-        i(aria-hidden='true')
-        //  leave me or you'll be regret... 
-    .backdrop
+    .absolute.inset-0(style="backdrop-filter: blur(40px); z-index: -2;" class="max-md:hidden")
   script(src='https://unpkg.com/gsap@3/dist/gsap.min.js')
   script(src='https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js')
   script(src='https://unpkg.com/gsap@3/dist/CustomEase.min.js')
