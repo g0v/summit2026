@@ -7,7 +7,7 @@ if [[ -d .git ]]; then
   git clone $(git remote get-url origin) --depth 1 -b production _public
   cd _public
   git rm -r *
-  cp -R ../static/2024/* ./
+  cp -R ../static/2026/* ./
   git add *
   git commit -m "regen for $REV"
   git push
