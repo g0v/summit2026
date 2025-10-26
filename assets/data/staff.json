@@ -1,0 +1,709 @@
+{
+  "members": [
+    {
+      "id": "pm5",
+      "name": {"zh": "Pomin Wu", "en": "Pomin Wu"},
+      "avatar": "assets/img/staff/pm5.jpg",
+      "website": "",
+      "bio": "g0ver since 2013.  Speaks Klingon."
+    },
+    {
+      "id": "rschiang",
+      "name": {"zh": "RSChiang", "en": "RSChiang"},
+      "avatar": "assets/img/staff/rschiang.png",
+      "website": "https://poren.tw",
+      "bio": "<h6 class=\"mb-2\"><a href=\"https://poren.tw\" rel=\"external\"><ruby lang=\"hak-TW\" style=\"ruby-overhang: none;\"><ruby lang=\"hak-TW\" style=\"ruby-position: under; ruby-position: inter-character;\">姜<rt>ㄍㄧㆲˋ</rt>柏<rt>ㄆㄚㆻˋ</rt>任<rt>ㄖㄧㆬ˫</rt></ruby><rt>Gìong Pàg Rhīm</rt></ruby></a> (Poren Chiang)</h6><ul><li><strong>三個關鍵字：</strong>資訊法、開放資料、自由軟體</li><li><strong>喜歡的一句話：</strong>我能吞下玻璃而不傷身體<sup><a href=\"https://en.wikipedia.org/wiki/I_Can_Eat_Glass\" rel=\"external\">[1]</a></sup></li><li><strong>社群座右銘：</strong><style>@keyframes rschiang-gradient { 0% { background-position-x: 0%; } 100% { background-position-x: 100%; } } .rschiang-faster:hover { animation-duration: .5s !important; }</style><span class=\"rschiang-faster\" style=\"background-image: linear-gradient(90deg, #337ab7, #fd8a8a 15%, #fd8c04, #a8d1d1, #9ea1d4 35%, #337ab7 50%, #fd8a8a 65%, #fd8c04, #a8d1d1, #9ea1d4 85%, #337ab7); background-size: 200% 100%; background-clip: text; animation: rschiang-gradient 3s linear infinite; color: transparent; font-weight: bolder; cursor: wait;\">先講求不傷身體，再講求效果</span></li></ul>"},
+    {
+      "id": "fanlan",
+      "name": {"zh": "繁嵐／Fanlan", "en": "Fanlan"},
+      "avatar": "assets/img/staff/fanlan.jpg",
+      "website": "https://www.fanlan.net",
+      "bio": ""
+    },
+    {
+      "id": "dong",
+      "name": {"zh": "Dong", "en": "Dong"},
+      "avatar": "assets/img/staff/dong.jpg",
+      "website":"https://www.cooldongdong.com/",
+      "bio": "我最喜歡做酷東東了！個人網站："
+    },
+    {
+      "id": "yc",
+      "name": {"zh": "YC", "en": "YC"},
+      "avatar": "",
+      "website": "",
+      "bio": ""
+    },
+    {
+      "id": "seangau",
+      "name": {"zh": "高任翔", "en": "SeanGau"},
+      "avatar": "assets/img/staff/seangau.jpg",
+      "website": "",
+      "bio": "工程師、影像工作者、劇場人"
+    },
+    {
+      "id": "mavis",
+      "name": {"zh": "Mavis", "en": "Mavis"},
+      "avatar": "https://gravatar.com/avatar/6dcf47460aa337665572446eac4d156ea3a54770195f5277ea305cdf03627aaa.jpg",
+      "website": "",
+      "bio": ""
+    },
+    {
+      "id": "jason",
+      "name": {"zh": "Jason", "en": "Jason"},
+      "avatar": "https://gravatar.com/avatar/b20b81541a3b3194ee86b7f0c778b22b44f92dae8640e47b586fc9c87bd95b4d.jpg",
+      "website": "",
+      "bio": ""
+    },
+    {
+      "id": "daisuke",
+      "name": {"zh": "大助", "en": "Daisuke"},
+      "avatar": "assets/img/staff/daisuke.jpg",
+      "website": "https://www.facebook.com/DaisukeChenPhotography/",
+      "bio": "不知道到底是救火隊還是本身就是火的大助<br>歡迎追蹤攝影粉專（？"
+    },
+    {
+      "id": "ahmin",
+      "name": {"zh": "阿敏", "en": "Ah-min"},
+      "avatar": "assets/img/staff/ahmin.jpg",
+      "website": "",
+      "bio": "踅來踅去，踅到 Summit 的七逃人"
+    },
+    {
+      "id": "hou",
+      "name": {"zh": "小侯Sió Hâu", "en": "Hâu/Hou"},
+      "avatar": "assets/img/staff/hou.png",
+      "website": "",
+      "bio": "Star Wars Fan/nobody/<br>student/TW history/speak aurebesh"
+    },
+    {
+      "id": "kirby",
+      "name": {"zh": "Kirby", "en": "Kirby"},
+      "avatar": "https://gravatar.com/avatar/ccf9a149c27229ebd167ab22f43f2cd1614ee0be39ab528714776481aef00a3c.jpg",
+      "website": "",
+      "bio": ""
+    },
+    {
+      "id": "allen",
+      "name": {"zh": "王文岳", "en": "Allen Wang"},
+      "avatar": "assets/img/staff/allen.jpg",
+      "website": "",
+      "bio": "<p>Wikidata Taiwan 臺灣維基數據社群共同發起人</p><p>過去曾任第一屆第一期立法院開放國會委員會民間委員、國家文化記憶庫：110-111年社群經營與運作模式建置計畫資訊技術協力、社團法人台灣維基媒體協會秘書長，曾共同主持有「客家@維基」資料多元應用專案以及執行李梅樹紀念館國家文化記憶庫專案「臺灣美術巨擘的最後一程—李梅樹告別式相關文物掃描」等資料開放專案。</p>"},
+    {
+      "id": "monica",
+      "name": {"zh": "咪咕", "en": "Monica Mu"},
+      "avatar": "assets/img/staff/monica.jpg",
+      "website": "",
+      "bio": "<p>是個跨足資訊圈與金融圈的填坑獸，擅長填 Allen Wang 挖出來的坑 (๑•̀ᄇ•́)و ✧ </p><p>Wikidata Taiwan 共同發起人<br>台灣維基媒體協會 理事</p>"
+    },
+    {
+      "id": "momose",
+      "name": {"zh": "桃瀨", "en": "Momose"},
+      "avatar": "",
+      "website": "",
+      "bio": ""
+    },
+    {
+      "id": "peter",
+      "name": {"zh": "Peter", "en": "Peter"},
+      "avatar": "assets/img/staff/peter.jpg",
+      "website": "",
+      "bio": "<p>不務正業的法律人，g0v 社群的沒有人與 vTaiwan 社群參與者。</p><p>A law student who does not want to be limited by law. g0v Nobody/ vTaiwan contributor</p>"
+    },
+    {
+      "id": "yellowsoar",
+      "name": {"zh": "yellowsoar", "en": "yellowsoar"},
+      "avatar": "assets/img/staff/yellowsoar.jpg",
+      "website": "",
+      "bio": "一個不務正業的水利工程師... ╮(￣▽￣\")╭<br><img src=\"https://i.imgur.com/A5GIRjz.jpeg\">"
+    },
+    {
+      "id": "rayen",
+      "name": {"zh": "Rayen", "en": "Rayen"},
+      "avatar": "",
+      "website": "",
+      "bio": ""
+    },
+    {
+      "id": "ireneann",
+      "name": {"zh": "Ireneann", "en": "Ireneann"},
+      "avatar": "assets/img/staff/ireneann.jpg",
+      "website": "",
+      "bio": "終於可以幫忙一次g0v囉。"
+    },
+    {
+      "id": "vivian",
+      "name": {"zh": "Vivian", "en": "Vivian"},
+      "avatar": "assets/img/staff/vivian.jpg",
+      "website": "",
+      "bio": "#默默耕耘的i人類"
+    },
+    {
+      "id": "carey",
+      "name": {"zh": "張珮歆", "en": "Carey Chang"},
+      "avatar": "assets/img/staff/carey.jpg",
+      "website": "",
+      "bio": "台中人，北棲青年<br>1997摩羯座INFP<br>主修生醫的政治工作者<br>108課綱多元選修老師"
+    },
+    {
+      "id": "lois",
+      "name": {"zh": "Lois Chen", "en": "Lois Chen"},
+      "avatar": "assets/img/staff/lois.jpg",
+      "website": "https://hackmd.io/8KIFgcOWRbq5bvdiEHqlLw",
+      "bio": "一名熱衷於參與社群活動的前端工程師，同時也是 Tech Book Community 創辦人："
+    },
+    {
+      "id": "elva",
+      "name": {"zh": "楊之綾", "en": "Elva"},
+      "avatar": "assets/img/staff/elva.jpg",
+      "website":"https://tw.linkedin.com/in/chih-ling-yang",
+      "bio": "華語教學跨足教育訓練"
+    },
+    {
+      "id": "kevin",
+      "name": {"zh": "Kevin", "en": "Kevin"},
+      "avatar": "assets/img/staff/kevin.jpg",
+      "website": "",
+      "bio": ""
+    },
+    {
+      "id": "kangaroo",
+      "name": {"zh": "蘇冠彰", "en": "Kangaroo"},
+      "avatar": "assets/img/staff/kangaroo.jpg",
+      "website": "https://kangarooblog.simple.ink/",
+      "bio": ""
+    },
+    {
+      "id": "whitecat",
+      "name": {"zh": "白貓", "en": "White Cat"},
+      "avatar": "assets/img/staff/whitecat.jpg",
+      "website": "",
+      "bio": ""
+    },
+    {
+      "id": "patrick",
+      "name": {"zh": "Patrick", "en": "Patrick"},
+      "avatar": "assets/img/staff/patrick.jpg",
+      "website": "",
+      "bio": ""
+    },
+    {
+      "id": "city",
+      "name": {"zh": "張婷媗", "en": "City"},
+      "avatar": "assets/img/staff/city.jpg",
+      "website": "",
+      "bio": "是個高中二年級生 就讀蘭陽女中"
+    },
+    {
+      "id": "hamster",
+      "name": {"zh": "楊上賢", "en": "Hamster"},
+      "avatar": "https://gravatar.com/avatar/56524c112d9510a20e3bd3064e645bf3b87d2e931c45dc9b82d3d7cbd5b2abaa.jpg",
+      "website": "",
+      "bio": ""
+    },
+    {
+      "id": "peti",
+      "name": {"zh": "林沛緹", "en": "Peti"},
+      "avatar": null,
+      "website": "",
+      "bio": ""
+    },
+    {
+      "id": "yuan",
+      "name": {"zh": "Yuan", "en": "Yuan"},
+      "avatar": "https://gravatar.com/avatar/27b84ea7a68d4c6c9f568aa6c374894c1fdab6198893045c293c5fc2c6125915.jpg",
+      "website": "https://yuan-tw.net",
+      "bio": ""
+    },
+    {
+      "id": "ting",
+      "name": {"zh": "Yu Ting Chen", "en": "Yu Ting Chen"},
+      "avatar": "",
+      "website": "",
+      "bio": ""
+    },
+    {
+      "id": "paul",
+      "name": {"zh": "Paul", "en": "Paul"},
+      "avatar": "https://gravatar.com/avatar/d5dcf7c19848cb6042e8f0e3ef5b5eb651711ea9776a869f74a40b788c0d17d3.jpg",
+      "website": "",
+      "bio": ""
+    },
+    {
+      "id": "ddio",
+      "name": {"zh": "ddio", "en": "ddio"},
+      "avatar": "assets/img/speakers/ddio.jpg",
+      "website": "",
+      "bio": "ddio - 主婦，第一間房子專案維護者"
+    },
+    {
+      "id": "coldplay",
+      "name": {"zh": "冷玩／劉靜耘", "en": "coldplay/Claire Liu"},
+      "avatar": "assets/img/speakers/claire-liu.jpg",
+      "website": "https://tw.linkedin.com/in/clairecyliu",
+      "bio": ""
+    },
+    {
+      "id": "billion",
+      "name": {"zh": "比鄰", "en": "Billion"},
+      "avatar": "assets/img/speakers/billion-lee.jpg",
+      "website": "",
+      "bio": "比鄰是個魔法少女"
+    },
+    {
+      "id": "ichieh",
+      "name": {"zh": "ichieh", "en": "ichieh"},
+      "avatar": "assets/img/staff/ichieh.jpg",
+      "website": "",
+      "bio": ""
+    },
+    {
+      "id": "oliver",
+      "name": {"zh": "Oliver", "en": "Oliver"},
+      "avatar": "assets/img/staff/oliver.jpg",
+      "website": "",
+      "bio": ""
+    },
+    {
+      "id": "kailan",
+      "name": {"zh": "Kailan", "en": "Kailan"},
+      "avatar": "https://gravatar.com/avatar/03394efca1d70947a580cb8c6c9d8b2f1b7ab1cb8f3c7677659e11a7dfbb85a3.jpg",
+      "website": "",
+      "bio": ""
+    },
+    {
+      "id": "yangi",
+      "name": {"zh": "羊騎", "en": "Yangi"},
+      "avatar": "assets/img/staff/yangi.jpg",
+      "website": "",
+      "bio": ""
+    },
+    {
+      "id": "gavin",
+      "name": {"zh": "Gavin", "en": "Gavin"},
+      "avatar": "",
+      "website": "",
+      "bio": ""
+    },
+    {
+      "id": "hsiaoling",
+      "name": {"zh": "小0", "en": "Hsiaoling"},
+      "avatar": "",
+      "website": "",
+      "bio": ""
+    },
+    {
+      "id": "janice",
+      "name": {"zh": "Janice Hu", "en": "Janice Hu"},
+      "avatar": "",
+      "website": "",
+      "bio": ""
+    },
+    {
+      "id": "littlechin",
+      "name": {"zh": "小群", "en": "littlechin"},
+      "avatar": "https://gravatar.com/avatar/17ca86408e3e3c04de55e541868908317ca37de816f0e24a510199dfdfca9390.jpg",
+      "website": "https://littlechin.tw",
+      "bio": "一個在會場亂跑的人"
+    },
+    {
+      "id": "moontai",
+      "name": {"zh": "月太", "en": "moontai0724"},
+      "avatar": "https://gravatar.com/avatar/e4f20ec6872f262b2f2866a636a6023de414612a22f2ec52c154ed4ea5ee8d02.jpg",
+      "website": "https://moontai0724.tw",
+      "bio": ""
+    },
+    {
+      "id": "77",
+      "name": {"zh": "77", "en": "77"},
+      "avatar": "https://gravatar.com/avatar/d70fd2f563f5ba351cf00d7aff6c2c0c1a31326ca100b2acff490c7c8f08d2bf.jpg",
+      "website": "",
+      "bio": "<p>這裡是77，剛從大肚山跑到花果山的大學生。</p><p>高中玩FRC做文學獎，大學寫了一本書，目前在努力成為一位擁有人文心和理工腦的創造者。</p>"
+    },
+    {
+      "id": "weiqi",
+      "name": {"zh": "圍棋", "en": "Weiqi"},
+      "avatar": "assets/img/staff/weiqi.jpg",
+      "website": "",
+      "bio": "<p>Hi, 我是圍棋:) 目前是大學三年級學生。</p><p>做過社區營造、刊物編輯、網站設計，目前在大學裡面教怎麼寫Wikipedia。很高興認識大家。</p>"
+    },
+    {
+      "id": "shrimproll",
+      "name": {"zh": "蝦捲", "en": "蝦捲"},
+      "avatar": null,
+      "website": "",
+      "bio": ""
+    },
+    {
+      "id": "shibasalmon",
+      "name": {"zh": "柴犬", "en": "柴犬"},
+      "avatar": "https://gravatar.com/avatar/894f1c4b0b89e3fd10c0572c313bfa99d4aeb3bae49e042e77d1302caa30305d.jpg",
+      "website": "",
+      "bio": ""
+    },
+    {
+      "id": "zhenshoot",
+      "name": {"zh": "海豹", "en": "Zhenshoot"},
+      "avatar": "assets/img/staff/zhenshoot.jpg",
+      "website": "https://www.instagram.com/zhen_shoot",
+      "bio": "嗨我是會按快門的海豹｜人像攝影｜活動紀錄"
+    },
+    {
+      "id": "yutin",
+      "name": {"zh": "YuTin", "en": "YuTin"},
+      "avatar": "assets/img/speakers/yutin.jpg",
+      "website": "",
+      "bio": "軟體工程師 / EMT / Open Code"
+    },
+    {
+      "id": "charlie",
+      "name": {"zh": "查理", "en": "Charlieeeeee"},
+      "avatar": "https://gravatar.com/avatar/3fa528d205b05f812044dc395ba13e173c27f94d517982aa912970462ba9a41c.jpg",
+      "website": "",
+      "bio": ""
+    },
+    {
+      "id": "mengting",
+      "name": {"zh": "孟庭", "en": "Mengting"},
+      "avatar": "assets/img/staff/mengting.jpg",
+      "website": "",
+      "bio": ""
+    },
+    {
+      "id": "cpy",
+      "name": {"zh": "CPY", "en": "CPY"},
+      "avatar": "https://gravatar.com/avatar/b758f76d4ee9cb5078b95086193cebe27586ce0beeafd01e649a0cc06384fec0.jpg",
+      "website": "",
+      "bio": ""
+    },
+    {
+      "id": "chaoyi",
+      "name": {"zh": "兆翌", "en": "Chaoyi"},
+      "avatar": "https://gravatar.com/avatar/ea1f127f094a2db6b6f9de0075a0dd4069cf836334eeeaf3e553a5f1865f0824.jpg",
+      "website": "",
+      "bio": ""
+    },
+    {
+      "id": "annie",
+      "name": {"zh": "安妮", "en": "Annie Tseng"},
+      "avatar": "assets/img/staff/annie.jpg",
+      "website": "",
+      "bio": "三個關鍵字：前端網頁工程師、社群新參者、場務小精靈"
+    },
+    {
+      "id": "riley",
+      "name": {"zh": "Riley", "en": "Riley"},
+      "avatar": "assets/img/staff/riley.png",
+      "website": "",
+      "bio": ""
+    },
+    {
+      "id": "kuki",
+      "name": {"zh": "餅乾", "en": "kuki"},
+      "avatar": "assets/img/staff/kuki.jpg",
+      "website": "",
+      "bio": ""
+    },
+    {
+      "id": "che",
+      "name": {"zh": "che", "en": "che"},
+      "avatar": "assets/img/staff/che.jpg",
+      "website": "https://chewu-0319.github.io/personal/about/",
+      "bio": "期待大學生活~<br>這我："
+    },
+    {
+      "id": "vanbert",
+      "name": {"zh": "帕奇", "en": "Vanbart"},
+      "avatar": "assets/img/staff/vanbert.jpg",
+      "website": "",
+      "bio": "正在準備轉PM的特教輔導員"
+    },
+    {
+      "id": "jackie",
+      "name": {"zh": "jackie", "en": "jackie"},
+      "avatar": "assets/img/staff/jackie.jpg",
+      "website": "",
+      "bio": ""
+    },
+    {
+      "id": "zai",
+      "name": {"zh": "Zai", "en": "Zai"},
+      "avatar": "https://gravatar.com/avatar/f2d95c3c84a9515cf176987939104d5df0a736fb448a339b61ad22ee376dfb77.jpg",
+      "website": "https://ouoc.net/",
+      "bio": ""
+    },
+    {
+      "id": "joy",
+      "name": {"zh": "喬", "en": "Joy"},
+      "avatar": "assets/img/staff/joy.png",
+      "website": "",
+      "bio": ""
+    },
+    {
+      "id": "ralin",
+      "name": {"zh": "Ralin", "en": "Ralin"},
+      "avatar": "assets/img/staff/ralin.jpg",
+      "website": "",
+      "bio": ""
+    },
+    {
+      "id": "yider",
+      "name": {"zh": "Yider", "en": "Yider"},
+      "avatar": "https://gravatar.com/avatar/3fb4fe91e7f691523250f4da797f50b493be5fd6199744e1e5a1bca29dee2ba6.jpg",
+      "website": "",
+      "bio": ""
+    },
+    {
+      "id": "penguin",
+      "name": {"zh": "柯羿", "en": "Tsubasa Ko"},
+      "avatar": "",
+      "website": "",
+      "bio": "Hi!"
+    },
+    {
+      "id": "phoebe",
+      "name": {"zh": "Phoebe", "en": "Phoebe"},
+      "avatar": "",
+      "website": "",
+      "bio": ""
+    },
+    {
+      "id": "puchi",
+      "name": {"zh": "Puchi", "en": "Puchi"},
+      "avatar": "assets/img/staff/puchi.jpg",
+      "website": "",
+      "bio": ""
+    },
+    {
+      "id": "yenchiang",
+      "name": {"zh": "賴彥江", "en": "Lai Yen Chiang"},
+      "avatar": "assets/img/staff/yenchiang.jpg",
+      "website": "",
+      "bio": ""
+    },
+    {
+      "id": "astrid",
+      "name": {"zh": "柚子", "en": "Astrid"},
+      "avatar": "assets/img/speakers/astrid.jpg",
+      "website": "",
+      "bio": ""
+    },
+    {
+      "id": "skyler",
+      "name": {"zh": "Skyler", "en": "Skyler"},
+      "avatar": "assets/img/staff/skyler.jpg",
+      "website": "",
+      "bio": ""
+    },
+    {
+      "id": "amos",
+      "name": {"zh": "Amos", "en": "Amos"},
+      "avatar": "assets/img/staff/amos.jpg",
+      "website": "",
+      "bio": "研究生/榮民/OCF/da0/澎湖仔"
+    },
+    {
+      "id": "angy",
+      "name": {"zh": "陳安頎", "en": "Angy"},
+      "avatar": "",
+      "website": "",
+      "bio": ""
+    },
+    {
+      "id": "wilt",
+      "name": {"zh": "Wilt Chen", "en": "Wilt Chen"},
+      "avatar": "",
+      "website": "",
+      "bio": ""
+    },
+    {
+      "id": "kris",
+      "name": {"zh": "Kris", "en": "Kris"},
+      "avatar": "",
+      "website": "",
+      "bio": ""
+    },
+    {
+      "id": "chiahao",
+      "name": {"zh": "張家豪", "en": "張家豪"},
+      "avatar": "",
+      "website": "",
+      "bio": ""
+    },
+    {
+      "id": "sarah",
+      "name": {"zh": "Sarah Wu", "en": "Sarah Wu"},
+      "avatar": "",
+      "website": "",
+      "bio": ""
+    },
+    {
+      "id": "jhanshin",
+      "name": {"zh": "江健新", "en": "江健新"},
+      "avatar": "",
+      "website": "",
+      "bio": ""
+    },
+    {
+      "id": "caro",
+      "name": {"zh": "Caro", "en": "Caro"},
+      "avatar": "https://gravatar.com/avatar/cd639d84e5e7448a9a68d7ff247f59fa4da862b0d6dd7f31a041b97b07bb60a3.jpg",
+      "website": "",
+      "bio": ""
+    },
+    {
+      "id": "angela",
+      "name": {"zh": "Angela Kao", "en": "Angela Kao"},
+      "avatar": "",
+      "website": "",
+      "bio": ""
+    },
+    {
+      "id": "chihao",
+      "name": {"zh": "chihao", "en": "chihao"},
+      "avatar": "assets/img/speakers/chihhao-yu.jpg",
+      "website": "",
+      "bio": "<ul><li>台灣資訊環境研究中心 IORG 共同主持人</li><li>台灣零時政府 g0v 國際交流社群工作小組共同創辦人</li><li>港台日韓公民黑客社群網絡「面海松」共同主辦人</li></ul>"
+    },
+    {
+      "id": "ian",
+      "name": {"zh": "劉雁", "en": "Ian Liu"},
+      "avatar": "https://gravatar.com/avatar/1adadaf68c107c93b42908dacd253698b1970fef9f11d1fe3811bedadf9bfa75.jpg",
+      "website":"https://yannest.com",
+      "bio": "2013 幫 Muka 救火掉進 COSCUP 行銷坑，就坑坑相連出沒在 SITCON, g0v Summit, CCTW 中，也當過拉贊及出納志工小精靈。資傳碩班時接觸了資訊社會學，進而思索怎樣讓地方或人文的人都能快速接觸開放精神，也試著在一些文恐行動中試著嘗試開放的概念。曾在某前瞻計畫中試著推動開放資料與 CC，突然醒悟覺得來 OCF 可試著從不同角度「更用力」使力。"},
+    {
+      "id": "ipa",
+      "name": {"zh": "ipa", "en": "ipa"},
+      "avatar": "https://gravatar.com/avatar/e7148e4d582f014e61a0fc3a7bfe12812cd805348173460bbbc397ab3e25fee1.jpg",
+      "website": "",
+      "bio": ""
+    },
+    {
+      "id": "saul",
+      "name": {"zh": "彭彭", "en": "彭彭"},
+      "avatar": "",
+      "website": "",
+      "bio": ""
+    },
+    {
+      "id": "ael",
+      "name": {"zh": "小班", "en": "Ael"},
+      "avatar": "assets/img/speakers/ael.jpg",
+      "website": "",
+      "bio": ""
+    },
+    {
+      "id": "hungwen",
+      "name": {"zh": "曾虹文", "en": "Hung-wen Tseng"},
+      "avatar": "",
+      "website": "",
+      "bio": ""
+    }
+  ],
+  "teams": [
+    {
+      "id": "organizers",
+      "name": {"zh": "總籌組", "en": "Organizers"},
+      "members": ["pm5"],
+      "sections": null
+    },
+    {
+      "id": "media",
+      "name": {"zh": "宣傳組", "en": "Marketing"},
+      "members": ["rschiang"],
+      "sections": [
+        {
+          "id": "sns",
+          "name": {"zh": "社群小組", "en": "SNS"},
+          "members": ["fanlan", "mavis", "jason", "daisuke"]
+        },
+        {
+          "id": "design",
+          "name": {"zh": "設計小組", "en": "Design"},
+          "members": ["dong", "ahmin", "skyler", "hou"]
+        },
+        {
+          "id": "pr",
+          "name": {"zh": "媒體小組", "en": "Media Relations"},
+          "members": ["yc", "ahmin"]
+        },
+        {
+          "id": "web",
+          "name": {"zh": "網站小組", "en": "Web"},
+          "members": ["seangau", "kirby"]
+        }
+      ]
+    },
+    {
+      "id": "admin",
+      "name": {"zh": "行政組", "en": "Administration"},
+      "members": ["allen", "monica", "momose"],
+      "sections": null
+    },
+    {
+      "id": "program",
+      "name": {"zh": "議程組", "en": "Program"},
+      "members": ["peter", "yellowsoar", "whitecat", "rayen", "kirby"],
+      "sections": [
+        {
+          "id": "program-committee",
+          "name": {"zh": "議程委員", "en": "Agenda Committee"},
+          "members": ["paul", "ddio", "coldplay", "ichieh", "billion"]
+        },
+        {
+          "id": "program-assistants",
+          "name": {"zh": "議程助理", "en": "Session Assistants"},
+          "members": ["lois", "hamster", "peti", "city", "yuan", "elva", "ting", "kangaroo", "kevin", "vivian", "carey", "patrick", "ireneann"]
+        }
+      ]
+    },
+    {
+      "id": "photography",
+      "name": {"zh": "紀錄組", "en": "Photography"},
+      "members": ["oliver", "whitecat", "shibasalmon", "hsiaoling", "kailan", "moontai", "zhenshoot", "littlechin", "janice", "yangi", "shrimproll", "gavin", "weiqi", "77"],
+      "sections": [
+        {
+          "id": "equipment",
+          "name": {"zh": "設備", "en": "Equipment"},
+          "members": ["yutin", "charlie", "mengting"]
+        }
+      ]
+    },
+    {
+      "id": "logistics",
+      "name": {"zh": "場務組", "en": "Logistics"},
+      "members": ["cpy", "chaoyi", "penguin", "puchi", "zai", "ralin", "yider", "jackie", "joy", "yenchiang", "che", "astrid", "annie", "phoebe", "riley", "kuki", "vanbert"],
+      "sections": null
+    },
+    {
+      "id": "translation",
+      "name": {"zh": "翻譯組", "en": "Translation"},
+      "members": ["skyler", "amos"],
+      "sections": [
+        {
+          "id": "interpreters",
+          "name": {"zh": "口譯", "en": "Interpreters"},
+          "members": ["wilt", "angy", "kris", "chiahao", "sarah", "jhanshin", "caro", "angela"]
+        }
+      ]
+    },
+    {
+      "id": "sponsorship",
+      "name": {"zh": "贊助組", "en": "Sponsorship"},
+      "members": ["chihao"],
+      "sections": null
+    },
+    {
+      "id": "finance",
+      "name": {"zh": "財務組", "en": "Finance"},
+      "members": ["ian"],
+      "sections": null
+    },
+    {
+      "id": "advisors",
+      "name": {"zh": "顧問", "en": "Advisors"},
+      "members": ["ipa", "saul", "ael", "hungwen"],
+      "sections": null
+    }
+  ]
+}
