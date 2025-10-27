@@ -1,0 +1,16 @@
+name: Dispatch to summit.g0v.tw
+
+on:
+  push:
+    branches: [ production ]
+
+jobs:
+  dispatch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Repository Dispatch
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.GHA_WORKFLOW_TRIGGER }}
+          repository: g0v/summit.g0v.tw
+          event-type: update
