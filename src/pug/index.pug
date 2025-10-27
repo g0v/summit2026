@@ -1,5 +1,13 @@
-extends _layout.pug
-block script
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width,initial-scale=1')
+  title g0v Summit 2026 Incoming...
+  base(href=base)  
+  meta(property='og:image', content='assets/img/summit2026cfp.jpg')
+  meta(property='og:description', content='g0v Summit 2026 是 g0v 台灣零時政府社群兩年一次的大聚會，也是全球公民黑客、公民科技的盛會。民主不只投票凍蒜，Summit 2026 邀你一起持續貢獻、全球連結，公民不打烊。')
+  link(rel='icon', type='image/svg+xml', href='assets/img/g0v-logo.svg')
+
+body
   script(type='text/javascript').
     console.log('redirecting to cfp...');
     window.location.href = window.location.href.replace(/\/$/, '') + '/cfp/';
