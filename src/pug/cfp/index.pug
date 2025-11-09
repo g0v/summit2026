@@ -110,12 +110,12 @@ body
           
   footer.grid.gap-6#footer(class="md:grid-cols-3 max-md:pt-[14rem]")
     h3.text-center(class="max-md:text-white") g0v summit
-    .flex.gap-6.bg-white.rounded-full.px-10.h-14.items-center.justify-center(class="md:mx-auto")
-      a(href='https://summit.g0v.tw/2024' target='_blank') 2024
-      a(href='https://summit.g0v.tw/2020' target='_blank') 2020
-      a(href='https://summit.g0v.tw/2018' target='_blank') 2018
-      a(href='https://summit.g0v.tw/2014' target='_blank') 2014
-    .flex.gap-6.bg-white.rounded-full.px-10.h-14.items-center.justify-center(class="md:mx-auto")
+    .flex.gap-6.bg-white.rounded-full.px-10.h-14.items-center.justify-center.rolling-list(class="md:mx-auto")
+      a(href='https://summit.g0v.tw/2024' target='_blank'): .inline-block 2024
+      a(href='https://summit.g0v.tw/2020' target='_blank'): .inline-block 2020
+      a(href='https://summit.g0v.tw/2018' target='_blank'): .inline-block 2018
+      a(href='https://summit.g0v.tw/2014' target='_blank'): .inline-block 2014
+    .flex.gap-6.bg-white.rounded-full.px-10.h-14.items-center.justify-center.rolling-list(class="md:mx-auto")
       a(href='https://www.facebook.com/g0v.tw/' target='_blank')
         i.fa-brands.fa-facebook-f#social(aria-hidden='true')
       a(href='https://www.instagram.com/g0v.tw/' target='_blank')

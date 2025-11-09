@@ -2,7 +2,7 @@
 
 :root {
   --color-primary-dark: #5b5a36;
-  --color-primary-light: #a4a073;
+  --color-primary-light: #F09937;
   --color-background: #000000;
   --color-text-primary: #18191a;
   --color-text-secondary: rgba(24, 25, 26, 0.75);
@@ -146,9 +146,47 @@
   footer {
     @apply z-[500] w-full min-h-[10vh] flex flex-row justify-evenly items-center relative;
     padding: 5rem 2vw;
+
+    .rolling-list a {
+      &:hover > * {
+        animation: iconMouseIn .3s ease forwards;
+      }
+      &:not(:hover) > * {
+        animation: iconMouseOut .3s ease forwards;
+      }
+    }
   }
 }
 
+@keyframes iconMouseIn {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+    color: inherit;
+  }
+  49% {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  50% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+    color: var(--color-primary-light);
+  }
+}
+
+@keyframes iconMouseOut {
+  0% {
+    color: var(--color-primary-light);
+  }
+  100% {
+    color: inherit;
+  }
+}
 
 
 @keyframes drawIn {
