@@ -67,8 +67,8 @@ layers.forEach((layer, i) => {
 const master = gsap.timeline({
   scrollTrigger: {
     trigger: ".section-circles",
-    start: "top top",
-    end: "bottom-=400vh top", // End 400vh before the end of the section
+    start: "top+=5vh top",
+    end: "bottom-=360vh top",
     scrub: 1
   }
 });

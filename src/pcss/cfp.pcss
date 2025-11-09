@@ -1,16 +1,8 @@
 @import "tailwindcss";
 
-:root {
-  --color-primary-dark: #5b5a36;
-  --color-primary-light: #F09937;
-  --color-background: #000000;
-  --color-text-primary: #18191a;
-  --color-text-secondary: rgba(24, 25, 26, 0.75);
-  --color-text-muted: rgba(24, 25, 26, 0.5);
-  --speed: 0.24s;
-  --easing: ease-in-out;
-  --offset: 12;
-  --m: 4rem;
+@theme {
+  --color-primary: #f09937;
+  --color-secondary: #e55050;
 }
 
 @layer base {
@@ -23,7 +15,7 @@
   }
 
   body {
-    @apply font-['Onest',sans-serif] bg-[#0d0d0d] bg-black m-0 p-0 w-full overflow-x-hidden overflow-y-auto;
+    @apply font-['Onest',sans-serif] bg-black m-0 p-0 w-full overflow-x-hidden overflow-y-auto;
   }
 
   a {
@@ -32,10 +24,6 @@
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-bold;
-  }
-
-  h3 {
-    @apply font-medium text-black text-[calc(0.6*var(--m))] m-0;
   }
 }
 
@@ -51,7 +39,7 @@
   }
 
   .text > span {
-    @apply absolute w-full h-full bg-[#f09937] text-black flex flex-col justify-end;
+    @apply absolute w-full h-full bg-primary text-black flex flex-col justify-end;
     clip-path: polygon(0 50%, 100% 50%, 100% 50%, 0 50%);
     transform-origin: center;
     transition: all cubic-bezier(0.1, 0.5, 0.5, 1) 0.4s;
@@ -62,7 +50,7 @@
   }
 
   .section-first {
-    @apply h-[30vh] flex items-end justify-end text-[#a4a073] bg-black text-[2rem];
+    @apply h-[30vh] flex items-end justify-end bg-black;
   }
 
   .section-circles {
@@ -70,7 +58,7 @@
   }
 
   .circles-container {
-    @apply w-full h-[150vh] sticky top-0 bg-black flex;
+    @apply w-full h-[170vh] sticky top-0 bg-black flex;
   }
 
   .layer {
@@ -93,7 +81,7 @@
   .nav-item {
     @apply relative z-[1] inline-block no-underline text-black font-semibold py-1 px-0 text-2xl md:text-4xl;
     &:hover {
-      @apply text-[#e55050];
+      @apply text-secondary;
     }
   }
 
@@ -131,16 +119,14 @@
 
 
   .reveal {
-    @apply h-screen text-white mt-[20%] flex items-center justify-center md:items-start;
-    padding: 0 4rem;
+    @apply h-screen text-white mt-[20%] flex items-center justify-center md:items-start py-0 px-8;
   }
 
   .reveal p {
-    @apply text-4xl md:text-8xl leading-[1.2];
-  }
-
-  .reveal p.longer {
-    @apply text-4xl md:text-6xl leading-[1.2];
+    @apply text-4xl md:text-7xl leading-[1.2];
+    &.longer {
+      @apply text-3xl md:text-6xl;
+    }
   }
 
   footer {
@@ -175,13 +161,13 @@
   100% {
     transform: translateY(0);
     opacity: 1;
-    color: var(--color-primary-light);
+    color: var(--color-secondary);
   }
 }
 
 @keyframes iconMouseOut {
   0% {
-    color: var(--color-primary-light);
+    color: var(--color-secondary);
   }
   100% {
     color: inherit;
