@@ -7,7 +7,7 @@ const setLocale = (function (lang) {
   document.body.lang = (lang === 'en' ? 'en-TW' : 'zh-Hant-TW')
   if (!current.startsWith(lang))
     $(document.body).i18n()
-  $('.agenda-grid').css('--agenda-header-height', ($('#agenda-header').outerHeight()+10) + 'px')
+  $('.agenda-grid').css('--agenda-header-height', ($('#agenda-header').outerHeight() + 10) + 'px')
 })
 
 $('#cookie-notice button').on('click', function (e) {
@@ -15,8 +15,9 @@ $('#cookie-notice button').on('click', function (e) {
   $('#cookie-notice').addClass('hidden')
 })
 
-$('select#lang-select').on('change', function (e) {
+$('#lang-select').on('change', function (e) {
   let lang = $(this).val()
+  console.log("lang changed", lang)
   setLocale(lang)
   storage.setItem("userLang", lang)
 })
@@ -35,7 +36,7 @@ $(function () {
 
   i18n.load({
     zh: i18nzh,
-    en: 'assets/i18n/en.json?v='+'1'
+    en: 'assets/i18n/en.json?v=' + '1'
   }).done(() => {
     let lang = storage.getItem("userLang")
 
@@ -56,7 +57,7 @@ $(function () {
       lang = lang || 'en' // Fallback
     }
 
-    $('select#lang-select').val(lang)
+    $('#lang-select').val(lang)
     setLocale(lang)
   })
 })

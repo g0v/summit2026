@@ -304,9 +304,6 @@
   .m-363\.5 {
     margin: calc(var(--spacing) * 363.5);
   }
-  .mx-8 {
-    margin-inline: calc(var(--spacing) * 8);
-  }
   .mx-auto {
     margin-inline: auto;
   }
@@ -345,6 +342,12 @@
   }
   .mt-auto {
     margin-top: auto;
+  }
+  .mr-16 {
+    margin-right: calc(var(--spacing) * 16);
+  }
+  .mr-auto {
+    margin-right: auto;
   }
   .mb-0 {
     margin-bottom: calc(var(--spacing) * 0);
@@ -1063,6 +1066,43 @@
 #modal.show > .inner-modal {
   transform: translateY(0);
 }
+footer .rolling-list a {
+  color: var(--color-neutral-600);
+}
+footer .rolling-list a:hover > * {
+  animation: iconMouseIn .3s ease forwards;
+}
+footer .rolling-list a:not(:hover) > * {
+  animation: iconMouseOut .3s ease forwards;
+}
+@keyframes iconMouseIn {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+    color: inherit;
+  }
+  49% {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  50% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+    color: var(--color-primary);
+  }
+}
+@keyframes iconMouseOut {
+  0% {
+    color: var(--color-primary);
+  }
+  100% {
+    color: inherit;
+  }
+}
 @property --tw-rotate-x {
   syntax: "*";
   inherits: false;
@@ -1244,4 +1284,3 @@
     }
   }
 }
-
