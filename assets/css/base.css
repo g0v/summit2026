@@ -243,6 +243,9 @@
   .right-0 {
     right: calc(var(--spacing) * 0);
   }
+  .bottom-0 {
+    bottom: calc(var(--spacing) * 0);
+  }
   .bottom-1\/4 {
     bottom: calc(1/4 * 100%);
   }
@@ -614,6 +617,9 @@
   .px-0 {
     padding-inline: calc(var(--spacing) * 0);
   }
+  .px-2 {
+    padding-inline: calc(var(--spacing) * 2);
+  }
   .px-3 {
     padding-inline: calc(var(--spacing) * 3);
   }
@@ -954,6 +960,12 @@
   }
   .btn {
     transition: all 0.2s ease;
+  }
+  .btn-sm {
+    padding-inline: calc(var(--spacing) * 2);
+    padding-block: calc(var(--spacing) * 1);
+    font-size: var(--text-sm);
+    line-height: var(--tw-leading, var(--text-sm--line-height));
   }
   .btn-lg {
     border-radius: var(--radius-lg);
