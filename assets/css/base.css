@@ -455,9 +455,6 @@
   .h-28 {
     height: calc(var(--spacing) * 28);
   }
-  .h-32 {
-    height: calc(var(--spacing) * 32);
-  }
   .h-40 {
     height: calc(var(--spacing) * 40);
   }
@@ -671,9 +668,6 @@
   }
   .border-white {
     border-color: var(--color-white);
-  }
-  .bg-\[\#D9D9D9\] {
-    background-color: #D9D9D9;
   }
   .bg-\[\#F5F5F5\] {
     background-color: #F5F5F5;
@@ -996,11 +990,6 @@
   @media (width >= 48rem) {
     .md\:mb-12 {
       margin-bottom: calc(var(--spacing) * 12);
-    }
-  }
-  @media (width >= 48rem) {
-    .md\:mb-14 {
-      margin-bottom: calc(var(--spacing) * 14);
     }
   }
   @media (width >= 48rem) {
