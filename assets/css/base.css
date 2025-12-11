@@ -1044,6 +1044,11 @@
       gap: calc(var(--spacing) * 12);
     }
   }
+  @media (width >= 80rem) {
+    .xl\:grid-cols-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
 }
 @layer base {
   body {
