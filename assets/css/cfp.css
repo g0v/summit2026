@@ -853,6 +853,11 @@
     }
   }
   @media (width < 48rem) {
+    .max-md\:text-center {
+      text-align: center;
+    }
+  }
+  @media (width < 48rem) {
     .max-md\:text-lg {
       font-size: var(--text-lg);
       line-height: var(--tw-leading, var(--text-lg--line-height));
