@@ -7,7 +7,7 @@ const setLocale = (function (lang) {
   document.body.lang = (lang === 'en' ? 'en-TW' : 'zh-Hant-TW')
   if (!current.startsWith(lang))
     $(document.body).i18n()
-  updateCountdown() 
+  updateCountdown()
   $('.agenda-grid').css('--agenda-header-height', ($('#agenda-header').outerHeight() + 10) + 'px')
 })
 
@@ -22,25 +22,15 @@ function changeLang(lang) {
   storage.setItem("userLang", lang)
 }
 
-$('.zh-btn').on('click', function (e) {
-  changeLang('zh')
-  toggleMobileNav()
-})
-
-$('.en-btn').on('click', function (e) {
-  changeLang('en')
-  toggleMobileNav()
-})
-
 $(function () {
   if (!storage.getItem('agreeCookie')) {
     $('#cookie-notice').removeClass('hidden')
   }
 
-  let i18nzh = {}
+  const i18nzh = {}
   $('[data-i18n]').each(function () {
-    let key = $(this).attr('data-i18n').replace(/\[.*?\]/g, '');
-    let text = $(this).html()
+    const key = $(this).attr('data-i18n').replace(/\[.*?\]/g, '');
+    const text = $(this).html()
     i18nzh[key] = text
   })
 
@@ -66,9 +56,18 @@ $(function () {
         }
       lang = lang || 'en' // Fallback
     }
+    ['zh', 'en'].forEach(l => {
+      const lBtn = $(`.${l}-btn`)
+      lBtn.on('click', function (e) {
+        changeLang(l)
+        toggleMobileNav()
+        $(".lang-btn").removeClass("!text-primary-dark")
+        $(this).addClass("!text-primary-dark")
+      })
+      lBtn.toggleClass('!text-primary-dark', l === lang)
+    })
 
-    $('#lang-select').val(lang)
-    setLocale(lang)
+    changeLang(lang)
   })
 })
 
@@ -104,18 +103,14 @@ const $navbar = $('#navbar')
 const $mobileNav = $('#mobile-nav')
 
 if (navTransparentFlag) {
-  $navbar.addClass('bg-transparent transition-colors')
+  $navbar.addClass('bg-white/90 transition-colors')
   function onScroll() {
-    if ($(window).scrollTop() > 10) {
-      $navbar.addClass('bg-white shadow-md')
-    } else {
-      $navbar.removeClass('bg-white shadow-md')
-    }
+    $navbar.toggleClass('!bg-white shadow-md', $(window).scrollTop() > 10)
   }
   $(window).on('scroll', onScroll)
   onScroll()
 } else {
-  $navbar.addClass('bg-white shadow-md')
+  $navbar.addClass('!bg-white shadow-md')
 }
 
 // toggle mobile nav

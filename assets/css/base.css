@@ -9,6 +9,7 @@
     --color-slate-100: oklch(96.8% 0.007 247.896);
     --color-neutral-500: oklch(55.6% 0 0);
     --color-neutral-600: oklch(43.9% 0 0);
+    --color-neutral-800: oklch(26.9% 0 0);
     --color-black: #000;
     --color-white: #fff;
     --spacing: 0.25rem;
@@ -248,9 +249,6 @@
   }
   .left-8 {
     left: calc(var(--spacing) * 8);
-  }
-  .z-50 {
-    z-index: 50;
   }
   .z-999 {
     z-index: 999;
@@ -573,6 +571,9 @@
   .border-white {
     border-color: var(--color-white);
   }
+  .\!bg-white {
+    background-color: var(--color-white) !important;
+  }
   .bg-\[\#F5F5F5\] {
     background-color: #F5F5F5;
   }
@@ -596,11 +597,16 @@
   .bg-slate-100 {
     background-color: var(--color-slate-100);
   }
-  .bg-transparent {
-    background-color: transparent;
-  }
   .bg-white {
     background-color: var(--color-white);
+  }
+  .bg-white\/90 {
+    background-color: color-mix(in srgb, #fff 90%, transparent);
+  }
+  @supports (color: color-mix(in lab, red, red)) {
+    .bg-white\/90 {
+      background-color: color-mix(in oklab, var(--color-white) 90%, transparent);
+    }
   }
   .object-cover {
     -o-object-fit: cover;
@@ -629,9 +635,6 @@
   }
   .px-4 {
     padding-inline: calc(var(--spacing) * 4);
-  }
-  .px-6 {
-    padding-inline: calc(var(--spacing) * 6);
   }
   .px-8 {
     padding-inline: calc(var(--spacing) * 8);
@@ -730,6 +733,9 @@
   .whitespace-nowrap {
     white-space: nowrap;
   }
+  .\!text-primary-dark {
+    color: var(--color-primary-dark) !important;
+  }
   .text-\[\#A1A1A1\] {
     color: #A1A1A1;
   }
@@ -776,11 +782,6 @@
   .duration-300 {
     --tw-duration: 300ms;
     transition-duration: 300ms;
-  }
-  @media (hover: hover) {
-    .hover\:text-primary:hover {
-      color: var(--color-primary);
-    }
   }
   :where(*:is(.active)) .in-\[\.active\]\:-rotate-180 {
     rotate: calc(180deg * -1);
@@ -986,12 +987,6 @@
       gap: calc(var(--spacing) * 12);
     }
   }
-  @media (width >= 64rem) {
-    .lg\:text-2xl {
-      font-size: var(--text-2xl);
-      line-height: var(--tw-leading, var(--text-2xl--line-height));
-    }
-  }
   @media (width >= 80rem) {
     .xl\:basis-auto {
       flex-basis: auto;
@@ -999,9 +994,6 @@
   }
 }
 @layer base {
-  :root {
-    font-size: 16px;
-  }
   body {
     font-family: var(--font-sans);
     --tw-leading: var(--leading-relaxed);
@@ -1112,7 +1104,7 @@
     cursor: pointer;
     align-items: center;
     justify-content: center;
-    border-radius: 0.25rem;
+    border-radius: var(--radius-lg);
     padding-inline: calc(var(--spacing) * 4);
     padding-block: calc(var(--spacing) * 2);
   }
@@ -1130,11 +1122,29 @@
     line-height: var(--tw-leading, var(--text-sm--line-height));
   }
   .btn-lg {
-    border-radius: var(--radius-lg);
     padding-inline: calc(var(--spacing) * 7);
     padding-block: calc(var(--spacing) * 3);
     font-size: var(--text-xl);
     line-height: var(--tw-leading, var(--text-xl--line-height));
+    --tw-font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-bold);
+  }
+  @media (width >= 64rem) {
+    .btn-lg {
+      font-size: var(--text-2xl);
+      line-height: var(--tw-leading, var(--text-2xl--line-height));
+    }
+  }
+  .btn-text-dark {
+    color: var(--color-neutral-800);
+    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+  }
+  @media (hover: hover) {
+    .btn-text-dark:hover {
+      color: var(--color-primary);
+    }
   }
   .btn-primary {
     background-color: var(--color-primary);

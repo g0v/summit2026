@@ -245,9 +245,6 @@
   .left-8 {
     left: calc(var(--spacing) * 8);
   }
-  .z-50 {
-    z-index: 50;
-  }
   .z-999 {
     z-index: 999;
   }
@@ -569,6 +566,9 @@
   .border-white {
     border-color: var(--color-white);
   }
+  .\!bg-white {
+    background-color: var(--color-white) !important;
+  }
   .bg-\[\#F5F5F5\] {
     background-color: #F5F5F5;
   }
@@ -592,11 +592,16 @@
   .bg-slate-100 {
     background-color: var(--color-slate-100);
   }
-  .bg-transparent {
-    background-color: transparent;
-  }
   .bg-white {
     background-color: var(--color-white);
+  }
+  .bg-white\/90 {
+    background-color: color-mix(in srgb, #fff 90%, transparent);
+  }
+  @supports (color: color-mix(in lab, red, red)) {
+    .bg-white\/90 {
+      background-color: color-mix(in oklab, var(--color-white) 90%, transparent);
+    }
   }
   .object-cover {
     -o-object-fit: cover;
@@ -625,9 +630,6 @@
   }
   .px-4 {
     padding-inline: calc(var(--spacing) * 4);
-  }
-  .px-6 {
-    padding-inline: calc(var(--spacing) * 6);
   }
   .px-8 {
     padding-inline: calc(var(--spacing) * 8);
@@ -772,11 +774,6 @@
   .duration-300 {
     --tw-duration: 300ms;
     transition-duration: 300ms;
-  }
-  @media (hover: hover) {
-    .hover\:text-primary:hover {
-      color: var(--color-primary);
-    }
   }
   :where(*:is(.active)) .in-\[\.active\]\:-rotate-180 {
     rotate: calc(180deg * -1);
@@ -980,12 +977,6 @@
   @media (width >= 64rem) {
     .lg\:gap-12 {
       gap: calc(var(--spacing) * 12);
-    }
-  }
-  @media (width >= 64rem) {
-    .lg\:text-2xl {
-      font-size: var(--text-2xl);
-      line-height: var(--tw-leading, var(--text-2xl--line-height));
     }
   }
   @media (width >= 80rem) {
