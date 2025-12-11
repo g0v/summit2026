@@ -8,6 +8,7 @@
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
     --color-slate-100: oklch(96.8% 0.007 247.896);
+    --color-neutral-100: oklch(97% 0 0);
     --color-neutral-200: oklch(92.2% 0 0);
     --color-neutral-300: oklch(87% 0 0);
     --color-neutral-400: oklch(70.8% 0 0);
@@ -595,6 +596,9 @@
   .bg-\[\#d3ebdf\] {
     background-color: #d3ebdf;
   }
+  .bg-neutral-100 {
+    background-color: var(--color-neutral-100);
+  }
   .bg-neutral-200 {
     background-color: var(--color-neutral-200);
   }
@@ -625,6 +629,10 @@
     .bg-white\/90 {
       background-color: color-mix(in oklab, var(--color-white) 90%, transparent);
     }
+  }
+  .object-contain {
+    -o-object-fit: contain;
+       object-fit: contain;
   }
   .object-cover {
     -o-object-fit: cover;
@@ -816,6 +824,11 @@
       translate: var(--tw-translate-x) var(--tw-translate-y);
     }
   }
+  @media (hover: hover) {
+    .hover\:text-primary:hover {
+      color: var(--color-primary);
+    }
+  }
   :where(*:is(.active)) .in-\[\.active\]\:-rotate-180 {
     rotate: calc(180deg * -1);
   }
@@ -921,11 +934,6 @@
     }
   }
   @media (width >= 48rem) {
-    .md\:grid-cols-2 {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-  }
-  @media (width >= 48rem) {
     .md\:grid-cols-3 {
       grid-template-columns: repeat(3, minmax(0, 1fr));
     }
@@ -1026,8 +1034,8 @@
     }
   }
   @media (width >= 64rem) {
-    .lg\:grid-cols-3 {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+    .lg\:grid-cols-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
   }
   @media (width >= 64rem) {
