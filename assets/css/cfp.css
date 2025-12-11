@@ -437,6 +437,10 @@
   .h-\[70vh\] {
     height: 70vh;
   }
+  .h-fit {
+    height: -moz-fit-content;
+    height: fit-content;
+  }
   .h-full {
     height: 100%;
   }

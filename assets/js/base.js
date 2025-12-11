@@ -18,6 +18,12 @@ $('#modal .modal-close').on('click', function (e) {
   history.replaceState(null, null, window.location.pathname);
 })
 
+$("a[disabled]").on('click', function (e) {
+  e.preventDefault()
+}).each(function () {
+  $(this).attr("title", "還在煮！")
+})
+
 $(document).on('keydown', function (e) {
   if (e.key === 'Escape' && $('#modal').hasClass('show')) {
     $('#modal .modal-close').click()
