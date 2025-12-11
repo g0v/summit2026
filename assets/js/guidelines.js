@@ -31,6 +31,10 @@ $(function () {
     showAgendaBox($(this).data('target'));
   });
 
+  $('#agenda-select').on('change', function () {
+    showAgendaBox($(this).val());
+  })
+
   /**
    * =======================
    * FAQ
