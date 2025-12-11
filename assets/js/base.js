@@ -18,8 +18,15 @@ $('#modal .modal-close').on('click', function (e) {
   history.replaceState(null, null, window.location.pathname);
 })
 
+let rickRoll = 0
+
 $("a[disabled]").on('click', function (e) {
   e.preventDefault()
+  rickRoll++
+  if (rickRoll > 10) {
+    window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ", "_blank")
+    rickRoll = 0
+  }
 }).each(function () {
   $(this).attr("title", "還在煮！")
 })
