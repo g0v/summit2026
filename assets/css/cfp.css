@@ -469,6 +469,9 @@
     width: -moz-max-content;
     width: max-content;
   }
+  .max-w-48 {
+    max-width: calc(var(--spacing) * 48);
+  }
   .flex-shrink-0 {
     flex-shrink: 0;
   }
@@ -971,14 +974,9 @@
     }
   }
   @media (width >= 48rem) {
-    .md\:gap-x-4 {
-      -moz-column-gap: calc(var(--spacing) * 4);
-           column-gap: calc(var(--spacing) * 4);
-    }
-  }
-  @media (width >= 48rem) {
-    .md\:gap-y-8 {
-      row-gap: calc(var(--spacing) * 8);
+    .md\:gap-x-3 {
+      -moz-column-gap: calc(var(--spacing) * 3);
+           column-gap: calc(var(--spacing) * 3);
     }
   }
   @media (width >= 48rem) {
