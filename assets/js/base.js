@@ -1,6 +1,5 @@
 // Global preferences
 const storage = window.sessionStorage
-const i18n = $.i18n()
 
 $('#cookie-notice button').on('click', function (e) {
   storage.setItem('agreeCookie', true)
@@ -20,15 +19,16 @@ $('#modal .modal-close').on('click', function (e) {
 
 let rickRoll = 0
 
-$("a[disabled]").on('click', function (e) {
+$("a[disabled]").each(function () {
+  $(this).attr("title", "還在煮！")
+  $(this).attr("data-i18n", $(this).attr("data-i18n") + ";[title]nav.disabled.title")
+}).on('click', function (e) {
   e.preventDefault()
   rickRoll++
   if (rickRoll > 10) {
     window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ", "_blank")
     rickRoll = 0
   }
-}).each(function () {
-  $(this).attr("title", "還在煮！")
 })
 
 $(document).on('keydown', function (e) {
@@ -40,10 +40,10 @@ $(document).on('keydown', function (e) {
 // Set i18n locale
 const setLocale = (function (lang) {
   let current = document.body.lang || 'zh-Hant-TW'
-  i18n.locale = lang
+  i18next.changeLanguage(lang)
   document.body.lang = (lang === 'en' ? 'en-TW' : 'zh-Hant-TW')
   if (!current.startsWith(lang))
-    $(document.body).i18n()
+    $(document.body).localize()
   updateCountdown()
   $('.agenda-grid').css('--agenda-header-height', ($('#agenda-header').outerHeight() + 10) + 'px')
 })
@@ -114,46 +114,82 @@ $(function () {
 
   const i18nzh = {}
   $('[data-i18n]').each(function () {
-    const key = $(this).attr('data-i18n').replace(/\[.*?\]/g, '');
-    const text = $(this).html()
-    i18nzh[key] = text
-  })
-
-  i18n.load({
-    zh: i18nzh,
-    en: 'assets/i18n/en.json?v=' + '1'
-  }).done(() => {
-    let lang = storage.getItem("userLang")
-
-    if (location.search)
-      if (location.search.includes('lang=en')) lang = 'en'
-      else if (location.search.includes('lang=zh')) lang = 'zh'
-
-    if (!lang) {
-      let languages = navigator.languages || [navigator.language || navigator.userLanguage]
-      for (const l of languages)
-        if (l.startsWith('en')) { // Explicitly prefer English
-          lang = 'en'
-          break
-        } else if (l.startsWith('zh')) { // Explicitly prefer Mandarin
-          lang = 'zh'
-          break
-        }
-      lang = lang || 'en' // Fallback
-    }
-    ['zh', 'en'].forEach(l => {
-      const lBtn = $(`.${l}-btn`)
-      lBtn.on('click', function (e) {
-        changeLang(l)
-        toggleMobileNav()
-        $(".lang-btn").removeClass("!text-primary-dark")
-        $(this).addClass("!text-primary-dark")
-      })
-      lBtn.toggleClass('!text-primary-dark', l === lang)
+    const $this = $(this)
+    const key = $this.attr('data-i18n')
+    const text = $this.html()
+    key.split(';').forEach(function (_key) {
+      const attr = _key.match(/\[(.*?)\]/)
+      if (attr && attr[1] !== "html") {
+        i18nzh[_key.replace(/\[.*?\]/g, '')] = $this.attr(attr[1])
+      } else {
+        i18nzh[_key.replace(/\[.*?\]/g, '')] = text
+      }
     })
-
-    changeLang(lang)
   })
+
+  console.log(i18nzh)
+
+  // Fetch English translations
+  fetch('assets/i18n/en.json?v=1')
+    .then(res => res.json())
+    .then(enTranslations => {
+      // Initialize i18next
+      i18next.init({
+        lng: 'zh',
+        fallbackLng: 'zh',
+        resources: {
+          zh: {
+            translation: i18nzh
+          },
+          en: {
+            translation: enTranslations
+          }
+        }
+      }, function (err, t) {
+        // Initialize jquery-i18next
+        jqueryI18next.init(i18next, $, {
+          tName: 't',
+          i18nName: 'i18n',
+          handleName: 'localize',
+          selectorAttr: 'data-i18n',
+          targetAttr: 'i18n-target',
+          optionsAttr: 'i18n-options',
+          useOptionsAttr: false,
+          parseDefaultValueFromContent: true
+        });
+
+        let lang = storage.getItem("userLang")
+
+        if (location.search)
+          if (location.search.includes('lang=en')) lang = 'en'
+          else if (location.search.includes('lang=zh')) lang = 'zh'
+
+        if (!lang) {
+          let languages = navigator.languages || [navigator.language || navigator.userLanguage]
+          for (const l of languages)
+            if (l.startsWith('en')) { // Explicitly prefer English
+              lang = 'en'
+              break
+            } else if (l.startsWith('zh')) { // Explicitly prefer Mandarin
+              lang = 'zh'
+              break
+            }
+          lang = lang || 'en' // Fallback
+        }
+        ['zh', 'en'].forEach(l => {
+          const lBtn = $(`.${l}-btn`)
+          lBtn.on('click', function (e) {
+            changeLang(l)
+            toggleMobileNav()
+            $(".lang-btn").removeClass("!text-primary-dark")
+            $(this).addClass("!text-primary-dark")
+          })
+          lBtn.toggleClass('!text-primary-dark', l === lang)
+        })
+
+        changeLang(lang)
+      });
+    });
 
   // UI interactions & events
   $('body').css('overflow', 'unset')
