@@ -61,9 +61,8 @@ const $navbar = $('#navbar')
 const $mobileNav = $('#mobile-nav')
 
 if (navTransparentFlag) {
-  $navbar.addClass('bg-white/90 transition-colors')
   function onScroll() {
-    $navbar.toggleClass('!bg-white shadow-md', $(window).scrollTop() > 10)
+    $navbar.toggleClass('!bg-white shadow-md md:!h-22', $(window).scrollTop() > 10)
   }
   $(window).on('scroll', onScroll)
   onScroll()
