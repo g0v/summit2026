@@ -3,7 +3,7 @@
 @layer theme, base, components, utilities;
 @layer theme {
   :root, :host {
-    --font-sans: Amarna, 'Noto Sans TC', sans-serif;
+    --font-sans: 'Noto Sans TC', sans-serif;
     --font-serif: Amarna, 'LXGW WenKai TC', serif;
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
@@ -1010,7 +1010,7 @@
 }
 @layer base {
   body {
-    font-family: var(--font-serif);
+    font-family: var(--font-sans);
     font-size: var(--text-base);
     line-height: var(--tw-leading, var(--text-base--line-height));
     --tw-leading: var(--leading-relaxed);
