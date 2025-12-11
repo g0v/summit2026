@@ -5,10 +5,10 @@
   :root, :host {
     --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
     --color-slate-100: oklch(96.8% 0.007 247.896);
+    --color-neutral-200: oklch(92.2% 0 0);
     --color-neutral-300: oklch(87% 0 0);
     --color-neutral-400: oklch(70.8% 0 0);
     --color-black: #000;
@@ -30,7 +30,6 @@
     --text-7xl--line-height: 1;
     --font-weight-semibold: 600;
     --font-weight-bold: 700;
-    --font-weight-black: 900;
     --leading-loose: 2;
     --radius-md: 0.375rem;
     --radius-lg: 0.5rem;
@@ -283,6 +282,9 @@
   .m-363\.5 {
     margin: calc(var(--spacing) * 363.5);
   }
+  .m-auto {
+    margin: auto;
+  }
   .mx-auto {
     margin-inline: auto;
   }
@@ -367,6 +369,9 @@
   .mb-20 {
     margin-bottom: calc(var(--spacing) * 20);
   }
+  .ml-2 {
+    margin-left: calc(var(--spacing) * 2);
+  }
   .block {
     display: block;
   }
@@ -397,6 +402,9 @@
   }
   .h-2 {
     height: calc(var(--spacing) * 2);
+  }
+  .h-4 {
+    height: calc(var(--spacing) * 4);
   }
   .h-6 {
     height: calc(var(--spacing) * 6);
@@ -570,11 +578,11 @@
   .bg-\[\#F5F5F5\] {
     background-color: #F5F5F5;
   }
-  .bg-\[\#FF7874\] {
-    background-color: #FF7874;
-  }
   .bg-\[\#d3ebdf\] {
     background-color: #d3ebdf;
+  }
+  .bg-neutral-200 {
+    background-color: var(--color-neutral-200);
   }
   .bg-primary {
     background-color: var(--color-primary);
@@ -586,6 +594,9 @@
     .bg-primary\/80 {
       background-color: color-mix(in oklab, var(--color-primary) 80%, transparent);
     }
+  }
+  .bg-secondary {
+    background-color: var(--color-secondary);
   }
   .bg-slate-100 {
     background-color: var(--color-slate-100);
@@ -695,9 +706,6 @@
   .text-right {
     text-align: right;
   }
-  .font-serif {
-    font-family: var(--font-serif);
-  }
   .text-2xl {
     font-size: var(--text-2xl);
     line-height: var(--tw-leading, var(--text-2xl--line-height));
@@ -722,14 +730,6 @@
     --tw-leading: var(--leading-loose);
     line-height: var(--leading-loose);
   }
-  .\!font-black {
-    --tw-font-weight: var(--font-weight-black) !important;
-    font-weight: var(--font-weight-black) !important;
-  }
-  .font-black {
-    --tw-font-weight: var(--font-weight-black);
-    font-weight: var(--font-weight-black);
-  }
   .font-bold {
     --tw-font-weight: var(--font-weight-bold);
     font-weight: var(--font-weight-bold);
@@ -743,9 +743,6 @@
   .text-\[\#A2A2A2\] {
     color: #A2A2A2;
   }
-  .text-\[\#FF7874\] {
-    color: #FF7874;
-  }
   .text-black {
     color: var(--color-black);
   }
@@ -754,6 +751,9 @@
   }
   .text-neutral-400 {
     color: var(--color-neutral-400);
+  }
+  .text-secondary {
+    color: var(--color-secondary);
   }
   .text-white {
     color: var(--color-white);
@@ -793,6 +793,11 @@
   @media (width < 48rem) {
     .max-md\:hidden {
       display: none;
+    }
+  }
+  @media (width < 48rem) {
+    .max-md\:w-full {
+      width: 100%;
     }
   }
   @media (width < 48rem) {
