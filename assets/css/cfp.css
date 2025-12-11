@@ -8,6 +8,8 @@
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
     --color-slate-100: oklch(96.8% 0.007 247.896);
+    --color-neutral-300: oklch(87% 0 0);
+    --color-neutral-400: oklch(70.8% 0 0);
     --color-black: #000;
     --color-white: #fff;
     --spacing: 0.25rem;
@@ -360,9 +362,6 @@
   .mb-15 {
     margin-bottom: calc(var(--spacing) * 15);
   }
-  .mb-18 {
-    margin-bottom: calc(var(--spacing) * 18);
-  }
   .mb-20 {
     margin-bottom: calc(var(--spacing) * 20);
   }
@@ -432,9 +431,6 @@
   }
   .w-6 {
     width: calc(var(--spacing) * 6);
-  }
-  .w-8 {
-    width: calc(var(--spacing) * 8);
   }
   .w-9 {
     width: calc(var(--spacing) * 9);
@@ -734,14 +730,17 @@
   .text-\[\#A2A2A2\] {
     color: #A2A2A2;
   }
-  .text-\[\#BDBDBD\] {
-    color: #BDBDBD;
-  }
   .text-\[\#FF7874\] {
     color: #FF7874;
   }
   .text-black {
     color: var(--color-black);
+  }
+  .text-neutral-300 {
+    color: var(--color-neutral-300);
+  }
+  .text-neutral-400 {
+    color: var(--color-neutral-400);
   }
   .text-white {
     color: var(--color-white);
