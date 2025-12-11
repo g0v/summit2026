@@ -7,6 +7,7 @@ const setLocale = (function (lang) {
   document.body.lang = (lang === 'en' ? 'en-TW' : 'zh-Hant-TW')
   if (!current.startsWith(lang))
     $(document.body).i18n()
+  updateCountdown() 
   $('.agenda-grid').css('--agenda-header-height', ($('#agenda-header').outerHeight() + 10) + 'px')
 })
 
@@ -131,11 +132,14 @@ function toggleMobileNav() {
 }
 
 // count day to submission deadline
-const target = new Date("2026-01-15T00:00:00+08:00")
-const msPerDay = 24 * 60 * 60 * 1000
-const daysLeftFromNow = Math.ceil((target - new Date()) / msPerDay)
-$('.submission-deadline').text(daysLeftFromNow)
-const totalDays = 40
-const dayPassed = Math.max(totalDays - daysLeftFromNow, 0)
-const progress = Math.min(Math.round(dayPassed / 30 * 100), 100)
-$('.submission-deadline-progress').css('width', `${progress}%`)
+function updateCountdown() {
+  const target = new Date("2026-01-15T00:00:00+08:00")
+  const msPerDay = 24 * 60 * 60 * 1000
+  const daysLeftFromNow = Math.ceil((target - new Date()) / msPerDay)
+  $('.submission-deadline').text(daysLeftFromNow)
+  const totalDays = 40
+  const dayPassed = Math.max(totalDays - daysLeftFromNow, 0)
+  const progress = Math.min(Math.round(dayPassed / 30 * 100), 100)
+  $('.submission-deadline-progress').css('width', `${progress}%`)
+}
+updateCountdown()
