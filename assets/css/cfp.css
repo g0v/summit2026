@@ -393,6 +393,10 @@
   .aspect-video {
     aspect-ratio: var(--aspect-video);
   }
+  .size-6 {
+    width: calc(var(--spacing) * 6);
+    height: calc(var(--spacing) * 6);
+  }
   .h-2 {
     height: calc(var(--spacing) * 2);
   }
@@ -768,6 +772,11 @@
   .duration-300 {
     --tw-duration: 300ms;
     transition-duration: 300ms;
+  }
+  @media (hover: hover) {
+    .hover\:text-primary:hover {
+      color: var(--color-primary);
+    }
   }
   :where(*:is(.active)) .in-\[\.active\]\:-rotate-180 {
     rotate: calc(180deg * -1);

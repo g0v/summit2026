@@ -42,8 +42,8 @@
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
     --color-primary: #008CC9;
-    --color-primary-dark: #074E64;
-    --color-secondary: #9cab37;
+    --color-primary-dark: #006CA9;
+    --color-secondary: #FF7874;
   }
 }
 @layer base {
@@ -396,6 +396,10 @@
   }
   .aspect-video {
     aspect-ratio: var(--aspect-video);
+  }
+  .size-6 {
+    width: calc(var(--spacing) * 6);
+    height: calc(var(--spacing) * 6);
   }
   .h-2 {
     height: calc(var(--spacing) * 2);
@@ -773,6 +777,11 @@
     --tw-duration: 300ms;
     transition-duration: 300ms;
   }
+  @media (hover: hover) {
+    .hover\:text-primary:hover {
+      color: var(--color-primary);
+    }
+  }
   :where(*:is(.active)) .in-\[\.active\]\:-rotate-180 {
     rotate: calc(180deg * -1);
   }
@@ -1077,12 +1086,6 @@
   a:not(.btn, .nav-link):link:hover, a:not(.btn, .nav-link):visited:hover {
     text-decoration-line: underline;
   }
-  i.msi {
-    font-family: 'Material Symbols Outlined';
-    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
 }
 @layer utilities {
   .container {
@@ -1174,12 +1177,6 @@
       color: var(--color-white);
     }
   }
-}
-.material-symbols-outlined {
-  font-variation-settings: 'FILL' 0,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 24;
 }
 #modal {
   position: fixed;
