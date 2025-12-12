@@ -77,6 +77,7 @@ function toggleMobileNav() {
   $navbar.addClass('bg-white')
   $mobileNav.toggleClass('grid-rows-[0fr] grid-rows-[1fr]')
   $mobileNav.toggleClass('shadow-md')
+  $('#burger').toggleClass('is-active')
 
   if ($(window).scrollTop() < 10 && $mobileNav.hasClass('grid-rows-[0fr]')) {
     $navbar.removeClass('bg-white')
