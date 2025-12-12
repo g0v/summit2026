@@ -378,9 +378,6 @@
   .mb-8 {
     margin-bottom: calc(var(--spacing) * 8);
   }
-  .mb-9 {
-    margin-bottom: calc(var(--spacing) * 9);
-  }
   .mb-12 {
     margin-bottom: calc(var(--spacing) * 12);
   }
