@@ -60,15 +60,16 @@ const navTransparentFlag = Boolean($('#nav-transparent-flag')[0]);
 const $navbar = $('#navbar')
 const $mobileNav = $('#mobile-nav')
 
-if (navTransparentFlag) {
-  function onScroll() {
+function onScroll() {
+  if (navTransparentFlag) {
     $navbar.toggleClass('!bg-white shadow-md md:!h-22', $(window).scrollTop() > 10)
+  } else {
+    $navbar.addClass('!bg-white shadow-md md:!h-22')
   }
-  $(window).on('scroll', onScroll)
-  onScroll()
-} else {
-  $navbar.addClass('!bg-white shadow-md')
 }
+
+$(window).on('scroll', onScroll)
+onScroll()
 
 // toggle mobile nav
 $('#toggle-nav-btn').on('click', toggleMobileNav)
