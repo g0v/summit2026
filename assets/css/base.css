@@ -1078,6 +1078,15 @@
   }
 }
 @layer base {
+  :root {
+    scroll-padding-top: calc(var(--spacing) * 18);
+    scroll-behavior: smooth;
+  }
+  @media (width >= 48rem) {
+    :root {
+      scroll-padding-top: calc(var(--spacing) * 28);
+    }
+  }
   body {
     font-family: var(--font-sans);
     font-size: var(--text-base);

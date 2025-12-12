@@ -72,6 +72,7 @@ if (navTransparentFlag) {
 
 // toggle mobile nav
 $('#toggle-nav-btn').on('click', toggleMobileNav)
+$('.toggle-mobile-nav').on('click', toggleMobileNav)
 
 function toggleMobileNav() {
   $navbar.addClass('bg-white')
