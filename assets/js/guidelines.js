@@ -19,6 +19,12 @@ $(function () {
 
     $agendaBoxes.stop(true, true);
 
+    if (selector === '#agenda-box4') {
+      $("#ref-agenda").fadeOut(DURATION)
+    } else {
+      $("#ref-agenda").fadeIn(DURATION)
+    }
+
     $current.fadeOut(DURATION, function () {
       $current.removeClass('is-active');
       $next.fadeIn(DURATION, function () {
