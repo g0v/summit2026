@@ -29,6 +29,8 @@ $(function () {
 
   $('.agenda-tab').on('click', function () {
     showAgendaBox($(this).data('target'));
+    $('.agenda-tab.border-neutral-600').removeClass('border-neutral-600');
+    $(this).addClass('border-neutral-600');
   });
 
   $('#agenda-select').on('change', function () {
