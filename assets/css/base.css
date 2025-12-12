@@ -3,7 +3,7 @@
 @layer theme, base, components, utilities;
 @layer theme {
   :root, :host {
-    --font-sans: 'Noto Sans TC', sans-serif;
+    --font-sans: Onest, 'Noto Sans TC', sans-serif;
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
     --color-slate-100: oklch(96.8% 0.007 247.896);
@@ -776,6 +776,10 @@
     --tw-leading: var(--leading-loose);
     line-height: var(--leading-loose);
   }
+  .leading-relaxed {
+    --tw-leading: var(--leading-relaxed);
+    line-height: var(--leading-relaxed);
+  }
   .font-bold {
     --tw-font-weight: var(--font-weight-bold);
     font-weight: var(--font-weight-bold);
@@ -1130,7 +1134,7 @@
     margin-bottom: calc(var(--spacing) * 2);
     list-style-position: outside;
     list-style-type: disc;
-    padding-inline-start: calc(var(--spacing) * 5);
+    padding-left: 1.5rem;
   }
   ul li {
     margin-bottom: calc(var(--spacing) * 1);
@@ -1139,7 +1143,7 @@
     margin-bottom: calc(var(--spacing) * 2);
     list-style-position: outside;
     list-style-type: decimal;
-    padding-inline-start: calc(var(--spacing) * 4);
+    padding-left: 1.5rem;
   }
   ol li {
     margin-bottom: calc(var(--spacing) * 1);
