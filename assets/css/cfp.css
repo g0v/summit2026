@@ -212,6 +212,9 @@
   }
 }
 @layer utilities {
+  .pointer-events-none {
+    pointer-events: none;
+  }
   .visible {
     visibility: visible;
   }
@@ -256,6 +259,9 @@
   }
   .z-50 {
     z-index: 50;
+  }
+  .z-998 {
+    z-index: 998;
   }
   .z-999 {
     z-index: 999;
