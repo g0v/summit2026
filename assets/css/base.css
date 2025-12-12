@@ -20,7 +20,7 @@
     --spacing: 0.25rem;
     --container-lg: 32rem;
     --container-3xl: 48rem;
-    --container-4xl: 56rem;
+    --container-5xl: 64rem;
     --container-7xl: 80rem;
     --text-sm: 0.875rem;
     --text-sm--line-height: calc(1.25 / 0.875);
@@ -477,6 +477,9 @@
     width: -moz-max-content;
     width: max-content;
   }
+  .max-w-44 {
+    max-width: calc(var(--spacing) * 44);
+  }
   .max-w-48 {
     max-width: calc(var(--spacing) * 48);
   }
@@ -593,6 +596,12 @@
   .border-neutral-200 {
     border-color: var(--color-neutral-200);
   }
+  .border-neutral-400 {
+    border-color: var(--color-neutral-400);
+  }
+  .border-neutral-600 {
+    border-color: var(--color-neutral-600);
+  }
   .border-white {
     border-color: var(--color-white);
   }
@@ -701,6 +710,9 @@
   .pt-5 {
     padding-top: calc(var(--spacing) * 5);
   }
+  .pt-6 {
+    padding-top: calc(var(--spacing) * 6);
+  }
   .pt-10 {
     padding-top: calc(var(--spacing) * 10);
   }
@@ -768,9 +780,6 @@
   .\!text-primary-dark {
     color: var(--color-primary-dark) !important;
   }
-  .text-\[\#A1A1A1\] {
-    color: #A1A1A1;
-  }
   .text-black {
     color: var(--color-black);
   }
@@ -813,6 +822,11 @@
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
     transition-duration: var(--tw-duration, var(--default-transition-duration));
   }
+  .transition-colors {
+    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+  }
   .transition-transform {
     transition-property: transform, translate, scale, rotate;
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
@@ -825,6 +839,16 @@
   @media (hover: hover) {
     .group-hover\:opacity-100:is(:where(.group):hover *) {
       opacity: 100%;
+    }
+  }
+  @media (hover: hover) {
+    .hover\:border-neutral-600:hover {
+      border-color: var(--color-neutral-600);
+    }
+  }
+  @media (hover: hover) {
+    .hover\:bg-neutral-300:hover {
+      background-color: var(--color-neutral-300);
     }
   }
   @media (hover: hover) {
@@ -1150,7 +1174,7 @@
   }
   @media (width >= 64rem) {
     .container {
-      max-width: var(--container-4xl);
+      max-width: var(--container-5xl);
     }
   }
   @media (width >= 80rem) {
