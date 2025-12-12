@@ -937,8 +937,8 @@
     }
   }
   @media (width >= 48rem) {
-    .md\:max-h-\[480px\] {
-      max-height: 480px;
+    .md\:max-h-\[632px\] {
+      max-height: 632px;
     }
   }
   @media (width >= 48rem) {
