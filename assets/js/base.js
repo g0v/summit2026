@@ -85,9 +85,9 @@ function toggleMobileNav() {
   $mobileNav.toggleClass('shadow-md')
   $('#burger').toggleClass('is-active')
   if ($('#burger').hasClass('is-active')) {
-    $navbar.addClass('max-md:bg-white').removeClass('shadow-md')
+    $navbar.addClass('max-md:bg-white')
   } else {
-    $navbar.removeClass('max-md:bg-white').removeClass('shadow-md')
+    $navbar.removeClass('max-md:bg-white')
   }
 }
 
