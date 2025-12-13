@@ -59,10 +59,15 @@ function changeLang(lang) {
 const navTransparentFlag = Boolean($('#nav-transparent-flag')[0]);
 const $navbar = $('#navbar')
 const $mobileNav = $('#mobile-nav')
+const scrollThreshold = 100
 
 function onScroll() {
   if (navTransparentFlag) {
-    $navbar.toggleClass('!bg-white shadow-md md:!h-22', $(window).scrollTop() > 10)
+    if ($(window).scrollTop() > scrollThreshold) {
+      $navbar.addClass('!bg-white shadow-md md:!h-22')
+    } else if ($(window).scrollTop() < scrollThreshold / 2) {
+      $navbar.removeClass('!bg-white shadow-md md:!h-22')
+    }
   } else {
     $navbar.addClass('!bg-white shadow-md md:!h-22')
   }
@@ -76,13 +81,13 @@ $('#toggle-nav-btn').on('click', toggleMobileNav)
 $('.toggle-mobile-nav').on('click', toggleMobileNav)
 
 function toggleMobileNav() {
-  $navbar.addClass('bg-white')
   $mobileNav.toggleClass('grid-rows-[0fr] grid-rows-[1fr]')
   $mobileNav.toggleClass('shadow-md')
   $('#burger').toggleClass('is-active')
-
-  if ($(window).scrollTop() < 10 && $mobileNav.hasClass('grid-rows-[0fr]')) {
-    $navbar.removeClass('bg-white')
+  if ($('#burger').hasClass('is-active')) {
+    $navbar.addClass('bg-white').removeClass('shadow-md')
+  } else {
+    $navbar.removeClass('bg-white').removeClass('shadow-md')
   }
 }
 

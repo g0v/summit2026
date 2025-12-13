@@ -1369,7 +1369,7 @@
 }
 #burger {
   height: 2.5px;
-  width: calc(var(--spacing) * 6);
+  width: calc(var(--spacing) * 5);
   border-radius: calc(infinity * 1px);
   background-color: var(--color-black);
   transition-property: all;
@@ -1382,7 +1382,7 @@
   position: absolute;
   display: block;
   height: 2.5px;
-  width: calc(var(--spacing) * 6);
+  width: calc(var(--spacing) * 5);
   border-radius: calc(infinity * 1px);
   background-color: var(--color-black);
 }
@@ -1403,7 +1403,7 @@
 }
 @keyframes burger-t-In {
   0% {
-    transform: rotate(0deg) translateY(-8px);
+    transform: rotate(0deg) translateY(-7px);
   }
   50% {
     transform: translateY(0);
@@ -1420,12 +1420,12 @@
     transform: translateY(0);
   }
   100% {
-    transform: rotate(0deg) translateY(-8px);
+    transform: rotate(0deg) translateY(-7px);
   }
 }
 @keyframes burger-b-In {
   0% {
-    transform: rotate(0deg) translateY(-8px);
+    transform: rotate(0deg) translateY(-7px);
   }
   50% {
     transform: translateY(0);
@@ -1442,7 +1442,7 @@
     transform: translateY(0);
   }
   100% {
-    transform: rotate(0deg) translateY(8px);
+    transform: rotate(0deg) translateY(7px);
   }
 }
 #modal {
