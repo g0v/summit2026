@@ -1091,11 +1091,6 @@
     }
   }
   @media (width >= 48rem) {
-    .md\:pt-28 {
-      padding-top: calc(var(--spacing) * 28);
-    }
-  }
-  @media (width >= 48rem) {
     .md\:text-2xl {
       font-size: var(--text-2xl);
       line-height: var(--tw-leading, var(--text-2xl--line-height));

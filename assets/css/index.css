@@ -3,8 +3,7 @@
 @layer theme, base, components, utilities;
 @layer theme {
   :root, :host {
-    --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
-      "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --font-sans: Onest, 'Noto Sans TC', sans-serif;
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
     --color-slate-100: oklch(96.8% 0.007 247.896);
@@ -41,6 +40,9 @@
     --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
+    --color-primary: #008CC9;
+    --color-primary-dark: #006CA9;
+    --color-secondary: #FF7874;
   }
 }
 @layer base {
@@ -650,6 +652,20 @@
   .bg-neutral-200 {
     background-color: var(--color-neutral-200);
   }
+  .bg-primary {
+    background-color: var(--color-primary);
+  }
+  .bg-primary\/80 {
+    background-color: color-mix(in srgb, #008CC9 80%, transparent);
+  }
+  @supports (color: color-mix(in lab, red, red)) {
+    .bg-primary\/80 {
+      background-color: color-mix(in oklab, var(--color-primary) 80%, transparent);
+    }
+  }
+  .bg-secondary {
+    background-color: var(--color-secondary);
+  }
   .bg-slate-100 {
     background-color: var(--color-slate-100);
   }
@@ -788,6 +804,9 @@
   .whitespace-nowrap {
     white-space: nowrap;
   }
+  .\!text-primary-dark {
+    color: var(--color-primary-dark) !important;
+  }
   .text-black {
     color: var(--color-black);
   }
@@ -796,6 +815,9 @@
   }
   .text-neutral-400 {
     color: var(--color-neutral-400);
+  }
+  .text-secondary {
+    color: var(--color-secondary);
   }
   .text-white {
     color: var(--color-white);
@@ -854,6 +876,11 @@
   @media (hover: hover) {
     .hover\:bg-neutral-300:hover {
       background-color: var(--color-neutral-300);
+    }
+  }
+  @media (hover: hover) {
+    .hover\:text-primary:hover {
+      color: var(--color-primary);
     }
   }
   :where(*:is(.active)) .in-\[\.active\]\:-rotate-180 {
@@ -1059,11 +1086,6 @@
   @media (width >= 48rem) {
     .md\:py-5 {
       padding-block: calc(var(--spacing) * 5);
-    }
-  }
-  @media (width >= 48rem) {
-    .md\:pt-28 {
-      padding-top: calc(var(--spacing) * 28);
     }
   }
   @media (width >= 48rem) {
