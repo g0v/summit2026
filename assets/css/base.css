@@ -913,6 +913,11 @@
     }
   }
   @media (width < 48rem) {
+    .max-md\:bg-white {
+      background-color: var(--color-white);
+    }
+  }
+  @media (width < 48rem) {
     .max-md\:pt-\[14rem\] {
       padding-top: 14rem;
     }
