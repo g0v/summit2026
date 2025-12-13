@@ -17,7 +17,7 @@
     --color-black: #000;
     --color-white: #fff;
     --spacing: 0.25rem;
-    --container-2xl: 42rem;
+    --container-xl: 36rem;
     --text-lg: 1.125rem;
     --text-lg--line-height: calc(1.75 / 1.125);
     --text-xl: 1.25rem;
@@ -241,14 +241,8 @@
   .top-0 {
     top: calc(var(--spacing) * 0);
   }
-  .top-40 {
-    top: calc(var(--spacing) * 40);
-  }
   .top-full {
     top: 100%;
-  }
-  .-right-\[10\%\] {
-    right: calc(10% * -1);
   }
   .right-0 {
     right: calc(var(--spacing) * 0);
@@ -258,12 +252,6 @@
   }
   .bottom-0 {
     bottom: calc(var(--spacing) * 0);
-  }
-  .bottom-12 {
-    bottom: calc(var(--spacing) * 12);
-  }
-  .-left-\[10\%\] {
-    left: calc(10% * -1);
   }
   .left-0 {
     left: calc(var(--spacing) * 0);
@@ -370,6 +358,9 @@
   }
   .mr-auto {
     margin-right: auto;
+  }
+  .-mb-6 {
+    margin-bottom: calc(var(--spacing) * -6);
   }
   .mb-0 {
     margin-bottom: calc(var(--spacing) * 0);
@@ -498,6 +489,9 @@
   .w-100 {
     width: calc(var(--spacing) * 100);
   }
+  .w-\[120\%\] {
+    width: 120%;
+  }
   .w-full {
     width: 100%;
   }
@@ -505,17 +499,20 @@
     width: -moz-max-content;
     width: max-content;
   }
-  .max-w-2xl {
-    max-width: var(--container-2xl);
-  }
   .max-w-44 {
     max-width: calc(var(--spacing) * 44);
   }
   .max-w-48 {
     max-width: calc(var(--spacing) * 48);
   }
+  .max-w-\[220px\] {
+    max-width: 220px;
+  }
   .max-w-none {
     max-width: none;
+  }
+  .max-w-xl {
+    max-width: var(--container-xl);
   }
   .shrink-0 {
     flex-shrink: 0;
@@ -928,11 +925,6 @@
     }
   }
   @media (width >= 48rem) {
-    .md\:top-10 {
-      top: calc(var(--spacing) * 10);
-    }
-  }
-  @media (width >= 48rem) {
     .md\:right-5 {
       right: calc(var(--spacing) * 5);
     }
@@ -1120,11 +1112,6 @@
     .md\:text-xl {
       font-size: var(--text-xl);
       line-height: var(--tw-leading, var(--text-xl--line-height));
-    }
-  }
-  @media (width >= 64rem) {
-    .lg\:top-4 {
-      top: calc(var(--spacing) * 4);
     }
   }
   @media (width >= 64rem) {
