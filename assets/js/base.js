@@ -25,7 +25,7 @@ $("a[disabled]").each(function () {
 }).on('click', function (e) {
   e.preventDefault()
   rickRoll++
-  if (rickRoll > 10) {
+  if (rickRoll > 3) {
     window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ", "_blank")
     rickRoll = 0
   }
