@@ -1442,6 +1442,10 @@
     transform: rotate(0deg) translateY(7px);
   }
 }
+body[lang=en-TW] .timeline-item-title {
+  font-size: var(--text-xl);
+  line-height: var(--tw-leading, var(--text-xl--line-height));
+}
 #modal {
   position: fixed;
   top: calc(var(--spacing) * 0);
