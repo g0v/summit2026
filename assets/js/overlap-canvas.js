@@ -21,15 +21,10 @@
 
   // Array of all available stool images
   const stoolPaths = [
-    'assets/img/stools/stool-nbg-b-l.svg',
     'assets/img/stools/stool-nbg-b-s.svg',
-    'assets/img/stools/stool-nbg-blk-l.svg',
     'assets/img/stools/stool-nbg-blk-s.svg',
-    'assets/img/stools/stool-nbg-g-l.svg',
     'assets/img/stools/stool-nbg-g-s.svg',
-    'assets/img/stools/stool-nbg-r-l.svg',
     'assets/img/stools/stool-nbg-r-s.svg',
-    'assets/img/stools/stool-nbg-y-l.svg',
     'assets/img/stools/stool-nbg-y-s.svg'
   ];
 
@@ -112,8 +107,13 @@
     });
 
     // Store custom data for rendering
+    let imageIndex = Math.floor(Math.random() * stoolImages.length);
+    if (color && Math.random() > 0.4) {
+      imageIndex = stoolImages.findIndex(img => img.src.includes(`nbg-${color}-s`));
+    }
+
     stool.render = {
-      imageIndex: Math.floor(Math.random() * stoolImages.length),
+      imageIndex: imageIndex,
       size: size,
       opacity: 0.4 + Math.random() * 0.4
     };
