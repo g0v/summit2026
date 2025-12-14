@@ -134,7 +134,24 @@ $(function () {
     })
   })
 
-  console.log(i18nzh)
+  let lang = storage.getItem("userLang")
+
+  if (location.search)
+    if (location.search.includes('lang=en')) lang = 'en'
+    else if (location.search.includes('lang=zh')) lang = 'zh'
+
+  if (!lang) {
+    let languages = navigator.languages || [navigator.language || navigator.userLanguage]
+    for (const l of languages)
+      if (l.startsWith('en')) { // Explicitly prefer English
+        lang = 'en'
+        break
+      } else if (l.startsWith('zh')) { // Explicitly prefer Mandarin
+        lang = 'zh'
+        break
+      }
+    lang = lang || 'en' // Fallback
+  }
 
   // Fetch English translations
   fetch('assets/i18n/en.json?v=1')
@@ -142,7 +159,7 @@ $(function () {
     .then(enTranslations => {
       // Initialize i18next
       i18next.init({
-        lng: 'zh',
+        lng: lang,
         fallbackLng: 'zh',
         resources: {
           zh: {
@@ -165,24 +182,6 @@ $(function () {
           parseDefaultValueFromContent: true
         });
 
-        let lang = storage.getItem("userLang")
-
-        if (location.search)
-          if (location.search.includes('lang=en')) lang = 'en'
-          else if (location.search.includes('lang=zh')) lang = 'zh'
-
-        if (!lang) {
-          let languages = navigator.languages || [navigator.language || navigator.userLanguage]
-          for (const l of languages)
-            if (l.startsWith('en')) { // Explicitly prefer English
-              lang = 'en'
-              break
-            } else if (l.startsWith('zh')) { // Explicitly prefer Mandarin
-              lang = 'zh'
-              break
-            }
-          lang = lang || 'en' // Fallback
-        }
         ['zh', 'en'].forEach(l => {
           const lBtn = $(`.${l}-btn`)
           lBtn.on('click', function (e) {
