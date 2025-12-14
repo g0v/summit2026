@@ -1247,7 +1247,6 @@
     text-decoration-line: underline;
   }
   a[disabled] {
-    cursor: default !important;
     color: var(--color-neutral-500) !important;
     text-decoration-line: none !important;
   }
