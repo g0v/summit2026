@@ -43,7 +43,7 @@ const setLocale = (function (lang) {
   i18next.changeLanguage(lang)
   document.body.lang = (lang === 'en' ? 'en-TW' : 'zh-Hant-TW')
   if (!current.startsWith(lang))
-    $(document.body).localize()
+    $(document).localize()
   updateCountdown()
   $('.agenda-grid').css('--agenda-header-height', ($('#agenda-header').outerHeight() + 10) + 'px')
 })
