@@ -1,5 +1,15 @@
-#banner {
-  background: url('../img/summit_main_new.png');
-  background-size: cover;
-  background-position: center right;
+.stool.animate {
+  animation: jump 0.5s cubic-bezier(0.4, 0.5, 0.6, 1) forwards;
+}
+
+@keyframes jump {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
