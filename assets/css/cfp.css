@@ -538,6 +538,9 @@
   .animate-bounce {
     animation: var(--animate-bounce);
   }
+  .cursor-pointer {
+    cursor: pointer;
+  }
   .resize {
     resize: both;
   }
