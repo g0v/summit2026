@@ -1394,7 +1394,7 @@
   animation: burger-b-Out 0.3s ease forwards;
 }
 #burger.is-active {
-  height: calc(var(--spacing) * 0);
+  background-color: transparent;
 }
 #burger.is-active:before {
   animation: burger-t-In 0.3s ease forwards;
