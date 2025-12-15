@@ -28,7 +28,20 @@ $("a[disabled]").each(function () {
   if (rickRoll > 3) {
     window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ", "_blank")
     rickRoll = 0
+    gtag('event', 'rickroll', {
+      'event_category': 'User Interaction',
+      'event_label': 'Rickroll',
+    })
   }
+})
+
+$("a.submit-form-link").on('click', function (e) {
+  e.preventDefault()
+  gtag('event', 'submit_form', {
+    'event_category': 'User Interaction',
+    'event_label': 'Submit Form',
+  })
+  window.open(this.href, '_blank')
 })
 
 $(document).on('keydown', function (e) {
