@@ -315,6 +315,9 @@
   .my-2 {
     margin-block: calc(var(--spacing) * 2);
   }
+  .my-3 {
+    margin-block: calc(var(--spacing) * 3);
+  }
   .my-4 {
     margin-block: calc(var(--spacing) * 4);
   }
@@ -371,9 +374,6 @@
   }
   .mb-1 {
     margin-bottom: calc(var(--spacing) * 1);
-  }
-  .mb-3 {
-    margin-bottom: calc(var(--spacing) * 3);
   }
   .mb-4 {
     margin-bottom: calc(var(--spacing) * 4);
@@ -542,6 +542,9 @@
   }
   .resize {
     resize: both;
+  }
+  .list-\[lower-alpha\] {
+    list-style-type: lower-alpha;
   }
   .appearance-none {
     -webkit-appearance: none;
@@ -769,9 +772,6 @@
   }
   .pb-\[5vh\] {
     padding-bottom: 5vh;
-  }
-  .pl-6 {
-    padding-left: calc(var(--spacing) * 6);
   }
   .text-center {
     text-align: center;
