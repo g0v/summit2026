@@ -312,17 +312,11 @@
   .mx-auto {
     margin-inline: auto;
   }
-  .my-2 {
-    margin-block: calc(var(--spacing) * 2);
-  }
   .my-3 {
     margin-block: calc(var(--spacing) * 3);
   }
   .my-4 {
     margin-block: calc(var(--spacing) * 4);
-  }
-  .my-5 {
-    margin-block: calc(var(--spacing) * 5);
   }
   .my-20 {
     margin-block: calc(var(--spacing) * 20);
@@ -330,26 +324,11 @@
   .my-auto {
     margin-block: auto;
   }
-  .ms-2 {
-    margin-inline-start: calc(var(--spacing) * 2);
-  }
   .ms-3 {
     margin-inline-start: calc(var(--spacing) * 3);
   }
-  .ms-auto {
-    margin-inline-start: auto;
-  }
-  .me-3 {
-    margin-inline-end: calc(var(--spacing) * 3);
-  }
-  .me-auto {
-    margin-inline-end: auto;
-  }
   .mt-3 {
     margin-top: calc(var(--spacing) * 3);
-  }
-  .mt-5 {
-    margin-top: calc(var(--spacing) * 5);
   }
   .mt-8 {
     margin-top: calc(var(--spacing) * 8);
@@ -369,17 +348,8 @@
   .-mb-12 {
     margin-bottom: calc(var(--spacing) * -12);
   }
-  .mb-0 {
-    margin-bottom: calc(var(--spacing) * 0);
-  }
-  .mb-1 {
-    margin-bottom: calc(var(--spacing) * 1);
-  }
   .mb-4 {
     margin-bottom: calc(var(--spacing) * 4);
-  }
-  .mb-5 {
-    margin-bottom: calc(var(--spacing) * 5);
   }
   .mb-6 {
     margin-bottom: calc(var(--spacing) * 6);
@@ -490,18 +460,11 @@
   .w-28 {
     width: calc(var(--spacing) * 28);
   }
-  .w-100 {
-    width: calc(var(--spacing) * 100);
-  }
   .w-\[120\%\] {
     width: 120%;
   }
   .w-full {
     width: 100%;
-  }
-  .w-max {
-    width: -moz-max-content;
-    width: max-content;
   }
   .max-w-44 {
     max-width: calc(var(--spacing) * 44);
@@ -698,12 +661,6 @@
     -o-object-fit: contain;
        object-fit: contain;
   }
-  .p-1 {
-    padding: calc(var(--spacing) * 1);
-  }
-  .p-2 {
-    padding: calc(var(--spacing) * 2);
-  }
   .p-3 {
     padding: calc(var(--spacing) * 3);
   }
@@ -712,12 +669,6 @@
   }
   .p-6 {
     padding: calc(var(--spacing) * 6);
-  }
-  .px-0 {
-    padding-inline: calc(var(--spacing) * 0);
-  }
-  .px-3 {
-    padding-inline: calc(var(--spacing) * 3);
   }
   .px-4 {
     padding-inline: calc(var(--spacing) * 4);
@@ -737,20 +688,11 @@
   .py-4 {
     padding-block: calc(var(--spacing) * 4);
   }
-  .py-5 {
-    padding-block: calc(var(--spacing) * 5);
-  }
   .py-20 {
     padding-block: calc(var(--spacing) * 20);
   }
-  .pe-3 {
-    padding-inline-end: calc(var(--spacing) * 3);
-  }
   .pe-4 {
     padding-inline-end: calc(var(--spacing) * 4);
-  }
-  .pt-5 {
-    padding-top: calc(var(--spacing) * 5);
   }
   .pt-6 {
     padding-top: calc(var(--spacing) * 6);
@@ -767,17 +709,11 @@
   .pr-\[15vw\] {
     padding-right: 15vw;
   }
-  .pb-5 {
-    padding-bottom: calc(var(--spacing) * 5);
-  }
   .pb-\[5vh\] {
     padding-bottom: 5vh;
   }
   .text-center {
     text-align: center;
-  }
-  .text-end {
-    text-align: end;
   }
   .text-left {
     text-align: left;
