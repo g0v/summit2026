@@ -43,7 +43,7 @@
 
   // Create physics engine
   const engine = Engine.create({
-    gravity: { x: 0, y: 0.8 }
+    gravity: { x: 0, y: 1 }
   });
 
   const world = engine.world;
@@ -207,7 +207,7 @@
       if (body.isStatic) continue;
 
       // Remove stools that are below the canvas
-      if (body.position.y > canvas.height + 200) {
+      if (body.position.y > canvas.height + 200 || body.position.y < -101) {
         bodiesToRemove.push(body);
       }
     }
@@ -218,8 +218,24 @@
   }
 
   // Animation loop
-  function animate() {
-    Engine.update(engine, 1000 / 60);
+  let lastTime = 0;
+
+  function animate(time) {
+    if (!time) {
+      requestAnimationFrame(animate);
+      return;
+    }
+
+    if (lastTime === 0) {
+      lastTime = time;
+      requestAnimationFrame(animate);
+      return;
+    }
+
+    const delta = time - lastTime;
+    lastTime = time;
+
+    Engine.update(engine, Math.min(delta, 100));
     customRender();
 
     // Clean up off-screen stools
