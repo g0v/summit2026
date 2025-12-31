@@ -666,6 +666,10 @@
     -o-object-fit: contain;
        object-fit: contain;
   }
+  .object-cover {
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
   .p-3 {
     padding: calc(var(--spacing) * 3);
   }
