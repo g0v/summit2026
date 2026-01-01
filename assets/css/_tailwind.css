@@ -324,6 +324,9 @@
   .my-auto {
     margin-block: auto;
   }
+  .ms-2 {
+    margin-inline-start: calc(var(--spacing) * 2);
+  }
   .ms-3 {
     margin-inline-start: calc(var(--spacing) * 3);
   }
