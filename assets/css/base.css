@@ -334,9 +334,6 @@
   .my-auto {
     margin-block: auto;
   }
-  .ms-2 {
-    margin-inline-start: calc(var(--spacing) * 2);
-  }
   .ms-3 {
     margin-inline-start: calc(var(--spacing) * 3);
   }
@@ -360,6 +357,9 @@
   }
   .-mb-12 {
     margin-bottom: calc(var(--spacing) * -12);
+  }
+  .mb-2 {
+    margin-bottom: calc(var(--spacing) * 2);
   }
   .mb-4 {
     margin-bottom: calc(var(--spacing) * 4);
@@ -904,6 +904,11 @@
   @media (width >= 48rem) {
     .md\:mx-auto {
       margin-inline: auto;
+    }
+  }
+  @media (width >= 48rem) {
+    .md\:mb-4 {
+      margin-bottom: calc(var(--spacing) * 4);
     }
   }
   @media (width >= 48rem) {
