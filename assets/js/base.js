@@ -111,7 +111,7 @@ function updateTimeline() {
     const dateString = $('time', this).attr('datetime')
     const itemDate = new Date(dateString.indexOf('T') > 0 ? dateString : (dateString + 'T00:00:00+08:00'))
     if (currentDate > itemDate) {
-      $(".timeline-icon > img", this).attr('src', 'assets/img/icons/mailbox.svg').attr('alt', '')
+      $(".timeline-icon", this).removeClass('opacity-50').attr('alt', '')
     }
   })
 }
