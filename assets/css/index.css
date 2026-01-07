@@ -13,3 +13,15 @@
     transform: translateY(0);
   }
 }
+
+.timeline-item time {
+  position: relative;
+}
+
+.timeline-item time[datetime$="+08:00"]::after {
+    content: '(UTC+8)';
+    position: absolute;
+    top: -1em;
+    right: 0;
+    font-size: 0.5em;
+  }

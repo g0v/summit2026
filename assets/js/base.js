@@ -104,15 +104,14 @@ function toggleMobileNav() {
   }
 }
 
-// count day to submission deadline
+// countdown to submission deadline
 function updateTimeline() {
   const currentDate = new Date()
-  $(".timeline-item").each(function () {
-    const itemDate = new Date($(this).data("timeline-date").split(/[\s、]+/g)[0].replace(/\//g, '-') + "T00:00:00+08:00")
+  $('.timeline-item').each(function () {
+    const dateString = $('time', this).attr('datetime')
+    const itemDate = new Date(dateString.indexOf('T') > 0 ? dateString : (dateString + 'T00:00:00+08:00'))
     if (currentDate > itemDate) {
-      $(".timeline-icon", this).html('<img src="assets/img/icons/mailbox.svg" alt="" class="m-auto">')
-    } else {
-      $(".timeline-icon", this).html('<img src="assets/img/icons/mailbox-lock.svg" alt="" class="m-auto">')
+      $(".timeline-icon > img", this).attr('src', 'assets/img/icons/mailbox.svg').attr('alt', '')
     }
   })
 }
