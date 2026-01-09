@@ -44,6 +44,7 @@
     --color-primary: #008CC9;
     --color-primary-dark: #006CA9;
     --color-secondary: #FF7874;
+    --color-secondary-light: #FF9894;
   }
 }
 @layer base {

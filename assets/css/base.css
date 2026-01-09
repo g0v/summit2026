@@ -54,6 +54,7 @@
     --color-primary: #008CC9;
     --color-primary-dark: #006CA9;
     --color-secondary: #FF7874;
+    --color-secondary-light: #FF9894;
   }
 }
 @layer base {
@@ -1447,6 +1448,21 @@ body[lang=en-TW] .timeline-item-title {
   top: -1em;
   right: 0;
   font-size: 0.5em;
+}
+.submission-deadline-progress {
+  background-color: var(--color-neutral-200);
+  background-image: linear-gradient(to right, var(--color-secondary), var(--color-secondary-light), var(--color-secondary), var(--color-secondary-light));
+  background-size: 300% 100%;
+  background-repeat: no-repeat;
+  animation: progress-shine 2s linear infinite;
+}
+@keyframes progress-shine {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: 0% 0;
+  }
 }
 #modal {
   position: fixed;
