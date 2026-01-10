@@ -57,7 +57,6 @@ const setLocale = (function (lang) {
   document.body.lang = (lang === 'en' ? 'en-TW' : 'zh-Hant-TW')
   if (!current.startsWith(lang))
     $(document).localize()
-  updateCountdown()
   $('.agenda-grid').css('--agenda-header-height', ($('#agenda-header').outerHeight() + 10) + 'px')
 })
 
@@ -115,15 +114,12 @@ function updateTimeline() {
     }
   })
 }
-function updateCountdown() {
-  const targetDate = new Date("2026-01-15T00:00:00+08:00")
-  const daysLeftFromNow = Math.ceil((targetDate - new Date()) / (24 * 60 * 60 * 1000))
-  $('.submission-deadline').text(daysLeftFromNow)
-  const totalDays = Number(30)
-  const dayPassed = Math.max(totalDays - daysLeftFromNow, 0)
-  const progress = Math.min(Math.round(dayPassed / totalDays * 100), 100)
-  console.log("progresss", progress)
-  $('.submission-deadline-progress').css('width', `${progress}%`)
+
+function initCountdown() {
+  const targetDate = new Date('2026-01-15T00:00:00+08:00')
+  const dateDiff = targetDate - new Date()
+  const twoDaysFromNow = (new Date().getTime() / 1000) + (dateDiff / 1000);
+  new FlipDown(twoDaysFromNow).start()
 }
 
 $(function () {
@@ -217,5 +213,5 @@ $(function () {
   }, 1000)
 
   updateTimeline()
-  updateCountdown()
+  initCountdown()
 })
