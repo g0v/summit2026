@@ -116,7 +116,7 @@ function updateTimeline() {
 }
 
 function initCountdown() {
-  const targetDate = new Date('2026-01-15T00:00:00+08:00')
+  const targetDate = new Date('2026-01-25T00:00:00+08:00')
   const dateDiff = targetDate - new Date()
   const twoDaysFromNow = (new Date().getTime() / 1000) + (dateDiff / 1000);
   new FlipDown(twoDaysFromNow).start()
