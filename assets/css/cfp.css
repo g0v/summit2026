@@ -779,9 +779,6 @@
   .text-neutral-400 {
     color: var(--color-neutral-400);
   }
-  .text-secondary {
-    color: var(--color-secondary);
-  }
   .text-white {
     color: var(--color-white);
   }
