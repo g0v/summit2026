@@ -215,3 +215,9 @@ $(function () {
   updateTimeline()
   initCountdown()
 })
+
+// show staging info on a specific host
+const host = location.hostname
+if (['localhost', 'g0v.github.io'].includes(host)) {
+  $('#staging-info').show()
+}
