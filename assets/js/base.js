@@ -110,7 +110,8 @@ function updateTimeline() {
     const dateString = $('time', this).attr('datetime')
     const itemDate = new Date(dateString.indexOf('T') > 0 ? dateString : (dateString + 'T00:00:00+08:00'))
     if (currentDate > itemDate) {
-      $(".timeline-icon", this).removeClass('opacity-50').attr('alt', '')
+      $(this).removeClass('opacity-50')
+      $(".timeline-icon", this).attr('alt', '')
     }
   })
 }
@@ -213,5 +214,5 @@ $(function () {
   }, 1000)
 
   updateTimeline()
-  initCountdown()
+  //initCountdown()
 })
