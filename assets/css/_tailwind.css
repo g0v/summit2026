@@ -35,7 +35,6 @@
     --radius-md: 0.375rem;
     --radius-lg: 0.5rem;
     --radius-xl: 0.75rem;
-    --radius-2xl: 1rem;
     --animate-bounce: bounce 1s infinite;
     --aspect-video: 16 / 9;
     --default-transition-duration: 150ms;
@@ -405,9 +404,6 @@
   .h-9 {
     height: calc(var(--spacing) * 9);
   }
-  .h-12 {
-    height: calc(var(--spacing) * 12);
-  }
   .h-14 {
     height: calc(var(--spacing) * 14);
   }
@@ -582,9 +578,6 @@
   }
   .overflow-hidden {
     overflow: hidden;
-  }
-  .rounded-2xl {
-    border-radius: var(--radius-2xl);
   }
   .rounded-full {
     border-radius: calc(infinity * 1px);
@@ -946,8 +939,8 @@
     }
   }
   @media (width >= 48rem) {
-    .md\:\!h-22 {
-      height: calc(var(--spacing) * 22) !important;
+    .md\:\!h-20 {
+      height: calc(var(--spacing) * 20) !important;
     }
   }
   @media (width >= 48rem) {
@@ -1086,8 +1079,8 @@
     }
   }
   @media (width >= 64rem) {
-    .lg\:gap-12 {
-      gap: calc(var(--spacing) * 12);
+    .lg\:gap-10 {
+      gap: calc(var(--spacing) * 10);
     }
   }
   @media (width >= 80rem) {
