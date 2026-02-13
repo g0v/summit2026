@@ -76,9 +76,9 @@ const scrollThreshold = 100
 function onScroll() {
   if (navTransparentFlag) {
     if ($(window).scrollTop() > scrollThreshold) {
-      $navbar.addClass('!bg-white shadow-md md:!h-20')
+      $navbar.addClass('show-dark')
     } else if ($(window).scrollTop() < scrollThreshold / 2) {
-      $navbar.removeClass('!bg-white shadow-md md:!h-20')
+      $navbar.removeClass('show-dark')
     }
   } else {
     $navbar.addClass('!bg-white shadow-md md:!h-20')
@@ -96,11 +96,6 @@ function toggleMobileNav() {
   $mobileNav.toggleClass('grid-rows-[0fr] grid-rows-[1fr]')
   $mobileNav.toggleClass('shadow-md')
   $('#burger').toggleClass('is-active')
-  if ($('#burger').hasClass('is-active')) {
-    $navbar.addClass('max-md:bg-white')
-  } else {
-    $navbar.removeClass('max-md:bg-white')
-  }
 }
 
 // countdown to submission deadline
