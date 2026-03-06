@@ -1,6 +1,4 @@
-.stool.animate {
-  animation: jump 0.5s cubic-bezier(0.4, 0.5, 0.6, 1) forwards;
-}
+@import "./_tailwind.css";
 
 @keyframes jump {
   0% {
@@ -11,5 +9,32 @@
   }
   100% {
     transform: translateY(0);
+  }
+}
+
+.stool-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &.animate {
+    animation: jump 0.5s cubic-bezier(0.4, 0.5, 0.6, 1) forwards;
+  }
+}
+
+.speech-bubble {
+  @apply bg-white text-2xl p-2 rounded-xl shadow-lg mb-4 relative flex items-center justify-center;
+  z-index: 10;
+  width: 50px;
+  height: 50px;
+  &.animate {
+    animation: jump 0.5s cubic-bezier(0.4, 0.5, 0.6, 1) forwards;
+  }
+  
+  &::after {
+    content: '';
+    @apply absolute bottom-[-8px] left-1/2 -translate-x-1/2 w-0 h-0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid white;
   }
 }
