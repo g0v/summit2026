@@ -9,7 +9,7 @@ const { t } = useI18n(Astro.url.pathname)
 <Layout pageName={t('nav.visit')}>
   <main class="visit-main container max-w-full min-w-0 px-10 py-25">
     <!-- 區塊一：交通資訊 -->
-    <div class="visit-section-info mb-16 grid gap-8 md:grid-cols-[1fr_1.8fr]">
+    <div id="visit-map" class="visit-section-info mb-16 grid gap-8 md:grid-cols-[1fr_1.8fr]">
       <div class="visit-section-info__title">
         <h2>{t('visit.info.title')}</h2>
       </div>
@@ -49,7 +49,7 @@ const { t } = useI18n(Astro.url.pathname)
     </div>
 
     <!-- 區塊二：交通方式 -->
-    <div class="visit-section-transport min-w-0">
+    <div id="visit-transport" class="visit-section-transport min-w-0">
       <div class="visit-section-transport__title mb-12 wrap-break-word">
         <h2>{t('visit.transport.title')}</h2>
       </div>
@@ -156,9 +156,44 @@ const { t } = useI18n(Astro.url.pathname)
 
     <script src="../scripts/visit-tabs.js"></script>
     <script>
+      /**
+       * Handle deep links from Navbar visit submenu.
+       * - #visit-map: scroll to the map/info block
+       * - #tab-publicTransport / #tab-driving: switch tab then scroll to transport block
+       * @returns {void}
+       */
+      function handleVisitHash() {
+        const { hash } = window.location
+
+        if (hash === '#visit-map') {
+          document.getElementById('visit-map')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+          return
+        }
+
+        if (hash === '#tab-publicTransport' || hash === '#tab-driving') {
+          const tabKey = hash.replace('#tab-', '')
+          /** @type {HTMLButtonElement | null} */
+          const tab = document.querySelector(`[data-tab="${tabKey}"]`)
+          tab?.click()
+
+          document.getElementById('visit-transport')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+        }
+      }
+
       document.querySelector('.visit-map-embed__view-btn')?.addEventListener('click', function () {
         this.closest('.visit-map-embed')?.classList.add('visit-map-embed--active')
       })
+
+      /**
+       * @returns {void}
+       */
+      function scheduleHandleVisitHash() {
+        if (!window.location.hash) return
+        window.requestAnimationFrame(() => handleVisitHash())
+      }
+
+      document.addEventListener('DOMContentLoaded', scheduleHandleVisitHash)
+      window.addEventListener('hashchange', scheduleHandleVisitHash)
     </script>
     <style>
       .visit-map-embed--active .visit-map-embed__overlay {

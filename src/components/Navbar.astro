@@ -8,13 +8,15 @@ const locale = getLocaleFromPath(Astro.url.pathname)
 const { t } = useI18n(Astro.url.pathname)
 const pathname = pathnameWithoutBaseAndLocale(Astro.url.pathname)
 
+const visitHref = getRelativeLocaleUrl(locale, 'visit')
+
 const navs = [
-  { href: getRelativeLocaleUrl(locale, 'agenda/day1'), name: t('nav.agenda') },
-  { href: getRelativeLocaleUrl(locale, 'visit'), name: t('nav.visit') },
-  { href: getRelativeLocaleUrl(locale, 'venue'), name: t('nav.venue') },
-  { href: getRelativeLocaleUrl(locale, 'speaker'), name: t('nav.speaker') },
-  { href: getRelativeLocaleUrl(locale, 'sponsor'), name: t('nav.sponsor') },
-  { href: getRelativeLocaleUrl(locale, 'about'), name: t('nav.about') },
+  { key: 'agenda', href: getRelativeLocaleUrl(locale, 'agenda/day1'), name: t('nav.agenda') },
+  { key: 'visit', href: visitHref, name: t('nav.visit') },
+  { key: 'venue', href: getRelativeLocaleUrl(locale, 'venue'), name: t('nav.venue') },
+  { key: 'speaker', href: getRelativeLocaleUrl(locale, 'speaker'), name: t('nav.speaker') },
+  { key: 'sponsor', href: getRelativeLocaleUrl(locale, 'sponsor'), name: t('nav.sponsor') },
+  { key: 'about', href: getRelativeLocaleUrl(locale, 'about'), name: t('nav.about') },
 ]
 ---
 
@@ -26,11 +28,24 @@ const navs = [
 
     <div id="navs" class="scroll-x hidden h-full min-w-0 items-center md:flex">
       {
-        navs.map(nav => (
-          <a class="nav-link" href={nav.href}>
-            {nav.name}
-          </a>
-        ))
+        navs.map(nav =>
+          nav.key === 'visit' ? (
+            <button
+              id="visit-toggle"
+              type="button"
+              class="nav-link"
+              aria-haspopup="true"
+              aria-expanded="false"
+              aria-controls="visit-submenu"
+            >
+              {nav.name}
+            </button>
+          ) : (
+            <a class="nav-link" href={nav.href}>
+              {nav.name}
+            </a>
+          ),
+        )
       }
     </div>
 
@@ -41,7 +56,7 @@ const navs = [
       </span>
 
       <div
-        class="pointer-events-none absolute top-0 right-0 bottom-0 left-0 block w-max transform-[translateY(90%)] opacity-0 transition-[opacity,transform] group-hover:pointer-events-auto group-hover:transform-[translateY(100%)] group-hover:opacity-100"
+        class="pointer-events-none absolute top-0 right-0 bottom-0 left-0 z-60 block w-max transform-[translateY(90%)] opacity-0 transition-[opacity,transform] group-hover:pointer-events-auto group-hover:transform-[translateY(100%)] group-hover:opacity-100"
       >
         <div class="mt-1 flex flex-col">
           <a href={getRelativeLocaleUrl('zh-tw', pathname)} class="w-full cursor-pointer bg-black px-6 py-2 text-white transition-[background-color] hover:bg-neutral-500">華語</a>
@@ -81,6 +96,42 @@ const navs = [
     </div>
   </div>
   <a class="btn-brand hidden h-full shrink-0 items-center justify-center px-8 md:flex" href="#">{t('nav.register')}</a>
+
+  <!-- Desktop: visit submenu (traffic quick links) -->
+  <div
+    id="visit-submenu"
+    class="pointer-events-none absolute top-full right-0 left-0 z-50 hidden grid-rows-[0fr] overflow-hidden bg-black text-white transition-[grid-template-rows] md:grid"
+  >
+    <div class="container min-h-0">
+      <div class="grid grid-cols-[1fr_2fr] gap-8 py-12">
+        <div class="min-w-0">
+          <div class="text-2xl leading-tight font-bold tracking-wide text-white">{t('index.venue.title')} →</div>
+          <a
+            class="mt-5 block w-fit text-base leading-relaxed font-normal text-white/70 transition-colors hover:text-white/90"
+            href={`${visitHref}#visit-map`}
+          >
+            {t('visit.info.venueName')}
+          </a>
+        </div>
+
+        <div class="min-w-0">
+          <div class="text-2xl leading-tight font-bold tracking-wide text-white">{t('visit.transport.title')} →</div>
+          <div class="mt-5 flex flex-wrap items-center gap-x-3 gap-y-2 text-base leading-relaxed font-normal">
+            <a
+              class="w-fit text-white/70 transition-colors hover:text-white/90"
+              href={`${visitHref}#tab-publicTransport`}
+            >
+              {t('visit.transport.tabs.publicTransport')}
+            </a>
+            <span class="text-white/40">|</span>
+            <a class="w-fit text-white/70 transition-colors hover:text-white/90" href={`${visitHref}#tab-driving`}>
+              {t('visit.transport.tabs.drivingLine1')}{t('visit.transport.tabs.drivingLine2')}
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </nav>
 
 <script>
@@ -96,6 +147,19 @@ const navs = [
     $mobileNav.toggleClass('grid-rows-[0fr] grid-rows-[1fr]')
     $mobileNav.toggleClass('shadow-md')
     $('#burger').toggleClass('is-active')
+  }
+
+  /**
+   * @param {JQuery<HTMLElement>} $submenu
+   * @param {JQuery<HTMLElement>} $toggle
+   */
+  function closeSubmenu($submenu, $toggle) {
+    $submenu.removeClass('grid-rows-[1fr]')
+    $submenu.addClass('grid-rows-[0fr]')
+    $submenu.removeClass('shadow-md')
+    $submenu.removeClass('pointer-events-auto')
+    $submenu.addClass('pointer-events-none')
+    $toggle.attr('aria-expanded', 'false')
   }
 
   // navs x scroll
@@ -114,5 +178,22 @@ const navs = [
       e.preventDefault()
       el.scrollBy({ left: delta, behavior: 'smooth' })
     }
+  })
+
+  // desktop visit submenu (reuse the same grid-rows toggle approach as mobile nav)
+  const $visitSubmenu = $('#visit-submenu')
+  const $visitToggle = $('#visit-toggle')
+
+  $visitToggle.on('click', function () {
+    $visitSubmenu.toggleClass('grid-rows-[0fr] grid-rows-[1fr]')
+    $visitSubmenu.toggleClass('shadow-md')
+    $visitSubmenu.toggleClass('pointer-events-none pointer-events-auto')
+
+    const expanded = $visitSubmenu.hasClass('grid-rows-[1fr]')
+    $visitToggle.attr('aria-expanded', String(expanded))
+  })
+
+  $('#visit-submenu a').on('click', function () {
+    closeSubmenu($visitSubmenu, $visitToggle)
   })
 </script>
