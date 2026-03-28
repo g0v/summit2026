@@ -68,16 +68,38 @@ const sessions = schedule.sessions.filter(session => session.start.startsWith(da
   agendaGridEl?.addEventListener('click', showSessionModal)
   sessionsEl?.addEventListener('click', showSessionModal)
 
+  // Reuse the same modal HTML as clicking a session cell
+  function openSessionModalFromElement(session: HTMLElement) {
+    const header = session.querySelector('.modal-content .header')
+    const body = session.querySelector('.modal-content .body')
+    if (!header || !body) return
+    showModalWith({ header: header.innerHTML, body: body.innerHTML })
+  }
+
   function showSessionModal(e: Event) {
     const target = e.target as HTMLElement
     const session = target.closest('.session.session-canClick')
     if (!session) return
 
-    showModalWith({
-      header: session.querySelector('.modal-content .header').innerHTML,
-      body: session.querySelector('.modal-content .body').innerHTML,
-    })
+    openSessionModalFromElement(session)
   }
+
+  // scroll page to `#sessionId` cell and open modal
+  function tryOpenSessionFromHash() {
+    const raw = location.hash.slice(1)
+    if (!raw) return
+    const id = decodeURIComponent(raw)
+    const nodes = document.querySelectorAll<HTMLElement>(
+      `.session.session-canClick[data-id="${CSS.escape(id)}"]`,
+    )
+    const session =
+      Array.from(nodes).find(el => isVisible(el)) ?? nodes[0]
+    if (!session) return
+    session.scrollIntoView({ block: 'center', inline: 'nearest', behavior: 'smooth' })
+    openSessionModalFromElement(session)
+  }
+
+  requestAnimationFrame(() => tryOpenSessionFromHash())
 
   // Search
   const agendaSearchEls = document.querySelectorAll('.agenda-search')
