@@ -2,16 +2,13 @@
 import { getRelativeLocaleUrl } from 'astro:i18n'
 import { getLocaleFromPath } from '~/i18n/utils'
 import schedule from '~/data/schedule.json'
+import { AGENDA_DAY2_DATE } from '~/utils/build/agenda/dates'
 
 const locale = getLocaleFromPath(Astro.url.pathname)
 
-// Same date split as agenda day1/day2 pages
-const AGENDA_DAY1_PREFIX = '2024-05-04'
-const AGENDA_DAY2_PREFIX = '2024-05-05'
-
 // Localized agenda/dayN + #sessionId for hash deep-link
 function hrefForAgendaSession(start, id) {
-  const day = start.startsWith(AGENDA_DAY2_PREFIX) ? 'agenda/day2' : 'agenda/day1'
+  const day = start.startsWith(AGENDA_DAY2_DATE) ? 'agenda/day2' : 'agenda/day1'
   return `${getRelativeLocaleUrl(locale, day)}#${encodeURIComponent(id)}`
 }
 const isZhTW = locale === 'zh-tw'
