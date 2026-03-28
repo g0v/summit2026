@@ -58,17 +58,47 @@ const speakersForGrid = schedule.speakers.filter(s => String(s.id ?? '').trim() 
 
   const gridEl = document.querySelector('#speakers-grid')
 
+  function openSpeakerModalFromCard(speaker: HTMLElement) {
+    const header = speaker.querySelector('.modal-content .header')
+    const body = speaker.querySelector('.modal-content .body')
+    if (!header || !body) return
+    showModalWith({ header: header.innerHTML, body: body.innerHTML })
+  }
+
   // Click speaker and open pop-up overlay used on the agenda page
   function showSpeakerModal(e: Event) {
     const target = e.target as HTMLElement
     const speaker = target.closest('.speaker[data-id]')
     if (!speaker) return
 
-    showModalWith({
-      header: speaker.querySelector('.modal-content .header').innerHTML,
-      body: speaker.querySelector('.modal-content .body').innerHTML,
-    })
+    openSpeakerModalFromCard(speaker)
+  }
+
+  function isVisible(el: HTMLElement) {
+    const style = window.getComputedStyle(el)
+    return (
+      style.display !== 'none' &&
+      style.visibility !== 'hidden' &&
+      style.opacity !== '0' &&
+      el.offsetWidth > 0 &&
+      el.offsetHeight > 0
+    )
+  }
+
+  // …/speaker/#speakerId → scroll to card and open same pop-up (ref speakers.js)
+  function tryOpenSpeakerFromHash() {
+    const raw = location.hash.slice(1)
+    if (!raw) return
+    const id = decodeURIComponent(raw)
+    const nodes = document.querySelectorAll<HTMLElement>(
+      `#speakers-grid .speaker[data-id="${CSS.escape(id)}"]`,
+    )
+    const speaker = Array.from(nodes).find(el => isVisible(el)) ?? nodes[0]
+    if (!speaker) return
+    speaker.scrollIntoView({ block: 'center', inline: 'nearest', behavior: 'smooth' })
+    openSpeakerModalFromCard(speaker)
   }
 
   gridEl?.addEventListener('click', showSpeakerModal)
+  requestAnimationFrame(() => tryOpenSpeakerFromHash())
 </script>
