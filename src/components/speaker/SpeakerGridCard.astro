@@ -5,14 +5,11 @@ import schedule from '~/data/schedule.json'
 
 const locale = getLocaleFromPath(Astro.url.pathname)
 
-/** Matches [day1.astro](src/pages/agenda/day1.astro) / day2 `date` prop. */
+// Same date split as agenda day1/day2 pages
 const AGENDA_DAY1_PREFIX = '2024-05-04'
 const AGENDA_DAY2_PREFIX = '2024-05-05'
 
-/**
- * @param {string} start Session `start` ISO string
- * @param {string} id Session id for URL hash
- */
+// Localized agenda/dayN + #sessionId for hash deep-link
 function hrefForAgendaSession(start, id) {
   const day = start.startsWith(AGENDA_DAY2_PREFIX) ? 'agenda/day2' : 'agenda/day1'
   return `${getRelativeLocaleUrl(locale, day)}#${encodeURIComponent(id)}`
@@ -28,13 +25,11 @@ const isDefaultAvatar = !speaker.avatar || speaker.avatar.includes('default')
 
 const sessions = schedule.sessions.filter(s => s.speakers.includes(speaker.id))
 
-/** @param {string} dateStr */
 function formatMMdd(dateStr) {
   const d = new Date(dateStr)
   return `${String(d.getMonth() + 1).padStart(2, '0')}/${String(d.getDate()).padStart(2, '0')}`
 }
 
-/** @param {string} dateStr */
 function formatHHmm(dateStr) {
   const d = new Date(dateStr)
   return `${String(d.getHours()).padStart(2, '0')}:${String(d.getMinutes()).padStart(2, '0')}`

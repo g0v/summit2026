@@ -8,12 +8,12 @@ const { t } = useI18n(Astro.url.pathname)
 const locale = getLocaleFromPath(Astro.url.pathname)
 const isZhTW = locale === 'zh-tw'
 
-/** @type {string[]} */
+// schedule speaker ids
 const KEYNOTE_SPEAKER_IDS = ['zh-34', 'en-14']
 
 const keynoteSpeakers = KEYNOTE_SPEAKER_IDS.map(id => schedule.speakers.find(s => s.id === id)).filter(Boolean)
 
-/** omit empty `id` rows in Schedule */
+// hide placeholder rows with empty id
 const speakersForGrid = schedule.speakers.filter(s => String(s.id ?? '').trim() !== '')
 ---
 
@@ -58,9 +58,9 @@ const speakersForGrid = schedule.speakers.filter(s => String(s.id ?? '').trim() 
 
   const gridEl = document.querySelector('#speakers-grid')
 
-  /** @param {Event} e */
-  function showSpeakerModal(e) {
-    const target = /** @type {HTMLElement} */ (e.target)
+  // Click speaker and open pop-up overlay used on the agenda page
+  function showSpeakerModal(e: Event) {
+    const target = e.target as HTMLElement
     const speaker = target.closest('.speaker[data-id]')
     if (!speaker) return
 
