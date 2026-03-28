@@ -33,6 +33,10 @@
     "docs": "籌備文件",
     "coc": "社群守則"
   },
+  "speakers": {
+    "keynote": "基調演講",
+    "sessions": "議程講者"
+  },
   "agenda": {
     "title": "議程",
     "main_note": "議程共筆",

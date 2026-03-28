@@ -34,6 +34,10 @@
     "coc": "Code of Conduct"
 
   },
+  "speakers": {
+    "keynote": "Keynote",
+    "sessions": "Session Speakers"
+  },
   "agenda": {
     "title": "Agenda",
     "main_note": "Notes",

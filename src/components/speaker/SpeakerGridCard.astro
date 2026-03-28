@@ -1,0 +1,70 @@
+---
+import { getLocaleFromPath } from '~/i18n/utils'
+import schedule from '~/data/schedule.json'
+
+const locale = getLocaleFromPath(Astro.url.pathname)
+const isZhTW = locale === 'zh-tw'
+
+const { speaker } = Astro.props
+
+const name = isZhTW ? speaker.zh.name : speaker.en.name
+const otherName = isZhTW ? speaker.en.name : speaker.zh.name
+const bio = isZhTW ? speaker.zh.bio : speaker.en.bio
+const isDefaultAvatar = !speaker.avatar || speaker.avatar.includes('default')
+
+const sessions = schedule.sessions.filter(s => s.speakers.includes(speaker.id))
+
+/** @param {string} dateStr */
+function formatMMdd(dateStr) {
+  const d = new Date(dateStr)
+  return `${String(d.getMonth() + 1).padStart(2, '0')}/${String(d.getDate()).padStart(2, '0')}`
+}
+
+/** @param {string} dateStr */
+function formatHHmm(dateStr) {
+  const d = new Date(dateStr)
+  return `${String(d.getHours()).padStart(2, '0')}:${String(d.getMinutes()).padStart(2, '0')}`
+}
+---
+
+<div class="speaker flex cursor-pointer flex-col items-center justify-center" data-id={speaker.id}>
+  <div class="flex aspect-square w-full items-center justify-center overflow-hidden rounded-full bg-slate-100">
+    {isDefaultAvatar
+      ? <img class="rounded-full" src={speaker.avatar} aria-hidden="true" />
+      : <img class="h-full w-full rounded-full object-cover" src={speaker.avatar} alt={name} />
+    }
+  </div>
+  <div class="my-2 text-center">{name}</div>
+
+  <div class="modal-content hidden">
+    <div class="header">
+      <div class="flex items-center gap-4">
+        <img class="w-20 shrink-0 rounded-full bg-slate-100" src={speaker.avatar} alt={name} />
+        <div class="flex flex-col">
+          <h4 class="font-bold">{name}</h4>
+          {speaker.zh.name !== speaker.en.name && (
+            <h6 class="text-neutral-500">{otherName}</h6>
+          )}
+        </div>
+      </div>
+    </div>
+    <div class="body">
+      {bio && <p class="mb-4 whitespace-pre-line wrap-break-word">{bio}</p>}
+      {sessions.length > 0 && (
+        <div class="border-t border-neutral-300 pt-4">
+          {sessions.map(session => {
+            const title = isZhTW ? session.zh.title : session.en.title
+            const info = `${formatMMdd(session.start)} ${formatHHmm(session.start)} ~ ${formatHHmm(session.end)} @ ${session.room}`
+            {/* TODO: Wrap in <a href="...agenda/dayN#sessionId"> once Agenda implements hash deep-link */}
+            return (
+              <div class="mb-4">
+                <h5 class="font-bold">{title}</h5>
+                <div class="text-sm text-neutral-500">{info}</div>
+              </div>
+            )
+          })}
+        </div>
+      )}
+    </div>
+  </div>
+</div>

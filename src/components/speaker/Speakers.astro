@@ -1,0 +1,71 @@
+---
+import Layout from '~/layouts/Layout.astro'
+import { getLocaleFromPath, useI18n } from '~/i18n/utils'
+import schedule from '~/data/schedule.json'
+import SpeakerGridCard from './SpeakerGridCard.astro'
+
+const { t } = useI18n(Astro.url.pathname)
+const locale = getLocaleFromPath(Astro.url.pathname)
+const isZhTW = locale === 'zh-tw'
+
+/** @type {string[]} */
+const KEYNOTE_SPEAKER_IDS = ['zh-34', 'en-14']
+
+const keynoteSpeakers = KEYNOTE_SPEAKER_IDS.map(id => schedule.speakers.find(s => s.id === id)).filter(Boolean)
+---
+
+<Layout pageName={t('nav.speaker')}>
+  <div class="container">
+    <div class="my-20">
+      <h1 class="border-b border-neutral-500 pb-3">{t('nav.speaker')}</h1>
+    </div>
+
+    <section class="my-20">
+      <h3 class="mb-12">{t('speakers.keynote')}</h3>
+      {
+        keynoteSpeakers.map(speaker => {
+          const name = isZhTW ? speaker.zh.name : speaker.en.name
+          const bio = isZhTW ? speaker.zh.bio : speaker.en.bio
+          return (
+            <div class="mb-12">
+              <div class="flex flex-col items-center gap-12 md:flex-row md:items-start">
+                <img class="h-auto w-full max-w-56 shrink-0 rounded-full md:max-w-48" src={speaker.avatar} alt={name} />
+                <div>
+                  <h5 class="mb-6">{name}</h5>
+                  {bio && <p class="whitespace-pre-line">{bio}</p>}
+                </div>
+              </div>
+            </div>
+          )
+        })
+      }
+    </section>
+
+    <section class="my-20">
+      <h3 class="mb-4">{t('speakers.sessions')}</h3>
+      <div id="speakers-grid" class="mb-12 grid grid-cols-3 items-start gap-6 md:grid-cols-5">
+        {schedule.speakers.map(speaker => <SpeakerGridCard speaker={speaker} />)}
+      </div>
+    </section>
+  </div>
+</Layout>
+
+<script>
+  import { showModalWith } from '~/utils/client/modal'
+
+  const gridEl = document.querySelector('#speakers-grid')
+
+  /** @param {Event} e */
+  function showSpeakerModal(e) {
+    const target = /** @type {HTMLElement} */ (e.target)
+    const speaker = target.closest('.speaker[data-id]')
+    if (!speaker) return
+
+    showModalWith({
+      header: speaker.querySelector('.modal-content .header').innerHTML,
+      body: speaker.querySelector('.modal-content .body').innerHTML,
+    })
+  }
+
+  gridEl?.addEventListener('click', showSpeakerModal)
+</script>
