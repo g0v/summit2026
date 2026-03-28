@@ -1,8 +1,10 @@
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { ViewHelper } from 'three/addons/helpers/ViewHelper.js';
 import * as CANNON from 'cannon-es';
 import CannonDebugger from 'cannon-es-debugger';
+import type { ThreeMFLoader } from 'three/examples/jsm/Addons.js';
 
 export function initModelViewer() {
   const container = document.querySelector('.model-viewer') as HTMLElement;
@@ -13,6 +15,13 @@ export function initModelViewer() {
   let camera: THREE.PerspectiveCamera;
   let renderer: THREE.WebGLRenderer;
   let controls: OrbitControls;
+  let viewHelper: ViewHelper;
+  let rolling = {
+    mesh: null as THREE.Mesh | null,
+    radius: 0.2,
+    height: 0.0001,
+    speed: 0.05,
+  }
 
   // Get props from data attributes
   const modelPath = container.dataset.modelPath || '';
@@ -49,7 +58,7 @@ export function initModelViewer() {
   const init = () => {
     // Create scene
     scene = new THREE.Scene();
-    scene.background = new THREE.Color(0xf0f0f0);
+    scene.background = new THREE.Color(0xDDDDDD);
 
     const ambientLight = new THREE.AmbientLight(0xffffff, 1.5);
     const directionalLight = new THREE.DirectionalLight(0xffffff, 1.5);
@@ -70,6 +79,7 @@ export function initModelViewer() {
 
     scene.add(ambientLight);
     scene.add(directionalLight);
+    scene.fog = new THREE.FogExp2(0xDDDDDD, 0.3);
 
     // Create camera
     camera = new THREE.PerspectiveCamera(
@@ -86,8 +96,18 @@ export function initModelViewer() {
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
     renderer.toneMappingExposure = 1;
     renderer.shadowMap.enabled = true;
-    renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+    renderer.shadowMap.type = THREE.PCFShadowMap;
+    renderer.autoClear = false;
     container.appendChild(renderer.domElement);
+
+    viewHelper = new ViewHelper(camera, renderer.domElement);
+    const helperContainer = document.createElement('div');
+    helperContainer.style.position = 'absolute';
+    helperContainer.style.right = '0';
+    helperContainer.style.top = '0';
+    helperContainer.style.width = '128px';
+    helperContainer.style.height = '128px';
+    document.body.appendChild(helperContainer);
 
     // Add controls
     controls = new OrbitControls(camera, renderer.domElement);
@@ -103,7 +123,8 @@ export function initModelViewer() {
       controls.rotateSpeed = 0.5;
     }
 
-    const floorGeometry = new THREE.PlaneGeometry(20, 20);
+    // add floor
+    const floorGeometry = new THREE.PlaneGeometry(30, 30);
     const floorMaterial = new THREE.MeshStandardMaterial({
       color: 0xDDDDDD
     });
@@ -113,7 +134,7 @@ export function initModelViewer() {
     scene.add(floor);
 
     for (let i = 0; i < 8; i++) {
-      const floorGeometry = new THREE.PlaneGeometry(0.1, 20);
+      const floorGeometry = new THREE.PlaneGeometry(0.1, 30);
       const floorMaterial = new THREE.MeshStandardMaterial({
         color: i % 2 == 0 ? 0xE62327 : 0x3282B8
       });
@@ -123,6 +144,25 @@ export function initModelViewer() {
       floor.position.set(-0.8 + i * 0.2, 0.01, 0);
       scene.add(floor);
     }
+
+    // add rolling
+    const geometry = new THREE.CylinderGeometry(rolling.radius, rolling.radius, rolling.height, 32);
+    const loader = new THREE.TextureLoader();
+    const topTexture = loader.load('models/pangolin-mono.png'); // 正面（圖案）
+
+    const materials = [
+      new THREE.MeshStandardMaterial({ color: 0xffffff, transparent: true, opacity: 0 }),  // 0: 頂面
+      new THREE.MeshStandardMaterial({ map: topTexture, transparent: true, side: THREE.DoubleSide }),  // 1: 頂面
+      new THREE.MeshStandardMaterial({ color: 0xffffff, transparent: true, opacity: 0 }),  // 0: 頂面
+    ];
+    rolling.mesh = new THREE.Mesh(geometry, materials);
+    rolling.mesh.receiveShadow = true;
+    rolling.mesh.rotation.x = -Math.PI / 2;
+    rolling.mesh.rotation.z = -Math.PI / 2;
+    rolling.mesh.position.y = 0.2;
+    rolling.mesh.position.x = -0.5;
+    rolling.mesh.position.z = -10;
+    scene.add(rolling.mesh);
 
     // Load model and scene
     Promise.all([
@@ -167,7 +207,15 @@ export function initModelViewer() {
   const animate = () => {
     requestAnimationFrame(animate);
     controls.update();
+    rolling.mesh.rotation.x += rolling.speed;
+    rolling.mesh.position.z += rolling.speed * rolling.radius;
+    if (rolling.mesh.position.z > 10) {
+      rolling.mesh.position.z = -10;
+    }
+    renderer.clear();
     renderer.render(scene, camera);
+    renderer.clearDepth(); // 確保座標軸不被方塊遮擋
+    viewHelper.render(renderer);
   };
 
   const handleResize = () => {
