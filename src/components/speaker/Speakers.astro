@@ -12,6 +12,9 @@ const isZhTW = locale === 'zh-tw'
 const KEYNOTE_SPEAKER_IDS = ['zh-34', 'en-14']
 
 const keynoteSpeakers = KEYNOTE_SPEAKER_IDS.map(id => schedule.speakers.find(s => s.id === id)).filter(Boolean)
+
+/** omit empty `id` rows in Schedule */
+const speakersForGrid = schedule.speakers.filter(s => String(s.id ?? '').trim() !== '')
 ---
 
 <Layout pageName={t('nav.speaker')}>
@@ -44,7 +47,7 @@ const keynoteSpeakers = KEYNOTE_SPEAKER_IDS.map(id => schedule.speakers.find(s =
     <section class="my-20">
       <h3 class="mb-4">{t('speakers.sessions')}</h3>
       <div id="speakers-grid" class="mb-12 grid grid-cols-3 items-start gap-6 md:grid-cols-5">
-        {schedule.speakers.map(speaker => <SpeakerGridCard speaker={speaker} />)}
+        {speakersForGrid.map(speaker => <SpeakerGridCard speaker={speaker} />)}
       </div>
     </section>
   </div>
