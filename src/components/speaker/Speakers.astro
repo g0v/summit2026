@@ -67,20 +67,14 @@ const speakersForGrid = schedule.speakers.filter(s => String(s.id ?? '').trim() 
   function showSpeakerModal(e: Event) {
     const target = e.target as HTMLElement
     const speaker = target.closest('.speaker[data-id]')
-    if (!speaker) return
+    if (!speaker || !(speaker instanceof HTMLAnchorElement)) return
 
     openSpeakerModalFromCard(speaker)
   }
 
   function isVisible(el: HTMLElement) {
     const style = window.getComputedStyle(el)
-    return (
-      style.display !== 'none' &&
-      style.visibility !== 'hidden' &&
-      style.opacity !== '0' &&
-      el.offsetWidth > 0 &&
-      el.offsetHeight > 0
-    )
+    return style.display !== 'none' && style.visibility !== 'hidden' && style.opacity !== '0' && el.offsetWidth > 0 && el.offsetHeight > 0
   }
 
   // …/speaker/#speakerId → scroll to card and open same pop-up (ref speakers.js)
@@ -88,9 +82,7 @@ const speakersForGrid = schedule.speakers.filter(s => String(s.id ?? '').trim() 
     const raw = location.hash.slice(1)
     if (!raw) return
     const id = decodeURIComponent(raw)
-    const nodes = document.querySelectorAll<HTMLElement>(
-      `#speakers-grid .speaker[data-id="${CSS.escape(id)}"]`,
-    )
+    const nodes = document.querySelectorAll<HTMLElement>(`#speakers-grid .speaker[data-id="${CSS.escape(id)}"]`)
     const speaker = Array.from(nodes).find(el => isVisible(el)) ?? nodes[0]
     if (!speaker) return
     speaker.scrollIntoView({ block: 'center', inline: 'nearest', behavior: 'smooth' })
