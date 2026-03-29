@@ -21,6 +21,9 @@ schedule.sessions.forEach(session => {
     sessions.push(session)
   }
 })
+const rooms = schedule.rooms.map(room => room.id)
+// ex: [time] 4rem [R0] 1fr [R1] 1fr [R2] 1fr [R3] 1fr [RH] 1fr [end] auto
+const gridTemplateColumnsStyle = '[time] 4rem ' + rooms.map(room => `[${room}] 1fr`).join(' ') + ' [end] auto'
 ---
 
 <div class="agenda hidden lg:block">
@@ -34,29 +37,20 @@ schedule.sessions.forEach(session => {
         </div>
       </div>
 
-      <div class="agenda-grid grid text-center">
+      <div class="grid text-center" style={`grid-template-columns: ${gridTemplateColumnsStyle};`}>
         <div></div>
-        <RoomCard room="R0" />
-        <RoomCard room="R1" />
-        <RoomCard room="R2" />
-        <RoomCard room="RH" />
+        {rooms.map(room => <RoomCard room={room} />)}
       </div>
     </div>
   </div>
 
   <div class="container">
-    <div id="agenda-grid" class="agenda-grid relative grid">
+    <div id="agenda-grid" class="relative grid" style={`grid-template-columns: ${gridTemplateColumnsStyle};`}>
       {Array.from(times).map(time => <Time at={time} />)}
       {sessions.map(session => <Session session={session} />)}
     </div>
   </div>
 </div>
-
-<style>
-  .agenda-grid {
-    grid-template-columns: [time] 4rem [R0] 1fr [R1] 1fr [R2] 1fr [RH] 1fr [end] auto;
-  }
-</style>
 
 <style is:global>
   .agenda {

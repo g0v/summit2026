@@ -15,7 +15,7 @@ const sessions = schedule.sessions.filter(session => session.start.startsWith(da
   <div class="container">
     <h1 class="my-8 md:my-12">{t('agenda.title')}</h1>
 
-    <div class="mb-8 flex flex-col gap-4 md:flex-row">
+    <!-- <div class="mb-8 flex flex-col gap-4 md:flex-row">
       <a href="#" class="btn btn-info flex gap-1 px-14!">
         <Icon name="mdi:text-box-edit" width="24" />
         <span>{t('agenda.main_note')}</span>
@@ -24,7 +24,7 @@ const sessions = schedule.sessions.filter(session => session.start.startsWith(da
         <Icon name="mdi:video" width="24" />
         <span>{t('agenda.main_live')}</span>
       </a>
-    </div>
+    </div> -->
   </div>
 
   <Desktop title={title} date={date} />
@@ -63,10 +63,10 @@ const sessions = schedule.sessions.filter(session => session.start.startsWith(da
   import { showModalWith } from '~/utils/client/modal'
 
   const agendaGridEl = document.querySelector('#agenda-grid')
-  const sessionsEl = document.querySelector('#sessions')
+  const mobileSessionsEl = document.querySelector('#mobile-sessions')
 
   agendaGridEl?.addEventListener('click', showSessionModal)
-  sessionsEl?.addEventListener('click', showSessionModal)
+  mobileSessionsEl?.addEventListener('click', showSessionModal)
 
   // Reuse the same modal HTML as clicking a session cell
   function openSessionModalFromElement(session: HTMLElement) {

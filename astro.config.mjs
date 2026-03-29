@@ -15,6 +15,9 @@ export default defineConfig({
         '~': fileURLToPath(new URL('./src', import.meta.url)),
       },
     },
+    server: {
+      allowedHosts: process.env.ALLOW_HOSTS?.split(',') || []
+    }
   },
   i18n: {
     defaultLocale: 'zh-tw',

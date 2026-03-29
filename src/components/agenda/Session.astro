@@ -11,7 +11,7 @@ const isZhTW = locale === 'zh-tw'
 
 const { session } = Astro.props
 
-const columnOrder = ['R0', 'R1', 'R2', 'RH', 'end']
+const columnOrder = ['R0', 'R1', 'R2', 'R3', 'RH', 'end']
 
 const speakers = session.speakers.map(speakerId => speakerIdToDetail(speakerId))
 const startRow = parseInt(extractHHmm(session.start).replace(':', '')) || 0
@@ -74,7 +74,7 @@ function formatDescription(rawDescription) {
 }
 ---
 
-<div class:list={['session', canClick ? 'session-canClick' : '', 'm-3 flex flex-col transition-opacity']} style={style} data-id={session.id}>
+<div class:list={['session', canClick ? 'session-canClick z-20' : '', 'm-3 flex flex-col transition-opacity']} style={style} data-id={session.id} data-room={session.broadcast || session.room}>
   <div class:list={['relative z-10 shrink-0 grow rounded p-4', isRest ? 'bg-neutral-300' : 'bg-[#F3F3F3]', canClick ? 'cursor-pointer' : '']}>
     <div class="sticky" style="top: calc(var(--agenda-header-height) + 1rem);">
       <div class="font-bold">{isZhTW ? session.zh.title : session.en.title}</div>
@@ -96,12 +96,16 @@ function formatDescription(rawDescription) {
             {formatMMdd(session.start)} {formatHHmm(session.start)} ~ {formatHHmm(session.end)} @ {session.broadcast || session.room}
           </div>
           <div class="flex gap-2">
-            <a href={session.qa} target="_blank" class="btn btn-info">
-              {t('agenda.qa')}
-            </a>
-            <a href={session.co_write} target="_blank" class="btn btn-info">
-              {t('agenda.note')}
-            </a>
+            {session.qa && (
+              <a href={session.qa} target="_blank" class="btn btn-info">
+                {t('agenda.qa')}
+              </a>
+            )}
+            {session.co_write && (
+              <a href={session.co_write} target="_blank" class="btn btn-info">
+                {t('agenda.note')}
+              </a>
+            )}
           </div>
         </div>
 

@@ -12,6 +12,7 @@ const locale = getLocaleFromPath(Astro.url.pathname)
 const { title, date } = Astro.props
 
 const sessions = schedule.sessions.filter(session => session.start.startsWith(date))
+const rooms = schedule.rooms.map(room => room.id)
 
 const allSessions = sessions.reduce((acc, session) => {
   const key = extractHHmm(session.start)
@@ -20,46 +21,6 @@ const allSessions = sessions.reduce((acc, session) => {
   return acc
 }, {})
 const allTimes = Object.keys(allSessions).sort((a, b) => a.localeCompare(b))
-
-const r0Sessions = sessions
-  .filter(session => session.room === 'R0' || session.broadcast.includes('R0'))
-  .reduce((acc, session) => {
-    const key = extractHHmm(session.start)
-    if (!acc[key]) acc[key] = []
-    acc[key].push(session)
-    return acc
-  }, {})
-const r0Times = Object.keys(r0Sessions).sort((a, b) => a.localeCompare(b))
-
-const r1Sessions = sessions
-  .filter(session => session.room === 'R1' || session.broadcast.includes('R1'))
-  .reduce((acc, session) => {
-    const key = extractHHmm(session.start)
-    if (!acc[key]) acc[key] = []
-    acc[key].push(session)
-    return acc
-  }, {})
-const r1Times = Object.keys(r1Sessions).sort((a, b) => a.localeCompare(b))
-
-const r2Sessions = sessions
-  .filter(session => session.room === 'R2' || session.broadcast.includes('R2'))
-  .reduce((acc, session) => {
-    const key = extractHHmm(session.start)
-    if (!acc[key]) acc[key] = []
-    acc[key].push(session)
-    return acc
-  }, {})
-const r2Times = Object.keys(r2Sessions).sort((a, b) => a.localeCompare(b))
-
-const rhSessions = sessions
-  .filter(session => session.room === 'RH' || session.broadcast.includes('RH'))
-  .reduce((acc, session) => {
-    const key = extractHHmm(session.start)
-    if (!acc[key]) acc[key] = []
-    acc[key].push(session)
-    return acc
-  }, {})
-const rhTimes = Object.keys(rhSessions).sort((a, b) => a.localeCompare(b))
 ---
 
 <div class="lg:hidden">
@@ -83,82 +44,31 @@ const rhTimes = Object.keys(rhSessions).sort((a, b) => a.localeCompare(b))
       <div id="mobileSearchPanel" class="mb-4 hidden">
         <Search />
       </div>
-      <div id="btns" class="grid grid-cols-5 text-center">
-        <button data-target="#allSessions" class="border-info-dark border-b-2 transition-colors">ALL</button>
-        <button data-target="#r0Sessions" class="border-b-2 border-transparent transition-colors">R0</button>
-        <button data-target="#r1Sessions" class="border-b-2 border-transparent transition-colors">R1</button>
-        <button data-target="#r2Sessions" class="border-b-2 border-transparent transition-colors">R2</button>
-        <button data-target="#rhSessions" class="border-b-2 border-transparent transition-colors">RH</button>
+      <div id="btns" class="grid grid-cols-6 text-center">
+        <button data-target-room="all" class="border-info-dark border-b-2 transition-colors">ALL</button>
+        {
+          rooms.map(room => (
+            <button data-target-room={room} class="border-b-2 border-transparent transition-colors">
+              {room}
+            </button>
+          ))
+        }
       </div>
     </div>
   </div>
 
   <div class="container">
-    <div id="sessions" class="mt-6">
-      <div id="allSessions">
-        {
-          allTimes.map(time => (
-            <div>
-              <div>{time}</div>
-              {allSessions[time].map(session => (
-                <Session session={session} />
-              ))}
-            </div>
-          ))
-        }
-      </div>
-
-      <div id="r0Sessions" style="display: none;">
-        {
-          r0Times.map(time => (
-            <div>
-              <div>{time}</div>
-              {r0Sessions[time].map(session => (
-                <Session session={session} />
-              ))}
-            </div>
-          ))
-        }
-      </div>
-
-      <div id="r1Sessions" style="display: none;">
-        {
-          r1Times.map(time => (
-            <div>
-              <div>{time}</div>
-              {r1Sessions[time].map(session => (
-                <Session session={session} />
-              ))}
-            </div>
-          ))
-        }
-      </div>
-
-      <div id="r2Sessions" style="display: none;">
-        {
-          r2Times.map(time => (
-            <div>
-              <div>{time}</div>
-              {r2Sessions[time].map(session => (
-                <Session session={session} />
-              ))}
-            </div>
-          ))
-        }
-      </div>
-
-      <div id="rhSessions" style="display: none;">
-        {
-          rhTimes.map(time => (
-            <div>
-              <div>{time}</div>
-              {rhSessions[time].map(session => (
-                <Session session={session} />
-              ))}
-            </div>
-          ))
-        }
-      </div>
+    <div id="mobile-sessions" class="mt-6">
+      {
+        allTimes.map(time => (
+          <div class="time-group">
+            <div>{time}</div>
+            {allSessions[time].map(session => (
+              <Session session={session} />
+            ))}
+          </div>
+        ))
+      }
     </div>
   </div>
 </div>
@@ -168,8 +78,8 @@ const rhTimes = Object.keys(rhSessions).sort((a, b) => a.localeCompare(b))
 
   const searchToggleEl = document.querySelector<HTMLButtonElement>('#searchToggle')
   const searchPanelEl = document.querySelector<HTMLElement>('#mobileSearchPanel')
+  const $mobileSessions = $('#mobile-sessions')
   const $btnsChildren = $('#btns button')
-  const $sessionsChildren = $('#sessions > div')
 
   searchToggleEl?.addEventListener('click', () => {
     const isExpanded = searchToggleEl.getAttribute('aria-expanded') === 'true'
@@ -181,17 +91,37 @@ const rhTimes = Object.keys(rhSessions).sort((a, b) => a.localeCompare(b))
   })
 
   $('#btns').on('click', 'button', function () {
-    hideAll()
+    resetMobileSessions()
     $(this).removeClass('border-transparent').addClass('border-info-dark')
-    $($(this).data('target')).css('display', '')
+    const targetRoom = $(this).data('target-room')
+
+    if (targetRoom !== 'all') {
+      $mobileSessions
+        .find('.session[data-room]')
+        .filter(function () {
+          const rooms = $(this)
+            .data('room')
+            .split(',')
+            .map(room => room.trim())
+          return !rooms.includes(targetRoom)
+        })
+        .addClass('hidden')
+    }
+
+    syncTimeGroupVisibility()
   })
 
-  function hideAll() {
+  function resetMobileSessions() {
     $btnsChildren.each(function () {
       $(this).removeClass('border-info-dark').addClass('border-transparent')
     })
-    $sessionsChildren.each(function () {
-      $(this).css('display', 'none').removeClass('border-info-dark')
+    $mobileSessions.find('.session').removeClass('hidden')
+  }
+
+  function syncTimeGroupVisibility() {
+    $mobileSessions.find('.time-group').each(function () {
+      const hasVisibleSessions = $(this).find('.session').not('.hidden').length > 0
+      $(this).toggleClass('hidden', !hasVisibleSessions)
     })
   }
 </script>
