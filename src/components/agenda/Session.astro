@@ -10,6 +10,8 @@ const locale = getLocaleFromPath(Astro.url.pathname)
 const isZhTW = locale === 'zh-tw'
 
 const { session } = Astro.props
+const sessionTitle = isZhTW ? session.zh.title : session.en.title || session.zh.title
+const sessionDescription = isZhTW ? session.zh.description : session.en.description || session.zh.description
 
 const columnOrder = ['R0', 'R1', 'R2', 'R3', 'RH', 'end']
 
@@ -23,7 +25,8 @@ const canClick = !isRest && !isEvent
 
 const style = `grid-area: ${startRow} / ${startCol} / ${endRow} / ${endCol};`
 
-const description = formatDescription(isZhTW ? session.zh.description : session.en.description)
+const description = formatDescription(sessionDescription)
+const agendaTimeZone = 'Asia/Taipei'
 
 function getColumnStartEnd(columns) {
   columns = columns.split(',')
@@ -38,26 +41,42 @@ function speakerIdToDetail(speakerId) {
   return schedule.speakers.find(speaker => speaker.id === speakerId)
 }
 
-function formatMMdd(date) {
-  if (typeof date === 'string') {
-    date = new Date(date)
-  }
+function getSpeakerName(speaker) {
+  return isZhTW ? speaker.zh.name : speaker.en.name || speaker.zh.name
+}
 
-  const month = String(date.getMonth() + 1).padStart(2, '0')
-  const day = String(date.getDate()).padStart(2, '0')
+function formatMMdd(date) {
+  const parts = formatInAgendaTimeZoneToParts(date, {
+    month: '2-digit',
+    day: '2-digit',
+  })
+
+  const month = parts.find(part => part.type === 'month')?.value ?? '00'
+  const day = parts.find(part => part.type === 'day')?.value ?? '00'
 
   return `${month}/${day}`
 }
 
 function formatHHmm(date) {
-  if (typeof date === 'string') {
-    date = new Date(date)
-  }
+  const parts = formatInAgendaTimeZoneToParts(date, {
+    hour: '2-digit',
+    minute: '2-digit',
+    hour12: false,
+  })
 
-  const hour = String(date.getHours()).padStart(2, '0')
-  const minute = String(date.getMinutes()).padStart(2, '0')
+  const hour = parts.find(part => part.type === 'hour')?.value ?? '00'
+  const minute = parts.find(part => part.type === 'minute')?.value ?? '00'
 
   return `${hour}:${minute}`
+}
+
+function formatInAgendaTimeZoneToParts(date, options) {
+  const value = typeof date === 'string' ? new Date(date) : date
+
+  return new Intl.DateTimeFormat('en-CA', {
+    timeZone: agendaTimeZone,
+    ...options,
+  }).formatToParts(value)
 }
 
 function formatDescription(rawDescription) {
@@ -77,9 +96,9 @@ function formatDescription(rawDescription) {
 <div class:list={['session', canClick ? 'session-canClick z-20' : '', 'm-3 flex flex-col transition-opacity']} style={style} data-id={session.id} data-room={session.broadcast || session.room}>
   <div class:list={['relative z-10 shrink-0 grow rounded p-4', isRest ? 'bg-neutral-300' : 'bg-[#F3F3F3]', canClick ? 'cursor-pointer' : '']}>
     <div class="sticky" style="top: calc(var(--agenda-header-height) + 1rem);">
-      <div class="font-bold">{isZhTW ? session.zh.title : session.en.title}</div>
+      <div class="font-bold">{sessionTitle}</div>
       <div class="flex flex-col items-stretch">
-        {speakers.map(speaker => <div class="text-sm">{isZhTW ? speaker.zh.name : speaker.en.name}</div>)}
+        {speakers.map(speaker => <div class="text-sm">{getSpeakerName(speaker)}</div>)}
       </div>
 
       {!isRest && <SessionBadges session={session} />}
@@ -90,7 +109,7 @@ function formatDescription(rawDescription) {
     canClick && (
       <div class="modal-content hidden">
         <div class="header">
-          <h3 class="text-info-dark">{isZhTW ? session.zh.title : session.en.title}</h3>
+          <h3 class="text-info-dark">{sessionTitle}</h3>
           <SessionBadges session={session} />
           <div class="mb-2">
             {formatMMdd(session.start)} {formatHHmm(session.start)} ~ {formatHHmm(session.end)} @ {session.broadcast || session.room}
@@ -112,14 +131,11 @@ function formatDescription(rawDescription) {
         <div class="body">
           <div class="mb-4 flex flex-col gap-4">
             {speakers.map(speaker => (
-              <a
-                href={`${getRelativeLocaleUrl(locale, 'speaker')}#${encodeURIComponent(speaker.id)}`}
-                class="group flex items-center gap-4 text-inherit no-underline"
-              >
+              <a href={`${getRelativeLocaleUrl(locale, 'speaker')}#${encodeURIComponent(speaker.id)}`} class="group flex items-center gap-4 text-inherit no-underline">
                 <div class="aspect-square w-24 overflow-hidden rounded-full bg-[#f1f5f9]">
-                  <img class="h-full w-full" src={speaker.avatar} alt={isZhTW ? speaker.zh.name : speaker.en.name} />
+                  <img class="h-full w-full" src={speaker.avatar} alt={getSpeakerName(speaker)} />
                 </div>
-                <span class="text-info-dark text-xl font-bold underline-offset-4 group-hover:underline">{isZhTW ? speaker.zh.name : speaker.en.name}</span>
+                <span class="text-info-dark text-xl font-bold underline-offset-4">{getSpeakerName(speaker)}</span>
               </a>
             ))}
           </div>
