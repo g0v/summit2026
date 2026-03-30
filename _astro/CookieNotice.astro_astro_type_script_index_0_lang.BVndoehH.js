@@ -1,0 +1,1 @@
+import{j as o}from"./jquery.module.C7SjhYEJ.js";const e=window.sessionStorage;e.getItem("agreeCookie")||o("#cookie-notice").css("display","");o("#cookie-notice button").on("click",function(){e.setItem("agreeCookie","true"),o("#cookie-notice").css("display","none")});
