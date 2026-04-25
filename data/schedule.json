@@ -109,7 +109,7 @@
       "uri": "",
       "zh": {
         "title": "不實資訊與環境評估如何影響能源轉型？",
-        "description": "本場論壇以「不實資訊與環境評估如何影響能源轉型」為主題，討論能源政策在推動過程中，如何受到資訊環境與制度設計的影響，以及這些因素如何牽動台灣的能源安全與社會韌性。該場次將聚焦於：\n\n（一）能源政策規劃與環境評估在溝通上的挑戰\n（二）能源相關議題之不實資訊所造成的影響\n\n本場論壇將結合事實查核、研究觀察與環境倡議的第一線經驗，分析能源與環評相關的不實資訊如何被製造、轉譯與擴散，並探討公民團體在其中所扮演的角色。"
+        "description": "本場論壇以「不實資訊與環境評估如何影響能源轉型」為主題，討論能源政策在推動過程中，如何受到資訊環境與制度設計的影響，以及這些因素如何牽動台灣的能源安全與社會韌性。該場次將聚焦於：\n\n- （一）能源政策規劃與環境評估在溝通上的挑戰\n- （二）能源相關議題之不實資訊所造成的影響\n\n本場論壇將結合事實查核、研究觀察與環境倡議的第一線經驗，分析能源與環評相關的不實資訊如何被製造、轉譯與擴散，並探討公民團體在其中所扮演的角色。"
       },
       "en": {
         "title": "",
@@ -619,7 +619,7 @@
       "uri": "",
       "zh": {
         "title": "數位平權，從無障礙體驗開始：換個角度，看見不同的數位世界",
-        "description": "打造一個包容的數位環境，不只是為了現在的身障者，更是在為未來的自己，鋪好一條能被好好使用的路。\n\n全世界約有四分之一的人口是身心障礙者或年長者，因感官退化、身體限制或認知差異，在使用數位產品時面臨重重困難。而我們每一個人，也都正在通往「變老」的路上。無障礙從來不是少數人的需求，而是每個人都會面對的日常。\n\nA11y Camp 是一場以體驗為起點、以包容為核心的數位無障礙工作坊。我們邀請參與者暫時放下對視覺的依賴，改用「聽」來操作手機與數位服務。當畫面不再可見，只能透過聲音尋找內容、理解狀態、進行操作時，許多原本被忽略的問題，會變得格外清晰。\n\n在活動中，參與者將實際開啟手機的螢幕閱讀器，體驗視障者如何在聲音中導航，理解為何不清楚的指引、混亂的資訊結構，會讓人迷失方向。\n\n邀請你來參加，透過親身體驗，感受不同的數位世界！"
+        "description": "打造一個包容的數位環境，不只是為了現在的身障者，更是在為未來的自己，鋪好一條能被好好使用的路。\n\n全世界約有四分之一的人口是身心障礙者或年長者，因感官退化、身體限制或認知差異，在使用數位產品時面臨重重困難。而我們每一個人，也都正在通往「變老」的路上。無障礙從來不是少數人的需求，而是每個人都會面對的日常。\n\nA11y Camp 是一場以體驗為起點、以包容為核心的數位無障礙工作坊。我們邀請參與者暫時放下對視覺的依賴，改用「聽」來操作手機與數位服務。當畫面不再可見，只能透過聲音尋找內容、理解狀態、進行操作時，許多原本被忽略的問題，會變得格外清晰。\n\n在活動中，參與者將實際開啟手機的螢幕閱讀器，體驗視障者如何在聲音中導航，理解為何不清楚的指引、混亂的資訊結構，會讓人迷失方向。\n\n邀請你來參加，透過親身體驗，感受不同的數位世界！\n\n---\n\n本工作坊將實際操作 iOS / Android 的螢幕閱讀器，建議攜帶耳機參與，以獲得更清楚的語音聆聽體驗，同時也能避免影響其他參與者。"
       },
       "en": {
         "title": "Digital Equity Starts with Accessibility: Changing Perspectives to See a Different Digital World",
@@ -1043,16 +1043,18 @@
       "language": "zh",
       "uri": "",
       "zh": {
-        "title": "地方民主再深化與數位工具",
-        "description": "台灣的民主政治面臨嚴苛挑戰，地方政治的民主在深化更是其中的重中之重，2026年底適逢地方大選。台南新芽希望透過十周年回顧與有志之士一同討論，如何透過數位工具協助地方民主深化，並創造新的跨地域網絡連結，共同協作。"
+        "title": "公民科技如何介入地方治理",
+        "description": "本場次將以台南為場域討論公民科技如何介入台南的地方治理，從監督（台南新芽的議會觀測數位工具歷程）及協作（好想工作室的登革熱地圖、石棉瓦清運地圖）兩個面向切入。"
       },
       "en": {
-        "title": "Re-inforcing Local Democracy and Digital Tools",
+        "title": "",
         "description": ""
       },
       "speakers": [
+        "mglee",
         "urda",
-        "billy"
+        "billy",
+        "howard"
       ],
       "tags": [
         "activism"
@@ -1333,10 +1335,13 @@
         "description": ""
       },
       "speakers": [
-        "ianwu",
         "vik",
-        "kuan",
-        "mashbean"
+        "moda",
+        "cht",
+        "kpmg",
+        "ianwu",
+        "mashbean",
+        "kuan"
       ],
       "tags": [
         "did"
@@ -1365,8 +1370,8 @@
         "description": ""
       },
       "speakers": [
-        "vik",
-        "ianwu"
+        "ianwu",
+        "vik"
       ],
       "tags": [
         "did"
@@ -1550,35 +1555,6 @@
       "tags": []
     },
     {
-      "id": "2026-052",
-      "type": "P",
-      "room": "R0",
-      "broadcast": "",
-      "start": "2026-05-23T11:00:00+08:00",
-      "end": "2026-05-23T12:00:00+08:00",
-      "qa": "",
-      "slide": "",
-      "co_write": "",
-      "live": "",
-      "record": "",
-      "language": "zh",
-      "uri": "",
-      "zh": {
-        "title": "風險時代的地方韌性怎麼長出來",
-        "description": "不論是地緣政治或氣候變遷，台灣所面臨的挑戰早已與過去50年的承平時期不同。我希望透過這一場panel描繪幾種不同的韌性樣態，而且更偏重於是地方、民間長出來再去對接企業部門及公部門，並討論其中遇到的困境及經驗複製的可能性。"
-      },
-      "en": {
-        "title": "",
-        "description": ""
-      },
-      "speakers": [
-        "urda",
-        "lintt",
-        "mglee"
-      ],
-      "tags": []
-    },
-    {
       "id": "2026-053",
       "type": "P",
       "room": "RH",
@@ -1678,7 +1654,7 @@
       "language": "zh",
       "uri": "",
       "zh": {
-        "title": "Keynote",
+        "title": "Keynote：從社群到體制",
         "description": ""
       },
       "en": {
@@ -1705,7 +1681,7 @@
       "language": "en",
       "uri": "",
       "zh": {
-        "title": "Keynote",
+        "title": "Keynote：科技民防",
         "description": "講者為退役軍人與無人機工程師，具有多年歐洲與中東前沿戰事經驗，曾於美軍、烏克蘭等軍事單位，擔任小型無人飛行系統（sUAS）、反無人機系統（C-UAS）與電子作戰（EW）訓練教官。"
       },
       "en": {
@@ -1741,7 +1717,8 @@
       },
       "speakers": [
         "rschiang",
-        "isabelhou"
+        "isabelhou",
+        "urda"
       ],
       "tags": []
     },
@@ -1760,7 +1737,7 @@
       "language": "zh",
       "uri": "",
       "zh": {
-        "title": "基調對談：光復夥伴們（暫定）",
+        "title": "基調對談：光復夥伴們",
         "description": ""
       },
       "en": {
@@ -2068,15 +2045,18 @@
       "language": "",
       "uri": "",
       "zh": {
-        "title": "交流活動",
-        "description": ""
+        "title": "晚間交流聚",
+        "description": "聽完一天的議程還意猶未盡嗎？一起來交流聚與講者、工作人員、以及其他與會者們品嚐點心、開心聊天吧！"
       },
       "en": {
         "title": "Evening Reception",
-        "description": ""
+        "description": "Not ready to call it a day just yet? Come hang out at our evening reception! It’s the perfect chance to refuel and catch up with the speakers, the volunteers, and the rest of the community."
       },
       "speakers": [],
-      "tags": []
+      "tags": [
+        "snacks",
+        "pizza"
+      ]
     },
     {
       "id": "U",
@@ -2240,7 +2220,7 @@
     },
     {
       "id": "kshirato",
-      "avatar": "",
+      "avatar": "kshirato.jpg",
       "zh": {
         "name": "白取耕一郎",
         "bio": "日本公民科技組織 proj-inclusive 創辦人暨負責人。一般社團法人防窮研究所創辦人暨理事長。拓殖大學副教授。行政學博士。提出並持續研究「防窮」概念（即預防貧困的方法論）。"
@@ -2295,6 +2275,18 @@
       },
       "en": {
         "name": "Mashbean",
+        "bio": ""
+      }
+    },
+    {
+      "id": "howard",
+      "avatar": "",
+      "zh": {
+        "name": "吳展瑋",
+        "bio": ""
+      },
+      "en": {
+        "name": "Howard Wu",
         "bio": ""
       }
     },
@@ -3104,7 +3096,7 @@
     },
     {
       "id": "mcuillerier",
-      "avatar": "",
+      "avatar": "mcuillerier.jpg",
       "zh": {
         "name": "Maxime Cuillerier",
         "bio": "Maxime Cuillerier 目前於蒙特婁的加拿大國立政府行政學院（ENAP）攻讀公共行政博士班。此前，他於拉瓦爾大學取得工商管理碩士（MBA）學位，專攻機器學習與商業分析。Maxime 在加拿大政府服務超過 18 年，期間曾擔任多項營運與策略職位。在他的職業生涯中，他致力於推動多項與人工智慧及組織變革相關的專案。在學術研究方面，Maxime 關注的領域包括：公民駭客、數位創業／內部創業、數位公共服務的共同創作、人機關係，以及後人文主義本體論在公共組織中的應用。"
@@ -3291,6 +3283,42 @@
       },
       "en": {
         "name": "Zeck",
+        "bio": ""
+      }
+    },
+    {
+      "id": "moda",
+      "avatar": "",
+      "zh": {
+        "name": "數位發展部",
+        "bio": ""
+      },
+      "en": {
+        "name": "Ministry of Digital Affairs",
+        "bio": ""
+      }
+    },
+    {
+      "id": "cht",
+      "avatar": "",
+      "zh": {
+        "name": "中華電信",
+        "bio": ""
+      },
+      "en": {
+        "name": "Chunghwa Telecom",
+        "bio": ""
+      }
+    },
+    {
+      "id": "kpmg",
+      "avatar": "",
+      "zh": {
+        "name": "KPMG",
+        "bio": ""
+      },
+      "en": {
+        "name": "KPMG",
         "bio": ""
       }
     },
@@ -3524,11 +3552,11 @@
     {
       "id": "D",
       "zh": {
-        "name": "交流活動",
+        "name": "晚宴活動",
         "description": ""
       },
       "en": {
-        "name": "Reception",
+        "name": "Party",
         "description": ""
       }
     },
@@ -3729,6 +3757,28 @@
       },
       "en": {
         "name": "Community Building",
+        "description": ""
+      }
+    },
+    {
+      "id": "snacks",
+      "zh": {
+        "name": "點心",
+        "description": ""
+      },
+      "en": {
+        "name": "Light Meals",
+        "description": ""
+      }
+    },
+    {
+      "id": "pizza",
+      "zh": {
+        "name": "披薩",
+        "description": ""
+      },
+      "en": {
+        "name": "Pizzas",
         "description": ""
       }
     },
