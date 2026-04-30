@@ -1,0 +1,1 @@
+import{h as t}from"./modal.DUMKCNtx.js";const o=document.querySelector("#modal"),r=document.querySelector("#modal-close-btn");o?.addEventListener("click",e=>{e.target===e.currentTarget&&t()});r.addEventListener("click",t);
