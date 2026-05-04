@@ -1,0 +1,1 @@
+import{s as t}from"./modal.DUMKCNtx.js";document.querySelectorAll(".sponsor-description-trigger").forEach(e=>{e.addEventListener("click",o=>{const r=o.currentTarget.closest(".sponsor-card")?.querySelector(".modal-content .body");r&&t({header:null,body:r.innerHTML,size:"lg"})})});
