@@ -1,1 +1,0 @@
-import{s as r}from"./modal.DUMKCNtx.js";document.querySelectorAll(".booth-card").forEach(e=>{e.addEventListener("click",()=>{const o=e.querySelector(".modal-content .body")?.innerHTML;o&&r({header:null,body:o,size:"lg"})})});
