@@ -269,7 +269,7 @@
         "ronnywang"
       ],
       "tags": [
-        "opengov"
+        "CT-OGP"
       ]
     },
     {
@@ -482,7 +482,7 @@
         "ronnywang"
       ],
       "tags": [
-        "opengov"
+        "CT-OGP"
       ]
     },
     {
@@ -996,7 +996,7 @@
         "tmonk"
       ],
       "tags": [
-        "opendata"
+        "CT-OGP"
       ]
     },
     {
@@ -1635,6 +1635,33 @@
       "speakers": [],
       "tags": [
         "CT-CRC"
+      ]
+    },
+    {
+      "id": "CT-OGP",
+      "type": "C",
+      "room": "R0",
+      "broadcast": null,
+      "start": "2026-05-24T15:30:00+08:00",
+      "end": "2026-05-24T15:30:00+08:00",
+      "qa": null,
+      "slide": null,
+      "co_write": null,
+      "live": null,
+      "record": null,
+      "language": null,
+      "uri": null,
+      "zh": {
+        "title": "敲開國會大門：從開源工具到社群孵育的民主實驗",
+        "description": "我們一直在尋找公民參與開放國會議題的切入點。雖然立法院釋出很多資料，但難查詢、不知道怎麼解讀，讓許多公民不知從何關心立法院在幹嘛。我們認為，開放國會不該只是口號，而是讓具備不同立法知識程度、不同背景與需求的民眾，都能知道怎麼關心議事程序的具體行動。\n\n因此，我們展開了一場橫跨工具開發與社群孵育的公民行動。為了降低資訊攝取的門檻，我們開發 **LawTrace**，試圖將散置各處的立法院公開資料轉化為使用者友善的介面，讓法案變得好追蹤、好分析比對；同時，我們也推出「**開放預算平台**」重新梳理政府金流，讓預算數據成為可視、可討論的公共基礎。\n\n然而，單有工具是不夠的。我們同步深耕 **g0v 國會松**。在這裡，不同背景與專長的人可以交流對議事程序的掌握、查找立法院資料的祕技，也不時提供對於公民科技工具的想法。\n\n以科技工具降低使用門檻，再搭配社群活用工具、關注議題。我們一起實驗，這場由下而上的公民參與運動，是否能延續開放國會國家行動方案未竟的目標，真正打開公民與立法院對話的大門。"
+      },
+      "en": {
+        "title": "Unlocking Parliament: A Democratic Experiment from Open-Source Tools to Community Incubation",
+        "description": "We have continually sought entry points for citizen engagement in Open Parliament initiatives. While the Legislative Yuan releases vast amounts of data, it remains difficult to query and interpret, leaving many citizens unsure of how to follow legislative affairs. We believe an “Open Parliament” must be more than a slogan; it must be a concrete effort that empowers citizens of all backgrounds and varying levels of legislative knowledge to actively engage with parliamentary procedures.\n\nTo achieve this, we launched a civic initiative bridging tool development and community incubation. To lower the barrier to information access, we developed **LawTrace**, transforming scattered public data from the Legislative Yuan into a user-friendly interface that makes bills easy to track, analyze, and compare. Concurrently, we introduced the **Open Budget Platform** to reorganize government financial flows, turning budget data into an accessible, visual foundation for public discourse.\n\nHowever, tools alone are insufficient. We simultaneously cultivated the **g0v Congressthon**. This community space allows individuals with diverse expertise to share insights on legislative procedures, exchange tips for navigating parliamentary data, and brainstorm ideas for civic tech innovations.\n\nBy leveraging technology to lower access barriers and empowering the community to utilize these tools for issue advocacy, we are conducting a collaborative experiment. Our goal is to see whether this bottom-up civic movement can carry forward the unfinished objectives of the Open Parliament National Action Plan and truly open the doors for dialogue between citizens and the legislature."
+      },
+      "speakers": [],
+      "tags": [
+        "CT-OGP"
       ]
     },
     {
@@ -3854,6 +3881,17 @@
       },
       "en": {
         "name": "Digital Resilience",
+        "description": ""
+      }
+    },
+    {
+      "id": "CT-OGP",
+      "zh": {
+        "name": "國會松",
+        "description": ""
+      },
+      "en": {
+        "name": "Congressthon",
         "description": ""
       }
     }
