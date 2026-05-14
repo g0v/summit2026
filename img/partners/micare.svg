@@ -3,7 +3,7 @@
 <svg width="100%" height="100%" viewBox="0 0 400 400" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
     <g transform="matrix(1,0,0,1,0,-2616)">
         <g id="咪卡_logo_400x400" transform="matrix(1,0,0,1,-450,2616)">
-            <rect x="450" y="0" width="400" height="400" style="fill:white;"/>
+            <rect x="450" y="0" width="400" height="400" style="fill:transparent;"/>
             <g transform="matrix(0.133178,0,0,0.133178,-376.175,-2627.11)">
                 <g transform="matrix(8.63164,0,0,8.63164,6402.64,19215)">
                     <path d="M94.655,177.864L103.654,177.864L103.654,204.883L94.655,204.883L94.655,177.864ZM70.813,177.864L80.382,177.864L87.631,189.877L93.332,180.104L93.332,193.704L86.837,204.883L70.813,177.864ZM70.792,204.883L70.792,180.368L79.201,194.478L79.201,204.883L70.792,204.883Z" style="fill:rgb(89,87,87);fill-rule:nonzero;"/>
