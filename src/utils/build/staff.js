@@ -18,5 +18,5 @@ export function onlyUrl(input) {
 }
 
 export function getAvatar(person) {
-  return import.meta.env.BASE_URL + (person.hasAvatar ? `img/staff/${person.id}.webp` : `img/staff/default.jpg`)
+  return person.hasAvatar ? import.meta.env.BASE_URL + `img/staff/${person.id}.webp` : `https://www.gravatar.com/avatar/${person.gravatar}?s=256&d=${encodeURI('https://summit.g0v.tw/2026/img/staff/default.jpg')}`
 }

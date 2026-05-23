@@ -158,6 +158,7 @@ for (const record of records) {
       en: record.英文版稱呼?.trim() ?? '',
     },
     intro: record.個人簡介?.trim() ?? '',
+    gravatar: record.GravatarHash?.trim() ?? ''
   })
 
   for (const team of unique(personTeams)) {
