@@ -2125,7 +2125,7 @@
       "room": "R3",
       "broadcast": null,
       "start": "2026-05-24T13:00:00+08:00",
-      "end": "2026-05-24T15:00:00+08:00",
+      "end": "2026-05-24T14:00:00+08:00",
       "qa": null,
       "slide": null,
       "co_write": null,
@@ -2134,14 +2134,16 @@
       "language": null,
       "uri": "https://summit.g0v.tw/2026/agenda/day2/#U-1",
       "zh": {
-        "title": "開放工作坊",
-        "description": "開放工作坊即將登場！這是一個由下而上、由現場參與者共同決定的議程空間。無論你有一個絕妙的點子想找人討論，還是有一個開發中的專案想徵求貢獻者，都歡迎你來提案！\n\n- 會場三樓走道指定白板區域，為開放工作坊的提案地點。\n- 會眾領取識別證時，會同步發放開放工作坊投票貼紙，一人 3 張。\n- 在 Summit 期間，開放給會眾用貼紙投票，貼給最有興趣的專案。\n- 投票至 2026 年 5 月 23 號（六）下午 17:00（UTC+8）截止。\n"
+        "title": "開放工作坊：沒有標準答案的 Unconference 實驗，拆除學科框架的跨領域競技場",
+        "description": "我們是台大生組成的「X-Salou跨領域沙龍」團隊。本場工作坊將濃縮「跨領域沙龍」的精華，把議程主導權完全交還給參與者。我們透過「議題市場」現場自訂子題，分組討論，展開最直接的邏輯交鋒。如果你厭倦了單向輸出的講座與目的導向的工作坊，歡迎來體驗這場思辨碰撞，並成為我們未來的共創夥伴。\n"
       },
       "en": {
-        "title": "Unconference",
-        "description": "The Unconference is coming up! This is a bottom-up session space shaped collaboratively by on-site participants. Whether you have a brilliant idea you want to discuss or an ongoing project looking for contributors, you are welcome to submit a proposal!\n\n- **Proposal Location**: 3F Whiteboard Alley\n- **Voting Stickers**: Attendees will receive 3 Unconference voting stickers per person when they pick up their badges.\n- **How to Vote**: During the Summit, attendees can use their stickers to vote by placing them on the projects they are most interested in.\n- **Deadline**: Voting closes on Saturday, May 23, 2026, at 17:00 (UTC+8)."
+        "title": "Unconference: An Unconference Experiment to Dismantle Disciplinary Frameworks",
+        "description": "We are a team of students from National Taiwan University known as the X-Salou Interdisciplinary Salon. This workshop distills the essence of our interdisciplinary salons, returning full control of the agenda to the participants. Through an issue marketplace, we will live-source subtopics for group discussions and engage in direct logical exchanges. If you are tired of one-way lectures and goal-oriented workshops, come experience this collision of ideas and become our future co-creation partner."
       },
-      "speakers": [],
+      "speakers": [
+        "ryan"
+      ],
       "tags": []
     },
     {
@@ -2150,7 +2152,7 @@
       "room": "RH",
       "broadcast": null,
       "start": "2026-05-24T13:00:00+08:00",
-      "end": "2026-05-24T15:00:00+08:00",
+      "end": "2026-05-24T14:00:00+08:00",
       "qa": null,
       "slide": null,
       "co_write": null,
@@ -2159,14 +2161,70 @@
       "language": null,
       "uri": "https://summit.g0v.tw/2026/agenda/day2/#U-2",
       "zh": {
-        "title": "開放工作坊",
-        "description": "開放工作坊即將登場！這是一個由下而上、由現場參與者共同決定的議程空間。無論你有一個絕妙的點子想找人討論，還是有一個開發中的專案想徵求貢獻者，都歡迎你來提案！\n\n- 會場三樓走道指定白板區域，為開放工作坊的提案地點。\n- 會眾領取識別證時，會同步發放開放工作坊投票貼紙，一人 3 張。\n- 在 Summit 期間，開放給會眾用貼紙投票，貼給最有興趣的專案。\n- 投票至 2026 年 5 月 23 號（六）下午 17:00（UTC+8）截止。"
+        "title": "開放工作坊：一個更理性的／理想的社群平台，長什麼樣子？",
+        "description": "社群媒體以然是當代大中獲取資訊與對話的核心場域，然而現有的平台機制往往加劇了社會分裂，並削弱著公共對話的品質。在對現狀不滿的同時，我們對「理性」且「可行」的社群平台，真的有共識嗎？\n本議程將從講者與團隊打造，專為「理性討話」而生的社群平台實驗出發，探討在制度上嘗試促進理性、深入討論的平台，可能面臨的討論與取捨。接著將推薦了經設計、發言論點架構等價值取捨提出於工作坊中討論，期待於議程最後，能對「理性」、「理想」的社群平台，有更多元且鮮明的共識。\n"
       },
       "en": {
-        "title": "Unconference",
-        "description": "The Unconference is coming up! This is a bottom-up session space shaped collaboratively by on-site participants. Whether you have a brilliant idea you want to discuss or an ongoing project looking for contributors, you are welcome to submit a proposal!\n\n- **Proposal Location**: 3F Whiteboard Alley\n- **Voting Stickers**: Attendees will receive 3 Unconference voting stickers per person when they pick up their badges.\n- **How to Vote**: During the Summit, attendees can use their stickers to vote by placing them on the projects they are most interested in.\n- **Deadline**: Voting closes on Saturday, May 23, 2026, at 17:00 (UTC+8)."
+        "title": "Unconference: Workshop: What Does a More Rational/Ideal Social Media Platform Look Like?",
+        "description": "Social media has become a central arena for information and dialogue, yet existing platform mechanisms often exacerbate social divisions and undermine the quality of public discourse. While dissatisfaction with the status quo is widespread, do we truly have a consensus on what a rational and feasible social media platform looks like? This session begins with an experiment—a social media platform designed specifically for rational conversation—to explore the institutional trade-offs and challenges in promoting deep, reasoned discussion. Participants will engage in a workshop to discuss value judgments regarding design and argument structures, aiming to develop a diverse and clear consensus on the characteristics of an ideal social media platform."
       },
-      "speakers": [],
+      "speakers": [
+        "ak"
+      ],
+      "tags": []
+    },
+    {
+      "id": "U-3",
+      "type": "U",
+      "room": "R3",
+      "broadcast": null,
+      "start": "2026-05-24T14:00:00+08:00",
+      "end": "2026-05-24T15:00:00+08:00",
+      "qa": null,
+      "slide": null,
+      "co_write": null,
+      "live": null,
+      "record": null,
+      "language": null,
+      "uri": null,
+      "zh": {
+        "title": "開放工作坊：政黨域名該怎麼用？",
+        "description": "把政黨域名拿下了，然後呢？\n該怎麼用？（討論）算不算公共資源？（濫用）\n一起發顯現在空看的三個政黨域名該如何用吧\n（如果有時間還可以討論 TWNIC 該如何處理惡搞（？）吧及域名政策）"
+      },
+      "en": {
+        "title": "Unconference: How Should Political Party Domain Names Be Used?",
+        "description": "We've secured the political party domain names, so what's next? How should they be used? (Discussion) Should they be considered public resources? (Abuse) Let's explore how to use the three currently available political party domain names. (If time permits, we can also discuss how TWNIC should handle parodies and domain name policies.)"
+      },
+      "speakers": [
+        "1233"
+      ],
+      "tags": []
+    },
+    {
+      "id": "U-4",
+      "type": "U",
+      "room": "RH",
+      "broadcast": null,
+      "start": "2026-05-24T14:00:00+08:00",
+      "end": "2026-05-24T15:00:00+08:00",
+      "qa": null,
+      "slide": null,
+      "co_write": null,
+      "live": null,
+      "record": null,
+      "language": null,
+      "uri": null,
+      "zh": {
+        "title": "開放工作坊：速構椅-在summit 現場製作大會主視覺「椅子」",
+        "description": "想要帶走免費的 summit 紀念品嗎？想要體驗手作的樂趣嗎？\n那就來「速構椅」製作手工椅子，把它帶回家吧！\n這場工作坊會教大家怎麼用回收打包帶製作椅子，跟著這場工作坊，讓你能把獨一無二的紀念品帶回家！"
+      },
+      "en": {
+        "title": "Unconference: Quick-Build Chair - Making the Summit’s Visual Identity On-Site",
+        "description": "Want to take home a free Summit souvenir? Want to experience the fun of handmade crafts? Come to the Quick-Build Chair workshop to make a handmade chair and take it home! This workshop will teach everyone how to make chairs using recycled packing straps. Follow along with this workshop so you can bring a unique souvenir home!"
+      },
+      "speakers": [
+        "percy"
+      ],
       "tags": []
     },
     {
@@ -3430,6 +3488,54 @@
       "en": {
         "name": "Coseeing",
         "bio": "Creating an inclusive digital environment is not just about accommodating people with disabilities today; it's about paving the way for our own future. Approximately one-quarter of the global population consists of individuals with disabilities or older adults who face significant challenges with digital products due to sensory decline, physical limitations, or cognitive differences. All of us are on the path to aging, and accessibility is not a niche requirement but an everyday necessity for everyone.\n\nA11y Camp is a digital accessibility workshop focused on inclusivity, starting with experiential learning. We invite participants to temporarily set aside their reliance on visual cues and instead use auditory methods to navigate smartphones and digital services. When visuals are no longer accessible and content must be found, understood, and operated through sound, many overlooked issues become glaringly apparent. During the event, participants will activate their phone's screen reader to experience how visually impaired individuals navigate through audio cues, gaining insight into how unclear instructions and disorganized information can lead to confusion.\n\nJoin us to explore a different digital world through firsthand experience and gain a deeper understanding of the importance of digital accessibility!"
+      }
+    },
+    {
+      "id": "ryan",
+      "avatar": "",
+      "zh": {
+        "name": "Ryan",
+        "bio": ""
+      },
+      "en": {
+        "name": "",
+        "bio": ""
+      }
+    },
+    {
+      "id": "ak",
+      "avatar": "",
+      "zh": {
+        "name": "AK",
+        "bio": ""
+      },
+      "en": {
+        "name": "",
+        "bio": ""
+      }
+    },
+    {
+      "id": "1233",
+      "avatar": "",
+      "zh": {
+        "name": "1233",
+        "bio": ""
+      },
+      "en": {
+        "name": "",
+        "bio": ""
+      }
+    },
+    {
+      "id": "percy",
+      "avatar": "",
+      "zh": {
+        "name": "Percy",
+        "bio": ""
+      },
+      "en": {
+        "name": "",
+        "bio": ""
       }
     }
   ],
