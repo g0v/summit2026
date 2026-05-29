@@ -126,7 +126,7 @@ const sponsors = {
     },
     {
       name: 'TudiVoice',
-      img: 'tudiVoice.svg',
+      img: 'tudiVoice.webp',
     },
   ],
 }
@@ -164,7 +164,7 @@ const pastReports = []
                 {logoOnlyTiers.includes(tier) ? (
                   <div class="grid grid-cols-2 gap-2 md:flex md:flex-wrap">
                     {list.map(s => (
-                      <div class="aspect-square rounded-lg bg-neutral-50 md:w-32">
+                      <div class="grid aspect-square place-items-center rounded-lg bg-neutral-50 md:w-32">
                         <img src={`${import.meta.env.BASE_URL}img/partners/${s.img}`} alt={s.name} />
                       </div>
                     ))}
