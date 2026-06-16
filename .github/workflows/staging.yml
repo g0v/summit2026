@@ -34,7 +34,6 @@ jobs:
         run: npm run fetch-schedule
         env:
           SPREADSHEET_ID: ${{ vars.SPREADSHEET_ID }}
-          GCP_API_KEY: ${{ secrets.GCP_API_KEY }}
           DEFAULT_AVATAR: ${{ vars.DEFAULT_AVATAR }}
           AVATAR_BASE_URL: ${{ vars.AVATAR_BASE_URL }}
 

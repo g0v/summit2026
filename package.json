@@ -36,7 +36,7 @@
     "linkify-html": "^4.3.3",
     "linkifyjs": "^4.3.3",
     "micromark": "^4.0.2",
-    "opass-schedule-to-json": "^1.1.5",
+    "opass-schedule-to-json": "^1.2.0",
     "prettier": "^3.8.1",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.7.2",

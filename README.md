@@ -22,8 +22,8 @@ GitHub action 根據 main branch 更新，作為 staging site
 議程採用 OPass 格式的 [Google Sheet](https://docs.google.com/spreadsheets/d/1jD0RtB_J4XxcwbgABtHJWo6XECffTLP6_bgzrcy_rqo)。更新前，請先在 `.env` 設定以下欄位：
 
 ```
-GCP_API_KEY=""
-SPREADSHEET_ID=""
+# 以下以 2026 為範例
+SPREADSHEET_ID="1jD0RtB_J4XxcwbgABtHJWo6XECffTLP6_bgzrcy_rqo"
 DEFAULT_AVATAR="https://summit.g0v.tw/2026/img/avatars/default.jpg"
 AVATAR_BASE_URL="https://summit.g0v.tw/2026/img/avatars/"
 ```
